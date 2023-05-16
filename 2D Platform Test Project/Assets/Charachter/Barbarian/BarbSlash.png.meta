@@ -1,0 +1,711 @@
+fileFormatVersion: 2
+guid: 9f29a710486d3f84fa1cf6dbb1931e31
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BarbSlash_0
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 642
+        width: 46
+        height: 47
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e306b21c2962794b885c2b8d4f225e5
+      internalID: 1864327196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_1
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 641
+        width: 45
+        height: 47
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f40f309c3857024a9da6d3958868696
+      internalID: 1290082518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_2
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 641
+        width: 46
+        height: 47
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c374ade01e8e3cc4bab098dfe5f9b725
+      internalID: -176764956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_3
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 641
+        width: 45
+        height: 48
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02a87a253ec094f4d9c19110678c9f88
+      internalID: -1219968188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_4
+      rect:
+        serializedVersion: 2
+        x: 840
+        y: 641
+        width: 54
+        height: 56
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aab85b543f35354c9301acade76a0c1
+      internalID: -1600631205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_5
+      rect:
+        serializedVersion: 2
+        x: 1042
+        y: 641
+        width: 62
+        height: 54
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba47f7a55c168a4885fff7010479a27
+      internalID: 936669219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_6
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 450
+        width: 45
+        height: 49
+      alignment: 9
+      pivot: {x: 0.4888889, y: 0.97959185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e01b60d22baafd34aad278a4c8acd619
+      internalID: 809633418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_7
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 450
+        width: 29
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5862069, y: 0.97872335}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd32367c4484dbd4e8b91cdd984b6bbc
+      internalID: 74251476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_8
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 450
+        width: 39
+        height: 49
+      alignment: 9
+      pivot: {x: 0.43589744, y: 0.97959185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c67a49c972f4c144782a4989fab5b574
+      internalID: 2121028631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_9
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 450
+        width: 56
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6607143, y: 0.97959185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ad074144815b34cbd6fd73372fc52b
+      internalID: 835282674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_10
+      rect:
+        serializedVersion: 2
+        x: 820
+        y: 450
+        width: 56
+        height: 49
+      alignment: 9
+      pivot: {x: 0.71428573, y: 0.97959185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 278ef5373b16cf54d917769b8864d678
+      internalID: 347755856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_11
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 450
+        width: 56
+        height: 49
+      alignment: 9
+      pivot: {x: 0.71428573, y: 0.97959185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9428aba5357df7149a38086be37cc164
+      internalID: -1562197659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_12
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 258
+        width: 46
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acd403e16a7707a46ab05593857201dd
+      internalID: -1989339694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_13
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 258
+        width: 45
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca0ff45b34d1352489eb7221a00886e5
+      internalID: 1116226661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_14
+      rect:
+        serializedVersion: 2
+        x: 450
+        y: 258
+        width: 46
+        height: 47
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e592791022ea6644493ad30ecfbb5b0c
+      internalID: 983521788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_15
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 258
+        width: 54
+        height: 48
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 160e50f00b9c2e74f87e4294398d2771
+      internalID: 755544365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_16
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 249
+        width: 66
+        height: 58
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89a08f47ebdbebe48b6bd76961101dd3
+      internalID: 1502765416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_17
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 253
+        width: 62
+        height: 54
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1379b252c2178c54a877f3127ca3a6f7
+      internalID: 1193937132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_18
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 66
+        width: 45
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6661ce84f9ecf1c44b778157f85f2a58
+      internalID: -1386572998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_19
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 66
+        width: 29
+        height: 47
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ad1f537de161cb4088fdaec7cc79b80
+      internalID: 1476653739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_20
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 66
+        width: 39
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43c041d31b38dda4fbeeda6f576a16ea
+      internalID: 227227171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_21
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 66
+        width: 56
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53dd0ad28f0b4c848af632d532cd7f6e
+      internalID: 137948634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_22
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 66
+        width: 56
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e00bcec96a2e5374e8b22bdb5fa3e9d6
+      internalID: 323523379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbSlash_23
+      rect:
+        serializedVersion: 2
+        x: 1044
+        y: 66
+        width: 56
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c859f8ca6ad8d643aa795226b55c17c
+      internalID: -2097908502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BarbSlash_1: 1290082518
+      BarbSlash_9: 835282674
+      BarbSlash_22: 323523379
+      BarbSlash_12: -1989339694
+      BarbSlash_8: 2121028631
+      BarbSlash_17: 1193937132
+      BarbSlash_3: -1219968188
+      BarbSlash_7: 74251476
+      BarbSlash_10: 347755856
+      BarbSlash_16: 1502765416
+      BarbSlash_5: 936669219
+      BarbSlash_15: 755544365
+      BarbSlash_21: 137948634
+      BarbSlash_0: 1864327196
+      BarbSlash_4: -1600631205
+      BarbSlash_11: -1562197659
+      BarbSlash_6: 809633418
+      BarbSlash_14: 983521788
+      BarbSlash_23: -2097908502
+      BarbSlash_18: -1386572998
+      BarbSlash_19: 1476653739
+      BarbSlash_2: -176764956
+      BarbSlash_13: 1116226661
+      BarbSlash_20: 227227171
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

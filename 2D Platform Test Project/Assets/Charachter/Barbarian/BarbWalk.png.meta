@@ -1,0 +1,975 @@
+fileFormatVersion: 2
+guid: db3b7949def534048897177b64e04915
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BarbarianWalk_0
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 196
+        width: 46
+        height: 48
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 800eb9256b6b2c440aba17836858ad1a
+      internalID: 1185166376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_1
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 197
+        width: 46
+        height: 47
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b55f3721f4bc8eb429b84d84834f2757
+      internalID: 900514722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_2
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 196
+        width: 46
+        height: 48
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aab038b964d7fe44791d0bad6b95e383
+      internalID: 315050001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_3
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 195
+        width: 46
+        height: 48
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3158eeb112a4b1f40a742992e1514ca0
+      internalID: -964367624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_4
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 196
+        width: 46
+        height: 48
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 014c400634d4a0a4b94d7656b7658498
+      internalID: 433057031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_5
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 197
+        width: 46
+        height: 47
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ab1faf940040cf489c923311803d0c3
+      internalID: 1464716083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_6
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 196
+        width: 46
+        height: 48
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aaa43798b57f5534ba5c2c104eb9d75d
+      internalID: -1239777582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_7
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 195
+        width: 46
+        height: 48
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d2a9ab6cc1a9e243a9d27b4935f98bb
+      internalID: 2095761910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_8
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 196
+        width: 46
+        height: 48
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671cf70c327a8864184481e946f7ee7f
+      internalID: -2011884612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_9
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 132
+        width: 45
+        height: 49
+      alignment: 9
+      pivot: {x: 0.4888889, y: 0.97959185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 635463b47bc0ce04cb5a3dc2aee3de47
+      internalID: -1750519841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_10
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 132
+        width: 46
+        height: 48
+      alignment: 9
+      pivot: {x: 0.39130434, y: 0.9791667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3acfa311e66e1614da2fdebecdddba6c
+      internalID: -1849938300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_11
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 133
+        width: 46
+        height: 48
+      alignment: 9
+      pivot: {x: 0.36956522, y: 0.9791667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c6664da347fdf40803f7dc6b4fca62
+      internalID: -44361789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_12
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 133
+        width: 45
+        height: 48
+      alignment: 9
+      pivot: {x: 0.46666667, y: 0.9791667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d380b6bc0d92a842a849f7eda78486f
+      internalID: 1618457798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_13
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 132
+        width: 46
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.97959185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdbfd31edecdb0c488fe60cbfcae6520
+      internalID: -2088839346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_14
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 132
+        width: 43
+        height: 48
+      alignment: 9
+      pivot: {x: 0.627907, y: 0.9791667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d4afd5bfd7be74289fbdc873883a0a
+      internalID: 1565794325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_15
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 132
+        width: 46
+        height: 49
+      alignment: 9
+      pivot: {x: 0.47826087, y: 0.97959185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef960bf40d4abf4ebfa4f1f85f30fc9
+      internalID: -991897443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_16
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 132
+        width: 46
+        height: 49
+      alignment: 9
+      pivot: {x: 0.36956522, y: 0.97959185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e73e0ea2f0168544f871252ee482bc35
+      internalID: -1562267172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_17
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 132
+        width: 46
+        height: 49
+      alignment: 9
+      pivot: {x: 0.3478261, y: 0.97959185}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 075a3769b8a1bec4388466d5ebe25bb6
+      internalID: 253992818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_18
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 68
+        width: 46
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23210cef4fc3e5e4c8276958b41ffd81
+      internalID: -833782871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_19
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 68
+        width: 46
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b5bbfca66498a459c3eade2d671448
+      internalID: 1087055002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_20
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 67
+        width: 46
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99967eb25d1c7ae48821979cd51efa51
+      internalID: -1431161947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_21
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 67
+        width: 45
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88008342ac602d54aa99b19d7c91d98c
+      internalID: -298935273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_22
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 67
+        width: 46
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78654e2760cf1ee4fb11d5c676153512
+      internalID: 1907948713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_23
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 68
+        width: 46
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b8982894a3c6fc48b019f061ff68c7c
+      internalID: 378533220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_24
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 67
+        width: 46
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de14f694985c84e46aa6a2020d7e72ce
+      internalID: 716923838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_25
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 67
+        width: 47
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b12ded6453660884fa4bd0cf73a49a2e
+      internalID: 1330286686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_26
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 67
+        width: 46
+        height: 50
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b34e61f095a9d834b932c55067449022
+      internalID: -1802249977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_27
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 4
+        width: 45
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a610ae6fc2fd9f42acd8aeed3372b81
+      internalID: -1216556417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_28
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 4
+        width: 46
+        height: 48
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4447313d3fd81641949c669a51e0607
+      internalID: 2011517253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_29
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 5
+        width: 46
+        height: 48
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 695b78f7d0509e045a3a886fb7563d7d
+      internalID: 276667985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_30
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 5
+        width: 45
+        height: 48
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8847c43ff51de904a9492bc607f11c10
+      internalID: 423348461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_31
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 4
+        width: 46
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d8b152f2f33324eba3866de7b2e6c0
+      internalID: 2035685137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_32
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 4
+        width: 43
+        height: 48
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f015eb30c74fdf4a8afb5ed0b2e83b2
+      internalID: 196562695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_33
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 4
+        width: 46
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a21cd0fe923b5ef4ab08814252af9002
+      internalID: -1281310572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_34
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 4
+        width: 46
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38583795193f6d243ba86eb2828e18c5
+      internalID: 2065456513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbarianWalk_35
+      rect:
+        serializedVersion: 2
+        x: 514
+        y: 4
+        width: 46
+        height: 49
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35f68e9f5ad82e94ca478cbe074115e7
+      internalID: -293586434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BarbarianWalk_17: 253992818
+      BarbarianWalk_25: 1330286686
+      BarbarianWalk_34: 2065456513
+      BarbarianWalk_26: -1802249977
+      BarbarianWalk_29: 276667985
+      BarbarianWalk_32: 196562695
+      BarbarianWalk_2: 315050001
+      BarbarianWalk_7: 2095761910
+      BarbarianWalk_28: 2011517253
+      BarbarianWalk_13: -2088839346
+      BarbarianWalk_27: -1216556417
+      BarbarianWalk_19: 1087055002
+      BarbarianWalk_0: 1185166376
+      BarbarianWalk_23: 378533220
+      BarbarianWalk_5: 1464716083
+      BarbarianWalk_10: -1849938300
+      BarbarianWalk_6: -1239777582
+      BarbarianWalk_9: -1750519841
+      BarbarianWalk_21: -298935273
+      BarbarianWalk_33: -1281310572
+      BarbarianWalk_16: -1562267172
+      BarbarianWalk_30: 423348461
+      BarbarianWalk_31: 2035685137
+      BarbarianWalk_35: -293586434
+      BarbarianWalk_24: 716923838
+      BarbarianWalk_22: 1907948713
+      BarbarianWalk_20: -1431161947
+      BarbarianWalk_1: 900514722
+      BarbarianWalk_18: -833782871
+      BarbarianWalk_14: 1565794325
+      BarbarianWalk_4: 433057031
+      BarbarianWalk_8: -2011884612
+      BarbarianWalk_11: -44361789
+      BarbarianWalk_15: -991897443
+      BarbarianWalk_12: 1618457798
+      BarbarianWalk_3: -964367624
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
