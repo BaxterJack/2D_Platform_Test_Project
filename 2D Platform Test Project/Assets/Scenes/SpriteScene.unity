@@ -397,6 +397,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1094461953}
+  - {fileID: 1422015463}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -434,8 +435,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.052628934, y: -0.12387228}
-  m_Size: {x: 0.3200724, y: 0.7358086}
+  m_Offset: {x: 0.0031390488, y: -0.3501119}
+  m_Size: {x: 0.32007247, y: 0.7499486}
   m_Direction: 0
 --- !u!114 &190901761
 MonoBehaviour:
@@ -452,6 +453,11 @@ MonoBehaviour:
   speed: 3
   jumpSpeed: 15
   animator: {fileID: 190901756}
+  attackPoint: {fileID: 1422015463}
+  attackRange: 0.25
+  enemeyLayers:
+    serializedVersion: 2
+    m_Bits: 64
   spriteRenderer: {fileID: 190901757}
 --- !u!1 &336080838
 GameObject:
@@ -887,7 +893,7 @@ GameObject:
   - component: {fileID: 713828673}
   - component: {fileID: 713828674}
   - component: {fileID: 713828675}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Barbarian
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1036,6 +1042,7 @@ MonoBehaviour:
   speed: 2
   animator: {fileID: 713828672}
   spriteRenderer: {fileID: 713828670}
+  maxHealth: 20
 --- !u!1 &774377438
 GameObject:
   m_ObjectHideFlags: 0
@@ -2195,6 +2202,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1422015462
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1422015463}
+  m_Layer: 0
+  m_Name: Attack Point
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1422015463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422015462}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.45, y: -0.441, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 190901758}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1498153551
 GameObject:
   m_ObjectHideFlags: 0

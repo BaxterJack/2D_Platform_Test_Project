@@ -23,20 +23,35 @@ public class Barbarian : MonoBehaviour
     [SerializeField]
     SpriteRenderer spriteRenderer;
 
+    [SerializeField]
+    int maxHealth = 20;
+    int currentHealth;
+
+    bool hasDied;
+
     void Start()
     {
         numWaypoints = waypoints.Length;
         currentWaypoint = 0;
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (hasDied)
+        {
+            return;
+        }
         SpriteAnimation();
     }
 
     private void FixedUpdate()
     {
+        if(hasDied)
+        {
+            return;
+        }
         MoveAI();
     }
 
@@ -80,5 +95,26 @@ public class Barbarian : MonoBehaviour
         {
             currentWaypoint = 0;
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        if (currentHealth <= 0) 
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        hasDied = true;
+        animator.SetBool("HasDied", hasDied);
+        GetComponent<Rigidbody2D>().gravityScale = 0.0f;
+        GetComponent<Rigidbody2D>().Sleep();
+        GetComponent<Collider2D>().enabled = false;
+
+        this.enabled = false;
     }
 }
