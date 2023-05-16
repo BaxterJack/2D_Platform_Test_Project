@@ -27,6 +27,9 @@ public class Barbarian : MonoBehaviour
     int maxHealth = 20;
     int currentHealth;
 
+    [SerializeField]
+    HealthBar healthBar;
+
     bool hasDied;
 
     void Start()
@@ -80,7 +83,7 @@ public class Barbarian : MonoBehaviour
         Vector2 barbPosition = rigidbody2D.transform.transform.position;
         Vector2 waypointPosition = waypoints[currentWaypoint];
         Vector2 direction = (barbPosition - waypointPosition);
-        if (direction.magnitude < 0.25f)
+        if (direction.magnitude < 0.35f)
         {
             ChooseNextWaypoint();
         }
@@ -100,6 +103,7 @@ public class Barbarian : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
 
         if (currentHealth <= 0) 
         {

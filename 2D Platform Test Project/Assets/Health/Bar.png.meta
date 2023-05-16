@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5651544b2ae70fb4f95487bd54eca355
+guid: f08af9d91f83fd946950550520845742
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -164,133 +164,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: BarbDeath_0
-      rect:
-        serializedVersion: 2
-        x: 17
-        y: 15
-        width: 46
-        height: 50
-      alignment: 9
-      pivot: {x: 0.32608697, y: 0.02}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf1edc5375bb52b48b01a92f8743385e
-      internalID: 247462467
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BarbDeath_1
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 15
-        width: 46
-        height: 49
-      alignment: 9
-      pivot: {x: 0.32608697, y: 0.040816326}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b2b6a5e0c63717d48b6369d4a374d840
-      internalID: 824490217
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BarbDeath_2
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 15
-        width: 46
-        height: 41
-      alignment: 9
-      pivot: {x: 0.3478261, y: 0.048780486}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 740cbfc1aa31c894cb720cb553fdfa6a
-      internalID: 1874172024
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BarbDeath_3
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 14
-        width: 46
-        height: 39
-      alignment: 9
-      pivot: {x: 0.32608697, y: 0.051282052}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f176652e1e3e29347b6e026a1e763b37
-      internalID: 1822067384
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BarbDeath_4
-      rect:
-        serializedVersion: 2
-        x: 274
-        y: 13
-        width: 46
-        height: 32
-      alignment: 9
-      pivot: {x: 0.3478261, y: 0.09375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 80e5c749fbba7174e9f0c9eb9a35370c
-      internalID: -1611626664
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BarbDeath_5
-      rect:
-        serializedVersion: 2
-        x: 338
-        y: 13
-        width: 46
-        height: 36
-      alignment: 9
-      pivot: {x: 0.36956522, y: 0.8611111}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55decd4c71e195d47a4e05ebb76102a6
-      internalID: 551107950
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -301,13 +175,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      BarbDeath_4: -1611626664
-      BarbDeath_5: 551107950
-      BarbDeath_3: 1822067384
-      BarbDeath_0: 247462467
-      BarbDeath_2: 1874172024
-      BarbDeath_1: 824490217
+    nameFileIdTable: {}
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
