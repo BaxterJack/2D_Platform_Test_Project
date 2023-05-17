@@ -7,7 +7,7 @@ public class AiSight : MonoBehaviour
     [SerializeField]
     float sightRange = 5f;
 
-    public bool canSeePlayer = false;
+    //bool canSeePlayer = false;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,7 @@ public class AiSight : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        canSeePlayer = CanSeePlayer();
+        //canSeePlayer = CanSeePlayer();
     }
 
     public bool CanSeePlayer()
@@ -41,10 +41,20 @@ public class AiSight : MonoBehaviour
 
         if (rayHit)
         {
-            Debug.Log("I can see the player");
+          //  Debug.Log("I can see the player");
             return true;
         }
- 
+
+        rayHit = Physics2D.Raycast(AiPosition, -forwardDirection, sightRange/2, playerMask);
+
+        Debug.DrawRay(AiPosition, -forwardDirection * sightRange/2, Color.red);
+
+        if (rayHit)
+        {
+          //  Debug.Log("I can hear the player behined me");
+            return true;
+        }
+
         return false;
     }
 }

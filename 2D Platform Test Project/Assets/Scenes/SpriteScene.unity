@@ -1238,6 +1238,7 @@ MonoBehaviour:
   healthBar: {fileID: 1902041915}
   aiSight: {fileID: 713828676}
   barbarianAnimation: {fileID: 713828677}
+  player: {fileID: 190901755}
 --- !u!114 &713828676
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1251,7 +1252,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sightRange: 5
-  canSeePlayer: 0
 --- !u!114 &713828677
 MonoBehaviour:
   m_ObjectHideFlags: 0

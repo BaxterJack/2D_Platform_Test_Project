@@ -27,30 +27,45 @@ public class Barbarian : MonoBehaviour
     [SerializeField]
     BarbarianAnimation barbarianAnimation;
 
+    [SerializeField]
+    GameObject player;
+
+    Vector2 destination;
+
+    public float attackOffset;
 
     void Start()
     {
         numWaypoints = waypoints.Length;
         currentWaypoint = 0;
+        destination = waypoints[currentWaypoint];
         currentHealth = maxHealth;
+        attackOffset = GetComponentInChildren<Attack_Point>().transform.position.x *1.5f;
     }
 
     void Update()
     {
-      
-        
+        if(aiSight.CanSeePlayer())
+        {
+            Debug.Log("I can see the player");
+            
+            destination = player.transform.position ;
+            destination.x += attackOffset;
+        }
+        else if (direction.magnitude < 0.35f)
+        {
+            ChooseNextWaypoint();
+        }
+
     }
 
     private void FixedUpdate()
     {
         if (!barbarianAnimation.IsAiDead())
         {
-            MoveAI();
+           MoveAI();
         }
-        if (direction.magnitude < 0.35f)
-        {
-            ChooseNextWaypoint();
-        }
+
     }
 
 
@@ -59,8 +74,7 @@ public class Barbarian : MonoBehaviour
         Rigidbody2D rigidbody2D = GetComponent<Rigidbody2D>();
         Vector2 velocity = rigidbody2D.velocity;
         Vector2 barbPosition = rigidbody2D.transform.transform.position;
-        Vector2 waypointPosition = waypoints[currentWaypoint];
-        direction = (barbPosition - waypointPosition);
+        direction = (barbPosition - destination);
         velocity.x = direction.normalized.x * -speed;
         rigidbody2D.velocity = velocity;   
     }
@@ -71,6 +85,7 @@ public class Barbarian : MonoBehaviour
         {
             currentWaypoint = 0;
         }
+        destination = waypoints[currentWaypoint];
     }
 
     public void TakeDamage(int damage)
@@ -82,6 +97,11 @@ public class Barbarian : MonoBehaviour
         {
             barbarianAnimation.Die();
         }
+    }
+
+    public Vector2 GetDirection()
+    {
+        return direction;
     }
 
 

@@ -36,14 +36,16 @@ public class BarbarianAnimation : MonoBehaviour
         Rigidbody2D rigidbody2D = GetComponent<Rigidbody2D>();
         horizontalMove = rigidbody2D.velocity.x;
 
-        isMoving = horizontalMove != 0;
+        isMoving = horizontalMove > 1.73f || horizontalMove < -1.73f;
         animator.SetBool("IsBarbMoving", isMoving);
 
-        if (horizontalMove > 0.0f)
+        Vector2 direction = GetComponent<Barbarian>().GetDirection();
+
+        if (direction.x < 0.2f)
         {
             spriteRenderer.flipX = true;
         }
-        else if (horizontalMove < 0.0f)
+        else if (direction.x > 0.2f)
         {
             spriteRenderer.flipX = false;
         }
