@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Barbarian : MonoBehaviour
 {
-    // Start is called before the first frame update
     [SerializeField]
     Vector2[] waypoints;
 
@@ -30,6 +29,9 @@ public class Barbarian : MonoBehaviour
     [SerializeField]
     HealthBar healthBar;
 
+    [SerializeField]
+    AiSight aiSight;
+
     bool hasDied;
 
     void Start()
@@ -47,11 +49,13 @@ public class Barbarian : MonoBehaviour
             return;
         }
         SpriteAnimation();
+        
+        
     }
 
     private void FixedUpdate()
     {
-        if(hasDied)
+        if (hasDied)
         {
             return;
         }
@@ -90,6 +94,8 @@ public class Barbarian : MonoBehaviour
         direction = (barbPosition - waypointPosition).normalized;
         velocity.x = direction.x * -speed;
         rigidbody2D.velocity = velocity;
+
+        
     }
     void ChooseNextWaypoint()
     {
