@@ -6,21 +6,13 @@ public class Barbarian : MonoBehaviour
 {
     [SerializeField]
     Vector2[] waypoints;
+    Vector2 direction;
 
     [SerializeField]
     float speed = 1.0f;
 
     int numWaypoints;
     int currentWaypoint;
-
-    bool isMoving = false;
-    float horizontalMove = 0.0f;
-
-    [SerializeField]
-    Animator animator;
-
-    [SerializeField]
-    SpriteRenderer spriteRenderer;
 
     [SerializeField]
     int maxHealth = 20;
@@ -32,7 +24,9 @@ public class Barbarian : MonoBehaviour
     [SerializeField]
     AiSight aiSight;
 
-    bool hasDied;
+    [SerializeField]
+    BarbarianAnimation barbarianAnimation;
+
 
     void Start()
     {
@@ -41,44 +35,24 @@ public class Barbarian : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (hasDied)
-        {
-            return;
-        }
-        SpriteAnimation();
-        
+      
         
     }
 
     private void FixedUpdate()
     {
-        if (hasDied)
+        if (!barbarianAnimation.IsAiDead())
         {
-            return;
+            MoveAI();
         }
-        MoveAI();
-    }
-
-    void SpriteAnimation()
-    {
-        Rigidbody2D rigidbody2D = GetComponent<Rigidbody2D>();
-        horizontalMove = rigidbody2D.velocity.x;
-
-        isMoving = horizontalMove != 0;
-        animator.SetBool("IsBarbMoving", isMoving);
-
-        if (horizontalMove > 0.0f)
+        if (direction.magnitude < 0.35f)
         {
-            spriteRenderer.flipX = true;
-        }
-        else if (horizontalMove < 0.0f)
-        {
-            spriteRenderer.flipX = false;
+            ChooseNextWaypoint();
         }
     }
+
 
     void MoveAI()
     {
@@ -86,16 +60,9 @@ public class Barbarian : MonoBehaviour
         Vector2 velocity = rigidbody2D.velocity;
         Vector2 barbPosition = rigidbody2D.transform.transform.position;
         Vector2 waypointPosition = waypoints[currentWaypoint];
-        Vector2 direction = (barbPosition - waypointPosition);
-        if (direction.magnitude < 0.35f)
-        {
-            ChooseNextWaypoint();
-        }
-        direction = (barbPosition - waypointPosition).normalized;
-        velocity.x = direction.x * -speed;
-        rigidbody2D.velocity = velocity;
-
-        
+        direction = (barbPosition - waypointPosition);
+        velocity.x = direction.normalized.x * -speed;
+        rigidbody2D.velocity = velocity;   
     }
     void ChooseNextWaypoint()
     {
@@ -113,18 +80,9 @@ public class Barbarian : MonoBehaviour
 
         if (currentHealth <= 0) 
         {
-            Die();
+            barbarianAnimation.Die();
         }
     }
 
-    void Die()
-    {
-        hasDied = true;
-        animator.SetBool("HasDied", hasDied);
-        GetComponent<Rigidbody2D>().gravityScale = 0.0f;
-        GetComponent<Rigidbody2D>().Sleep();
-        GetComponent<Collider2D>().enabled = false;
 
-        this.enabled = false;
-    }
 }
