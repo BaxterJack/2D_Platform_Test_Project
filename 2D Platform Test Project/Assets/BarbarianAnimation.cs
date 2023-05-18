@@ -15,6 +15,8 @@ public class BarbarianAnimation : MonoBehaviour
 
     bool hasDied = false;
 
+    Vector2 barbPosition;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,30 +26,50 @@ public class BarbarianAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        barbPosition = transform.position;
         if (!hasDied)
         {
-            SpriteAnimation();
+            WalkAnimation();
+            FlipSprite();
         }
         
     }
 
-    void SpriteAnimation()
+    void WalkAnimation()
     {
         Rigidbody2D rigidbody2D = GetComponent<Rigidbody2D>();
         horizontalMove = rigidbody2D.velocity.x;
 
-        isMoving = horizontalMove > 1.73f || horizontalMove < -1.73f;
+        isMoving = horizontalMove > 0.1f || horizontalMove < -0.1f;
         animator.SetBool("IsBarbMoving", isMoving);
 
-        Vector2 direction = GetComponent<Barbarian>().GetDirection();
+    }
 
-        if (direction.x < 0.2f)
+    void FlipSprite()
+    {
+        if (IsGoingRight())
         {
-            spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-1, 1, 1);
         }
-        else if (direction.x > 0.2f)
+        else if (!IsGoingRight())
         {
-            spriteRenderer.flipX = false;
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+    }
+
+    public bool IsGoingRight()
+    {
+        Vector2 target = GetComponent<Barbarian>().GetTarget();
+
+        Debug.DrawLine(barbPosition, target);
+
+        if (target.x > barbPosition.x) // Going right
+        {
+            return true;
+        }
+        else   //going Left
+        {
+            return false;
         }
     }
 

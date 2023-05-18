@@ -37,7 +37,7 @@ public class AiSight : MonoBehaviour
 
         RaycastHit2D rayHit = Physics2D.Raycast(AiPosition, forwardDirection, sightRange, playerMask);
 
-        Debug.DrawRay(AiPosition, forwardDirection * sightRange, Color.red);
+     //   Debug.DrawRay(AiPosition, forwardDirection * sightRange, Color.red);
 
         if (rayHit)
         {
@@ -47,7 +47,7 @@ public class AiSight : MonoBehaviour
 
         rayHit = Physics2D.Raycast(AiPosition, -forwardDirection, sightRange/2, playerMask);
 
-        Debug.DrawRay(AiPosition, -forwardDirection * sightRange/2, Color.red);
+    //    Debug.DrawRay(AiPosition, -forwardDirection * sightRange/2, Color.red);
 
         if (rayHit)
         {

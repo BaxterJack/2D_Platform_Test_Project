@@ -32,6 +32,8 @@ public class Barbarian : MonoBehaviour
 
     Vector2 destination;
 
+    Vector2 target;
+
     public float attackOffset;
 
     void Start()
@@ -39,17 +41,18 @@ public class Barbarian : MonoBehaviour
         numWaypoints = waypoints.Length;
         currentWaypoint = 0;
         destination = waypoints[currentWaypoint];
+        target = destination;
         currentHealth = maxHealth;
-        attackOffset = GetComponentInChildren<Attack_Point>().transform.position.x *1.5f;
+        
     }
 
     void Update()
     {
-        if(aiSight.CanSeePlayer())
-        {
-            Debug.Log("I can see the player");
-            
-            destination = player.transform.position ;
+        attackOffset = (transform.position.x - GetComponentInChildren<Attack_Point>().transform.position.x) *1.25f;
+        if (aiSight.CanSeePlayer())
+        {          
+            destination = player.transform.localPosition ;
+            target = destination;
             destination.x += attackOffset;
         }
         else if (direction.magnitude < 0.35f)
@@ -65,9 +68,7 @@ public class Barbarian : MonoBehaviour
         {
            MoveAI();
         }
-
     }
-
 
     void MoveAI()
     {
@@ -86,6 +87,7 @@ public class Barbarian : MonoBehaviour
             currentWaypoint = 0;
         }
         destination = waypoints[currentWaypoint];
+        target = destination;
     }
 
     public void TakeDamage(int damage)
@@ -99,10 +101,8 @@ public class Barbarian : MonoBehaviour
         }
     }
 
-    public Vector2 GetDirection()
+    public Vector2 GetTarget()
     {
-        return direction;
+        return target;
     }
-
-
 }

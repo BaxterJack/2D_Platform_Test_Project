@@ -29,11 +29,11 @@ public class PlayerAnimation : MonoBehaviour
 
         if (horizontalMove > 0.0f)
         {
-            spriteRenderer.flipX = true;
+            transform.localScale = new Vector3(-1, 1, 1);
         }
         else if (horizontalMove < 0.0f)
         {
-            spriteRenderer.flipX = false;
+            transform.localScale = new Vector3(1, 1, 1);
         }
         bool isAttacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Stab");
         isAttacking |= animator.GetCurrentAnimatorStateInfo(0).IsName("Slash");
