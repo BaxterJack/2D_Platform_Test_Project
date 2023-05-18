@@ -1315,6 +1315,11 @@ MonoBehaviour:
   - {x: 8, y: -4.2}
   - {x: -8, y: -4.2}
   speed: 1.5
+  aiSight: {fileID: 713828676}
+  player: {fileID: 190901755}
+  target: {x: 0, y: 0}
+  direction: {x: 0, y: 0}
+  destination: {x: 0, y: 0}
 --- !u!1 &774377438
 GameObject:
   m_ObjectHideFlags: 0

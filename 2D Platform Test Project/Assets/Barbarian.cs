@@ -38,57 +38,57 @@ public class Barbarian : MonoBehaviour
 
     void Start()
     {
-        numWaypoints = waypoints.Length;
-        currentWaypoint = 0;
-        destination = waypoints[currentWaypoint];
-        target = destination;
-        currentHealth = maxHealth;
+        //numWaypoints = waypoints.Length;
+        //currentWaypoint = 0;
+        //destination = waypoints[currentWaypoint];
+        //target = destination;
+        //currentHealth = maxHealth;
         
     }
 
     void Update()
     {
-        attackOffset = (transform.position.x - GetComponentInChildren<Attack_Point>().transform.position.x) *1.25f;
-        if (aiSight.CanSeePlayer())
-        {          
-            destination = player.transform.localPosition ;
-            target = destination;
-            destination.x += attackOffset;
-        }
-        else if (direction.magnitude < 0.35f)
-        {
-            //ChooseNextWaypoint();
-        }
+        //attackOffset = (transform.position.x - GetComponentInChildren<Attack_Point>().transform.position.x) *1.25f;
+        //if (aiSight.CanSeePlayer())
+        //{          
+        //    destination = player.transform.localPosition ;
+        //    target = destination;
+        //    destination.x += attackOffset;
+        //}
+        //else if (direction.magnitude < 0.35f)
+        //{
+        //    //ChooseNextWaypoint();
+        //}
 
     }
 
     private void FixedUpdate()
     {
-        if (!barbarianAnimation.IsAiDead())
-        {
-           //MoveAI();
-        }
+        //if (!barbarianAnimation.IsAiDead())
+        //{
+        //   //MoveAI();
+        //}
     }
 
-    void MoveAI()
-    {
-        Rigidbody2D rigidbody2D = GetComponent<Rigidbody2D>();
-        Vector2 velocity = rigidbody2D.velocity;
-        Vector2 barbPosition = rigidbody2D.transform.transform.position;
-        direction = (barbPosition - destination);
-        velocity.x = direction.normalized.x * -speed;
-        rigidbody2D.velocity = velocity;   
-    }
-    void ChooseNextWaypoint()
-    {
-        currentWaypoint++;
-        if(currentWaypoint == numWaypoints)
-        {
-            currentWaypoint = 0;
-        }
-        destination = waypoints[currentWaypoint];
-        target = destination;
-    }
+    //void MoveAI()
+    //{
+    //    Rigidbody2D rigidbody2D = GetComponent<Rigidbody2D>();
+    //    Vector2 velocity = rigidbody2D.velocity;
+    //    Vector2 barbPosition = rigidbody2D.transform.transform.position;
+    //    direction = (barbPosition - destination);
+    //    velocity.x = direction.normalized.x * -speed;
+    //    rigidbody2D.velocity = velocity;   
+    //}
+    //void ChooseNextWaypoint()
+    //{
+    //    currentWaypoint++;
+    //    if(currentWaypoint == numWaypoints)
+    //    {
+    //        currentWaypoint = 0;
+    //    }
+    //    destination = waypoints[currentWaypoint];
+    //    target = destination;
+    //}
 
     public void TakeDamage(int damage)
     {
@@ -101,8 +101,8 @@ public class Barbarian : MonoBehaviour
         }
     }
 
-    public Vector2 GetTarget()
-    {
-        return target;
-    }
+    //public Vector2 GetTarget()
+    //{
+    //    return target;
+    //}
 }

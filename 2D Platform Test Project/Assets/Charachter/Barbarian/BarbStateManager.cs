@@ -5,8 +5,8 @@ using UnityEngine;
 public class BarbStateManager : MonoBehaviour
 {
     BarbBaseState currentState;
-    public BarbPatrolState patrolState;// = new BarbPatrolState(GetComponent<GameObject>());
-    public BarbGoToAttackPosState goToAttackPosState = new BarbGoToAttackPosState();
+    public BarbPatrolState patrolState;
+    public BarbGoToAttackPosState goToAttackPosState ;
     public BarbAttackState attackState = new BarbAttackState();
 
     [SerializeField]
@@ -15,10 +15,21 @@ public class BarbStateManager : MonoBehaviour
     [SerializeField]
     public float speed = 1.0f;
 
+    [SerializeField]
+    public AiSight aiSight;
+
+    [SerializeField]
+    public GameObject player;
+
+    public Vector2 target;
+    public Vector2 direction;
+    public Vector2 destination;
+
 
     void Start()
     {
         patrolState = new BarbPatrolState(this);
+        goToAttackPosState = new BarbGoToAttackPosState(this);
         currentState = patrolState;
         currentState.EnterState(this);
     }
@@ -38,4 +49,6 @@ public class BarbStateManager : MonoBehaviour
         currentState = state;
         state.EnterState(this);
     }
+
+
 }

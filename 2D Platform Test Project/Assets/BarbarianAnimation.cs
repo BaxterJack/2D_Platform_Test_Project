@@ -59,7 +59,7 @@ public class BarbarianAnimation : MonoBehaviour
 
     public bool IsGoingRight()
     {
-        Vector2 target = GetComponent<Barbarian>().GetTarget();
+        Vector2 target = GetComponent<BarbStateManager>().target;
 
         Debug.DrawLine(barbPosition, target);
 

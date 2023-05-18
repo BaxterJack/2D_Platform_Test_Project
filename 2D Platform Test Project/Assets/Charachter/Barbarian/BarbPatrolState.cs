@@ -5,10 +5,7 @@ using UnityEngine;
 public class BarbPatrolState : BarbBaseState
 {
     BarbStateManager barb;
-
-    Vector2 direction;
-    Vector2 destination;
-    Vector2 target;
+  
     int numWaypoints;
     int currentWaypoint;
 
@@ -17,8 +14,8 @@ public class BarbPatrolState : BarbBaseState
         barb = Barb;
         numWaypoints = barb.waypoints.Length;
         currentWaypoint = 0;
-        destination = barb.waypoints[currentWaypoint];
-        target = destination;
+        barb.destination = barb.waypoints[currentWaypoint];
+        barb.target = barb.destination;
     }
     public override void EnterState(BarbStateManager barbarian)
     {
@@ -27,9 +24,13 @@ public class BarbPatrolState : BarbBaseState
 
     public override void UpdateState(BarbStateManager barbarian)
     {
-        if (direction.magnitude < 0.35f)
+        if (barb.direction.magnitude < 0.35f)
         {
             ChooseNextWaypoint();
+        }
+        if(barb.aiSight.CanSeePlayer())
+        {
+            barb.SwitchState(barb.goToAttackPosState);
         }
     }
 
@@ -43,8 +44,8 @@ public class BarbPatrolState : BarbBaseState
        Rigidbody2D rigidbody2D = barb.GetComponent<Rigidbody2D>();
        Vector2 velocity = rigidbody2D.velocity;
        Vector2 barbPosition = rigidbody2D.transform.transform.position;
-       direction = (barbPosition - destination);
-       velocity.x = direction.normalized.x * -barb.speed;
+       barb.direction = (barbPosition - barb.destination);
+       velocity.x = barb.direction.normalized.x * -barb.speed;
        rigidbody2D.velocity = velocity;
     }
 
@@ -55,7 +56,7 @@ public class BarbPatrolState : BarbBaseState
         {
             currentWaypoint = 0;
         }
-        destination = barb.waypoints[currentWaypoint];
-        target = destination;
+        barb.destination = barb.waypoints[currentWaypoint];
+        barb.target = barb.destination;
     }
 }
