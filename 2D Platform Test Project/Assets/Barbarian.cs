@@ -57,7 +57,7 @@ public class Barbarian : MonoBehaviour
         }
         else if (direction.magnitude < 0.35f)
         {
-            ChooseNextWaypoint();
+            //ChooseNextWaypoint();
         }
 
     }
@@ -66,7 +66,7 @@ public class Barbarian : MonoBehaviour
     {
         if (!barbarianAnimation.IsAiDead())
         {
-           MoveAI();
+           //MoveAI();
         }
     }
 
