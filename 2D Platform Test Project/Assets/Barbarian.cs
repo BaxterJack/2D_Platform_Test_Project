@@ -4,37 +4,37 @@ using UnityEngine;
 
 public class Barbarian : MonoBehaviour
 {
-    [SerializeField]
-    Vector2[] waypoints;
-    Vector2 direction;
+    //[SerializeField]
+    //Vector2[] waypoints;
+    //Vector2 direction;
 
-    [SerializeField]
-    float speed = 1.0f;
+    //[SerializeField]
+    //float speed = 1.0f;
 
-    int numWaypoints;
-    int currentWaypoint;
+    //int numWaypoints;
+    //int currentWaypoint;
 
-    [SerializeField]
-    int maxHealth = 20;
-    int currentHealth;
+    //[SerializeField]
+    //int maxHealth = 20;
+    //int currentHealth;
 
-    [SerializeField]
-    HealthBar healthBar;
+    //[SerializeField]
+    //HealthBar healthBar;
 
-    [SerializeField]
-    AiSight aiSight;
+    //[SerializeField]
+    //AiSight aiSight;
 
-    [SerializeField]
-    BarbarianAnimation barbarianAnimation;
+    //[SerializeField]
+    //BarbarianAnimation barbarianAnimation;
 
-    [SerializeField]
-    GameObject player;
+    ////[SerializeField]
+    ////GameObject player;
 
-    Vector2 destination;
+    ////Vector2 destination;
 
-    Vector2 target;
+    ////Vector2 target;
 
-    public float attackOffset;
+    //public float attackOffset;
 
     void Start()
     {
@@ -90,16 +90,16 @@ public class Barbarian : MonoBehaviour
     //    target = destination;
     //}
 
-    public void TakeDamage(int damage)
-    {
-        currentHealth -= damage;
-        healthBar.SetHealth(currentHealth);
+    //public void TakeDamage(int damage)
+    //{
+    //    currentHealth -= damage;
+    //    healthBar.SetHealth(currentHealth);
 
-        if (currentHealth <= 0) 
-        {
-            barbarianAnimation.Die();
-        }
-    }
+    //    if (currentHealth <= 0) 
+    //    {
+    //        barbarianAnimation.Die();
+    //    }
+    //}
 
     //public Vector2 GetTarget()
     //{

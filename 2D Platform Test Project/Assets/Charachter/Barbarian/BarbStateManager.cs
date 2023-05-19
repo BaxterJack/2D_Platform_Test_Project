@@ -7,7 +7,8 @@ public class BarbStateManager : MonoBehaviour
     BarbBaseState currentState;
     public BarbPatrolState patrolState;
     public BarbGoToAttackPosState goToAttackPosState ;
-    public BarbAttackState attackState = new BarbAttackState();
+    public BarbAttackState attackState;
+    public BarbDeathState deathState;
 
     [SerializeField]
     public Vector2[] waypoints;
@@ -25,18 +26,40 @@ public class BarbStateManager : MonoBehaviour
     public Vector2 direction;
     public Vector2 destination;
 
+    [SerializeField]
+    public HealthBar healthBar;
+
+    [SerializeField]
+    public BarbarianAnimation barbarianAnimation;
+
+    [SerializeField]
+    public Attack_Point attackPoint;
+
+    [SerializeField]
+    public LayerMask playerLayers;
+
+    public float attackOffset;
+
+    public float attackCoolDown = 0.0f;
 
     void Start()
     {
         patrolState = new BarbPatrolState(this);
         goToAttackPosState = new BarbGoToAttackPosState(this);
+        attackState = new BarbAttackState(this);
+        deathState = new BarbDeathState(this);
         currentState = patrolState;
         currentState.EnterState(this);
+        
     }
 
     void Update()
     {
         currentState.UpdateState(this);
+        if(attackCoolDown > 0.0f)
+        {
+            attackCoolDown -= Time.deltaTime;
+        }
     }
 
     void FixedUpdate()

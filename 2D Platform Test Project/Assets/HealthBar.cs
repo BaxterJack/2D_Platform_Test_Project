@@ -8,6 +8,15 @@ public class HealthBar : MonoBehaviour
     [SerializeField]
     Slider slider;
 
+    [SerializeField]
+    int maxHealth = 40;
+    public int currentHealth;
+
+    private void Start()
+    {
+        currentHealth = maxHealth;
+    }
+
     void Update()
     {
         if (slider.value <= 0.0f)
@@ -25,5 +34,12 @@ public class HealthBar : MonoBehaviour
     public void SetHealth(int health)
     {
         slider.value = health;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        SetHealth(currentHealth);
+
     }
 }

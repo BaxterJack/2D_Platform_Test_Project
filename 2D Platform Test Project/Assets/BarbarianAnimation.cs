@@ -5,7 +5,7 @@ using UnityEngine;
 public class BarbarianAnimation : MonoBehaviour
 {
     [SerializeField]
-    Animator animator;
+    public Animator animator;
 
     [SerializeField]
     SpriteRenderer spriteRenderer;
@@ -50,10 +50,12 @@ public class BarbarianAnimation : MonoBehaviour
         if (IsGoingRight())
         {
             transform.localScale = new Vector3(-1, 1, 1);
+            GetComponentInChildren<HealthBar>().transform.localScale = new Vector3(-1, 1, 1);
         }
         else if (!IsGoingRight())
         {
             transform.localScale = new Vector3(1, 1, 1);
+            GetComponentInChildren<HealthBar>().transform.localScale = new Vector3(1, 1, 1);
         }
     }
 
@@ -71,6 +73,11 @@ public class BarbarianAnimation : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public void Slash()
+    {
+        animator.SetTrigger("SlashAttack");
     }
 
     public void Die()

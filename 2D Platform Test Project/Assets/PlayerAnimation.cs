@@ -20,6 +20,13 @@ public class PlayerAnimation : MonoBehaviour
     bool isMoving = false;
     float horizontalMove = 0.0f;
 
+    Vector3 canvasScale;
+
+    private void Start()
+    {
+        canvasScale = GetComponentInChildren<Canvas>().transform.localScale;
+    }
+
     void Update()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal");
@@ -30,10 +37,12 @@ public class PlayerAnimation : MonoBehaviour
         if (horizontalMove > 0.0f)
         {
             transform.localScale = new Vector3(-1, 1, 1);
+            GetComponentInChildren<HealthBar>().transform.localScale = new Vector3(-1, 1, 1);
         }
         else if (horizontalMove < 0.0f)
         {
             transform.localScale = new Vector3(1, 1, 1);
+            GetComponentInChildren<HealthBar>().transform.localScale = new Vector3(1, 1, 1);
         }
         bool isAttacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Stab");
         isAttacking |= animator.GetCurrentAnimatorStateInfo(0).IsName("Slash");
@@ -56,8 +65,8 @@ public class PlayerAnimation : MonoBehaviour
 
         foreach (Collider2D enemy in hitEnemies)
         {
+            enemy.GetComponentInChildren<HealthBar>().TakeDamage(20);
             Debug.Log("We hit " + enemy.name);
-            enemy.GetComponentInChildren<Barbarian>().TakeDamage(20);
         }
     }
 
@@ -68,7 +77,7 @@ public class PlayerAnimation : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log("We hit " + enemy.name);
-            enemy.GetComponentInChildren<Barbarian>().TakeDamage(35);
+            enemy.GetComponentInChildren<HealthBar>().TakeDamage(35);
         }
     }
 

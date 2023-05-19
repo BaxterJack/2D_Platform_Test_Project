@@ -16,6 +16,8 @@ public class BarbPatrolState : BarbBaseState
         currentWaypoint = 0;
         barb.destination = barb.waypoints[currentWaypoint];
         barb.target = barb.destination;
+        
+
     }
     public override void EnterState(BarbStateManager barbarian)
     {
@@ -24,13 +26,19 @@ public class BarbPatrolState : BarbBaseState
 
     public override void UpdateState(BarbStateManager barbarian)
     {
+        if (barb.healthBar.currentHealth <= 0)
+        {
+            barb.SwitchState(barb.deathState);
+            return;
+        }
+        if (barb.aiSight.CanSeePlayer())
+        {
+            barb.SwitchState(barb.goToAttackPosState);
+            return;
+        }
         if (barb.direction.magnitude < 0.35f)
         {
             ChooseNextWaypoint();
-        }
-        if(barb.aiSight.CanSeePlayer())
-        {
-            barb.SwitchState(barb.goToAttackPosState);
         }
     }
 
