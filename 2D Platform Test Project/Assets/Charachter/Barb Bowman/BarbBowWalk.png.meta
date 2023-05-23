@@ -1,0 +1,975 @@
+fileFormatVersion: 2
+guid: f9dfd14a837fba94c995e826c70ef82f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: tvOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BarbBowWalk_0
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 418
+        width: 56
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccf47260bebc9414aa922e62393d42f8
+      internalID: -1456887810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_1
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 419
+        width: 56
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa73ea50722dc984bb628c6f6480832e
+      internalID: 1974322164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_2
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 418
+        width: 56
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b0741d7f3fa9a8478a6b3b33f3dde4e
+      internalID: -1314365264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_3
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 417
+        width: 55
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e31c24e79c6062f4fb10f0ed9fb422a3
+      internalID: -1273233259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_4
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 418
+        width: 56
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f31ff088cfe711e43a2de3c2515383c6
+      internalID: -836621131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_5
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 419
+        width: 56
+        height: 47
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3a9ee4c8a1e9cf409ac604b4aecb718
+      internalID: -1820716866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_6
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 418
+        width: 56
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bdba2304d686be44b132d2856e2f19d
+      internalID: -1073397858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_7
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 417
+        width: 56
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d0ab53b0218f140a81ba805191aee7
+      internalID: -1903508110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_8
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 418
+        width: 56
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a5a7ab8fa1e22f40a27c7e14e63e72f
+      internalID: 1394543660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_9
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 290
+        width: 44
+        height: 49
+      alignment: 9
+      pivot: {x: 0.6363636, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d74b5717f6deac488b484a8e5075bb7
+      internalID: -919095407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_10
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 290
+        width: 43
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5813953, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32d0546e4112ba4f90fcd278e9da730
+      internalID: 2011934623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_11
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 291
+        width: 44
+        height: 48
+      alignment: 9
+      pivot: {x: 0.54545456, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b88359471b62a4fba95886131d2c75
+      internalID: 874179782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_12
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 291
+        width: 43
+        height: 48
+      alignment: 9
+      pivot: {x: 0.41860464, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2340e5556b5b53f4fa2869aa199e15ca
+      internalID: -444741034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_13
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 290
+        width: 40
+        height: 49
+      alignment: 9
+      pivot: {x: 0.475, y: 0.48979592}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c615f4631dcfded459c61d2752b9a5a4
+      internalID: 763766281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_14
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 290
+        width: 40
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b59730b8092128c47bf7011c4388fe3c
+      internalID: 1487488464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_15
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 290
+        width: 43
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 0.48979592}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7de63734c2dd00f499fc39f025bb4e03
+      internalID: -1207544888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_16
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 290
+        width: 44
+        height: 49
+      alignment: 9
+      pivot: {x: 0.59090906, y: 0.48979592}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e259c1134f9a9df45852ea20e8f79208
+      internalID: -1476665667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_17
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 290
+        width: 43
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5813953, y: 0.48979592}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e36d64697b90d438a42e3ffcfe6387
+      internalID: -574107829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_18
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 162
+        width: 42
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6112fe5ff61759447bf2f6a4c57a8a6f
+      internalID: -1574686882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_19
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 162
+        width: 42
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d58731a8d264f974ea39009d927795e6
+      internalID: -2008808821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_20
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 161
+        width: 42
+        height: 50
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3132f17f263138349aba3bc3aff8421f
+      internalID: -1961764574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_21
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 161
+        width: 41
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7d0002e5f4ee944eb8924fd56bc9adf
+      internalID: 1108960080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_22
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 161
+        width: 42
+        height: 50
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9fd1c2e0f1df9b4681563b74fce7d41
+      internalID: -1690145415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_23
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 162
+        width: 42
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d52ae2aaa9ccc664fa1d9eb644f9facd
+      internalID: 1813815052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_24
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 161
+        width: 42
+        height: 50
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c542a5d835ed18144b0175a0640ca296
+      internalID: 1534709725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_25
+      rect:
+        serializedVersion: 2
+        x: 945
+        y: 161
+        width: 41
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5a232221d4a8cd4581ba261c6b4ab00
+      internalID: 312283263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_26
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 161
+        width: 42
+        height: 50
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f9f8c81774010547a2c0fee27397772
+      internalID: -1390684375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_27
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 34
+        width: 44
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 663c511264f7f0244a04e2e6a77ee8f3
+      internalID: 930448262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_28
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 34
+        width: 43
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07904899248c118419b8f43e19494961
+      internalID: 1373890830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_29
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 35
+        width: 44
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 298b98e4d7ab20447872f6161b8a71de
+      internalID: 1396658317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_30
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 35
+        width: 43
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3e59ba3e4ca8b0459f5f3e68f73a5c2
+      internalID: 1675225008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_31
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 34
+        width: 40
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5435fd80b872f4342bcd89ec2d361e63
+      internalID: 1804155938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_32
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 34
+        width: 40
+        height: 48
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2c6540e82bdcb44e8c363c6a5af85b5
+      internalID: 1000012253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_33
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 34
+        width: 43
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfce99cf7ba61bf4a9c3c8e15f6dffa0
+      internalID: -1213591831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_34
+      rect:
+        serializedVersion: 2
+        x: 942
+        y: 34
+        width: 44
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3a451bf1c75e2347b0813cbcee2a682
+      internalID: -2089481780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BarbBowWalk_35
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 34
+        width: 43
+        height: 49
+      alignment: 9
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc50353e0b2474345bf0f50a1a4c8e27
+      internalID: 905777300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BarbBowWalk_22: -1690145415
+      BarbBowWalk_8: 1394543660
+      BarbBowWalk_11: 874179782
+      BarbBowWalk_24: 1534709725
+      BarbBowWalk_17: -574107829
+      BarbBowWalk_27: 930448262
+      BarbBowWalk_14: 1487488464
+      BarbBowWalk_23: 1813815052
+      BarbBowWalk_33: -1213591831
+      BarbBowWalk_29: 1396658317
+      BarbBowWalk_0: -1456887810
+      BarbBowWalk_31: 1804155938
+      BarbBowWalk_6: -1073397858
+      BarbBowWalk_20: -1961764574
+      BarbBowWalk_35: 905777300
+      BarbBowWalk_7: -1903508110
+      BarbBowWalk_26: -1390684375
+      BarbBowWalk_2: -1314365264
+      BarbBowWalk_9: -919095407
+      BarbBowWalk_4: -836621131
+      BarbBowWalk_30: 1675225008
+      BarbBowWalk_32: 1000012253
+      BarbBowWalk_34: -2089481780
+      BarbBowWalk_10: 2011934623
+      BarbBowWalk_15: -1207544888
+      BarbBowWalk_16: -1476665667
+      BarbBowWalk_19: -2008808821
+      BarbBowWalk_18: -1574686882
+      BarbBowWalk_21: 1108960080
+      BarbBowWalk_25: 312283263
+      BarbBowWalk_5: -1820716866
+      BarbBowWalk_3: -1273233259
+      BarbBowWalk_28: 1373890830
+      BarbBowWalk_13: 763766281
+      BarbBowWalk_1: 1974322164
+      BarbBowWalk_12: -444741034
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

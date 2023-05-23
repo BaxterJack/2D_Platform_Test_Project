@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class BarbDeathState : BarbBaseState
 {
-    BarbStateManager barb;
+    BarbStateManager stateMachine;
 
-    public BarbDeathState(BarbStateManager Barb)
+    public BarbDeathState(BarbStateManager StateMachine)
     {
-        barb = Barb;
+        stateMachine = StateMachine;
     }
 
     public override void EnterState(BarbStateManager barbarian)
     {
-        barb.barbarianAnimation.Die();
+        stateMachine.barbarianAnimation.Die();
     }
 
     public override void UpdateState(BarbStateManager barbarian)
