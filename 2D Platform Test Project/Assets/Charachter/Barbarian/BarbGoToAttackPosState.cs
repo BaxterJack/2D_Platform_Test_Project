@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class BarbGoToAttackPosState : BarbBaseState
 {
-    BarbStateManager barb;
     float distanceToTarget;
     float attackOffset;
-    public BarbGoToAttackPosState(BarbStateManager Barb)
-    {
-        barb = Barb;
-    }
 
+    //---------------------------------------------------------BarbarianAxeman
     public override void EnterState(BarbStateManager barbarian)
     {
 
@@ -19,45 +15,63 @@ public class BarbGoToAttackPosState : BarbBaseState
 
     public override void UpdateState(BarbStateManager barbarian)
     {
-        SetAttackOffset();
-        if(distanceToTarget < 0.1 && barb.attackCoolDown <=0.0f)
+        SetAttackOffset(barbarian);
+        if(distanceToTarget < 0.1 && barbarian.attackCoolDown <=0.0f)
         {
-            barb.SwitchState(barb.attackState);
+            barbarian.SwitchState(barbarian.attackState);
             return;
         }
-        if (!barb.aiSight.CanSeePlayer())
+        if (!barbarian.aiSight.CanSeePlayer())
         {
-            barb.SwitchState(barb.patrolState);
+            barbarian.SwitchState(barbarian.patrolState);
             return;
         }
-        if (barb.healthBar.currentHealth <= 0)
+        if (barbarian.healthBar.currentHealth <= 0)
         {
-            barb.SwitchState(barb.deathState);
+            barbarian.SwitchState(barbarian.deathState);
             return;
         }
     }
 
     public override void FixedUpdateState(BarbStateManager barbarian)
     {
-        MoveAI();
+        MoveAI(barbarian);
     }
 
-    void MoveAI()
+    void MoveAI(BarbStateManager barbarian)
     {
-        Rigidbody2D rigidbody2D = barb.GetComponent<Rigidbody2D>();
+        Rigidbody2D rigidbody2D = barbarian.GetComponent<Rigidbody2D>();
         Vector2 velocity = rigidbody2D.velocity;
         Vector2 barbPosition = rigidbody2D.transform.transform.position;
-        barb.direction = (barbPosition - barb.destination);
-        velocity.x = barb.direction.normalized.x * -barb.speed;
+        barbarian.direction = (barbPosition - barbarian.destination);
+        velocity.x = barbarian.direction.normalized.x * -barbarian.speed;
         rigidbody2D.velocity = velocity;
     }
 
-    void SetAttackOffset()
+    void SetAttackOffset(BarbStateManager barbarian)
     {
-        attackOffset = (barb.transform.position.x - barb.GetComponentInChildren<Attack_Point>().transform.position.x) * 1.25f;
-        barb.destination = barb.player.transform.localPosition;
-        barb.target = barb.destination;
-        barb.destination.x += attackOffset;
-        distanceToTarget = (barb.destination - (Vector2)barb.transform.position).magnitude;
+        attackOffset = (barbarian.transform.position.x - barbarian.GetComponentInChildren<Attack_Point>().transform.position.x) * 1.25f;
+        barbarian.destination = barbarian.player.transform.localPosition;
+        barbarian.target = barbarian.destination;
+        barbarian.destination.x += attackOffset;
+        distanceToTarget = (barbarian.destination - (Vector2)barbarian.transform.position).magnitude;
+    }
+
+
+    //---------------------------------------------------------BarbarianBowman
+
+    public override void EnterState(BarbBowStateManager barbarianBow)
+    {
+        
+    }
+
+    public override void UpdateState(BarbBowStateManager barbarian)
+    {
+
+    }
+
+    public override void FixedUpdateState(BarbBowStateManager barbarian)
+    {
+
     }
 }

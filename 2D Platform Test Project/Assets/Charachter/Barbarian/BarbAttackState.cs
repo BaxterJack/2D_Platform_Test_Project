@@ -4,20 +4,14 @@ using UnityEngine;
 
 public class BarbAttackState : BarbBaseState
 {
-    BarbStateManager stateManager;
-
     float distanceToTarget;
     float attackOffset;
 
     bool isAttacking;
-
-
     float timeSinceAttack = 0.0f;
 
-    public BarbAttackState(BarbStateManager StateManager)
-    {
-        stateManager = StateManager;
-    }
+
+    //---------------------------------------------------------BarbarianAxeman
     public override void EnterState(BarbStateManager barbarian)
     {
         
@@ -26,15 +20,15 @@ public class BarbAttackState : BarbBaseState
     public override void UpdateState(BarbStateManager barbarian)
     {
 
-        if (stateManager.healthBar.currentHealth <= 0)
+        if (barbarian.healthBar.currentHealth <= 0)
         {
-            stateManager.SwitchState(stateManager.deathState);
+            barbarian.SwitchState(barbarian.deathState);
             return;
         }
-        isAttacking = stateManager.barbarianAnimation.animator.GetCurrentAnimatorStateInfo(0).IsName("BarbSlashAnim");
+        isAttacking = barbarian.barbarianAnimation.animator.GetCurrentAnimatorStateInfo(0).IsName("BarbSlashAnim");
         if(!isAttacking)
         {
-            SlashAttack();
+            SlashAttack(barbarian);
         }
         else
         {
@@ -43,10 +37,10 @@ public class BarbAttackState : BarbBaseState
         
         if(timeSinceAttack > 1.5f)
         {
-            ApplyDamage();
+            ApplyDamage(barbarian);
             timeSinceAttack = 0.0f;
-            stateManager.attackCoolDown = 3.0f;
-            stateManager.SwitchState(stateManager.goToAttackPosState);
+            barbarian.attackCoolDown = 3.0f;
+            barbarian.SwitchState(barbarian.goToAttackPosState);
         }
         
     }
@@ -56,30 +50,46 @@ public class BarbAttackState : BarbBaseState
 
     }
 
-    void SetAttackOffset()
+    void SetAttackOffset(BarbStateManager barbarian)
     {
-        attackOffset = (stateManager.transform.position.x - stateManager.GetComponentInChildren<Attack_Point>().transform.position.x) * 1.25f;
-        stateManager.destination = stateManager.player.transform.localPosition;
-        stateManager.target = stateManager.destination;
-        stateManager.destination.x += attackOffset;
-        distanceToTarget = (stateManager.destination - (Vector2)stateManager.transform.position).magnitude;
+        attackOffset = (barbarian.transform.position.x - barbarian.GetComponentInChildren<Attack_Point>().transform.position.x) * 1.25f;
+        barbarian.destination = barbarian.player.transform.localPosition;
+        barbarian.target = barbarian.destination;
+        barbarian.destination.x += attackOffset;
+        distanceToTarget = (barbarian.destination - (Vector2)barbarian.transform.position).magnitude;
     }
 
-    void SlashAttack()
+    void SlashAttack(BarbStateManager barbarian)
     {
-        stateManager.barbarianAnimation.Slash();
-
-
+        barbarian.barbarianAnimation.Slash();
     }
 
-    void ApplyDamage()
+    void ApplyDamage(BarbStateManager barbarian)
     {
-        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(stateManager.attackPoint.transform.position, stateManager.attackPoint.attackRange, stateManager.playerLayers);
+        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(barbarian.attackPoint.transform.position, barbarian.attackPoint.attackRange, barbarian.playerLayers);
 
         foreach (Collider2D player in hitPlayer)
         {
             player.GetComponentInChildren<HealthBar>().TakeDamage(20);
             Debug.Log("We hit " + player.name);
         }
+    }
+
+
+    //---------------------------------------------------------BarbarianBowman
+
+    public override void EnterState(BarbBowStateManager barbarianBow)
+    {
+
+    }
+
+    public override void UpdateState(BarbBowStateManager barbarian)
+    {
+
+    }
+
+    public override void FixedUpdateState(BarbBowStateManager barbarian)
+    {
+
     }
 }

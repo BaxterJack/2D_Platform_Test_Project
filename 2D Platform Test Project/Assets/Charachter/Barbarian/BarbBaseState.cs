@@ -4,20 +4,21 @@ using UnityEngine;
 
 public abstract class BarbBaseState
 {
+    //--------------------------------------------------------------------BarbarianAxeman
     public abstract void EnterState(BarbStateManager barbarian);
 
     public abstract void UpdateState(BarbStateManager barbarian);
 
     public abstract void FixedUpdateState(BarbStateManager barbarian);
 
+    //--------------------------------------------------------------------BarbarianBowman
+
+    public abstract void EnterState(BarbBowStateManager barbarianBow);
+
+    public abstract void UpdateState(BarbBowStateManager barbarianBow);
+
+    public abstract void FixedUpdateState(BarbBowStateManager barbarianBow);
+
 }
 
-//public abstract class BarbBaseState
-//{
-//    public abstract void EnterState(AiStateMachine barbarian);
 
-//    public abstract void UpdateState(AiStateMachine barbarian);
-
-//    public abstract void FixedUpdateState(AiStateMachine barbarian);
-
-//}

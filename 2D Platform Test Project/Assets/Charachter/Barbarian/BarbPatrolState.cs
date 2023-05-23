@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class BarbPatrolState : BarbBaseState
 {
-    BarbStateManager barb;
+    //BarbStateManager barb;
   
     int numWaypoints;
     int currentWaypoint;
 
-    public BarbPatrolState(BarbStateManager Barb)
+
+    //---------------------------------------------------------BarbarianAxeman
+    public BarbPatrolState(BarbStateManager barbarian)
     {
-        barb = Barb;
-        numWaypoints = barb.waypoints.Length;
+        //barb = Barb;
+        numWaypoints = barbarian.waypoints.Length;
         currentWaypoint = 0;
-        barb.destination = barb.waypoints[currentWaypoint];
-        barb.target = barb.destination;
+        barbarian.destination = barbarian.waypoints[currentWaypoint];
+        barbarian.target = barbarian.destination;
         
 
     }
@@ -26,45 +28,106 @@ public class BarbPatrolState : BarbBaseState
 
     public override void UpdateState(BarbStateManager barbarian)
     {
-        if (barb.healthBar.currentHealth <= 0)
+        if (barbarian.healthBar.currentHealth <= 0)
         {
-            barb.SwitchState(barb.deathState);
+            barbarian.SwitchState(barbarian.deathState);
             return;
         }
-        if (barb.aiSight.CanSeePlayer())
+        if (barbarian.aiSight.CanSeePlayer())
         {
-            barb.SwitchState(barb.goToAttackPosState);
+            barbarian.SwitchState(barbarian.goToAttackPosState);
             return;
         }
-        if (barb.direction.magnitude < 0.35f)
+        if (barbarian.direction.magnitude < 0.35f)
         {
-            ChooseNextWaypoint();
+            ChooseNextWaypoint(barbarian);
         }
     }
 
     public override void FixedUpdateState(BarbStateManager barbarian)
     {
-        MoveAI();
+        MoveAI(barbarian);
     }
 
-    void MoveAI()
+    void MoveAI(BarbStateManager barbarian)
     {
-       Rigidbody2D rigidbody2D = barb.GetComponent<Rigidbody2D>();
+       Rigidbody2D rigidbody2D = barbarian.GetComponent<Rigidbody2D>();
        Vector2 velocity = rigidbody2D.velocity;
        Vector2 barbPosition = rigidbody2D.transform.transform.position;
-       barb.direction = (barbPosition - barb.destination);
-       velocity.x = barb.direction.normalized.x * -barb.speed;
+        barbarian.direction = (barbPosition - barbarian.destination);
+       velocity.x = barbarian.direction.normalized.x * -barbarian.speed;
        rigidbody2D.velocity = velocity;
     }
 
-    void ChooseNextWaypoint()
+    void ChooseNextWaypoint(BarbStateManager barbarian)
     {
         currentWaypoint++;
         if (currentWaypoint == numWaypoints)
         {
             currentWaypoint = 0;
         }
-        barb.destination = barb.waypoints[currentWaypoint];
-        barb.target = barb.destination;
+        barbarian.destination = barbarian.waypoints[currentWaypoint];
+        barbarian.target = barbarian.destination;
+    }
+
+
+    //---------------------------------------------------------BarbarianBowman
+
+    public BarbPatrolState(BarbBowStateManager barbarianBow)
+    {
+        numWaypoints = barbarianBow.waypoints.Length;
+        currentWaypoint = 0;
+        barbarianBow.destination = barbarianBow.waypoints[currentWaypoint];
+        barbarianBow.target = barbarianBow.destination;
+
+
+    }
+    public override void EnterState(BarbBowStateManager barbarianBow)
+    {
+
+    }
+
+    public override void UpdateState(BarbBowStateManager barbarianBow)
+    {
+        if (barbarianBow.healthBar.currentHealth <= 0)
+        {
+            barbarianBow.SwitchState(barbarianBow.deathState);
+            return;
+        }
+        if (barbarianBow.aiSight.CanSeePlayer())
+        {
+            //barbarianBow.SwitchState(barbarianBow.goToAttackPosState);
+            return;
+        }
+        if (barbarianBow.direction.magnitude < 0.35f)
+        {
+            ChooseNextWaypoint(barbarianBow);
+        }
+    }
+
+    public override void FixedUpdateState(BarbBowStateManager barbarianBow)
+    {
+        MoveAI(barbarianBow);
+    }
+
+    void MoveAI(BarbBowStateManager barbarianBow)
+    {
+        Rigidbody2D rigidbody2D = barbarianBow.GetComponent<Rigidbody2D>();
+        Vector2 velocity = rigidbody2D.velocity;
+        Vector2 barbPosition = rigidbody2D.transform.transform.position;
+        barbarianBow.direction = (barbPosition - barbarianBow.destination);
+        velocity.x = barbarianBow.direction.normalized.x * -barbarianBow.speed;
+        rigidbody2D.velocity = velocity;
+    }
+
+    void ChooseNextWaypoint(BarbBowStateManager barbarianBow)
+    {
+        currentWaypoint++;
+        if (currentWaypoint == numWaypoints)
+        {
+            currentWaypoint = 0;
+        }
+        barbarianBow.destination = barbarianBow.waypoints[currentWaypoint];
+        barbarianBow.target = barbarianBow.destination;
     }
 }

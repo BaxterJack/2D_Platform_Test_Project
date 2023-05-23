@@ -45,9 +45,9 @@ public class BarbStateManager : MonoBehaviour
     void Start()
     {
         patrolState = new BarbPatrolState(this);
-        goToAttackPosState = new BarbGoToAttackPosState(this);
-        attackState = new BarbAttackState(this);
-        deathState = new BarbDeathState(this);
+        goToAttackPosState = new BarbGoToAttackPosState();
+        attackState = new BarbAttackState();
+        deathState = new BarbDeathState();
         currentState = patrolState;
         currentState.EnterState(this);
         
