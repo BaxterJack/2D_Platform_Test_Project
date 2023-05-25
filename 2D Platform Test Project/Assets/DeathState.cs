@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DeathState : BaseState
 {
-
     public DeathState(AiObject AiObject) : base(AiObject)
     {
 
@@ -17,7 +16,7 @@ public class DeathState : BaseState
 
     public override void UpdateState()
     {
-
+        GameObject.Destroy(aiObject.gameObject, 30);
     }
 
     public override void FixedUpdateState()

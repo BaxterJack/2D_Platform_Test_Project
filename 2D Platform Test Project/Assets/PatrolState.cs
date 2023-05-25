@@ -5,14 +5,14 @@ using UnityEngine;
 public class PatrolState : BaseState
 {
     int numWaypoints;
-    int currentWaypoint; 
+    int currentWaypointIndex = 0;
 
     public PatrolState(AiObject AiObject) : base(AiObject)
     {
-        numWaypoints = aiObject.waypoints.Length;
-        currentWaypoint = 0;
-        aiObject.destination = aiObject.waypoints[currentWaypoint].transform.position;
-        aiObject.target = aiObject.destination;
+        numWaypoints = aiObject.GetNumWaypoints();
+        currentWaypointIndex = 0;
+        aiObject.SetDestination(aiObject.GetWaypoint(currentWaypointIndex));
+        aiObject.SetTarget(aiObject.GetDestination());
     }
 
     public override void EnterState()
@@ -22,18 +22,12 @@ public class PatrolState : BaseState
 
     public override void UpdateState()
     {
-        aiObject.distanceToTarget = (aiObject.destination - (Vector2)aiObject.transform.position).magnitude;
-        if (aiObject.healthBar.currentHealth <= 0)
+        aiObject.SetDistanceToDestintion();
+        if (aiObject.attackCoolDown >= 0)
         {
-          //  barbarian.SwitchState(barbarian.deathState);
-            return;
+            aiObject.attackCoolDown -= Time.deltaTime;
         }
-        if (aiObject.aiSight.CanSeePlayer())
-        {
-           // barbarian.SwitchState(barbarian.goToAttackPosState);
-            return;
-        }
-        if (aiObject.direction.magnitude < 0.5f)
+        if (aiObject.GetDistanceToDestintion() < 0.5f)
         {
             ChooseNextWaypoint();
         }
@@ -44,20 +38,16 @@ public class PatrolState : BaseState
         aiObject.MoveAI();
     }
 
-    //public override bool CanTransition()
-    //{
-    //    return false;
-    //}
 
     void ChooseNextWaypoint()
     {
-        currentWaypoint++;
-        if (currentWaypoint == numWaypoints)
+        currentWaypointIndex++;
+        if (currentWaypointIndex == numWaypoints)
         {
-            currentWaypoint = 0;
+            currentWaypointIndex = 0;
         }
-        aiObject.destination = aiObject.waypoints[currentWaypoint].transform.position;
-        aiObject.target = aiObject.destination;
+        aiObject.SetDestination(aiObject.GetWaypoint(currentWaypointIndex));
+        aiObject.SetTarget(aiObject.GetDestination());
     }
 
 

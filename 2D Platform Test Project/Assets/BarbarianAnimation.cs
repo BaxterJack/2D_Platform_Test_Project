@@ -63,8 +63,6 @@ public class BarbarianAnimation : MonoBehaviour
     {
         Vector2 target = GetComponent<AiObject>().target;
 
-        Debug.DrawLine(barbPosition, target);
-
         if (target.x > barbPosition.x) // Going right
         {
             return true;
@@ -88,7 +86,7 @@ public class BarbarianAnimation : MonoBehaviour
         GetComponent<Rigidbody2D>().Sleep();
         GetComponent<Collider2D>().enabled = false;
 
-        this.enabled = false;
+        //this.enabled = false;
     }
 
     public bool IsAiDead()

@@ -18,26 +18,22 @@ public class GoToAttackPosState : BaseState
     public override void UpdateState()
     {
         aiObject.SetAttackOffset();
+        aiObject.SetDestination(aiObject.GetPlayerPosition(), aiObject.GetAttackOffset());
+        aiObject.SetTarget(aiObject.GetPlayerPosition());
+        aiObject.SetDistanceToDestintion();
 
-        if (aiObject.distanceToTarget < 0.1 && aiObject.attackCoolDown <= 0.0f)
+        if(aiObject.attackCoolDown >= 0)
         {
-            // barbarian.SwitchState(barbarian.attackState);
-            return;
-        }
-        if (!aiObject.aiSight.CanSeePlayer())
-        {
-            // barbarian.SwitchState(barbarian.patrolState);
-            return;
-        }
-        if (aiObject.healthBar.currentHealth <= 0)
-        {
-            // barbarian.SwitchState(barbarian.deathState);
-            return;
+            aiObject.attackCoolDown -= Time.deltaTime;
         }
     }
 
     public override void FixedUpdateState()
     {
-        aiObject.MoveAI();
+        if(aiObject.GetDistanceToDestintion() > 0.1)
+        {
+            aiObject.MoveAI();
+        }
+        //aiObject.MoveAI();
     }
 }

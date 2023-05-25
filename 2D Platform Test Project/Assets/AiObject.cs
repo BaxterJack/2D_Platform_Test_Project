@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class AiObject : MonoBehaviour
 {
-
-    public StateMachine stateMachine;
+    protected StateMachine stateMachine;
 
     [SerializeField]
-    public GameObject[] waypoints;
+    GameObject[] waypoints;
 
     [SerializeField]
     public float speed = 1.0f;
@@ -34,35 +33,97 @@ public class AiObject : MonoBehaviour
     public float attackOffset;
 
     public float attackCoolDown = 0.0f;
+    public float timeSinceAttack = 0.0f;
 
     public Vector2 target;
-    public Vector2 direction;
     public Vector2 destination;
 
-    public float distanceToTarget;
-
-    private void Start()
-    {
-      
-    }
+    public float distanceToDestination;
 
     public void MoveAI()
     {
         Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
         Vector2 velocity = rigidbody.velocity;
         Vector2 barbPosition = rigidbody.transform.transform.position;
-        direction = (barbPosition - destination);
-        velocity.x = direction.normalized.x * -speed;
+        Vector2 direction = (barbPosition - destination);
+        if (GetDistanceToDestintion() < 0.5)
+        {
+            velocity.x = direction.normalized.x * -speed / 3;
+        }
+        else
+        {
+            velocity.x = direction.normalized.x * -speed;
+        }
+        //velocity.x = direction.normalized.x * -speed;
         GetComponent<Rigidbody2D>().velocity = velocity;
     }
 
     public void SetAttackOffset()
     {
         attackOffset = (transform.position.x - GetComponentInChildren<Attack_Point>().transform.position.x) * 1.25f;
-        destination = player.transform.localPosition;
-        target = destination;
-        destination.x += attackOffset;
-        distanceToTarget = (destination - (Vector2)transform.position).magnitude;
+    }
+
+    public float GetAttackOffset()
+    {
+        return attackOffset;
+    }
+
+    public bool HasJustAttacked()
+    {
+        return attackCoolDown > 0.0f;
+    }
+
+    public bool IsInRangeOfTarget()
+    {
+        bool isInRange = distanceToDestination <= 0.1f;
+        isInRange &= attackCoolDown <= 0.0f;
+        return isInRange; 
+    }
+
+    public int GetNumWaypoints()
+    {
+        return waypoints.Length;
+    }
+
+    public Vector2 GetWaypoint(int waypointIndex)
+    {
+        return waypoints[waypointIndex].transform.position;
+    }
+
+    public void SetDestination(Vector2 Destination)
+    {
+        destination = Destination;
+    }
+
+    public void SetDestination(Vector2 Destination, float offset)
+    {
+        destination = Destination;
+        destination.x += offset;
+    }
+
+    public Vector2 GetDestination()
+    {
+        return destination;
+    }
+
+    public void SetTarget(Vector2 Target)
+    {
+        target = Target;
+    }
+
+    public void SetDistanceToDestintion()
+    {
+        distanceToDestination = (destination - (Vector2)transform.position).magnitude;
+    }
+
+    public float GetDistanceToDestintion()
+    {
+        return distanceToDestination;
+    }
+
+    public Vector2 GetPlayerPosition()
+    {
+        return player.transform.position;
     }
 }
 

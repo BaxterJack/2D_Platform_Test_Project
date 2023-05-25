@@ -6,7 +6,7 @@ public class AttackState : BaseState
 {
     
     bool isAttacking;
-    float timeSinceAttack = 0.0f;
+    
     public AttackState(AiObject AiObject) : base(AiObject)
     {
 
@@ -14,12 +14,30 @@ public class AttackState : BaseState
 
     public override void EnterState()
     {
-
+        aiObject.timeSinceAttack = 0.0f;
     }
 
     public override void UpdateState()
     {
         aiObject.SetAttackOffset();
+        aiObject.SetDestination(aiObject.GetPlayerPosition(), aiObject.GetAttackOffset());
+        aiObject.SetTarget(aiObject.GetPlayerPosition());
+        aiObject.SetDistanceToDestintion();
+        isAttacking = aiObject.barbarianAnimation.animator.GetCurrentAnimatorStateInfo(0).IsName("BarbSlashAnim");
+        if (!isAttacking)
+        {
+            SlashAttack();
+        }
+        else
+        {
+            aiObject.timeSinceAttack += Time.deltaTime;
+        }
+        if (aiObject.timeSinceAttack >= 1.5f)
+        {
+            ApplyDamage();
+            aiObject.timeSinceAttack = 0.0f;
+            aiObject.attackCoolDown = 3.0f;
+        }
     }
 
     public override void FixedUpdateState()

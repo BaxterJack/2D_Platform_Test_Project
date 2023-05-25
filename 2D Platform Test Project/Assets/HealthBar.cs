@@ -39,7 +39,16 @@ public class HealthBar : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        if(currentHealth < 0)
+        {
+            currentHealth = 0;
+        }
         SetHealth(currentHealth);
 
+    }
+
+    public bool HasNoHealth()
+    {
+        return currentHealth <= 0;
     }
 }

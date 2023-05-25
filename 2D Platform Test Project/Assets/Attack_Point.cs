@@ -10,7 +10,7 @@ public class Attack_Point : MonoBehaviour
 
     void OnDrawGizmosSelected()
     {
-        Gizmos.DrawWireSphere(this.transform.position, attackRange);
+        //Gizmos.DrawWireSphere(this.transform.position, attackRange);
     }
 
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class StateMachine 
 {
     public BaseState currentState;
-//    public BaseDelegates baseDelegates;
 
     List<BaseState> allStates;
     List<StateTransition> allTransitions;
@@ -15,6 +14,10 @@ public class StateMachine
         allTransitions = new List<StateTransition>();
     }
 
+    public void EnterState()
+    {
+        currentState.EnterState();
+    }
   
     public void Update()
     {
@@ -27,18 +30,16 @@ public class StateMachine
         currentState.FixedUpdateState();
     }
 
-    public void SwitchState(/*BaseState state*/)
+    public void SwitchState()
     {
-        //currentState = state;
-        //currentState.EnterState();
-
         foreach (var transition in allTransitions)
         {
             bool correctState = transition.sourceState == currentState;
-            bool canTransition = transition.funcTest();
-                if (correctState && canTransition)
-                {
+            if (correctState && transition.canTransition())
+            {
                 currentState = transition.transitionState;
+                Debug.Log(currentState);
+                currentState.EnterState();
             }
         }
     }
