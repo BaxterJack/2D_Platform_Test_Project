@@ -7,12 +7,12 @@ public class StateTransition
 {
     public BaseState sourceState;
     public BaseState transitionState;
-    public Func<bool> delegatePtr;
-    public StateTransition(BaseState SourceState, BaseState TransitionState, Func<bool> DelegatePtr)
+    public Func<bool> funcTest;
+    public StateTransition(BaseState SourceState, BaseState TransitionState, Func<bool> FuncTest)
     {
-        BaseState sourceState = SourceState;
-        BaseState transitionState = TransitionState;
-        Func<bool> delegatePtr = DelegatePtr;
+        sourceState = SourceState;
+        transitionState = TransitionState;
+        funcTest = FuncTest;
     }
 }
 

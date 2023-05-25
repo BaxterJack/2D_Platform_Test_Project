@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AiObject : MonoBehaviour
 {
-    protected StateMachine stateMachine;
+
+    public StateMachine stateMachine;
 
     [SerializeField]
     public GameObject[] waypoints;
@@ -40,7 +41,11 @@ public class AiObject : MonoBehaviour
 
     public float distanceToTarget;
 
-   
+    private void Start()
+    {
+      
+    }
+
     public void MoveAI()
     {
         Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();

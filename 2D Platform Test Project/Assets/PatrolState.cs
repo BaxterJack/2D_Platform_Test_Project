@@ -22,6 +22,7 @@ public class PatrolState : BaseState
 
     public override void UpdateState()
     {
+        aiObject.distanceToTarget = (aiObject.destination - (Vector2)aiObject.transform.position).magnitude;
         if (aiObject.healthBar.currentHealth <= 0)
         {
           //  barbarian.SwitchState(barbarian.deathState);
@@ -32,7 +33,7 @@ public class PatrolState : BaseState
            // barbarian.SwitchState(barbarian.goToAttackPosState);
             return;
         }
-        if (aiObject.direction.magnitude < 0.35f)
+        if (aiObject.direction.magnitude < 0.5f)
         {
             ChooseNextWaypoint();
         }

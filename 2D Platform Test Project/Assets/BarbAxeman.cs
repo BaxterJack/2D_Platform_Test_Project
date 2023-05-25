@@ -9,19 +9,27 @@ public class BarbAxeman : AiObject
     public DeathState deathState;
     public GoToAttackPosState goToAttackPosState;
 
-    BarbAxemanDelegates barbAxemanDelegates;
+
     StateTransition stateTransition;
+
+    BarbAxeman()
+    {
+      
+    }
     void Start()
     {
-        barbAxemanDelegates = new BarbAxemanDelegates(this);
+
         patrolState = new PatrolState(this);
         attackState = new AttackState(this);
         deathState = new DeathState(this);
-        stateMachine = new StateMachine(this, barbAxemanDelegates);
         goToAttackPosState = new GoToAttackPosState(this);
-        stateMachine.currentState = patrolState;
-        barbAxemanDelegates = new BarbAxemanDelegates(this);
-        stateTransition = new StateTransition(patrolState, deathState, /*barbAxemanDelegates.CanSeePlayer*/ this.aiSight.CanSeePlayer);
+        //stateMachine.currentState = patrolState;
+        //stateTransition = new StateTransition(patrolState, deathState, this.aiSight.CanSeePlayer);
+
+        stateMachine = new StateMachine();
+        stateMachine.AddState(patrolState);
+        stateMachine.AddState(goToAttackPosState);
+        stateMachine.AddTransition(new StateTransition(patrolState, goToAttackPosState, this.aiSight.CanSeePlayer));
     }
 
     void Update()
@@ -34,30 +42,29 @@ public class BarbAxeman : AiObject
         stateMachine.FixedUpdate();
     }
 
-
 }
 
-public class BarbAxemanDelegates : BaseDelegates
-{
-    public SeePlayer seePlayerPtr;
-    public NoHealth noHealthPtr;
-    public BarbAxemanDelegates(AiObject AiObject) : base(AiObject)
-    {
-        seePlayerPtr = new SeePlayer(CanSeePlayer);
-        noHealthPtr = new NoHealth(HasNoHealth);
-    }
+//public class BarbAxemanDelegates : BaseDelegates
+//{
+//    public SeePlayer seePlayerPtr;
+//    public NoHealth noHealthPtr;
+//    public BarbAxemanDelegates(AiObject AiObject) : base(AiObject)
+//    {
+//        seePlayerPtr = new SeePlayer(CanSeePlayer);
+//        noHealthPtr = new NoHealth(HasNoHealth);
+//    }
 
-    public delegate bool SeePlayer();
+//    public delegate bool SeePlayer();
 
-    public bool CanSeePlayer()
-    {
-        return aiObject.aiSight.CanSeePlayer();
-    }
+//    public bool CanSeePlayer()
+//    {
+//        return aiObject.aiSight.CanSeePlayer();
+//    }
 
-    public delegate bool NoHealth();
+//    public delegate bool NoHealth();
 
-    public bool HasNoHealth()
-    {
-        return aiObject.healthBar.currentHealth <= 0;
-    }
-}
+//    public bool HasNoHealth()
+//    {
+//        return aiObject.healthBar.currentHealth <= 0;
+//    }
+//}

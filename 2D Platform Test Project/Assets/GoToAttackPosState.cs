@@ -12,32 +12,32 @@ public class GoToAttackPosState : BaseState
 
     public override void EnterState()
     {
-        aiObject.SetAttackOffset();
 
-        if (aiObject.distanceToTarget < 0.1 && aiObject.attackCoolDown <= 0.0f)
-        {
-           // barbarian.SwitchState(barbarian.attackState);
-            return;
-        }
-        if (!aiObject.aiSight.CanSeePlayer())
-        {
-           // barbarian.SwitchState(barbarian.patrolState);
-            return;
-        }
-        if (aiObject.healthBar.currentHealth <= 0)
-        {
-           // barbarian.SwitchState(barbarian.deathState);
-            return;
-        }
     }
 
     public override void UpdateState()
     {
-        aiObject.MoveAI();
+        aiObject.SetAttackOffset();
+
+        if (aiObject.distanceToTarget < 0.1 && aiObject.attackCoolDown <= 0.0f)
+        {
+            // barbarian.SwitchState(barbarian.attackState);
+            return;
+        }
+        if (!aiObject.aiSight.CanSeePlayer())
+        {
+            // barbarian.SwitchState(barbarian.patrolState);
+            return;
+        }
+        if (aiObject.healthBar.currentHealth <= 0)
+        {
+            // barbarian.SwitchState(barbarian.deathState);
+            return;
+        }
     }
 
     public override void FixedUpdateState()
     {
-
+        aiObject.MoveAI();
     }
 }
