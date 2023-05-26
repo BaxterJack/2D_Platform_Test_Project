@@ -38,7 +38,7 @@ public class StateMachine
             if (correctState && transition.canTransition())
             {
                 currentState = transition.transitionState;
-                Debug.Log(currentState);
+                //Debug.Log(currentState);
                 currentState.EnterState();
             }
         }

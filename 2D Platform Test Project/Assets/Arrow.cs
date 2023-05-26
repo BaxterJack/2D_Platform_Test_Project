@@ -24,6 +24,24 @@ public class Arrow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Destroy(gameObject, 10);
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Debug.Log(collision.gameObject.name);
+           
+            player.GetComponentInChildren<HealthBar>().TakeDamage(20);
+
+
+            //rigidBody.velocity = new Vector2(0, 0);
+            Destroy(gameObject.GetComponent<Rigidbody2D>());
+            gameObject.transform.SetParent(player.transform, true);
+            //player.transform.SetParent(this.gameObject.transform);
+            //gameObject.transform.parent = player.transform;
+        }
+    }
+
 }

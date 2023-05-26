@@ -2834,7 +2834,7 @@ MonoBehaviour:
   target: {x: 0, y: 0}
   destination: {x: 0, y: 0}
   distanceToDestination: 0
-  arrow: {fileID: 7885684696611522640, guid: 206b2e257d5bcea43ab335df7859142c, type: 3}
+  arrow: {fileID: 7107373551082097070, guid: 206b2e257d5bcea43ab335df7859142c, type: 3}
   arrowPosition: {fileID: 345253172}
 --- !u!1 &1578636344
 GameObject:

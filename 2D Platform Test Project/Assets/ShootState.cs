@@ -12,7 +12,7 @@ public class ShootState : BaseState
     public ShootState(AiObject AiObject, BarbBowmen BarbBowmen) : base(AiObject)
     {
         barbBowmen = BarbBowmen;
-
+        aiObject.attackCoolDown = 2.5f;
     }
     public override void EnterState()
     {
@@ -21,9 +21,10 @@ public class ShootState : BaseState
 
     public override void UpdateState()
     {
-        aiObject.SetDestination(aiObject.GetPlayerPosition(), aiObject.GetAttackOffset());
+        //aiObject.SetDestination(aiObject.GetPlayerPosition(), aiObject.GetAttackOffset());
+        aiObject.SetAttackOffset();
         aiObject.SetTarget(aiObject.GetPlayerPosition());
-        aiObject.SetDistanceToDestintion();
+        //aiObject.SetDistanceToDestintion();
 
         isShooting = aiObject.barbarianAnimation.animator.GetCurrentAnimatorStateInfo(0).IsName("BarbSlashAnim");
         if (!isShooting && aiObject.attackCoolDown >= 2.0f)
