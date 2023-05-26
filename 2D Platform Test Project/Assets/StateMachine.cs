@@ -6,11 +6,11 @@ public class StateMachine
 {
     public BaseState currentState;
 
-    List<BaseState> allStates;
+//    List<BaseState> allStates;
     List<StateTransition> allTransitions;
     public StateMachine()
     {
-        allStates = new List<BaseState>();
+//        allStates = new List<BaseState>();
         allTransitions = new List<StateTransition>();
     }
 
@@ -44,15 +44,18 @@ public class StateMachine
         }
     }
 
-    public void AddState(BaseState state)
+    //public void AddState(BaseState state)
+    //{
+    //    allStates.Add(state);
+    //    if(allStates.Count == 1)
+    //    {
+    //        currentState = state;
+    //    }
+    //}
+    public void SetInitialState(BaseState initialState)
     {
-        allStates.Add(state);
-        if(allStates.Count == 1)
-        {
-            currentState = state;
-        }
+        currentState = initialState;
     }
-
     public void AddTransition( StateTransition transition)
     {
         allTransitions.Add(transition);

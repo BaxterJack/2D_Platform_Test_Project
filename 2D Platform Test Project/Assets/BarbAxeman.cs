@@ -18,8 +18,9 @@ public class BarbAxeman : AiObject
         goToAttackPosState = new GoToAttackPosState(this);
 
         stateMachine = new StateMachine();
-        stateMachine.AddState(patrolState);
-        stateMachine.AddState(goToAttackPosState);
+        //stateMachine.AddState(patrolState);
+        //stateMachine.AddState(goToAttackPosState);
+        stateMachine.SetInitialState(patrolState);
         stateMachine.AddTransition(new StateTransition(patrolState, goToAttackPosState, this.aiSight.CanSeePlayer));
         stateMachine.AddTransition(new StateTransition(patrolState, deathState, this.healthBar.HasNoHealth));
         stateMachine.AddTransition(new StateTransition(goToAttackPosState, patrolState, this.aiSight.CannotSeePlayer));

@@ -93,4 +93,9 @@ public class BarbarianAnimation : MonoBehaviour
     {
         return hasDied;
     }
+
+    public void Shoot()
+    {
+        animator.SetTrigger("ShootAttack");
+    }
 }
