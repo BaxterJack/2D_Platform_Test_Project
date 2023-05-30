@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b4d0ee656cf665c4a8e74047e0e4bc8d
+guid: eac5b5feed8f36242b8d4305e667681a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -49,7 +49,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 64
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 0, y: 0, z: 285, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -166,127 +166,211 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BarbBowDeath_0
+      name: PlayerDeath_0
       rect:
         serializedVersion: 2
         x: 17
-        y: 18
-        width: 34
-        height: 50
+        y: 17
+        width: 30
+        height: 48
       alignment: 9
-      pivot: {x: 0.44117647, y: 0.5}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e66d04c2fa724f34692bf1c011c29445
-      internalID: -1733410362
+      spriteID: 27a50b9fd5fcaaf4cad1a170622cb24e
+      internalID: -1617967747
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BarbBowDeath_1
+      name: PlayerDeath_1
       rect:
         serializedVersion: 2
         x: 82
-        y: 18
-        width: 35
-        height: 49
+        y: 17
+        width: 31
+        height: 47
       alignment: 9
-      pivot: {x: 0.44285715, y: 0.5102041}
+      pivot: {x: 0.5, y: 0.5106383}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a338b1b5e4bc7b49a3aef3e660a5dbf
-      internalID: 1755754275
+      spriteID: d3f9a6c71ab087c4780d1a21475de674
+      internalID: -755081689
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BarbBowDeath_2
+      name: PlayerDeath_2
       rect:
         serializedVersion: 2
         x: 147
-        y: 18
-        width: 33
-        height: 41
+        y: 17
+        width: 30
+        height: 40
       alignment: 9
-      pivot: {x: 0.45454547, y: 0.6097561}
+      pivot: {x: 0.5, y: 0.6}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 380bf989a00b4214b8744b6f8fe83ad5
-      internalID: 115168162
+      spriteID: 9b8553974219715428ada529a3c1caaf
+      internalID: 909472057
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BarbBowDeath_3
+      name: PlayerDeath_3
       rect:
         serializedVersion: 2
         x: 211
-        y: 19
-        width: 33
-        height: 37
+        y: 15
+        width: 30
+        height: 39
       alignment: 9
-      pivot: {x: 0.45454547, y: 0.6756757}
+      pivot: {x: 0.5, y: 0.71794873}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7d75cb1138690b4b9d15d5ce0795274
-      internalID: -1765280829
+      spriteID: b21a1fe29578a27408888939a41e68b8
+      internalID: -2028989524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BarbBowDeath_4
+      name: PlayerDeath_4
       rect:
         serializedVersion: 2
-        x: 274
-        y: 17
-        width: 37
+        x: 275
+        y: 15
+        width: 33
         height: 31
       alignment: 9
-      pivot: {x: 0.43243244, y: 0.9677419}
+      pivot: {x: 0.4848485, y: 0.9677419}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4517fb90a6cc360488b9a4f2135b897b
-      internalID: 1717742711
+      spriteID: adab4c260acf0ef4a975686ebd95d4ae
+      internalID: -724203637
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BarbBowDeath_5
+      name: PlayerDeath_5
       rect:
         serializedVersion: 2
         x: 338
-        y: 16
-        width: 39
-        height: 36
+        y: 15
+        width: 40
+        height: 39
       alignment: 9
-      pivot: {x: 0.43589744, y: 1.3888888}
+      pivot: {x: 0.425, y: 1.2307693}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2df8ad233b1fe7b4c97eb5523b9bbff3
-      internalID: 761986998
+      spriteID: 43b357b9db1098f4fbe9fd234a910058
+      internalID: 1586941590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerDeath_6
+      rect:
+        serializedVersion: 2
+        x: 430
+        y: 15
+        width: 14
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19d6dcb3b82302746b117d218ac7997e
+      internalID: -1034820512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerDeath_7
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 16
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97ae6bc05db8b3643a3dd5f2d9b6b97c
+      internalID: -203866390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerDeath_8
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 15
+        width: 19
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a9a80e8e1a87549927e9218d79772d
+      internalID: 1368799499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PlayerDeath_9
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 15
+        width: 19
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fffcae70e8e1904281142b58502ac12
+      internalID: 649858727
       vertices: []
       indices: 
       edges: []
@@ -295,19 +379,23 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BarbBowDeath_4: 1717742711
-      BarbBowDeath_2: 115168162
-      BarbBowDeath_0: -1733410362
-      BarbBowDeath_1: 1755754275
-      BarbBowDeath_3: -1765280829
-      BarbBowDeath_5: 761986998
+      PlayerDeath_9: 649858727
+      PlayerDeath_4: -724203637
+      PlayerDeath_0: -1617967747
+      PlayerDeath_6: -1034820512
+      PlayerDeath_2: 909472057
+      PlayerDeath_5: 1586941590
+      PlayerDeath_7: -203866390
+      PlayerDeath_1: -755081689
+      PlayerDeath_3: -2028989524
+      PlayerDeath_8: 1368799499
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 

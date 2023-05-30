@@ -12,6 +12,7 @@ public class HealthBar : MonoBehaviour
     int maxHealth = 40;
     public int currentHealth;
 
+
     private void Start()
     {
         currentHealth = maxHealth;
