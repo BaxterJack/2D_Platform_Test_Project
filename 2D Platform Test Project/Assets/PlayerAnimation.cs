@@ -6,7 +6,7 @@ public class PlayerAnimation : MonoBehaviour
 {
 
     [SerializeField]
-    Animator animator;
+    public Animator animator;
 
     [SerializeField]
     SpriteRenderer spriteRenderer;
@@ -23,44 +23,30 @@ public class PlayerAnimation : MonoBehaviour
     bool isMoving = false;
     float horizontalMove = 0.0f;
     bool hasDied = false;
+    bool isAttacking;
 
-    Vector3 canvasScale;
-
+    int stabDamage = 20;
+    int slashDamage = 35;
     private void Start()
     {
-        canvasScale = GetComponentInChildren<Canvas>().transform.localScale;
+
     }
 
     void Update()
     {
         if (hasDied == false)
         {
-            horizontalMove = Input.GetAxisRaw("Horizontal");
-            isMoving = horizontalMove != 0;
-
-            animator.SetBool("IsMoving", isMoving);
-
-            if (horizontalMove > 0.0f)
-            {
-                transform.localScale = new Vector3(-1, 1, 1);
-                GetComponentInChildren<HealthBar>().transform.localScale = new Vector3(-1, 1, 1);
-            }
-            else if (horizontalMove < 0.0f)
-            {
-                transform.localScale = new Vector3(1, 1, 1);
-                GetComponentInChildren<HealthBar>().transform.localScale = new Vector3(1, 1, 1);
-            }
-            bool isAttacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Stab");
-            isAttacking |= animator.GetCurrentAnimatorStateInfo(0).IsName("Slash");
+            SetMoveAnimation();
+            OrientPlayer();
+            SetIsAttacking();
 
             if (Input.GetMouseButtonDown(0) && !isAttacking)
             {
-                Stab();
+                StabAnimation();
             }
-
             if (Input.GetMouseButtonDown(1) && !isAttacking)
             {
-                Slash();
+                SlashAnimation();
             }
             if (healthBar.HasNoHealth())
             {
@@ -70,38 +56,81 @@ public class PlayerAnimation : MonoBehaviour
        
     }
 
-    void Stab()
+    void SetMoveAnimation()
     {
-        animator.SetTrigger("Stab");
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackPoint.attackRange, enemeyLayers);
+        horizontalMove = Input.GetAxisRaw("Horizontal");
+        isMoving = horizontalMove != 0;
+        animator.SetBool("IsMoving", isMoving);
+    }
 
-        foreach (Collider2D enemy in hitEnemies)
+    void SetIsAttacking()
+    {
+        isAttacking = animator.GetCurrentAnimatorStateInfo(0).IsName("Stab");
+        isAttacking |= animator.GetCurrentAnimatorStateInfo(0).IsName("Slash");
+    }
+
+    void OrientPlayer()
+    {
+        if (horizontalMove > 0.0f)
         {
-            enemy.GetComponentInChildren<HealthBar>().TakeDamage(20);
-            Debug.Log("We hit " + enemy.name);
+            transform.localScale = new Vector3(-1, 1, 1);
+            GetComponentInChildren<HealthBar>().transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else if (horizontalMove < 0.0f)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+            GetComponentInChildren<HealthBar>().transform.localScale = new Vector3(1, 1, 1);
         }
     }
 
-    void Slash()
+    void StabAnimation()
     {
-        animator.SetTrigger("Slash");
+        animator.SetTrigger("Stab");
+    }
+
+    void ApplyStabDamage()
+    {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackPoint.attackRange, enemeyLayers);
         foreach (Collider2D enemy in hitEnemies)
         {
-            Debug.Log("We hit " + enemy.name);
-            enemy.GetComponentInChildren<HealthBar>().TakeDamage(35);
+            enemy.GetComponentInChildren<HealthBar>().TakeDamage(stabDamage);
+        }
+    }
+
+    void SlashAnimation()
+    {
+        animator.SetTrigger("Slash");
+    }
+
+    void ApplySlashDamage()
+    {
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackPoint.attackRange, enemeyLayers);
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponentInChildren<HealthBar>().TakeDamage(slashDamage);
         }
     }
 
     void Die()
     {
         hasDied = true;
-        animator.SetBool("HasDied", hasDied);
+        DieAnimation(hasDied);
         GetComponent<Rigidbody2D>().gravityScale = 0.0f;
-        GetComponent<Rigidbody2D>().Sleep();
+        //GetComponent<Rigidbody2D>().Sleep();
         GetComponent<Collider2D>().enabled = false;
-       /* GameObject gameObject = */GetComponent<GameObject>().layer = 0;
-       // gameObject.layer = 0;
+        GetComponent<GameObject>().layer = 0;
+        
+    }
+
+    void DieAnimation(bool hasDied)
+    {
+        animator.SetBool("HasDied", hasDied);
+    }
+    void Died()
+    {
+        GameManager manager = GameManager.Instance;
+        hasDied = false;
+        manager.PlayerHasDied();
     }
 
 }

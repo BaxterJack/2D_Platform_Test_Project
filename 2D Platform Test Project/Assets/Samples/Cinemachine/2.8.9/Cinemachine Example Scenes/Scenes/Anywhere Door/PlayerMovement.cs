@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Player
-{
     public class PlayerMovement : MonoBehaviour
     {
         public float movementSpeed = 10f;
@@ -39,4 +37,3 @@ namespace Player
             //transform.Rotate(-vertical, 0f, 0f, Space.Self);
         }
     }
-}

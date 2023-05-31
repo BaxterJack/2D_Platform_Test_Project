@@ -15,8 +15,8 @@ public class UIManager : MonoBehaviour
     
     [SerializeField]
     TMP_Text lootText;
+    GameManager gameManager;
 
-    
     [SerializeField]
     Image heart;
 
@@ -35,6 +35,7 @@ public class UIManager : MonoBehaviour
         lootText.text += " 100";
         currentLives = maxLives;
         heartImages = new Image[maxLives];
+        gameManager = GameManager.Instance;
         for (int i = 0; i < maxLives; i++)
         {
             Vector3 pos = heartTransform.localPosition;
@@ -68,6 +69,7 @@ public class UIManager : MonoBehaviour
         {
             currentLives--;
             heartImages[currentLives].gameObject.SetActive(false);
+
         }
     }
 
