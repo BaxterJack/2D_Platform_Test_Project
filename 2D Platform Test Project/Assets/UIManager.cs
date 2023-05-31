@@ -33,9 +33,6 @@ public class UIManager : MonoBehaviour
     void Start()
     { 
         lootText.text += " 100";
-
-        Debug.Log(heartTransform.position);
-        Debug.Log(heartTransform.localPosition);
         currentLives = maxLives;
         heartImages = new Image[maxLives];
         for (int i = 0; i < maxLives; i++)
@@ -50,7 +47,6 @@ public class UIManager : MonoBehaviour
         Image newHeart = Instantiate(heart, position, Quaternion.identity);;
         newHeart.transform.SetParent(uiCanvas.transform, false);
         heartImages[index] = newHeart;
-        Debug.Log(heartImages.Length);
     }
 
 
