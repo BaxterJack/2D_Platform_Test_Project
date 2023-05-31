@@ -5,7 +5,9 @@ using UnityEngine;
 using TMPro;
 public class UIManager : MonoBehaviour
 {
-    int lives = 3;
+    [SerializeField]
+    int maxLives = 3;
+    int currentLives;
     int score = 0;
 
     [SerializeField]
@@ -14,48 +16,77 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     TMP_Text lootText;
 
-    [SerializeField]
-    Transform heartTransform;
-
+    
     [SerializeField]
     Image heart;
-//    Sprite heart;
 
-    Transform newTransform;
+    [SerializeField]
+    RectTransform heartTransform;
+
+    [SerializeField]
+    Canvas uiCanvas;
+
+    Image[] heartImages;
 
     int offset = 25;
 
     void Start()
     { 
         lootText.text += " 100";
-        newTransform = heartTransform;
-        for(int i = 0; i < lives; i++)
+
+        Debug.Log(heartTransform.position);
+        Debug.Log(heartTransform.localPosition);
+        currentLives = maxLives;
+        heartImages = new Image[maxLives];
+        for (int i = 0; i < maxLives; i++)
         {
-            Vector3 pos = heartTransform.position;
+            Vector3 pos = heartTransform.localPosition;
             pos.x += i * offset;
-            Debug.Log(pos);
-            newTransform.position = pos;
-            Instantiate(heart, newTransform);
+            InstantiateHeart(pos, i);
         }
     }
+    private void InstantiateHeart(Vector3 position, int index)
+    {
+        Image newHeart = Instantiate(heart, position, Quaternion.identity);;
+        newHeart.transform.SetParent(uiCanvas.transform, false);
+        heartImages[index] = newHeart;
+        Debug.Log(heartImages.Length);
+    }
+
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown("down"))
+        {
+            DecreaseLives();
+        }
+        if (Input.GetKeyDown("up"))
+        {
+            IncreaseLives();
+        }
+    }
+    public void DecreaseLives()
+    {
+        if(currentLives > 0)
+        {
+            currentLives--;
+            heartImages[currentLives].gameObject.SetActive(false);
+        }
     }
 
-    void LoseLife()
+    public void IncreaseLives()
     {
-        if (lives > 0)
+        if (currentLives < maxLives)
         {
-            lives--;
-            //respawn
-        }
-        else
-        {
-            lives--;
-            //game over
+            
+            heartImages[currentLives].gameObject.SetActive(true);
+            currentLives++;
         }
     }
+
+
+    
+
+
 }
