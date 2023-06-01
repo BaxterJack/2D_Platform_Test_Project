@@ -10,7 +10,7 @@ public class HealthBar : MonoBehaviour
 
     [SerializeField]
     public int maxHealth = 40;
-    public int currentHealth;
+    private int currentHealth;
 
 
     private void Start()
@@ -26,10 +26,11 @@ public class HealthBar : MonoBehaviour
         }
     }
 
-    public void SetMaxHealth(int health)
+    public void SetMaxHealth()
     {
-        slider.maxValue = health;
-        slider.value = health;  
+        slider.maxValue = maxHealth;
+        slider.value = maxHealth;
+        currentHealth = maxHealth;
     }
 
     public void SetHealth(int health)
@@ -37,10 +38,14 @@ public class HealthBar : MonoBehaviour
         slider.value = health;
     }
 
-    public void SetCurrentHealth(int health)
-    {
-        currentHealth = health;
-    }
+    //public void SetCurrentHealth(int health)
+    //{
+    //    currentHealth = health;
+    //    slider.value = health;
+    //}
+
+
+
 
     public void TakeDamage(int damage)
     {

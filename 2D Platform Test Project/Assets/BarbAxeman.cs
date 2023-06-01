@@ -41,5 +41,20 @@ public class BarbAxeman : AiObject
         stateMachine.FixedUpdate();
     }
 
+    public void ApplySlashDamage()
+    {
+        Collider2D[] hitPlayer = Physics2D.OverlapCircleAll(this.attackPoint.transform.position, this.attackPoint.attackRange, this.playerLayers);
+
+        foreach (Collider2D player in hitPlayer)
+        {
+            player.GetComponentInChildren<HealthBar>().TakeDamage(20);
+            Debug.Log("We hit " + player.name);
+        }
+    }
+
+    void SetHasAttackedTrue()
+    {
+        this.hasAttacked = true;
+    }
 }
 

@@ -6,9 +6,13 @@ public class AiSight : MonoBehaviour
 {
     [SerializeField]
     float sightRange = 5f;
-
+    [SerializeField]
+    BoxCollider2D boxCollider;
+    //bool canSeePlayer = false;
     public bool CanSeePlayer()
     {
+
+
         Vector2 AiPosition = this.transform.position;
         Rigidbody2D rigidbody2D = GetComponent<Rigidbody2D>();
         float horizontalSpeed = rigidbody2D.velocity.x;
@@ -21,6 +25,7 @@ public class AiSight : MonoBehaviour
         RaycastHit2D rayHit = Physics2D.Raycast(AiPosition, forwardDirection, sightRange, playerMask);
         if (rayHit)
         {
+            //canSeePlayer = true;
             return true;
         }
         rayHit = Physics2D.Raycast(AiPosition, -forwardDirection, sightRange/2, playerMask);
@@ -55,5 +60,14 @@ public class AiSight : MonoBehaviour
             return false;
         }
         return true;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+
     }
 }

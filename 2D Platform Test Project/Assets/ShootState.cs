@@ -21,13 +21,10 @@ public class ShootState : BaseState
 
     public override void UpdateState()
     {
-        //aiObject.SetDestination(aiObject.GetPlayerPosition(), aiObject.GetAttackOffset());
         aiObject.SetAttackOffset();
         aiObject.SetTarget(aiObject.GetPlayerPosition());
-        //aiObject.SetDistanceToDestintion();
-
         isShooting = aiObject.barbarianAnimation.animator.GetCurrentAnimatorStateInfo(0).IsName("BarbSlashAnim");
-        if (!isShooting && aiObject.attackCoolDown >= 2.0f)
+        if (!isShooting && aiObject.attackCoolDown >= 1.5f)
         {
             aiObject.attackCoolDown = 0.0f;
             barbBowmen.Shoot();

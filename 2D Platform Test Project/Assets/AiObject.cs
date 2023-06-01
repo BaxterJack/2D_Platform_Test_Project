@@ -33,12 +33,14 @@ public class AiObject : MonoBehaviour
     public float attackOffset;
 
     public float attackCoolDown = 0.0f;
-    public float timeSinceAttack = 0.0f;
+//    public float timeSinceAttack = 0.0f;
 
     public Vector2 target;
     public Vector2 destination;
 
     public float distanceToDestination;
+
+    public bool hasAttacked = false;
 
     public void MoveAI()
     {
@@ -46,9 +48,10 @@ public class AiObject : MonoBehaviour
         Vector2 velocity = rigidbody.velocity;
         Vector2 barbPosition = rigidbody.transform.transform.position;
         Vector2 direction = (barbPosition - destination);
-        if (GetDistanceToDestintion() < 0.5)
+        float distance = GetDistanceToDestintion();
+        if (distance <= 0.5)
         {
-            velocity.x = direction.normalized.x * -speed / 3;
+            velocity.x = direction.normalized.x * -speed * (distance+0.5f);
         }
         else
         {
@@ -57,7 +60,17 @@ public class AiObject : MonoBehaviour
         //velocity.x = direction.normalized.x * -speed;
         GetComponent<Rigidbody2D>().velocity = velocity;
     }
-
+    public float AttackOffset
+    {
+        get
+        {
+            return attackOffset;
+        }
+        set
+        {
+            attackOffset = (transform.position.x - GetComponentInChildren<Attack_Point>().transform.position.x) * 1.25f;
+        }
+    }
     public void SetAttackOffset()
     {
         attackOffset = (transform.position.x - GetComponentInChildren<Attack_Point>().transform.position.x) * 1.25f;
@@ -68,14 +81,21 @@ public class AiObject : MonoBehaviour
         return attackOffset;
     }
 
+    //public bool HasJustAttacked()
+    //{
+    //    return attackCoolDown > 0.0f;
+    //}
+
+
     public bool HasJustAttacked()
     {
-        return attackCoolDown > 0.0f;
+        return hasAttacked;
     }
 
     public bool IsInRangeOfTarget()
     {
         bool isInRange = distanceToDestination <= 0.1f;
+        
         isInRange &= attackCoolDown <= 0.0f;
         return isInRange; 
     }
@@ -124,6 +144,14 @@ public class AiObject : MonoBehaviour
     public Vector2 GetPlayerPosition()
     {
         return player.transform.position;
+    }
+
+    public Vector2 PlayerPosition
+    {
+        get
+        {
+            return player.transform.position;
+        }
     }
 }
 

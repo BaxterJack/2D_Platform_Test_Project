@@ -22,19 +22,22 @@ public class PlayerAnimation : MonoBehaviour
 
     bool isMoving = false;
     float horizontalMove = 0.0f;
-    bool hasDied = false;
+
     bool isAttacking;
 
     int stabDamage = 20;
     int slashDamage = 35;
+
+    GameManager gameManager;
     private void Start()
     {
-
+        gameManager = GameManager.Instance;
     }
 
     void Update()
     {
-        if (hasDied == false)
+
+        if (gameManager.CurrentState == GameManager.PlayerState.Alive)
         {
             SetMoveAnimation();
             OrientPlayer();
@@ -48,14 +51,34 @@ public class PlayerAnimation : MonoBehaviour
             {
                 SlashAnimation();
             }
-            if (healthBar.HasNoHealth())
-            {
-                Die();
-            }
         }
-       
+        bool isDead = gameManager.CurrentState == GameManager.PlayerState.Dead;
+        DieAnimation(isDead);
+
+
+
     }
 
+    //void Die()
+    //{
+    //    DieAnimation(gameManager.CurrentState == GameManager.PlayerState.Dead);
+    //    //GetComponent<Rigidbody2D>().gravityScale = 0.0f;
+    //    ////GetComponent<Rigidbody2D>().Sleep();
+    //    //GetComponent<Collider2D>().enabled = false;
+    //    //GetComponent<GameObject>().layer = 0;
+
+    //}
+
+    void DieAnimation(bool isDead)
+    {
+        animator.SetBool("HasDied", isDead);
+    }
+    //void Died()
+    //{
+    //    GameManager manager = GameManager.Instance;
+    //    hasDied = false;
+    //    manager.PlayerHasDied();
+    //}
     void SetMoveAnimation()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal");
@@ -111,26 +134,6 @@ public class PlayerAnimation : MonoBehaviour
         }
     }
 
-    void Die()
-    {
-        hasDied = true;
-        DieAnimation(hasDied);
-        GetComponent<Rigidbody2D>().gravityScale = 0.0f;
-        //GetComponent<Rigidbody2D>().Sleep();
-        GetComponent<Collider2D>().enabled = false;
-        GetComponent<GameObject>().layer = 0;
-        
-    }
 
-    void DieAnimation(bool hasDied)
-    {
-        animator.SetBool("HasDied", hasDied);
-    }
-    void Died()
-    {
-        GameManager manager = GameManager.Instance;
-        hasDied = false;
-        manager.PlayerHasDied();
-    }
 
 }

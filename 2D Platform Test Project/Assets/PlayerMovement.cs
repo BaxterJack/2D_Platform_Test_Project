@@ -13,28 +13,33 @@ namespace Player
         float speed = 3.0f;
         [SerializeField]
         float jumpSpeed = 15.0f;
+        GameManager gameManager;
+        private void Start()
+        {
+            gameManager = GameManager.Instance;
+        }
 
         void FixedUpdate()
         {
-            Rigidbody2D rigidbody2D = GetComponent<Rigidbody2D>();
-            Vector3 velocity = rigidbody2D.velocity;
-
-            if (Input.GetKey(KeyCode.A))
+            if (gameManager.CurrentState == GameManager.PlayerState.Alive)
             {
-                velocity.x = -speed;
-            }
-            if (Input.GetKey(KeyCode.D))
-            {
-                velocity.x = speed;
-            }
+                Rigidbody2D rigidbody2D = GetComponent<Rigidbody2D>();
+                Vector3 velocity = rigidbody2D.velocity;
 
-            if (Input.GetKey(KeyCode.Space))
-            {
-                velocity.y = jumpSpeed;
+                if (Input.GetKey(KeyCode.A))
+                {
+                    velocity.x = -speed;
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    velocity.x = speed;
+                }
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    velocity.y = jumpSpeed;
+                }
+                rigidbody2D.velocity = velocity;
             }
-
-            rigidbody2D.velocity = velocity;
         }
-
     }
 }

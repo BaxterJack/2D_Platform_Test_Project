@@ -31,7 +31,7 @@ public class Arrow : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log(collision.gameObject.name);
+            //Debug.Log(collision.gameObject.name);
            
             player.GetComponentInChildren<HealthBar>().TakeDamage(20);
 

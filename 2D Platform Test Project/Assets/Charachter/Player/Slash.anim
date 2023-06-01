@@ -21,15 +21,15 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: -899011290, guid: 40acf53477103b941b2c789755fa3d05, type: 3}
-    - time: 0.25
+    - time: 0.2
       value: {fileID: -227241195, guid: 40acf53477103b941b2c789755fa3d05, type: 3}
-    - time: 0.5
+    - time: 0.4
       value: {fileID: 148390320, guid: 40acf53477103b941b2c789755fa3d05, type: 3}
-    - time: 0.75
+    - time: 0.5833333
       value: {fileID: -1141595734, guid: 40acf53477103b941b2c789755fa3d05, type: 3}
-    - time: 1
+    - time: 0.78333336
       value: {fileID: 1169668945, guid: 40acf53477103b941b2c789755fa3d05, type: 3}
-    - time: 1.25
+    - time: 0.98333335
       value: {fileID: -697801295, guid: 40acf53477103b941b2c789755fa3d05, type: 3}
     attribute: m_Sprite
     path: 
@@ -62,7 +62,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.2666667
+    m_StopTime: 1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -82,7 +82,7 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 1
+  - time: 0.78333336
     functionName: ApplySlashDamage
     data: 
     objectReferenceParameter: {fileID: 0}

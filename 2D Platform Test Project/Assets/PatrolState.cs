@@ -22,6 +22,7 @@ public class PatrolState : BaseState
 
     public override void UpdateState()
     {
+        aiObject.SetTarget(aiObject.GetDestination());
         aiObject.SetDistanceToDestintion();
         if (aiObject.attackCoolDown >= 0)
         {

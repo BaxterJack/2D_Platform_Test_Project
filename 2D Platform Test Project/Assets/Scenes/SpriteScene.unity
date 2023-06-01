@@ -652,7 +652,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 352.45, y: 210}
+  m_AnchoredPosition: {x: 352.45, y: 240.00005}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &192515545
@@ -752,6 +752,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192515543}
   m_CullTransparentMesh: 1
+--- !u!1 &208950400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7818466261548566946, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
+  m_PrefabInstance: {fileID: 6866111469678486933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &261578324
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,7 +792,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -351.5, y: 210}
+  m_AnchoredPosition: {x: -351.5, y: 240}
   m_SizeDelta: {x: 118.7992, y: 45.6239}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &261578326
@@ -1063,6 +1068,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 3036859145457702655}
     m_Modifications:
+    - target: {fileID: 5390418315728399933, guid: eacfd9394e053ea49823a3a62a610cbd, type: 3}
+      propertyPath: maxHealth
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6208280340967805623, guid: eacfd9394e053ea49823a3a62a610cbd, type: 3}
       propertyPath: m_Name
       value: HealthCanvas
@@ -1825,7 +1834,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -310, y: 210}
+  m_AnchoredPosition: {x: -310, y: 240.00005}
   m_SizeDelta: {x: 22.807556, y: 22.807587}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &881895788
@@ -3242,7 +3251,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465204994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1277039, y: -0.15000015, z: -10}
+  m_LocalPosition: {x: 5.5945187, y: -0.15000015, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3506,7 +3515,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.1277039, y: -0.15000015}
+  m_AnchoredPosition: {x: 5.5945187, y: -0.15000015}
   m_SizeDelta: {x: 1197, y: 675}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1615611893
@@ -4390,7 +4399,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 256, y: 210}
+  m_AnchoredPosition: {x: 256, y: 240.00005}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2007085243
@@ -4490,6 +4499,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007085241}
   m_CullTransparentMesh: 1
+--- !u!1 &2052285887 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5001142141416212421, guid: 86570501c5ad0954692d8c2bbf46f989, type: 3}
+  m_PrefabInstance: {fileID: 1721874910166922282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2102055950
 GameObject:
   m_ObjectHideFlags: 0
@@ -4604,6 +4618,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4752148173123535551, guid: 86570501c5ad0954692d8c2bbf46f989, type: 3}
   m_PrefabInstance: {fileID: 1721874910166922282}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &1721874910166922291
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052285887}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.6363636, y: 0.5}
+    oldSize: {x: 0.6875, y: 0.765625}
+    newSize: {x: 0.703125, y: 0.765625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 1.8}
+  m_EdgeRadius: 0
 --- !u!1001 &3036859145457702653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4612,13 +4652,21 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3637080649138514167, guid: 4132ffad7b6ffed49876345541ce243e, type: 3}
+      propertyPath: m_LinearDrag
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3637080649138514167, guid: 4132ffad7b6ffed49876345541ce243e, type: 3}
+      propertyPath: m_GravityScale
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5685485595861990313, guid: 4132ffad7b6ffed49876345541ce243e, type: 3}
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5685485595861990313, guid: 4132ffad7b6ffed49876345541ce243e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.22
+      value: 4.22
       objectReference: {fileID: 0}
     - target: {fileID: 5685485595861990313, guid: 4132ffad7b6ffed49876345541ce243e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4763,3 +4811,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5729527009019465423, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
   m_PrefabInstance: {fileID: 6866111469678486933}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &6866111469678486942
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208950400}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1, y: 0.5}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.4888889, y: 0.5}
+    oldSize: {x: 0.703125, y: 0.765625}
+    newSize: {x: 0.703125, y: 0.765625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5, y: 1.8}
+  m_EdgeRadius: 0

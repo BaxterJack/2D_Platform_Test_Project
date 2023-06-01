@@ -12,7 +12,7 @@ public class GoToAttackPosState : BaseState
 
     public override void EnterState()
     {
-
+        aiObject.hasAttacked = false;
     }
 
     public override void UpdateState()
@@ -22,7 +22,7 @@ public class GoToAttackPosState : BaseState
         aiObject.SetTarget(aiObject.GetPlayerPosition());
         aiObject.SetDistanceToDestintion();
 
-        if(aiObject.attackCoolDown >= 0)
+        if (aiObject.attackCoolDown >= 0)
         {
             aiObject.attackCoolDown -= Time.deltaTime;
         }
