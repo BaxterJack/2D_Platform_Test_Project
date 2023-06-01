@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     float respawnTimer = 0.0f;
     //bool hasDied = false;
     PlayerState currentState = PlayerState.Alive;
+    GameState currentGameState = GameState.Level1;
 
     LayerMask playerLayer;
     public static GameManager Instance
@@ -36,6 +37,12 @@ public class GameManager : MonoBehaviour
     {
         Alive,
         Dead
+    }
+
+    public enum GameState
+    {
+        MainMenu,
+        Level1
     }
 
     public PlayerState CurrentState

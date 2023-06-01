@@ -26,6 +26,9 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     Canvas uiCanvas;
 
+    [SerializeField]
+    GameObject gameOverUI;
+
     Image[] heartImages;
 
     int offset = 25;
@@ -70,6 +73,12 @@ public class UIManager : MonoBehaviour
             currentLives--;
             heartImages[currentLives].gameObject.SetActive(false);
 
+        }
+        if(currentLives == 0)
+        {
+            GameManager manager = GameManager.Instance;
+            manager.GameOver();
+            gameOverUI.gameObject.SetActive(true);
         }
     }
 
