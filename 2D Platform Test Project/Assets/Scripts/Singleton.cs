@@ -5,10 +5,7 @@ using UnityEngine;
 public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     protected static T instance;
-    //protected Singleton()
-    //{
-    //    Debug.Log(typeof(T).Name);
-    //}
+
     public static T Instance
     {
         get

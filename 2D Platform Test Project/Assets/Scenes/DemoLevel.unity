@@ -545,6 +545,7 @@ GameObject:
   - component: {fileID: 173108929}
   - component: {fileID: 173108928}
   - component: {fileID: 173108927}
+  - component: {fileID: 173108930}
   m_Layer: 5
   m_Name: Restart Level Button
   m_TagString: Untagged
@@ -617,13 +618,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 734563473}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 173108930}
+        m_TargetAssemblyTypeName: RestartLevelButton, Assembly-CSharp
+        m_MethodName: RestartLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -667,6 +668,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 173108925}
   m_CullTransparentMesh: 1
+--- !u!114 &173108930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173108925}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64af60073e591284b8ed0dd8e3b87766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &174293105
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,6 +764,73 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &188570466
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 188570469}
+  - component: {fileID: 188570468}
+  - component: {fileID: 188570467}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &188570467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188570466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &188570468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188570466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!4 &188570469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 188570466}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &192515543
 GameObject:
   m_ObjectHideFlags: 0
@@ -886,11 +966,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 192515543}
   m_CullTransparentMesh: 1
---- !u!1 &208950400 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7818466261548566946, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
-  m_PrefabInstance: {fileID: 6866111469678486933}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &261578324
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,7 +1272,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 107}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &336080838
 GameObject:
@@ -1746,11 +1821,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &734563473 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4396924553187437884, guid: b5397a43b14d2ae4dbd6a6a6204a4eac, type: 3}
-  m_PrefabInstance: {fileID: 4396924553895780781}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &774377438
 GameObject:
   m_ObjectHideFlags: 0
@@ -3273,6 +3343,7 @@ GameObject:
   - component: {fileID: 1376718014}
   - component: {fileID: 1376718013}
   - component: {fileID: 1376718012}
+  - component: {fileID: 1376718015}
   m_Layer: 5
   m_Name: Exit to Main Menu Button
   m_TagString: Untagged
@@ -3344,7 +3415,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1376718013}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1376718015}
+        m_TargetAssemblyTypeName: ExitToMainMenu, Assembly-CSharp
+        m_MethodName: ExitToMain
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1376718013
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3383,6 +3466,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376718010}
   m_CullTransparentMesh: 1
+--- !u!114 &1376718015
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1376718010}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88d0469c9c9e2504ba7499e28f47c812, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1376899154
 GameObject:
   m_ObjectHideFlags: 0
@@ -5023,11 +5118,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2007085241}
   m_CullTransparentMesh: 1
---- !u!1 &2052285887 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5001142141416212421, guid: 86570501c5ad0954692d8c2bbf46f989, type: 3}
-  m_PrefabInstance: {fileID: 1721874910166922282}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2102055950
 GameObject:
   m_ObjectHideFlags: 0
@@ -5201,32 +5291,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4752148173123535551, guid: 86570501c5ad0954692d8c2bbf46f989, type: 3}
   m_PrefabInstance: {fileID: 1721874910166922282}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &1721874910166922291
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2052285887}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.5}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.6363636, y: 0.5}
-    oldSize: {x: 0.6875, y: 0.765625}
-    newSize: {x: 0.703125, y: 0.765625}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2.5, y: 1.8}
-  m_EdgeRadius: 0
 --- !u!1001 &3036859145457702653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5465,29 +5529,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5729527009019465423, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
   m_PrefabInstance: {fileID: 6866111469678486933}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &6866111469678486942
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 208950400}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -1, y: 0.5}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4888889, y: 0.5}
-    oldSize: {x: 0.703125, y: 0.765625}
-    newSize: {x: 0.703125, y: 0.765625}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 5, y: 1.8}
-  m_EdgeRadius: 0

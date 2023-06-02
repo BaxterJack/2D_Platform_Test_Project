@@ -22,7 +22,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
 
     void Update()
     {
-        
+        //Debug.Log(GameSceneManager.Instance.CurrentScene);
     }
 
     public void LoadScene(SceneState sceneName)
@@ -32,4 +32,8 @@ public class GameSceneManager : Singleton<GameSceneManager>
         SceneManager.LoadScene(sceneNameString);
     }
 
+    public SceneState CurrentScene
+    {
+        get { return currentSceneState; }
+    }
 }
