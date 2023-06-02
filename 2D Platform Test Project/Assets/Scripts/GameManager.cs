@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : Singleton<GameManager>
 {
-    private static GameManager instance;
-
     [SerializeField]
     GameObject player;
 
@@ -16,22 +14,10 @@ public class GameManager : MonoBehaviour
     UIManager uiManager;
 
     float respawnTimer = 0.0f;
-    //bool hasDied = false;
-    PlayerState currentState = PlayerState.Alive;
-    GameState currentGameState = GameState.Level1;
 
-    LayerMask playerLayer;
-    public static GameManager Instance
-    {
-        get
-        {
-            if (instance == null)
-            {
-                Debug.LogError("Game Manager is Null");
-            }
-            return instance;
-        }
-    }
+    PlayerState currentState = PlayerState.Alive;
+
+    int playerLayer;
 
     public enum PlayerState
     {
@@ -39,11 +25,7 @@ public class GameManager : MonoBehaviour
         Dead
     }
 
-    public enum GameState
-    {
-        MainMenu,
-        Level1
-    }
+
 
     public PlayerState CurrentState
     {
@@ -58,7 +40,7 @@ public class GameManager : MonoBehaviour
             case PlayerState.Alive:
                 player.GetComponent<Rigidbody2D>().gravityScale = 6.0f;
                 player.GetComponent<Collider2D>().enabled = true;
-                player.layer = 7;
+                player.layer = playerLayer;
                 playerHealth.SetMaxHealth();
                 playerHealth.gameObject.SetActive(true);
 
@@ -107,14 +89,9 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void Awake()
-    {
-        instance = this;
-    }
-
     private void Start()
     {
-
+        playerLayer = player.layer;
     }
 
     public void GameOver()
