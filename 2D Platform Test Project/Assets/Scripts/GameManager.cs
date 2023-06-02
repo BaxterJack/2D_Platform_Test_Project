@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    [SerializeField]
+//   [SerializeField]
     GameObject player;
 
-    [SerializeField]
+//   [SerializeField]
     HealthBar playerHealth;
 
-    [SerializeField]
+//   [SerializeField]
     UIManager uiManager;
 
     float respawnTimer = 0.0f;
@@ -58,16 +58,20 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
+        
         if(currentState == PlayerState.Dead)
         {
             respawnTimer += Time.deltaTime;
+            Debug.Log(respawnTimer);
         }
         else if (playerHealth.HasNoHealth())
         {
+
             ChangePlayerState(PlayerState.Dead);
         }
         if (respawnTimer > 5)
         {
+            
             respawnTimer = 0;
             ChangePlayerState(PlayerState.Alive);
             RespawnPlayer();
@@ -91,7 +95,12 @@ public class GameManager : Singleton<GameManager>
 
     private void Start()
     {
+        
+        player = GameObject.Find("Player");
         playerLayer = player.layer;
+        playerHealth = player.GetComponentInChildren<HealthBar>();
+        GameObject obj = GameObject.Find("UICanvas");
+        uiManager = obj.GetComponent<UIManager>();
     }
 
     public void GameOver()
