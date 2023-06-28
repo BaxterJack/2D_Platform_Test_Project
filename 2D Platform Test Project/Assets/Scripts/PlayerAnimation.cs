@@ -123,6 +123,12 @@ public class PlayerAnimation : MonoBehaviour
     void SlashAnimation()
     {
         animator.SetTrigger("Slash");
+        
+    }
+    void SlashSound()
+    {
+        AudioManager audioManager = AudioManager.Instance;
+        audioManager.PlaySound("Slash");
     }
 
     void ApplySlashDamage()
@@ -131,6 +137,8 @@ public class PlayerAnimation : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponentInChildren<HealthBar>().TakeDamage(slashDamage);
+            AudioManager audioManager = AudioManager.Instance;
+            audioManager.PlaySound("Hit");
         }
     }
 

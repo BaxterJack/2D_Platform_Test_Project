@@ -78,6 +78,12 @@ public class BarbarianAnimation : MonoBehaviour
         animator.SetTrigger("SlashAttack");
     }
 
+    void SlashSound()
+    {
+        AudioManager audioManager = AudioManager.Instance;
+        audioManager.PlaySound("Slash");
+    }
+
     public void Die()
     {
         hasDied = true;

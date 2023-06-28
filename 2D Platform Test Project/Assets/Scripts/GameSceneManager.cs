@@ -17,6 +17,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
     void Start()
     {
         currentSceneState = SceneState.MainMenu;
+        PlayThemeMusic(currentSceneState);
     }
 
 
@@ -30,7 +31,31 @@ public class GameSceneManager : Singleton<GameSceneManager>
         currentSceneState = sceneName;
         string sceneNameString = sceneName.ToString();
         SceneManager.LoadScene(sceneNameString);
+        PlayThemeMusic(sceneName);
     }
+
+    void PlayThemeMusic(SceneState sceneName)
+    {
+        AudioManager audioManager = AudioManager.instance;
+        audioManager.StopTheme();
+        switch (sceneName)
+        {
+            case SceneState.MainMenu:
+                audioManager.PlayTheme("MainMenuTheme");
+                break;
+
+            case SceneState.Fort:
+
+                break;
+
+            case SceneState.DemoLevel:
+                audioManager.PlayTheme("BattleTheme");
+                break;
+
+        }
+
+    }
+
 
     public SceneState CurrentScene
     {

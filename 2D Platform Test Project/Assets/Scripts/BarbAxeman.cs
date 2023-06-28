@@ -48,7 +48,9 @@ public class BarbAxeman : AiObject
         foreach (Collider2D player in hitPlayer)
         {
             player.GetComponentInChildren<HealthBar>().TakeDamage(20);
-            Debug.Log("We hit " + player.name);
+            AudioManager audioManager = AudioManager.Instance;
+            audioManager.PlaySound("Hit");
+            //Debug.Log("We hit " + player.name);
         }
     }
 
