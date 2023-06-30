@@ -20,6 +20,12 @@ public class AudioManager : Singleton<AudioManager>
 
     }
 
+    protected override void Awake()
+    {
+        base.Awake();
+        InitialiseAudio();
+    }
+
     private void InitialiseAudio()
     {
         foreach (Sound s in sounds)
@@ -51,10 +57,10 @@ public class AudioManager : Singleton<AudioManager>
     public void PlayTheme(String name)
     {
         Theme = Array.Find(themes, s => s.name == name);
-        if(Theme.audioSource == null)
-        {
-            InitialiseAudio();
-        }
+        //if(Theme.audioSource == null)
+        //{
+        //    InitialiseAudio();
+        //}
         Theme.audioSource.Play();
     }
 

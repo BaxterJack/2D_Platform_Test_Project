@@ -15,6 +15,11 @@ public class GameSceneManager : Singleton<GameSceneManager>
     }
     Scene scene;
 
+    protected override void Awake()
+    {
+        base.Awake();
+    }
+
     void Start()
     {
         scene = SceneManager.GetActiveScene();

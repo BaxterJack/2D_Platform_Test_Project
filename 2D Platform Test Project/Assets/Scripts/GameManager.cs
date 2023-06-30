@@ -25,7 +25,10 @@ public class GameManager : Singleton<GameManager>
         Dead
     }
 
-
+    protected override void Awake()
+    {
+        base.Awake();
+    }
 
     public PlayerState CurrentState
     {

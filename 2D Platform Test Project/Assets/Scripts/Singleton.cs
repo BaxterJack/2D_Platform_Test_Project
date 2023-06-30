@@ -18,7 +18,7 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         }
     }
 
-    private void Awake()
+    protected virtual void Awake()
     {
         if (instance != null)
         {
@@ -31,6 +31,5 @@ public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         
     }
 
-    //protected abstract virtual void Initialize();
 }
 

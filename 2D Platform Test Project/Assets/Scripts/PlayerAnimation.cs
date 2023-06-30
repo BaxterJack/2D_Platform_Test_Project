@@ -29,9 +29,11 @@ public class PlayerAnimation : MonoBehaviour
     int slashDamage = 35;
 
     GameManager gameManager;
+    GameSceneManager gameSceneManager;
     private void Start()
     {
         gameManager = GameManager.Instance;
+        gameSceneManager = GameSceneManager.Instance;
     }
 
     void Update()
@@ -41,15 +43,24 @@ public class PlayerAnimation : MonoBehaviour
         {
             SetMoveAnimation();
             OrientPlayer();
-            SetIsAttacking();
-
-            if (Input.GetMouseButtonDown(0) && !isAttacking)
+            
+            bool isFightScene = false;
+            if(gameSceneManager.CurrentScene == GameSceneManager.SceneState.DemoLevel)
             {
-                StabAnimation();
+                isFightScene = true;
             }
-            if (Input.GetMouseButtonDown(1) && !isAttacking)
+
+            if (isFightScene)
             {
-                SlashAnimation();
+                SetIsAttacking();
+                if (Input.GetMouseButtonDown(0) && !isAttacking)
+                {
+                    StabAnimation();
+                }
+                if (Input.GetMouseButtonDown(1) && !isAttacking)
+                {
+                    SlashAnimation();
+                }
             }
         }
         bool isDead = gameManager.CurrentState == GameManager.PlayerState.Dead;

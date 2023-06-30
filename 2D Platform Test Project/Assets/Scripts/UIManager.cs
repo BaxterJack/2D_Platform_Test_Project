@@ -33,6 +33,8 @@ public class UIManager : MonoBehaviour
 
     int offset = 25;
 
+    private CanvasGroup canvasGroup;
+
     //void Start()
     //{
     //    lootText.text += " 100";
@@ -52,6 +54,23 @@ public class UIManager : MonoBehaviour
     //    newHeart.transform.SetParent(uiCanvas.transform, false);
     //    heartImages[index] = newHeart;
     //}
+
+    void Awake()
+    {
+        canvasGroup = GetComponent<CanvasGroup>();
+    }
+
+    public void HideUI()
+    {
+        canvasGroup.alpha = 0f;
+        canvasGroup.interactable = false;
+    }
+
+    public void ShowUI()
+    {
+        canvasGroup.alpha = 1f;
+        canvasGroup.interactable = true;
+    }
 
     void Start()
     {
@@ -84,6 +103,7 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        HideUI();
         if (Input.GetKeyDown("down"))
         {
             DecreaseLives();
