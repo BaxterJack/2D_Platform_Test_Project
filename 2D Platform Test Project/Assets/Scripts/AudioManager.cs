@@ -16,6 +16,12 @@ public class AudioManager : Singleton<AudioManager>
 
     private void Start()
     {
+        InitialiseAudio();
+
+    }
+
+    private void InitialiseAudio()
+    {
         foreach (Sound s in sounds)
         {
             s.audioSource = gameObject.AddComponent<AudioSource>();
@@ -33,7 +39,6 @@ public class AudioManager : Singleton<AudioManager>
             s.audioSource.pitch = s.pitch;
             s.audioSource.loop = s.loop;
         }
-
     }
 
     public void PlaySound(String name)
@@ -46,6 +51,10 @@ public class AudioManager : Singleton<AudioManager>
     public void PlayTheme(String name)
     {
         Theme = Array.Find(themes, s => s.name == name);
+        if(Theme.audioSource == null)
+        {
+            InitialiseAudio();
+        }
         Theme.audioSource.Play();
     }
 
