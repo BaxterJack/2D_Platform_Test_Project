@@ -13,11 +13,33 @@ public class GameSceneManager : Singleton<GameSceneManager>
         Level1,
         DemoLevel
     }
+    Scene scene;
 
     void Start()
     {
-        currentSceneState = SceneState.MainMenu;
-        PlayThemeMusic(currentSceneState);
+        scene = SceneManager.GetActiveScene();
+        string sceneName = scene.name;
+        ApplyCurrentScene(sceneName);
+        ChangeThemeMusic(currentSceneState);
+    }
+
+    void ApplyCurrentScene(string sceneName)
+    {
+        switch (sceneName)
+        {
+            case "MainMenu":
+                currentSceneState = SceneState.MainMenu;
+                break;
+            case "Fort":
+                currentSceneState = SceneState.Fort;
+                break;
+            case "DemoLevel":
+                currentSceneState = SceneState.DemoLevel;
+                break;
+            case "Level1":
+                currentSceneState = SceneState.Level1;
+                break;
+        }
     }
 
 
@@ -31,10 +53,10 @@ public class GameSceneManager : Singleton<GameSceneManager>
         currentSceneState = sceneName;
         string sceneNameString = sceneName.ToString();
         SceneManager.LoadScene(sceneNameString);
-        PlayThemeMusic(sceneName);
+        ChangeThemeMusic(sceneName);
     }
 
-    void PlayThemeMusic(SceneState sceneName)
+    void ChangeThemeMusic(SceneState sceneName)
     {
         AudioManager audioManager = AudioManager.instance;
         audioManager.StopTheme();
@@ -45,7 +67,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
                 break;
 
             case SceneState.Fort:
-
+                audioManager.PlayTheme("FortTheme");
                 break;
 
             case SceneState.DemoLevel:
@@ -55,7 +77,6 @@ public class GameSceneManager : Singleton<GameSceneManager>
         }
 
     }
-
 
     public SceneState CurrentScene
     {

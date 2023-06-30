@@ -33,23 +33,50 @@ public class UIManager : MonoBehaviour
 
     int offset = 25;
 
+    //void Start()
+    //{
+    //    lootText.text += " 100";
+    //    currentLives = maxLives;
+    //    heartImages = new Image[maxLives];
+    //    gameManager = GameManager.Instance;
+    //    for (int i = 0; i < maxLives; i++)
+    //    {
+    //        Vector3 pos = heartTransform.localPosition;
+    //        pos.x += i * offset;
+    //        InstantiateHeart(pos, i);
+    //    }
+    //}
+    //private void InstantiateHeart(Vector3 position, int index)
+    //{
+    //    Image newHeart = Instantiate(heart, position, Quaternion.identity); ;
+    //    newHeart.transform.SetParent(uiCanvas.transform, false);
+    //    heartImages[index] = newHeart;
+    //}
+
     void Start()
-    { 
+    {
         lootText.text += " 100";
         currentLives = maxLives;
         heartImages = new Image[maxLives];
         gameManager = GameManager.Instance;
         for (int i = 0; i < maxLives; i++)
         {
-            Vector3 pos = heartTransform.localPosition;
-            pos.x += i * offset;
-            InstantiateHeart(pos, i);
+            Vector2 anchoredPosition = heartTransform.anchoredPosition;
+            anchoredPosition.x += i * offset;
+            InstantiateHeart(anchoredPosition, i);
         }
     }
-    private void InstantiateHeart(Vector3 position, int index)
+
+    private void InstantiateHeart(Vector2 anchoredPosition, int index)
     {
-        Image newHeart = Instantiate(heart, position, Quaternion.identity);;
-        newHeart.transform.SetParent(uiCanvas.transform, false);
+        Image newHeart = Instantiate(heart);
+        RectTransform heartRectTransform = newHeart.GetComponent<RectTransform>();
+        heartRectTransform.SetParent(uiCanvas.transform, false);
+        heartRectTransform.anchorMin = new Vector2(0f, 1f);
+        heartRectTransform.anchorMax = new Vector2(0f, 1f);
+        heartRectTransform.pivot = new Vector2(0.5f, 0.5f);
+        heartRectTransform.anchoredPosition = anchoredPosition;
+
         heartImages[index] = newHeart;
     }
 

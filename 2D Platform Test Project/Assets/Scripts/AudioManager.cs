@@ -22,6 +22,7 @@ public class AudioManager : Singleton<AudioManager>
             s.audioSource.clip = s.clip;
             s.audioSource.volume = s.volume;
             s.audioSource.pitch = s.pitch;
+            s.audioSource.loop = s.loop;
         }
 
         foreach (Sound s in themes)
@@ -30,6 +31,7 @@ public class AudioManager : Singleton<AudioManager>
             s.audioSource.clip = s.clip;
             s.audioSource.volume = s.volume;
             s.audioSource.pitch = s.pitch;
+            s.audioSource.loop = s.loop;
         }
 
     }
@@ -49,7 +51,7 @@ public class AudioManager : Singleton<AudioManager>
 
     public void StopTheme()
     {
-        if(Theme.audioSource == null) // why does this not work, have to assign a theme in start method?
+        if(Theme.audioSource == null) 
         {
             return;
         }

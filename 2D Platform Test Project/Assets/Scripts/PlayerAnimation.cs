@@ -117,6 +117,8 @@ public class PlayerAnimation : MonoBehaviour
         foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponentInChildren<HealthBar>().TakeDamage(stabDamage);
+            AudioManager audioManager = AudioManager.Instance;
+            audioManager.PlaySound("Hit");
         }
     }
 
