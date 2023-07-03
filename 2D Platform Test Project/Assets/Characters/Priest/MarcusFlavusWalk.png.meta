@@ -1,0 +1,915 @@
+fileFormatVersion: 2
+guid: 3f4204bcfe716e043afda5f0b54b353f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 205
+        width: 34
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1680a6c7c8e6947409f8f489a28a5189
+      internalID: -147939085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_1
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 205
+        width: 34
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 801eb08bd1c9a504e858fdc92522f89f
+      internalID: 1338433569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_2
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 204
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4d28fdb6269b4a498dfe60214383bcf
+      internalID: -47879927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_3
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 203
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def1d4d227591ec408b49219c1ea43da
+      internalID: -1600370385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_4
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 204
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1d66225f42ec647a7ebfe856ab6eda
+      internalID: -1940321969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_5
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 205
+        width: 34
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eddc00ac834d58448ced393b6e6f99f
+      internalID: 1159598157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_6
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 204
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bd64d27cd709dd46863ea206c2f5116
+      internalID: -295231820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_7
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 203
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0189800de4ea5c4da0c534624462183
+      internalID: 1497323336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_8
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 204
+        width: 34
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b37cf9e5f39774a41ae60f3ff19074e5
+      internalID: 1694502386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_9
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 140
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 553b0e8c345d6464eb5b801c0238e9b7
+      internalID: -922952732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_10
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 140
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1ddf5488b27d9c46931c026d8d8967e
+      internalID: -341997699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_11
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 141
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2abfa6eae562b1049acfdad6da070113
+      internalID: 290198708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_12
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 141
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc296eab4679a77469c01e30ce0b7dae
+      internalID: 710696799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_13
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 140
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 180b0a11d8d9abc4d854d85c15121798
+      internalID: -277008520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_14
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 140
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59e8ab174340dcb43ab792c36b6f5b8e
+      internalID: 1888590700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_15
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 140
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02cf4b8879bca774e96c4a569a391a72
+      internalID: 455739640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_16
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 140
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75b47dfd687f17046b3e935db60fb397
+      internalID: -1268098984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_17
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 140
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83ce9e537adf79045a31c4092e1c0641
+      internalID: 1005185212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_18
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 76
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c0ea9064e78f8044a0583ada16995a3
+      internalID: -100018690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_19
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 76
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59614ea7f10415e42a1df90b63adc7d1
+      internalID: -1166122958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_20
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 75
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 954cc083c2c639041a9ea10102f54a73
+      internalID: 1463766916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_21
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 75
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f615e9f7dd508f41bd9353da4724356
+      internalID: -692484739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_22
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 75
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 296f74bb46b271d45b315bfa54e0a865
+      internalID: 440500706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_23
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 76
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7efa2f654a996684497037e44c132bb8
+      internalID: -956193249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_24
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 75
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65b6edd772356549a49e6a5a0cff5e7
+      internalID: 486208855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_25
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 75
+        width: 32
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34a3621e1b421c1499c5a37f4dfa2fe6
+      internalID: 601874767
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_26
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 75
+        width: 32
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8640973df36532143b07577df356c684
+      internalID: 91348199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_27
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 12
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eb3f234d294bc44b8872df1aa5c0f21
+      internalID: 196883293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_28
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 12
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d21e54d36e455c848a5a379955fe0a55
+      internalID: -925023206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_29
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 13
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d48103ecde1d982449042e1152121993
+      internalID: -1999906171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_30
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 13
+        width: 27
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ddcf6a3a43b034419292c37d9d27848
+      internalID: -286464244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_31
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 12
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d246276f8238f42bed0fbd4198a9a8
+      internalID: -363187339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_32
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 12
+        width: 30
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ffac3d74f517f141ad72bbe812e4a04
+      internalID: 1266846943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_33
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 12
+        width: 28
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4872e70782b42a84b8240362accf68a7
+      internalID: 873946737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_34
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 12
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b6f2c2dd2a04943b721133f7388d81
+      internalID: -1563875729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MarcusFlavusWalk_35
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 12
+        width: 27
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa19a9406458fc546b8d52f18da84a0b
+      internalID: 1194041779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      MarcusFlavusWalk_2: -47879927
+      MarcusFlavusWalk_3: -1600370385
+      MarcusFlavusWalk_16: -1268098984
+      MarcusFlavusWalk_30: -286464244
+      MarcusFlavusWalk_5: 1159598157
+      MarcusFlavusWalk_12: 710696799
+      MarcusFlavusWalk_18: -100018690
+      MarcusFlavusWalk_26: 91348199
+      MarcusFlavusWalk_11: 290198708
+      MarcusFlavusWalk_33: 873946737
+      MarcusFlavusWalk_28: -925023206
+      MarcusFlavusWalk_24: 486208855
+      MarcusFlavusWalk_21: -692484739
+      MarcusFlavusWalk_35: 1194041779
+      MarcusFlavusWalk_4: -1940321969
+      MarcusFlavusWalk_34: -1563875729
+      MarcusFlavusWalk_6: -295231820
+      MarcusFlavusWalk_9: -922952732
+      MarcusFlavusWalk_25: 601874767
+      MarcusFlavusWalk_13: -277008520
+      MarcusFlavusWalk_29: -1999906171
+      MarcusFlavusWalk_19: -1166122958
+      MarcusFlavusWalk_0: -147939085
+      MarcusFlavusWalk_20: 1463766916
+      MarcusFlavusWalk_22: 440500706
+      MarcusFlavusWalk_14: 1888590700
+      MarcusFlavusWalk_31: -363187339
+      MarcusFlavusWalk_8: 1694502386
+      MarcusFlavusWalk_1: 1338433569
+      MarcusFlavusWalk_15: 455739640
+      MarcusFlavusWalk_17: 1005185212
+      MarcusFlavusWalk_27: 196883293
+      MarcusFlavusWalk_10: -341997699
+      MarcusFlavusWalk_23: -956193249
+      MarcusFlavusWalk_32: 1266846943
+      MarcusFlavusWalk_7: 1497323336
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

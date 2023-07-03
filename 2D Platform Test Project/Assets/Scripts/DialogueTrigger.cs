@@ -44,4 +44,5 @@ public class DialogueTrigger : MonoBehaviour
             dialogueCanvas.gameObject.SetActive(false);
         }
     }
+
 }

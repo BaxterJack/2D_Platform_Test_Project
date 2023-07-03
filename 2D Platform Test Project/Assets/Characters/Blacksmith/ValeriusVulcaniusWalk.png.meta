@@ -1,0 +1,915 @@
+fileFormatVersion: 2
+guid: 782ac84079574af44a729df996e1d51c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 206
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71ac51bf458e5594db042029757623a0
+      internalID: 629949473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 207
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee5a9113270d6134281f51ec75937eec
+      internalID: 626320841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_2
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 206
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ed9a8d98311ba40914bf2d53067e08
+      internalID: -1497251272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_3
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 205
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6174dec5c1eda48b4977f63fb9c97a
+      internalID: 1497679652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_4
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 206
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e9e30f43a3981439550328e2311dc1
+      internalID: 357153742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_5
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 207
+        width: 30
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fab864abd35f47041b276cdb4a9a4113
+      internalID: 1103276847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_6
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 206
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8050be3043cf7cc4780cd7f813914d18
+      internalID: 2018281630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_7
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 205
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94445603a97916746b3a63b8bd1db8eb
+      internalID: 1322757514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_8
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 206
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16f531274f187d74586d1b11ee081d70
+      internalID: -1668108242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_9
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 142
+        width: 21
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42d44066d6167d443bb0e3d3c56278eb
+      internalID: -140229886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_10
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 142
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa261354ef04cb84081782d7862fffdc
+      internalID: -816081836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_11
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 143
+        width: 22
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92ace07a451b58b4db4b31043a84ca65
+      internalID: 1918640019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_12
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 143
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 995373d2d00ef2045a5208ce891c87ac
+      internalID: 1517290929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_13
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 142
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f5a0502f642f240a3d3a05e84dcb93
+      internalID: 1258234229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_14
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 142
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1880d645c7df0d4f976f7a3430613a3
+      internalID: 461359811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_15
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 142
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b193c7735c66f9d47962718d5a2efb7a
+      internalID: -1498026716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_16
+      rect:
+        serializedVersion: 2
+        x: 470
+        y: 142
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f48cdbd4f7fba474e86f3e82bdb11c4a
+      internalID: 1253163137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_17
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 142
+        width: 22
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63bc5ef03020317408d26e0a7661db63
+      internalID: -2103270622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_18
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 78
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46431a66106e03b4fba12a5901760170
+      internalID: 908860742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_19
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 78
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cde31dafd21c8b4f94324f8397d17d4
+      internalID: 1141717647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_20
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 77
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cb8fbf9b3acc9d43be580da609a1c7e
+      internalID: 47510684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_21
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 77
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e2d266bff06c34db270cb898e4a47a
+      internalID: -891363091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_22
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 77
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27610f9aa7c8c3c46843039762228719
+      internalID: -117219624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_23
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 78
+        width: 30
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88ef281616c77424586d286c6657a469
+      internalID: 1110085462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_24
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 77
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b091869189744474eb93b0197a6ce274
+      internalID: -1260647498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_25
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 77
+        width: 29
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f20e58e819dc0f4bb052c880025fb44
+      internalID: -569165988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_26
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 77
+        width: 30
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1900b2c6cc39f734bb1dcb851c35c550
+      internalID: 2072237935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_27
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 14
+        width: 21
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cb9e267d56c84a48a8927adf4ea78da
+      internalID: -1197396142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_28
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 14
+        width: 25
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00b53772c836b174d88c9c5b58fb21f7
+      internalID: -673458600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_29
+      rect:
+        serializedVersion: 2
+        x: 149
+        y: 15
+        width: 22
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da26ce08393859f49a6cf925e4e5cd48
+      internalID: 1799924913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_30
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 15
+        width: 23
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f25646d7c24ff1469682033e5f922fd
+      internalID: -1441056426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_31
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 14
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14da80c7f0151054686fd2f7e91cf873
+      internalID: -1259829966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_32
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 14
+        width: 28
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4ed7dff2752655469341a9aeb444b56
+      internalID: 1465792510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_33
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 14
+        width: 24
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84a306a9bb8fd924d8cb83c2443a3cba
+      internalID: 1076521718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_34
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 14
+        width: 23
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3496289b1521ce449b2442b18a81d4e
+      internalID: 379307980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ValeriusVulcaniusWalk_35
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 14
+        width: 22
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e18587e74101e5f4d86b52a7668079c3
+      internalID: -1071051683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ValeriusVulcaniusWalk_15: -1498026716
+      ValeriusVulcaniusWalk_33: 1076521718
+      ValeriusVulcaniusWalk_3: 1497679652
+      ValeriusVulcaniusWalk_22: -117219624
+      ValeriusVulcaniusWalk_17: -2103270622
+      ValeriusVulcaniusWalk_9: -140229886
+      ValeriusVulcaniusWalk_29: 1799924913
+      ValeriusVulcaniusWalk_34: 379307980
+      ValeriusVulcaniusWalk_2: -1497251272
+      ValeriusVulcaniusWalk_23: 1110085462
+      ValeriusVulcaniusWalk_18: 908860742
+      ValeriusVulcaniusWalk_24: -1260647498
+      ValeriusVulcaniusWalk_7: 1322757514
+      ValeriusVulcaniusWalk_21: -891363091
+      ValeriusVulcaniusWalk_11: 1918640019
+      ValeriusVulcaniusWalk_12: 1517290929
+      ValeriusVulcaniusWalk_27: -1197396142
+      ValeriusVulcaniusWalk_16: 1253163137
+      ValeriusVulcaniusWalk_6: 2018281630
+      ValeriusVulcaniusWalk_26: 2072237935
+      ValeriusVulcaniusWalk_10: -816081836
+      ValeriusVulcaniusWalk_8: -1668108242
+      ValeriusVulcaniusWalk_14: 461359811
+      ValeriusVulcaniusWalk_20: 47510684
+      ValeriusVulcaniusWalk_19: 1141717647
+      ValeriusVulcaniusWalk_0: 629949473
+      ValeriusVulcaniusWalk_31: -1259829966
+      ValeriusVulcaniusWalk_5: 1103276847
+      ValeriusVulcaniusWalk_30: -1441056426
+      ValeriusVulcaniusWalk_32: 1465792510
+      ValeriusVulcaniusWalk_4: 357153742
+      ValeriusVulcaniusWalk_25: -569165988
+      ValeriusVulcaniusWalk_28: -673458600
+      ValeriusVulcaniusWalk_13: 1258234229
+      ValeriusVulcaniusWalk_1: 626320841
+      ValeriusVulcaniusWalk_35: -1071051683
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
