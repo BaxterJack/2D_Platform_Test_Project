@@ -14,6 +14,8 @@ public class DialogueManager : Singleton<DialogueManager>
     [SerializeField]
     Canvas dialogueCanvas;
 
+    bool hasTabletPuzzle = false;
+
     void Start()
     {
         sentences = new Queue<string>();
@@ -30,6 +32,7 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         nameText.text = dialogue.name;
         sentences.Clear();
+        hasTabletPuzzle = dialogue.HasTabletPuzzle;
         foreach (string sentence in dialogue.sentences) 
         {
             sentences.Enqueue(sentence);
@@ -41,8 +44,8 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         if(sentences.Count == 0)
         {
-            EndDialogue();
             dialogueCanvas.gameObject.SetActive(false);
+            EndDialogue();
             return;
         }
         string sentence = sentences.Dequeue();
@@ -65,7 +68,11 @@ public class DialogueManager : Singleton<DialogueManager>
 
     void EndDialogue()
     {
-     
+        if (hasTabletPuzzle)
+        {
+            TabletManager tabletManager = TabletManager.Instance;
+            tabletManager.InitialiseMessage(tabletManager.currentTablet);
+        }
         Debug.Log("End of Conversation.");
     }
 }
