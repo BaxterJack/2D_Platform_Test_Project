@@ -37,6 +37,8 @@ namespace Cainos.PixelArtPlatformer_VillageProps
         /////////
         ArtefactCanvasManager artefactCanvasManager;
         public Artefact artefact;
+        public GameObject chestText;
+        public float textYOffset;
         private void Start()
         {
             artefactCanvasManager = ArtefactCanvasManager.Instance;
@@ -60,5 +62,21 @@ namespace Cainos.PixelArtPlatformer_VillageProps
             }
         }
 
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            SetTextPosition();
+            chestText.gameObject.SetActive(true);
+        }
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            chestText.gameObject.SetActive(false);
+        }
+
+        void SetTextPosition()
+        {
+            Vector2 chestPosition = this.transform.position;
+            chestPosition.y += textYOffset;
+            chestText.transform.position = chestPosition;
+        }
     }
 }
