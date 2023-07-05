@@ -5,7 +5,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-public class Typer /*: MonoBehaviour*/
+public class Typer 
 {
     private char[] punctuationMarks = { '.', ',', ';', '!', '?' };
     private string remainingWord = string.Empty;
@@ -13,13 +13,7 @@ public class Typer /*: MonoBehaviour*/
 
     private List<string> messageWords;
 
-    //public TMP_Text wordOutput;
     string wordOutput = "";
-
-    //public Typer()
-    //{
-    //    wordOutput = "";
-    //}
 
     public void Update()
     {
@@ -35,6 +29,7 @@ public class Typer /*: MonoBehaviour*/
     {
         string[] wordsArray = tablet.message.Split(new char[] { ' ' }.Concat(punctuationMarks).ToArray(), StringSplitOptions.RemoveEmptyEntries);
         messageWords = new List<string>(wordsArray);
+        wordOutput = "";
         SetCurrentWord();
     }
 
@@ -73,9 +68,12 @@ public class Typer /*: MonoBehaviour*/
         if(IsCorrectLetter(typedLetter))
         {
             EnterLetterToOutput(typedLetter);
+            //Change colour of Tablet Text for the letter input
+            TabletManager.Instance.ChangeCompletedLetterColour();
             RemoveLetter();
             if (IsWordComplete())
             {
+
                 RemoveWord();
                 if (IsSenteceComplete())
                 {
@@ -96,9 +94,9 @@ public class Typer /*: MonoBehaviour*/
         }
     }
 
-    private bool IsCorrectLetter(char letter) // add in system to ignore capitals
+    private bool IsCorrectLetter(char letter) 
     {
-        return remainingWord.IndexOf(letter) == 0;
+        return char.ToLower(letter) == char.ToLower(remainingWord[0]);
     }
     private void RemoveLetter()
     {
