@@ -42,7 +42,6 @@ public class Typer
     void SetRemainingWord(string word)
     {
         remainingWord = word;
-        //wordOutput.text = remainingWord;
     }
 
     private void CheckInput()
@@ -68,7 +67,6 @@ public class Typer
         if(IsCorrectLetter(typedLetter))
         {
             EnterLetterToOutput(typedLetter);
-            //Change colour of Tablet Text for the letter input
             TabletManager.Instance.ChangeCompletedLetterColour();
             RemoveLetter();
             if (IsWordComplete())
@@ -78,7 +76,7 @@ public class Typer
                 if (IsSenteceComplete())
                 {
                     EndOutputText();
-                    //Tablet has been translated
+                    TabletManager.Instance.TabletTranslated();
                 }
                 else
                 {

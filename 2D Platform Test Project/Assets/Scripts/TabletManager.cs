@@ -14,50 +14,16 @@ public class TabletManager : Singleton<TabletManager>
     [SerializeField]
     Canvas tabletCanvas;
 
+    public Button closeButton;
     public TMP_Text tabletText;
     public TMP_Text outputText;
 
-    public Color translatedColour;
-    
+    public TMP_Text title;
 
     public int currentTablet;
+    int totalTablets;
 
-    bool IsTabletCanvasActive = false;
-
-    int completedLetterIndex = 0;
-
-
-
-    protected override void Awake()
-    {
-        base.Awake();
-        currentTablet = 0;
-        typer = new Typer();
-        translatedTabletText = new StringBuilder();
-        remainingTabletText = new StringBuilder();
-    }
-
-    private void Update()
-    {
-        if(IsTabletCanvasActive)
-        {
-            typer.Update();
-            outputText.text = typer.WordOutput;
-        }
-
-    }
-
-    public void InitialiseMessage(int currentTabletIndex)
-    {
-        tabletText.text = tablets[currentTabletIndex].message;
-        remainingTabletText.Clear();
-        translatedTabletText.Clear();
-        remainingTabletText.Append(tabletText.text);
-        typer.SplitTabletMessage(tablets[currentTabletIndex]);
-        IsTabletCanvasActive = true;
-        completedLetterIndex = 0;
-        tabletCanvas.gameObject.SetActive(IsTabletCanvasActive);
-    }
+    bool isTabletCanvasActive = false;
 
     StringBuilder translatedTabletText;
     StringBuilder remainingTabletText;
@@ -65,6 +31,44 @@ public class TabletManager : Singleton<TabletManager>
     string colourTag = "<color=#006400>"; // Green Colour
     string endColourTag = "</color>";
     char[] ignoreChars = { '.', ',', ';', '!', '?', ' ' };
+
+    public bool IsTabletCanvasActive
+    {
+        get {  return isTabletCanvasActive; }
+    }
+    protected override void Awake()
+    {
+        base.Awake();
+        currentTablet = 0;
+        typer = new Typer();
+        translatedTabletText = new StringBuilder();
+        remainingTabletText = new StringBuilder();
+        totalTablets = tablets.Length;
+    }
+
+    private void Update()
+    {
+        if(isTabletCanvasActive)
+        {
+            typer.Update();
+            outputText.text = typer.WordOutput;
+        }
+
+    }
+
+    public void InitialiseTablet()
+    {
+        tabletText.text = tablets[currentTablet].message;
+        remainingTabletText.Clear();
+        translatedTabletText.Clear();
+        remainingTabletText.Append(tabletText.text);
+        typer.SplitTabletMessage(tablets[currentTablet]);
+        isTabletCanvasActive = true;
+        tabletCanvas.gameObject.SetActive(isTabletCanvasActive);
+        title.text = "Writing Tablet Mystery: Can you translate the message?";
+    }
+
+
     public void ChangeCompletedLetterColour()
     {
         //remove first character from remainingTabletText
@@ -88,12 +92,18 @@ public class TabletManager : Singleton<TabletManager>
         tabletText.text = colourTag + translatedTabletText.ToString() + endColourTag + remainingTabletText.ToString() ;
     }
 
+    public void TabletTranslated()
+    {
+        closeButton.gameObject.SetActive(true);
+        title.text = "Congratulations! You translated the Tablet.";
+    }
+
+    public void CloseTabletUI()
+    {
+        closeButton.gameObject.SetActive(false);
+        tabletCanvas.gameObject.SetActive(false);
+        isTabletCanvasActive = false;
+    }
+
 }
 
-
-//do
-//{
-//    char removeChar = remainingTabletText[0];
-//    remainingTabletText.Remove(0, 1);
-//    translatedTabletText.Append(removeChar);
-//} while (ignoreChars.Contains(remainingTabletText[0]));

@@ -11,9 +11,9 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField]
     Canvas dialogueCanvas;
 
-    [SerializeField]
-    GameObject player;
-
+   [SerializeField]
+   GameObject dialogueText;
+   public float textYOffset;
 
 
 
@@ -26,23 +26,44 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerDialogue()
     {
         dialogueCanvas.gameObject.SetActive(true);
+        dialogueManager.AssignCurrentNPC(GetComponent<NPC>());
         dialogueManager.StartDialogue(dialogue);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == player)
+        if (collision.tag == "Player")
         {
-            TriggerDialogue();
+            SetTextPosition();
+            dialogueText.gameObject.SetActive(true);   
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            bool isTabletOpen = TabletManager.Instance.IsTabletCanvasActive;
+            if (Input.GetKey(KeyCode.E) && !isTabletOpen)
+            {
+                TriggerDialogue();
+            }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject == player)
+        if (collision.tag == "Player")
         {
+            dialogueText.gameObject.SetActive(false);
             dialogueCanvas.gameObject.SetActive(false);
         }
     }
 
+    void SetTextPosition()
+    {
+        Vector2 npcPosition = this.transform.position;
+        npcPosition.y += textYOffset;
+        dialogueText.transform.position = npcPosition;
+    }
 }

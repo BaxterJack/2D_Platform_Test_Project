@@ -16,16 +16,16 @@ public class DialogueManager : Singleton<DialogueManager>
 
     bool hasTabletPuzzle = false;
 
+    NPC currentNPC;
+
     void Start()
     {
-        sentences = new Queue<string>();
-        
+        sentences = new Queue<string>();  
     }
 
     protected override void Awake()
     {
         base.Awake();
-
     }
 
     public void StartDialogue(Dialogue dialogue)
@@ -70,9 +70,14 @@ public class DialogueManager : Singleton<DialogueManager>
     {
         if (hasTabletPuzzle)
         {
-            TabletManager tabletManager = TabletManager.Instance;
-            tabletManager.InitialiseMessage(tabletManager.currentTablet);
+            TabletManager.Instance.InitialiseTablet();
         }
         Debug.Log("End of Conversation.");
+        currentNPC.SetHasConversationCompleted(true) ;
+    }
+
+    public void AssignCurrentNPC(NPC npc)
+    {
+        currentNPC = npc;
     }
 }

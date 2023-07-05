@@ -9,6 +9,11 @@ public abstract class BaseState
     {
         aiObject = AiObject;
     }
+    protected NPC npc;
+    protected BaseState(NPC NPC)
+    {
+        npc = NPC;
+    }
 
     public abstract void EnterState(/*BarbStateManager barbarian*/);
 

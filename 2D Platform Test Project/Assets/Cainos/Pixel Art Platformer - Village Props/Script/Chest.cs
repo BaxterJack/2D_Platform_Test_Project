@@ -46,17 +46,15 @@ namespace Cainos.PixelArtPlatformer_VillageProps
         void OpenChest()
         {
            IsOpened = true;
-            artefactCanvasManager.OpenCanvas(artefact);
+           artefactCanvasManager.OpenCanvas(artefact);
         }
 
         private void OnTriggerStay2D(Collider2D collision)
         {
             if (collision.tag == "Player")
             {
-
                 if (Input.GetKey(KeyCode.E))
                 {
-                    Debug.Log("Open Chest?");
                     OpenChest();
                 }
             }
