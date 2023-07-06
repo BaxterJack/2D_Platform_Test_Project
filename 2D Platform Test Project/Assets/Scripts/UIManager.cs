@@ -103,7 +103,11 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        HideUI();
+        if(GameSceneManager.Instance.CurrentScene == GameSceneManager.SceneState.Fort)
+        {
+            HideUI();
+        }
+        
         if (Input.GetKeyDown("down"))
         {
             DecreaseLives();

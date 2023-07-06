@@ -9,12 +9,9 @@ public class NPC : MonoBehaviour
     bool hasConversationCompleted = false;
 
     [SerializeField]
-    GameObject waypoint;
-    //public bool HasConversationCompleted
-    //{
-    //    get { return hasConversationCompleted; }
-    //    set { hasConversationCompleted = value; }
-    //}
+    public GameObject waypoint;
+
+    public float speed = 1.0f;
 
     public void SetHasConversationCompleted(bool hasConversationCompleted)
     {
@@ -28,6 +25,17 @@ public class NPC : MonoBehaviour
     public void AssignDialogue(Dialogue dialogue)
     {
         GetComponent<DialogueTrigger>().dialogue = dialogue;
+    }
+
+    public void MoveNPC()
+    {
+        Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
+        Vector2 velocity = rigidbody.velocity;
+        Vector2 npcPosition = rigidbody.transform.transform.position;
+        Vector2 direction = npcPosition - (Vector2)waypoint.transform.position;
+
+        velocity.x = direction.normalized.x * -speed;
+        rigidbody.velocity = velocity;  
     }
    
 }

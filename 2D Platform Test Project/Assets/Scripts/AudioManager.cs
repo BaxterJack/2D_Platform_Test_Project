@@ -16,7 +16,7 @@ public class AudioManager : Singleton<AudioManager>
 
     private void Start()
     {
-        InitialiseAudio();
+
 
     }
 
@@ -57,19 +57,19 @@ public class AudioManager : Singleton<AudioManager>
     public void PlayTheme(String name)
     {
         Theme = Array.Find(themes, s => s.name == name);
-        //if(Theme.audioSource == null)
-        //{
-        //    InitialiseAudio();
-        //}
         Theme.audioSource.Play();
     }
 
     public void StopTheme()
     {
-        if(Theme.audioSource == null) 
+        if (Theme.audioSource == null)
         {
             return;
         }
         Theme.audioSource.Stop();
+
     }
+
+
+
 }

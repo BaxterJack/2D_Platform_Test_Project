@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DemoLevel.unity
     guid: e71d27f1535a91c43a5535244023f3ca
+  - enabled: 1
+    path: Assets/Scenes/Fort.unity
+    guid: a67a76ed5a09e8d439eaad17aa1be895
   m_configObjects: {}

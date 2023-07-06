@@ -17,13 +17,6 @@ public class BarbarianAnimation : MonoBehaviour
 
     Vector2 barbPosition;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         barbPosition = transform.position;

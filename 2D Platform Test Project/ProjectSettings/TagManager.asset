@@ -15,9 +15,9 @@ TagManager:
   - Enemy
   - Player
   - EnemyArrow
-  - 
-  - 
-  - 
+  - NPC
+  - props
+  - background
   - 
   - 
   - 
@@ -48,6 +48,18 @@ TagManager:
   - name: Ground
     uniqueID: 221491855
     locked: 0
+  - name: Background
+    uniqueID: 853891709
+    locked: 0
+  - name: Props
+    uniqueID: 1912662479
+    locked: 0
   - name: Charachters
     uniqueID: 365012573
+    locked: 0
+  - name: NPC
+    uniqueID: 437138329
+    locked: 0
+  - name: player
+    uniqueID: 1980170431
     locked: 0

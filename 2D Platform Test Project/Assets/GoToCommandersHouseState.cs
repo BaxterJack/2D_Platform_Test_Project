@@ -22,6 +22,6 @@ public class GoToCommandersHouseState : BaseState
 
     public override void FixedUpdateState()
     {
-
+        npc.MoveNPC();
     }
 }
