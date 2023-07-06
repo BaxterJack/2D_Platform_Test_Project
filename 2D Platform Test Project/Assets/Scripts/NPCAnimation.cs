@@ -12,11 +12,21 @@ public class NPCAnimation : MonoBehaviour
 
     Vector2 npcPosition;
 
+    GameSceneManager gameSceneManager;
+
+    private void Start()
+    {
+        gameSceneManager = GameSceneManager.Instance;
+    }
 
     private void Update()
     {
-        WalkAnimation();
-        FlipSprite();
+        if (gameSceneManager.CurrentScene == GameSceneManager.SceneState.Fort)
+        {
+            WalkAnimation();
+            FlipSprite();
+        }
+           
     }
     void WalkAnimation()
     {

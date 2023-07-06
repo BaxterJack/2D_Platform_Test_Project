@@ -28,18 +28,18 @@ public class PlayerAnimation : MonoBehaviour
     int stabDamage = 20;
     int slashDamage = 35;
 
-    GameManager gameManager;
+    PlayerManager playerManager;
     GameSceneManager gameSceneManager;
     private void Start()
     {
-        gameManager = GameManager.Instance;
+        playerManager = PlayerManager.Instance;
         gameSceneManager = GameSceneManager.Instance;
     }
 
     void Update()
     {
 
-        if (gameManager.CurrentState == GameManager.PlayerState.Alive)
+        if (playerManager.CurrentState == PlayerManager.PlayerState.Alive)
         {
             SetMoveAnimation();
             OrientPlayer();
@@ -63,7 +63,7 @@ public class PlayerAnimation : MonoBehaviour
                 }
             }
         }
-        bool isDead = gameManager.CurrentState == GameManager.PlayerState.Dead;
+        bool isDead = playerManager.CurrentState == PlayerManager.PlayerState.Dead;
         DieAnimation(isDead);
 
 

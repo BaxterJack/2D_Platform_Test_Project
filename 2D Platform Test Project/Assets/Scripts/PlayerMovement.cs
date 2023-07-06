@@ -13,15 +13,15 @@ namespace Player
         float speed = 3.0f;
         [SerializeField]
         float jumpSpeed = 15.0f;
-        GameManager gameManager;
+        PlayerManager playerManager;
         private void Start()
         {
-            gameManager = GameManager.Instance;
+            playerManager = PlayerManager.Instance;
         }
 
         void FixedUpdate()
         {
-            if (gameManager.CurrentState == GameManager.PlayerState.Alive)
+            if (playerManager.CurrentState == PlayerManager.PlayerState.Alive)
             {
                 Rigidbody2D rigidbody2D = GetComponent<Rigidbody2D>();
                 Vector3 velocity = rigidbody2D.velocity;
