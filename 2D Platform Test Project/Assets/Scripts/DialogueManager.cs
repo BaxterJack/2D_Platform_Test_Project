@@ -8,10 +8,9 @@ public class DialogueManager : Singleton<DialogueManager>
 {
     public Queue<string> sentences;
 
-    public TMP_Text nameText;
-    public TMP_Text dialogueText;
+    TMP_Text npcName;
+    TMP_Text dialogueText;
 
-    [SerializeField]
     Canvas dialogueCanvas;
 
     bool hasTabletPuzzle = false;
@@ -26,11 +25,26 @@ public class DialogueManager : Singleton<DialogueManager>
     protected override void Awake()
     {
         base.Awake();
+        dialogueCanvas = GetComponent<Canvas>();
+        DisableCanvas();
+        foreach (TMP_Text textComponent in GetComponentsInChildren<TMP_Text>())
+        {
+            switch (textComponent.name)
+            {
+                case "NPC Name":
+                    npcName = textComponent;
+                    break;
+                case "Dialogue":
+                    dialogueText = textComponent;
+                    break;
+
+            }
+        }
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
-        nameText.text = dialogue.name;
+        npcName.text = dialogue.name;
         sentences.Clear();
         hasTabletPuzzle = dialogue.HasTabletPuzzle;
         foreach (string sentence in dialogue.sentences) 
@@ -40,11 +54,22 @@ public class DialogueManager : Singleton<DialogueManager>
         DisplayNextSentence();
     }
 
+
+    public void EnableCanvas()
+    {
+        dialogueCanvas.enabled = true;
+    }
+
+    public void DisableCanvas()
+    {
+        dialogueCanvas.enabled = false;
+    }
+
     public void DisplayNextSentence()
     {
         if(sentences.Count == 0)
         {
-            dialogueCanvas.gameObject.SetActive(false);
+            DisableCanvas();
             EndDialogue();
             return;
         }

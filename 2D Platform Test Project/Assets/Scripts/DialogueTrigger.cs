@@ -8,14 +8,10 @@ public class DialogueTrigger : MonoBehaviour
 {
     public Dialogue dialogue;
     DialogueManager dialogueManager;
-    [SerializeField]
-    Canvas dialogueCanvas;
 
    [SerializeField]
    GameObject dialogueText;
    public float textYOffset;
-
-
 
     private void Start()
     {
@@ -25,7 +21,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        dialogueCanvas.gameObject.SetActive(true);
+        dialogueManager.EnableCanvas();
         dialogueManager.AssignCurrentNPC(GetComponent<NPC>());
         dialogueManager.StartDialogue(dialogue);
     }
@@ -56,7 +52,7 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.tag == "Player")
         {
             dialogueText.gameObject.SetActive(false);
-            dialogueCanvas.gameObject.SetActive(false);
+            dialogueManager.DisableCanvas();
         }
     }
 

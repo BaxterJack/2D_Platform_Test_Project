@@ -3,73 +3,94 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
     [SerializeField]
     int maxLives = 3;
     int currentLives;
     int score = 0;
 
-    [SerializeField]
-    TMP_Text scoreText;
-    
-    [SerializeField]
-    TMP_Text lootText;
     PlayerManager playerManager;
-
-    [SerializeField]
-    Image heart;
-
-    [SerializeField]
-    RectTransform heartTransform;
-
-    [SerializeField]
-    Canvas uiCanvas;
-
-    [SerializeField]
-    GameObject gameOverUI;
 
     Image[] heartImages;
 
     int offset = 25;
 
-    private CanvasGroup canvasGroup;
+    [SerializeField]
+    Image heart;
 
-    //void Start()
-    //{
-    //    lootText.text += " 100";
-    //    currentLives = maxLives;
-    //    heartImages = new Image[maxLives];
-    //    gameManager = GameManager.Instance;
-    //    for (int i = 0; i < maxLives; i++)
-    //    {
-    //        Vector3 pos = heartTransform.localPosition;
-    //        pos.x += i * offset;
-    //        InstantiateHeart(pos, i);
-    //    }
-    //}
-    //private void InstantiateHeart(Vector3 position, int index)
-    //{
-    //    Image newHeart = Instantiate(heart, position, Quaternion.identity); ;
-    //    newHeart.transform.SetParent(uiCanvas.transform, false);
-    //    heartImages[index] = newHeart;
-    //}
 
-    void Awake()
+
+
+    //[SerializeField]
+    Canvas uiCanvas;
+
+//    [SerializeField]
+    TMP_Text scoreText;
+
+//    [SerializeField]
+    TMP_Text lootText;
+
+//    [SerializeField]
+    GameObject gameOverUI;
+
+
+
+//    [SerializeField]
+    RectTransform heartTransform;
+
+    protected override void Awake()
     {
-        canvasGroup = GetComponent<CanvasGroup>();
+        base.Awake();
+        uiCanvas = GetComponent<Canvas>();
+        //HideUI();
+        FindTextComponents();
+        FindRectTransforms();
+        DisactivateGameOverUI();
+
+    }
+
+
+    void FindTextComponents()
+    {
+        foreach (TMP_Text textComponent in GetComponentsInChildren<TMP_Text>())
+        {
+            switch (textComponent.name)
+            {
+                case "Text: Loot":
+                    lootText = textComponent;
+                    break;
+                case "Text: Score":
+                    scoreText = textComponent;
+                    break;
+            }
+        }
+    }
+
+    void FindRectTransforms()
+    {
+        foreach (RectTransform rectTransform in GetComponentsInChildren<RectTransform>())
+        {
+
+            if (rectTransform.name == "GameOverUI")
+            {
+                gameOverUI = rectTransform.gameObject;
+            }
+            if(rectTransform.name == "HeartLocation")
+            {
+                heartTransform = rectTransform;
+            }
+        }
     }
 
     public void HideUI()
     {
-        canvasGroup.alpha = 0f;
-        canvasGroup.interactable = false;
+        uiCanvas.enabled = false;
     }
 
     public void ShowUI()
     {
-        canvasGroup.alpha = 1f;
-        canvasGroup.interactable = true;
+        uiCanvas.enabled = true;
     }
 
     void Start()
@@ -99,13 +120,11 @@ public class UIManager : MonoBehaviour
         heartImages[index] = newHeart;
     }
 
-
-    // Update is called once per frame
     void Update()
     {
         if(GameSceneManager.Instance.CurrentScene == GameSceneManager.SceneState.Fort)
         {
-            HideUI();
+            //HideUI();
         }
         
         if (Input.GetKeyDown("down"))
@@ -128,9 +147,20 @@ public class UIManager : MonoBehaviour
         if(currentLives == 0)
         {
            playerManager.GameOver();
-           gameOverUI.gameObject.SetActive(true);
+           ActivateGameOverUI();
         }
     }
+
+    void ActivateGameOverUI()
+    {
+        gameOverUI.SetActive(true);
+    }
+
+    void DisactivateGameOverUI()
+    {
+        gameOverUI.SetActive(false);
+    }
+
 
     public void IncreaseLives()
     {
@@ -143,7 +173,25 @@ public class UIManager : MonoBehaviour
     }
 
 
-    
 
+    //void Start()
+    //{
+    //    lootText.text += " 100";
+    //    currentLives = maxLives;
+    //    heartImages = new Image[maxLives];
+    //    gameManager = GameManager.Instance;
+    //    for (int i = 0; i < maxLives; i++)
+    //    {
+    //        Vector3 pos = heartTransform.localPosition;
+    //        pos.x += i * offset;
+    //        InstantiateHeart(pos, i);
+    //    }
+    //}
+    //private void InstantiateHeart(Vector3 position, int index)
+    //{
+    //    Image newHeart = Instantiate(heart, position, Quaternion.identity); ;
+    //    newHeart.transform.SetParent(uiCanvas.transform, false);
+    //    heartImages[index] = newHeart;
+    //}
 
 }

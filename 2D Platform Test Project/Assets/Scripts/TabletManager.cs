@@ -64,7 +64,6 @@ public class TabletManager : Singleton<TabletManager>
         closeButton.gameObject.SetActive(false);
         foreach (TMP_Text textComponent in GetComponentsInChildren<TMP_Text>())
         {
-            Debug.Log(textComponent.name);
             switch (textComponent.name)
             {
                 case "Tablet Text":
