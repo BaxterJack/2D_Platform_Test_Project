@@ -26,6 +26,7 @@ public class BarbBowmen : AiObject
         stateMachine.AddTransition(new StateTransition(patrolState, shootState, this.aiSight.CanSeePlayer));
         stateMachine.AddTransition(new StateTransition(shootState, deathState, this.healthBar.HasNoHealth));
         stateMachine.AddTransition(new StateTransition(shootState, patrolState, this.aiSight.CannotSeePlayer));
+        FindPlayer();
     }
 
     // Update is called once per frame

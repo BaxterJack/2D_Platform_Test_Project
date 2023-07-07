@@ -15,8 +15,8 @@ public class AiObject : MonoBehaviour
     [SerializeField]
     public AiSight aiSight;
 
-    [SerializeField]
-    public GameObject player;
+
+    protected GameObject player;
 
     [SerializeField]
     public HealthBar healthBar;
@@ -42,6 +42,10 @@ public class AiObject : MonoBehaviour
 
     public bool hasAttacked = false;
 
+    protected void FindPlayer()
+    {
+        player = PlayerManager.Instance.gameObject;
+    }
     public void MoveAI()
     {
         Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();

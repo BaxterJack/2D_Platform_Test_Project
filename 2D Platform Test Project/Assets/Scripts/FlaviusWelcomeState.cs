@@ -17,7 +17,7 @@ public class FlaviusWelcomeState : BaseState
         dialogue.sentences.Add(sentence2);
         dialogue.sentences.Add(sentence3);
         dialogue.sentences.Add(sentence4);
-        dialogue.HasTabletPuzzle = true;
+        dialogue.HasTabletPuzzle = false;
         dialogue.name = "Flavius Cerialis";
         npc.AssignDialogue(dialogue);
     }

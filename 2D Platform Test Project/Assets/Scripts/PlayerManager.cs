@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerManager : Singleton<PlayerManager>
 {
-    GameObject player;
+    public GameObject player;
 
     HealthBar playerHealth;
 
@@ -42,7 +42,7 @@ public class PlayerManager : Singleton<PlayerManager>
                 player.GetComponent<Collider2D>().enabled = true;
                 player.layer = playerLayer;
                 playerHealth.SetMaxHealth();
-                playerHealth.gameObject.SetActive(true);
+                playerHealth.EnableHealthCanvas();
 
                 break;
 
@@ -62,7 +62,7 @@ public class PlayerManager : Singleton<PlayerManager>
         if (currentState == PlayerState.Dead)
         {
             respawnTimer += Time.deltaTime;
-            Debug.Log(respawnTimer);
+            //Debug.Log(respawnTimer);
         }
         else if (playerHealth.HasNoHealth())
         {
