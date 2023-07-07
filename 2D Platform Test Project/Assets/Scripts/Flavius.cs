@@ -32,7 +32,7 @@ public class Flavius : NPC
 
     private void Update()
     {
-        Debug.Log(stateMachine.currentState);
+        //Debug.Log(stateMachine.currentState);
         if(gameSceneManager.CurrentScene == GameSceneManager.SceneState.Fort)
         {
             stateMachine.Update();

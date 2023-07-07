@@ -11,14 +11,24 @@ public class TabletManager : Singleton<TabletManager>
     Typer typer;
     public Tablet[] tablets;
 
-    [SerializeField]
-    Canvas tabletCanvas;
+    //[SerializeField]
+    //Canvas tabletCanvas;
 
-    public Button closeButton;
-    public TMP_Text tabletText;
-    public TMP_Text outputText;
+    //public Button closeButton;
+    //public TMP_Text tabletText;
+    //public TMP_Text outputText;
 
-    public TMP_Text title;
+    //public TMP_Text title;
+
+
+
+
+    Button closeButton;
+    TMP_Text tabletText;
+    TMP_Text translatedText;
+    TMP_Text title;
+    Canvas canvas;
+
 
     public int currentTablet;
     int totalTablets;
@@ -44,6 +54,31 @@ public class TabletManager : Singleton<TabletManager>
         translatedTabletText = new StringBuilder();
         remainingTabletText = new StringBuilder();
         totalTablets = tablets.Length;
+
+
+        //test
+        closeButton = GetComponentInChildren<Button>();
+        tabletText = GetComponentInChildren<TMP_Text>();
+        canvas = GetComponent<Canvas>();
+        canvas.enabled = isTabletCanvasActive;
+        closeButton.gameObject.SetActive(false);
+        foreach (TMP_Text textComponent in GetComponentsInChildren<TMP_Text>())
+        {
+            Debug.Log(textComponent.name);
+            switch (textComponent.name)
+            {
+                case "Tablet Text":
+                    tabletText = textComponent;
+                    break;
+                case "Translated Text":
+                    translatedText = textComponent;
+                    break;
+                case "Title":
+                    title = textComponent;
+                    break;
+            }
+        }
+
     }
 
     private void Update()
@@ -51,7 +86,7 @@ public class TabletManager : Singleton<TabletManager>
         if(isTabletCanvasActive)
         {
             typer.Update();
-            outputText.text = typer.WordOutput;
+            translatedText.text = typer.WordOutput;
         }
 
     }
@@ -64,7 +99,11 @@ public class TabletManager : Singleton<TabletManager>
         remainingTabletText.Append(tabletText.text);
         typer.SplitTabletMessage(tablets[currentTablet]);
         isTabletCanvasActive = true;
-        tabletCanvas.gameObject.SetActive(isTabletCanvasActive);
+
+        //tabletCanvas.gameObject.SetActive(isTabletCanvasActive); test
+        //gameObject.SetActive(isTabletCanvasActive); //test
+        canvas.enabled = isTabletCanvasActive; // test 2
+
         title.text = "Writing Tablet Mystery: Can you translate the message?";
     }
 
@@ -101,8 +140,12 @@ public class TabletManager : Singleton<TabletManager>
     public void CloseTabletUI()
     {
         closeButton.gameObject.SetActive(false);
-        tabletCanvas.gameObject.SetActive(false);
         isTabletCanvasActive = false;
+        //closeButton.enabled = false;
+        //tabletCanvas.gameObject.SetActive(false); test
+        //gameObject.SetActive(isTabletCanvasActive); //test
+        canvas.enabled = isTabletCanvasActive; // test 2       
+
     }
 
 }
