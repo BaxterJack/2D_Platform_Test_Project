@@ -12,18 +12,31 @@ public class HealthBar : MonoBehaviour
     public int maxHealth = 40;
     private int currentHealth;
 
+    Canvas healthCanvas;
+
 
     private void Start()
     {
         currentHealth = maxHealth;
+        healthCanvas = GetComponentInParent<Canvas>();
     }
 
     void Update()
     {
         if (slider.value <= 0.0f)
         {
-            this.gameObject.SetActive(false);
+            DisableHealthCanvas();
         }
+    }
+
+    public void DisableHealthCanvas()
+    {
+        healthCanvas.enabled = false;
+    }
+
+    public void EnableHealthCanvas()
+    {
+        healthCanvas.enabled = true;
     }
 
     public void SetMaxHealth()
@@ -37,15 +50,6 @@ public class HealthBar : MonoBehaviour
     {
         slider.value = health;
     }
-
-    //public void SetCurrentHealth(int health)
-    //{
-    //    currentHealth = health;
-    //    slider.value = health;
-    //}
-
-
-
 
     public void TakeDamage(int damage)
     {

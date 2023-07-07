@@ -4,13 +4,10 @@ using UnityEngine;
 
 public class PlayerManager : Singleton<PlayerManager>
 {
-    //   [SerializeField]
     GameObject player;
 
-    //   [SerializeField]
     HealthBar playerHealth;
 
-    //   [SerializeField]
     UIManager uiManager;
 
     float respawnTimer = 0.0f;
