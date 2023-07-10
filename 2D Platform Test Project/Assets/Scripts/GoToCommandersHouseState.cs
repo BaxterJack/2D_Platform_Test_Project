@@ -11,8 +11,7 @@ public class GoToCommandersHouseState : BaseState
 
     public override void EnterState()
     {
-        npc.SetHasConversationCompleted(false);
-        Debug.Log("Change to go to commanders house");
+        //npc.SetHasConversationCompleted(false);
     }
 
     public override void UpdateState()

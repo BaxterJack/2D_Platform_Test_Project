@@ -123,5 +123,8 @@ public class TutorialGuide : MonoBehaviour
     public void ExitTrainingGround()
     {
         GameSceneManager.Instance.LoadScene(GameSceneManager.SceneState.Fort);
+        GameManager.Instance.TutorialComplete = true;
+        GameManager.Instance.ActivateNPCS(true);
+        PlayerManager.Instance.SetFortPosition();
     }
 }

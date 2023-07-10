@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using TMPro;
 using UnityEngine;
 
 
@@ -9,13 +10,31 @@ public class DialogueTrigger : MonoBehaviour
     public Dialogue dialogue;
     DialogueManager dialogueManager;
 
-   [SerializeField]
-   GameObject dialogueText;
    public float textYOffset;
+
+    public TMP_Text textPrefab;
+    TMP_Text startDialogue;
+    string startDialogueText = "Press E to Talk";
+
+    void CreateStartDialogueUI()
+    {
+        startDialogue = Instantiate(textPrefab);
+        startDialogue.text = startDialogueText;
+        startDialogue.gameObject.transform.position = GetDialogueTextPosition();
+    }
+
+    void DestroyStartDialogueUI()
+    {
+        if(startDialogue != null)
+        {
+            Destroy(startDialogue.gameObject);
+        }
+    }
 
     private void Start()
     {
         dialogueManager = DialogueManager.Instance;
+        textYOffset = 0.5f;
     }
 
 
@@ -30,8 +49,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            SetTextPosition();
-            dialogueText.gameObject.SetActive(true);   
+            CreateStartDialogueUI();
         }
     }
 
@@ -40,7 +58,7 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.tag == "Player")
         {
             bool isTabletOpen = TabletManager.Instance.IsTabletCanvasActive;
-            if (Input.GetKey(KeyCode.E) && !isTabletOpen)
+            if (Input.GetKey(KeyCode.E) && !isTabletOpen || dialogue.ForcedDialogue)
             {
                 TriggerDialogue();
             }
@@ -51,15 +69,15 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            dialogueText.gameObject.SetActive(false);
+            DestroyStartDialogueUI();
             dialogueManager.DisableCanvas();
         }
     }
 
-    void SetTextPosition()
+    Vector3 GetDialogueTextPosition()
     {
-        Vector2 npcPosition = this.transform.position;
+        Vector3 npcPosition = this.transform.position;
         npcPosition.y += textYOffset;
-        dialogueText.transform.position = npcPosition;
+        return npcPosition;
     }
 }

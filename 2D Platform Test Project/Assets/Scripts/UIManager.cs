@@ -19,24 +19,10 @@ public class UIManager : Singleton<UIManager>
     [SerializeField]
     Image heart;
 
-
-
-
-    //[SerializeField]
     Canvas uiCanvas;
-
-//    [SerializeField]
     TMP_Text scoreText;
-
-//    [SerializeField]
     TMP_Text lootText;
-
-//    [SerializeField]
     GameObject gameOverUI;
-
-
-
-//    [SerializeField]
     RectTransform heartTransform;
 
     protected override void Awake()
@@ -122,10 +108,6 @@ public class UIManager : Singleton<UIManager>
 
     void Update()
     {
-        if(GameSceneManager.Instance.CurrentScene == GameSceneManager.SceneState.Fort)
-        {
-            //HideUI();
-        }
         
         if (Input.GetKeyDown("down"))
         {

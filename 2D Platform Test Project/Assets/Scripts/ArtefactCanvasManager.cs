@@ -46,16 +46,19 @@ public class ArtefactCanvasManager : Singleton<ArtefactCanvasManager>
         artefactDescription.text = artefact.description;
         artefactImage.sprite = artefact.image;
         EnableCanvas();
+        
        
     }
 
     void EnableCanvas()
     {
         artefactCanvas.enabled = true;
+        UIManager.Instance.HideUI();
     }
 
     public void CloseCanvas()
     {
         artefactCanvas.enabled = false;
+        UIManager.Instance.ShowUI();
     }
 }

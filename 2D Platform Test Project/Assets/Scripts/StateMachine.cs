@@ -55,6 +55,8 @@ public class StateMachine
     public void SetInitialState(BaseState initialState)
     {
         currentState = initialState;
+        EnterState();
+
     }
     public void AddTransition( StateTransition transition)
     {

@@ -5,20 +5,29 @@ using UnityEngine;
 public class GaiusArmatus : NPC
 {
     GameSceneManager gameSceneManager;
-    ArmatusTutorialState armatusTutorialState;
     ArmatusWelcomeState armatusWelcomeState;
+    ArmatusTutorialState armatusTutorialState;
+    ArmatusSendToCommanderState armatusSendToCommanderState;
+    ArmatusTeachState armatusTeachState;
+    GameManager gameManager;
+
 
     protected static GaiusArmatus instance; 
 
     private void Awake()
     {
+        gameSceneManager = GameSceneManager.Instance;
+        gameManager = GameManager.Instance;
         stateMachine = new StateMachine();
         armatusWelcomeState = new ArmatusWelcomeState(this);
         armatusTutorialState = new ArmatusTutorialState(this);
-        stateMachine.SetInitialState(armatusWelcomeState);
+        armatusSendToCommanderState = new ArmatusSendToCommanderState(this);
+        armatusTeachState = new ArmatusTeachState(this);
         stateMachine.AddTransition(new StateTransition(armatusWelcomeState, armatusTutorialState, this.GetHasConversationCompleted));
-        //DontDestroyOnLoad(this);
-        gameSceneManager = GameSceneManager.Instance;
+        stateMachine.AddTransition(new StateTransition(armatusTutorialState, armatusSendToCommanderState, gameManager.IsTutorialComplete));
+        stateMachine.AddTransition(new StateTransition(armatusSendToCommanderState, armatusTeachState, this.GetHasConversationCompleted));
+
+        homeWaypoint = gameObject.transform.position;
 
 
         if (instance != null)
@@ -31,8 +40,16 @@ public class GaiusArmatus : NPC
         DontDestroyOnLoad(gameObject);
     }
 
+    protected override void Start()
+    {
+        base.Start();
+        stateMachine.SetInitialState(armatusWelcomeState);
+        Debug.Log("Hello Gaius Armatus");
+    }
+
     private void Update()
     {
+
         if (gameSceneManager.CurrentScene == GameSceneManager.SceneState.Fort)
         {
             stateMachine.Update();

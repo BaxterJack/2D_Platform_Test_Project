@@ -58,11 +58,13 @@ public class DialogueManager : Singleton<DialogueManager>
     public void EnableCanvas()
     {
         dialogueCanvas.enabled = true;
+        UIManager.Instance.HideUI();
     }
 
     public void DisableCanvas()
     {
         dialogueCanvas.enabled = false;
+        UIManager.Instance.ShowUI();
     }
 
     public void DisplayNextSentence()
@@ -97,7 +99,6 @@ public class DialogueManager : Singleton<DialogueManager>
         {
             TabletManager.Instance.InitialiseTablet();
         }
-        Debug.Log("End of Conversation.");
         currentNPC.SetHasConversationCompleted(true) ;
     }
 

@@ -16,6 +16,8 @@ public class PlayerManager : Singleton<PlayerManager>
 
     int playerLayer;
 
+    Vector3 lastFortPosition = new Vector3();
+
     public enum PlayerState
     {
         Alive,
@@ -114,5 +116,15 @@ public class PlayerManager : Singleton<PlayerManager>
         Vector3 respawnPos = deathPos;
         respawnPos.y += 2;
         player.transform.position = respawnPos;
+    }
+
+    public void SaveFortPosition()
+    {
+        lastFortPosition = player.transform.position;
+    }
+
+    public void SetFortPosition()
+    {
+        player.transform.position = lastFortPosition;
     }
 }

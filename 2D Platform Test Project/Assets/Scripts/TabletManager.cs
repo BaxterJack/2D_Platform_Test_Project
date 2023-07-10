@@ -102,17 +102,15 @@ public class TabletManager : Singleton<TabletManager>
         //tabletCanvas.gameObject.SetActive(isTabletCanvasActive); test
         //gameObject.SetActive(isTabletCanvasActive); //test
         canvas.enabled = isTabletCanvasActive; // test 2
-
+        UIManager.Instance.HideUI();
         title.text = "Writing Tablet Mystery: Can you translate the message?";
+
+
     }
 
 
     public void ChangeCompletedLetterColour()
     {
-        //remove first character from remainingTabletText
-        //check if next character in remainingTabletText is not a space or punctuation
-        //if next charachter is space/punctution, keep looking until next lett char
-        //add this/these characters to translatedTabletText
         if (remainingTabletText.Length > 0)
         {
             char firstChar = remainingTabletText[0];
@@ -125,8 +123,6 @@ public class TabletManager : Singleton<TabletManager>
                 translatedTabletText.Append(removeChar);
             }
         }
-        //add colour to translatedTabletText
-        //concatenate translatedTabletText & remainingTabletText to tabletText.text
         tabletText.text = colourTag + translatedTabletText.ToString() + endColourTag + remainingTabletText.ToString() ;
     }
 
@@ -140,11 +136,8 @@ public class TabletManager : Singleton<TabletManager>
     {
         closeButton.gameObject.SetActive(false);
         isTabletCanvasActive = false;
-        //closeButton.enabled = false;
-        //tabletCanvas.gameObject.SetActive(false); test
-        //gameObject.SetActive(isTabletCanvasActive); //test
         canvas.enabled = isTabletCanvasActive; // test 2       
-
+        UIManager.Instance.ShowUI();
     }
 
 }

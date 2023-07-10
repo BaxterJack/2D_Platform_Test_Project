@@ -62,17 +62,17 @@ public class GameSceneManager : Singleton<GameSceneManager>
         ChangeThemeMusic(sceneName);
     }
 
-    public void ApplySceneSettings(SceneState sceneName)
-    {
-        switch(sceneName)
-        {
-            case SceneState.DemoLevel:
-                GameObject obj = GameObject.Find("PlayerSpawn");
-                PlayerManager playerManager = PlayerManager.Instance;
-                playerManager.player.transform.position = obj.transform.position;
-                break;
-        }
-    }
+    //public void ApplySceneSettings(SceneState sceneName)
+    //{
+    //    switch(sceneName)
+    //    {
+    //        case SceneState.DemoLevel:
+    //            GameObject obj = GameObject.Find("PlayerSpawn");
+    //            PlayerManager playerManager = PlayerManager.Instance;
+    //            playerManager.player.transform.position = obj.transform.position;
+    //            break;
+    //    }
+    //}
 
     void ChangeThemeMusic(SceneState sceneName)
     {

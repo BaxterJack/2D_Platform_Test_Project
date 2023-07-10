@@ -54,7 +54,7 @@ public class NPCAnimation : MonoBehaviour
 
     public bool IsGoingRight()
     {
-        Vector2 target = GetComponent<NPC>().waypoint.transform.position;
+        Vector2 target = GetComponent<NPC>().homeWaypoint;
 
         if (target.x > npcPosition.x) // Going right
         {

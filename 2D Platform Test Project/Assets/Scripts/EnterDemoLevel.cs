@@ -8,9 +8,8 @@ public class EnterDemoLevel : MonoBehaviour
     void Start()
     {
         PlayerManager playerManager = PlayerManager.Instance;
-        Debug.Log(playerManager.player.transform.position);
         playerManager.player.transform.position = transform.position;
-        Debug.Log(playerManager.player.transform.position);
+        GameManager.Instance.ActivateNPCS(false);
     }
 
     // Update is called once per frame

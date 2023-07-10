@@ -14,12 +14,12 @@ public class Flavius : NPC
         
         stateMachine = new StateMachine();
         flaviusWelcomeState = new FlaviusWelcomeState(this);
-        stateMachine.SetInitialState(flaviusWelcomeState);
+        //stateMachine.SetInitialState(flaviusWelcomeState);
         goToCommandersHouseState = new GoToCommandersHouseState(this);
         stateMachine.AddTransition(new StateTransition(flaviusWelcomeState, goToCommandersHouseState, this.GetHasConversationCompleted));
-        //DontDestroyOnLoad(this);
         gameSceneManager = GameSceneManager.Instance;
-
+        GameObject gO = GameObject.Find("CommandersHouseWaypoint");
+        homeWaypoint = gO.transform.position;
         if (instance != null)
         {
             Destroy(gameObject);
@@ -30,14 +30,19 @@ public class Flavius : NPC
         DontDestroyOnLoad(gameObject);
     }
 
+    protected override void Start()
+    {
+        base.Start();
+        stateMachine.SetInitialState(flaviusWelcomeState);
+    }
+
     private void Update()
     {
-        //Debug.Log(stateMachine.currentState);
-        if(gameSceneManager.CurrentScene == GameSceneManager.SceneState.Fort)
+        if (gameSceneManager.CurrentScene == GameSceneManager.SceneState.Fort)
         {
             stateMachine.Update();
         }
-        
+
     }
 
     private void FixedUpdate()

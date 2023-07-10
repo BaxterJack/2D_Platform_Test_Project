@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArmatusWelcomeState : BaseState
+public class ArmatusSendToCommanderState : BaseState
 {
     Dialogue dialogue;
-    public ArmatusWelcomeState(NPC npc) : base(npc)
+    public ArmatusSendToCommanderState(NPC npc) : base(npc)
     {
-        string sentence1 = "Welcome, I am Gaius Armatus, the Master at Arms at Fort Vindolanda.";
-        string sentence2 = "You must be the new recruit. Lets see what you're made of.";
+        string sentence1 = "You were pretty impressive in the ring!";
+        string sentence2 = "You better get back to the commander, he will assign you some work to do now that you are fit for duty";
         dialogue = new Dialogue();
         dialogue.sentences.Add(sentence1);
         dialogue.sentences.Add(sentence2);
         dialogue.HasTabletPuzzle = false;
         dialogue.ConversationComplete = false;
+        dialogue.ForcedDialogue = true;
         dialogue.name = "Gaius Armatus";
-        
 
     }
     public override void EnterState()
@@ -33,4 +33,3 @@ public class ArmatusWelcomeState : BaseState
 
     }
 }
-

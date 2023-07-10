@@ -19,13 +19,14 @@ public class FlaviusWelcomeState : BaseState
         dialogue.sentences.Add(sentence4);
         dialogue.HasTabletPuzzle = false;
         dialogue.name = "Flavius Cerialis";
-        npc.AssignDialogue(dialogue);
+        
+
     }
 
     
     public override void EnterState()
     {
-        
+        npc.AssignDialogue(dialogue);
     }
 
     public override void UpdateState()
