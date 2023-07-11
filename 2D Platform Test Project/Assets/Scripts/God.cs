@@ -6,9 +6,13 @@ using UnityEngine.UI;
 [System.Serializable]
 public class God 
 {
+    [SerializeField]
     protected string name;
+    [SerializeField]
+    [TextArea(3, 10)]
     protected string description;
-    protected Image image;
+    [SerializeField]
+    protected Sprite image;
 
 
     protected God(string Name, string Description)
@@ -26,6 +30,11 @@ public class God
     {
         get { return description; }
         set { description = value; }
+    }
+
+    public Sprite Image
+    {
+        get { return image; }
     }
 
 }
