@@ -44,7 +44,6 @@ public class GaiusArmatus : NPC
     {
         base.Start();
         stateMachine.SetInitialState(armatusWelcomeState);
-        Debug.Log("Hello Gaius Armatus");
     }
 
     private void Update()

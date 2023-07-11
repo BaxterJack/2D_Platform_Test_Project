@@ -11,18 +11,6 @@ public class TabletManager : Singleton<TabletManager>
     Typer typer;
     public Tablet[] tablets;
 
-    //[SerializeField]
-    //Canvas tabletCanvas;
-
-    //public Button closeButton;
-    //public TMP_Text tabletText;
-    //public TMP_Text outputText;
-
-    //public TMP_Text title;
-
-
-
-
     Button closeButton;
     TMP_Text tabletText;
     TMP_Text translatedText;
@@ -55,8 +43,6 @@ public class TabletManager : Singleton<TabletManager>
         remainingTabletText = new StringBuilder();
         totalTablets = tablets.Length;
 
-
-        //test
         closeButton = GetComponentInChildren<Button>();
         tabletText = GetComponentInChildren<TMP_Text>();
         canvas = GetComponent<Canvas>();
@@ -98,14 +84,9 @@ public class TabletManager : Singleton<TabletManager>
         remainingTabletText.Append(tabletText.text);
         typer.SplitTabletMessage(tablets[currentTablet]);
         isTabletCanvasActive = true;
-
-        //tabletCanvas.gameObject.SetActive(isTabletCanvasActive); test
-        //gameObject.SetActive(isTabletCanvasActive); //test
         canvas.enabled = isTabletCanvasActive; // test 2
         UIManager.Instance.HideUI();
         title.text = "Writing Tablet Mystery: Can you translate the message?";
-
-
     }
 
 

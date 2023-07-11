@@ -2,12 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 public class Typer 
 {
     private char[] punctuationMarks = { '.', ',', ';', '!', '?' };
+    char[] ignoreChars = { '.', ',', ';', '!', '?', ' ' };
     private string remainingWord = string.Empty;
     private string currentWord = string.Empty;
 
@@ -15,6 +17,7 @@ public class Typer
 
     string wordOutput = "";
 
+    StringBuilder tabletMessage = new StringBuilder();
     public void Update()
     {
         CheckInput();
@@ -27,6 +30,8 @@ public class Typer
 
     public void SplitTabletMessage(Tablet tablet)
     {
+        tabletMessage.Clear();
+        tabletMessage.Append(tablet.message);
         string[] wordsArray = tablet.message.Split(new char[] { ' ' }.Concat(punctuationMarks).ToArray(), StringSplitOptions.RemoveEmptyEntries);
         messageWords = new List<string>(wordsArray);
         wordOutput = "";
@@ -75,12 +80,12 @@ public class Typer
                 RemoveWord();
                 if (IsSenteceComplete())
                 {
-                    EndOutputText();
+                    //EndOutputText();
                     TabletManager.Instance.TabletTranslated();
                 }
                 else
                 {
-                    AddSpaceToOutput();
+                    //AddSpaceToOutput();
                     SetCurrentWord();
                 }   
             }
@@ -107,17 +112,26 @@ public class Typer
     }
     void EnterLetterToOutput(char typedLetter)
     {
-        wordOutput += typedLetter;
+        char firstChar = tabletMessage[0];
+        tabletMessage.Remove(0, 1);
+        wordOutput += firstChar;
+        while (tabletMessage.Length > 0 && ignoreChars.Contains(tabletMessage[0]))
+        {
+            firstChar = tabletMessage[0];
+            tabletMessage.Remove(0, 1);
+            wordOutput += firstChar;
+        }
+        //wordOutput += typedLetter; // original
     }
-    void AddSpaceToOutput()
-    {
-        wordOutput += " ";
-    }
+    //void AddSpaceToOutput()
+    //{
+    //    wordOutput += " ";
+    //}
 
-    void EndOutputText()
-    {
-        wordOutput += ".";
-    }
+    //void EndOutputText()
+    //{
+    //    wordOutput += ".";
+    //}
     private bool IsWordComplete()
     {
         return remainingWord.Length == 0;
