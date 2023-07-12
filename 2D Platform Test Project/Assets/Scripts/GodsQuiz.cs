@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using TMPro;
+using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
@@ -14,38 +15,212 @@ public class GodsQuiz : MonoBehaviour
     public List<GodAnswer> answers;
     public List<God> incorrectAnswers;
 
-    private Button god1;
-    private Button god2;
-    private Button god3;
     private Button continueButton;
-    private Image background1;
-    private Image background2;
-    private Image background3;
 
     TMP_Text description;
     TMP_Text hint;
     TMP_Text feedback;
-
-    List<Button> godButtons;
 
     int numQuestions;
     int currentQuestion = 0;
     int score = 0;
 
     int correctButton;
+    int wrongGuesses = 0;
+
+    public Choices[] choices = new Choices[3];
+
+    private System.Random random;
     private void Awake()
     {
         numQuestions = answers.Count;
-        InitialiseBackgrounds();
-        InitialiseButtons();    
-        InitialiseText();
-    }
 
-    private void Update()
-    {
+        random = new System.Random();
+        choices = new Choices[3];
+        choices[0] = new Choices();
+        choices[1] = new Choices();
+        choices[2] = new Choices();
+
+        InitialiseBackgrounds();
+        InitialiseButtons();
+        InitialiseText();
         PopulateCanvas();
 
     }
+    private void Update()
+    {
+        
+    }
+
+    void PopulateCanvas()
+    {
+        wrongGuesses = 0;
+        CreateCorrectButton();
+        FindWrongAnswers();
+        ShowContinueButton(false);
+        for (int i =0; i < 3; i++)
+        {
+            choices[i].Background.color = Color.black;
+            choices[i].Button.onClick.RemoveAllListeners();
+            if (i == correctButton)
+            {
+                choices[i].Button.GetComponent<Image>().sprite = answers[currentQuestion].Image;
+                string descrip = answers[currentQuestion].Name;
+                descrip += ": ";
+                descrip += answers[currentQuestion].Description;
+                description.text = descrip;
+                hint.text = "Hint: ";
+                hint.text += answers[currentQuestion].Hint;
+                HideHint();
+                choices[i].Button.onClick.AddListener(CorrectAnswer);
+            }
+            else
+            {
+                int index = choices[i].Index;
+                choices[i].Button.GetComponent<Image>().sprite = incorrectAnswers[index].Image;
+                choices[i].Button.onClick.AddListener(IncorrectAnswer);
+            }
+        }
+    }
+
+    void PopulateFeedback(int index, bool isCorrect)
+    {
+        StringBuilder stringBuilder = new StringBuilder();
+        if (isCorrect)
+        {
+            stringBuilder.Append("Well Done! That is correct");
+            feedback.text = stringBuilder.ToString();
+
+        }
+        else
+        {
+            stringBuilder.Append("That is incorrect. This is ");
+            stringBuilder.Append(incorrectAnswers[index].Name);
+            stringBuilder.Append(": ");
+            stringBuilder.Append(incorrectAnswers[index].Description);
+            feedback.text = stringBuilder.ToString();
+        }
+    }
+
+    void CorrectAnswer()
+    {
+        int index = ClickedButtonIndex();
+        choices[index].Background.color = Color.green;
+        PopulateFeedback(index, true);
+        AssignPoints();
+        ShowContinueButton(true);
+    }
+
+    void ShowContinueButton(bool condition)
+    {
+        continueButton.gameObject.SetActive(condition);
+        
+    }
+    public void NextQuestion()
+    {
+        currentQuestion++;
+        if(currentQuestion < numQuestions)
+        {
+            PopulateCanvas();
+        }
+        else
+        {
+            //EndQuiz();
+        }
+
+    }
+
+
+    void ShowHint()
+    {
+        hint.enabled = true;
+    }
+
+    void HideHint()
+    {
+        hint.enabled = false;
+    }
+    void CreateCorrectButton()
+    {
+        correctButton = random.Next(0, 3);
+    }
+
+    void FindWrongAnswers()
+    {
+        int wrong1 = random.Next(0, 6);
+        int count = 0;
+        for (int i = 0; i < 3; i++)
+        {
+            if (i == correctButton)
+            {
+                choices[i].Index = currentQuestion;
+                choices[i].IsCorrectAnswer = true;
+            }
+            else
+            {
+                choices[i].Index = wrong1;
+                choices[i].IsCorrectAnswer = false;
+                if (count == 0)
+                {
+                    int wrong2 = random.Next(0, 7);
+                    while (wrong1 == wrong2)
+                    {
+                        wrong2 = random.Next(0, 7);
+                    }
+                    wrong1 = wrong2;
+                }
+                count++;
+            }
+        }
+    }
+    void AssignPoints()
+    {
+        if(wrongGuesses == 0)
+        {
+            score += 2;
+        }
+        else if (wrongGuesses == 1)
+        {
+            score += 1;
+        }
+
+    }
+    void IncorrectAnswer()
+    {
+        int index = ClickedButtonIndex();
+        choices[index].Background.color = Color.red;
+        wrongGuesses++;
+        PopulateFeedback(index, false);
+        ShowHint();
+    }
+
+
+    int ClickedButtonIndex()
+    {
+        int index = 0;
+        Button clickedButton = UnityEngine.EventSystems.EventSystem.current.currentSelectedGameObject.GetComponent<Button>();
+        if (clickedButton != null)
+        {
+            if (clickedButton == choices[0].Button)
+            {
+                index = 0;
+            }
+            else if (clickedButton == choices[1].Button)
+            {
+                index = 1;
+            }
+            else if (clickedButton == choices[2].Button)
+            {
+                index = 2;
+            }
+        }
+        else
+        {
+            Debug.Log("Clicked Button is Null");
+        }
+        return index;
+    }
+
     void InitialiseButtons()
     {
         foreach (Button button in GetComponentsInChildren<Button>())
@@ -53,25 +228,19 @@ public class GodsQuiz : MonoBehaviour
             switch (button.name)
             {
                 case "Button1":
-                    god1 = button;
+                    choices[0].Button = button;
                     break;
                 case "Button2":
-                    god2 = button;
+                    choices[1].Button = button;
                     break;
                 case "Button3":
-                    god3 = button;
+                    choices[2].Button = button;
                     break;
                 case "ContinueButton":
                     continueButton = button;
                     break;
             }
         }
-        godButtons = new List<Button>();
-        godButtons.Add(god1);
-        godButtons.Add(god2);
-        godButtons.Add(god3);
-
-
     }
 
     void InitialiseBackgrounds()
@@ -81,13 +250,13 @@ public class GodsQuiz : MonoBehaviour
             switch (image.name)
             {
                 case "Background1":
-                    background1 = image;
+                    choices[0].Background = image;
                     break;
                 case "Background2":
-                    background2 = image;
+                    choices[1].Background = image;
                     break;
                 case "Background3":
-                    background3 = image;
+                    choices[2].Background = image;
                     break;
             }
         }
@@ -111,42 +280,4 @@ public class GodsQuiz : MonoBehaviour
             }
         }
     }
-
-    void CreateCorrectButton()
-    {
-        // RandomNumber function??
-        correctButton = 1;
-        
-
-    }
-
-    void PopulateCanvas()
-    {
-        // RandomNumber function??
-        for (int i =0; i < 3; i++)
-        {
-            if(i == correctButton)
-            {
-                godButtons[i].GetComponent<Image>().sprite = answers[currentQuestion].Image;
-                string descrip = answers[currentQuestion].Name;
-                descrip += ": ";
-                descrip += answers[currentQuestion].Description;
-                description.text = descrip;
-                hint.text = answers[currentQuestion].Hint;
-            }
-            else
-            {
-                godButtons[i].GetComponent<Image>().sprite = incorrectAnswers[i].Image;
-            }
-        }
-
-    }
-
-    // Each question is has a correct asnswer answers[index]
-    // Random button populated with correct answer details
-    // Other two buttons assisned incorrect answers
-    // If incorrect answer, that buttons background turns red and Feedback pops up, explaing details about that god
-    // If correct answer given, that buttons background turns green and Well done message populates feedback
-    // Score is assigned, 2 points for no wrong answers, 1 point for 1 wrong answer, 0 for 2 wrong answers
-    // Go to next question
 }
