@@ -20,6 +20,8 @@ public class GodsQuiz : MonoBehaviour
     TMP_Text description;
     TMP_Text hint;
     TMP_Text feedback;
+    TMP_Text scoreText;
+    Canvas canvas;
 
     int numQuestions;
     int currentQuestion = 0;
@@ -40,24 +42,29 @@ public class GodsQuiz : MonoBehaviour
         choices[0] = new Choices();
         choices[1] = new Choices();
         choices[2] = new Choices();
-
+        canvas = GetComponent<Canvas>();
         InitialiseBackgrounds();
         InitialiseButtons();
         InitialiseText();
         PopulateCanvas();
-
+        ShowCanvas(false);
     }
     private void Update()
     {
         
     }
-
+    void ShowCanvas(bool condition)
+    {
+        canvas.enabled = condition;
+    }
     void PopulateCanvas()
     {
         wrongGuesses = 0;
+        UpdateScore();
         CreateCorrectButton();
         FindWrongAnswers();
         ShowContinueButton(false);
+        ShowFeedback(false);
         for (int i =0; i < 3; i++)
         {
             choices[i].Background.color = Color.black;
@@ -85,6 +92,7 @@ public class GodsQuiz : MonoBehaviour
 
     void PopulateFeedback(int index, bool isCorrect)
     {
+        ShowFeedback(true);
         StringBuilder stringBuilder = new StringBuilder();
         if (isCorrect)
         {
@@ -95,9 +103,10 @@ public class GodsQuiz : MonoBehaviour
         else
         {
             stringBuilder.Append("That is incorrect. This is ");
-            stringBuilder.Append(incorrectAnswers[index].Name);
+            stringBuilder.Append(incorrectAnswers[choices[index].Index].Name);
+            
             stringBuilder.Append(": ");
-            stringBuilder.Append(incorrectAnswers[index].Description);
+            stringBuilder.Append(incorrectAnswers[choices[index].Index].Description);
             feedback.text = stringBuilder.ToString();
         }
     }
@@ -108,13 +117,13 @@ public class GodsQuiz : MonoBehaviour
         choices[index].Background.color = Color.green;
         PopulateFeedback(index, true);
         AssignPoints();
+        UpdateScore();
         ShowContinueButton(true);
     }
 
     void ShowContinueButton(bool condition)
     {
         continueButton.gameObject.SetActive(condition);
-        
     }
     public void NextQuestion()
     {
@@ -128,6 +137,11 @@ public class GodsQuiz : MonoBehaviour
             //EndQuiz();
         }
 
+    }
+
+    void ShowFeedback(bool condition)
+    {
+        feedback.enabled = condition;
     }
 
 
@@ -183,7 +197,13 @@ public class GodsQuiz : MonoBehaviour
         {
             score += 1;
         }
+        
+    }
 
+    void UpdateScore()
+    {
+        scoreText.text = "Score: ";
+        scoreText.text += score.ToString();
     }
     void IncorrectAnswer()
     {
@@ -276,6 +296,9 @@ public class GodsQuiz : MonoBehaviour
                     break;
                 case "Feedback":
                     feedback = textComponent;
+                    break;
+                case "Score":
+                    scoreText = textComponent;
                     break;
             }
         }

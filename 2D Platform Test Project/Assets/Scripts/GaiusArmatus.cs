@@ -16,16 +16,13 @@ public class GaiusArmatus : NPC
 
     private void Awake()
     {
-        gameSceneManager = GameSceneManager.Instance;
-        gameManager = GameManager.Instance;
+        
         stateMachine = new StateMachine();
         armatusWelcomeState = new ArmatusWelcomeState(this);
         armatusTutorialState = new ArmatusTutorialState(this);
         armatusSendToCommanderState = new ArmatusSendToCommanderState(this);
         armatusTeachState = new ArmatusTeachState(this);
-        stateMachine.AddTransition(new StateTransition(armatusWelcomeState, armatusTutorialState, this.GetHasConversationCompleted));
-        stateMachine.AddTransition(new StateTransition(armatusTutorialState, armatusSendToCommanderState, gameManager.IsTutorialComplete));
-        stateMachine.AddTransition(new StateTransition(armatusSendToCommanderState, armatusTeachState, this.GetHasConversationCompleted));
+       
 
         homeWaypoint = gameObject.transform.position;
 
@@ -43,7 +40,12 @@ public class GaiusArmatus : NPC
     protected override void Start()
     {
         base.Start();
+        gameSceneManager = GameSceneManager.Instance;
+        gameManager = GameManager.Instance;
         stateMachine.SetInitialState(armatusWelcomeState);
+        stateMachine.AddTransition(new StateTransition(armatusWelcomeState, armatusTutorialState, this.GetHasConversationCompleted));
+        stateMachine.AddTransition(new StateTransition(armatusTutorialState, armatusSendToCommanderState, gameManager.IsTutorialComplete));
+        stateMachine.AddTransition(new StateTransition(armatusSendToCommanderState, armatusTeachState, this.GetHasConversationCompleted));
     }
 
     private void Update()

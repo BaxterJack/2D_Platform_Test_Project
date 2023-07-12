@@ -14,12 +14,11 @@ public class Flavius : NPC
     {
         
         stateMachine = new StateMachine();
-        gameManager = GameManager.Instance;
+        
         flaviusWelcomeState = new FlaviusWelcomeState(this);
         goToCommandersHouseState = new GoToCommandersHouseState(this);
         flaviusTabletOne = new FlaviusTabletOne(this);  
-        stateMachine.AddTransition(new StateTransition(flaviusWelcomeState, goToCommandersHouseState, this.GetHasConversationCompleted));
-        stateMachine.AddTransition(new StateTransition(goToCommandersHouseState, flaviusTabletOne, gameManager.IsTutorialComplete));
+
         gameSceneManager = GameSceneManager.Instance;
         GameObject gO = GameObject.Find("CommandersHouseWaypoint");
         homeWaypoint = gO.transform.position;
@@ -36,7 +35,11 @@ public class Flavius : NPC
     protected override void Start()
     {
         base.Start();
+        gameManager = GameManager.Instance;
         stateMachine.SetInitialState(flaviusWelcomeState);
+        stateMachine.AddTransition(new StateTransition(flaviusWelcomeState, goToCommandersHouseState, this.GetHasConversationCompleted));
+        stateMachine.AddTransition(new StateTransition(goToCommandersHouseState, flaviusTabletOne, gameManager.IsTutorialComplete));
+       
     }
 
     private void Update()
