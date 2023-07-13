@@ -19,7 +19,7 @@ public class Flavius : NPC
         goToCommandersHouseState = new GoToCommandersHouseState(this);
         flaviusTabletOne = new FlaviusTabletOne(this);  
 
-        gameSceneManager = GameSceneManager.Instance;
+        
         GameObject gO = GameObject.Find("CommandersHouseWaypoint");
         homeWaypoint = gO.transform.position;
         if (instance != null)
@@ -36,6 +36,7 @@ public class Flavius : NPC
     {
         base.Start();
         gameManager = GameManager.Instance;
+        gameSceneManager = GameSceneManager.Instance;
         stateMachine.SetInitialState(flaviusWelcomeState);
         stateMachine.AddTransition(new StateTransition(flaviusWelcomeState, goToCommandersHouseState, this.GetHasConversationCompleted));
         stateMachine.AddTransition(new StateTransition(goToCommandersHouseState, flaviusTabletOne, gameManager.IsTutorialComplete));

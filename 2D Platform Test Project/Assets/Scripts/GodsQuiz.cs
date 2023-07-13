@@ -53,7 +53,7 @@ public class GodsQuiz : MonoBehaviour
     {
         
     }
-    void ShowCanvas(bool condition)
+    public void ShowCanvas(bool condition)
     {
         canvas.enabled = condition;
     }
@@ -134,9 +134,24 @@ public class GodsQuiz : MonoBehaviour
         }
         else
         {
-            //EndQuiz();
+            CreateEndQuizButton();
         }
 
+    }
+
+    void EndQuiz()
+    {
+        ShowCanvas(false);
+        GameManager.Instance.SetGodsQuizComplete();
+    }
+
+    void CreateEndQuizButton()
+    {
+        TMP_Text endQuiz = continueButton.GetComponentInChildren<TMP_Text>();
+        endQuiz.text = "End Quiz";
+        continueButton.onClick.RemoveAllListeners();
+        continueButton.onClick.AddListener(EndQuiz);
+        ShowContinueButton(true);
     }
 
     void ShowFeedback(bool condition)

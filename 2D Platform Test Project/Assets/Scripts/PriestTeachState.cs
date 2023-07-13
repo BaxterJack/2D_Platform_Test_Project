@@ -2,23 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PriestWelcomeState : BaseState
+public class PriestTeachState : BaseState
 {
     Dialogue dialogue;
 
-    public PriestWelcomeState(NPC npc) : base(npc)
+    public PriestTeachState(NPC npc) : base(npc)
     {
-        string sentence1 = "Hello, my name is Marcus Flavus, I am the priest at Fort Vindolanda.";
-        string sentence2 = "You worship the Gods right?";
-        string sentence3 = "Of course you do!?";
-        string sentence4 = "Let me test your devotion then.";
+        string sentence1 = "You know your stuff about the gods?";
+        string sentence2 = "If you ever want to learn more, come back to me and we can talk";
 
 
         dialogue = new Dialogue();
         dialogue.sentences.Add(sentence1);
         dialogue.sentences.Add(sentence2);
-        dialogue.sentences.Add(sentence3);
-        dialogue.sentences.Add(sentence4);
         dialogue.HasTabletPuzzle = false;
         dialogue.name = "Marcus Flavus";
 

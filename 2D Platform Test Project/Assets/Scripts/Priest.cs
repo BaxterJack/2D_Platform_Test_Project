@@ -6,14 +6,19 @@ public class Priest : NPC
 {
     GameManager gameManager;
     private static Priest instance;
+    PriestSendToTraining priestSendToTraining;
     PriestWelcomeState priestWelcomeState;
     PriestQuizState priestQuizState;
+    PriestTeachState priestTeachState;
+
     private void Awake()
     {
         stateMachine = new StateMachine();
-        
+
+        priestSendToTraining = new PriestSendToTraining(this);
         priestWelcomeState = new PriestWelcomeState(this);
         priestQuizState = new PriestQuizState(this);
+        priestTeachState = new PriestTeachState(this);
         homeWaypoint = gameObject.transform.position;
         
         if (instance != null)
@@ -31,9 +36,10 @@ public class Priest : NPC
     {
         base.Start();
         gameManager = GameManager.Instance;
-        
-        stateMachine.AddTransition(new StateTransition(priestWelcomeState, priestQuizState, gameManager.IsTutorialComplete));
-        stateMachine.SetInitialState(priestWelcomeState);
+        stateMachine.AddTransition(new StateTransition(priestSendToTraining, priestWelcomeState, gameManager.IsTutorialComplete));
+        stateMachine.AddTransition(new StateTransition(priestWelcomeState, priestQuizState, this.GetHasConversationCompleted));
+        stateMachine.AddTransition(new StateTransition(priestQuizState, priestTeachState, gameManager.IsGodsQuizComplete));
+        stateMachine.SetInitialState(priestSendToTraining);
     }
 
     private void Update()
@@ -45,4 +51,6 @@ public class Priest : NPC
     {
         stateMachine.FixedUpdate();
     }
+
+
 }

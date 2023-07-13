@@ -11,7 +11,8 @@ public class GameManager : Singleton<GameManager>
 
     bool isTutorialComplete = false;
     List<NPC> nPCs = new List<NPC>();
-
+    bool isGodsQuizComplete = false;
+    GodsQuiz godsQuiz;
 
     public void AddNPC(NPC npc)
     {
@@ -35,4 +36,20 @@ public class GameManager : Singleton<GameManager>
         return isTutorialComplete;
     }
 
+    public void ActivateGodsQuiz()
+    {
+        godsQuiz = FindObjectOfType<GodsQuiz>();
+        godsQuiz.ShowCanvas(true);
+    }
+
+    public void SetGodsQuizComplete()
+    {
+        isGodsQuizComplete = true;
+        godsQuiz.ShowCanvas(false);
+    }
+
+    public bool IsGodsQuizComplete()
+    {
+        return isGodsQuizComplete;
+    }
 }

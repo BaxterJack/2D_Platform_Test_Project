@@ -211,8 +211,8 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 437138329
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &4774574854787484386
 MonoBehaviour:
@@ -360,7 +360,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 4786796233513369494}
   maxHealth: 100
-  currentHealth: 0
 --- !u!1 &8784303832465808548
 GameObject:
   m_ObjectHideFlags: 0
