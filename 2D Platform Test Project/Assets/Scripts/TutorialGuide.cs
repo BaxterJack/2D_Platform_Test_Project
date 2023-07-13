@@ -45,6 +45,7 @@ public class TutorialGuide : MonoBehaviour
     {
         instruction.text = moveLeft;
         currentObjective = Objective.MoveLeft;
+        PlayerManager.Instance.CanAttack = true;
     }
 
     
@@ -115,6 +116,7 @@ public class TutorialGuide : MonoBehaviour
 
             case Objective.Complete:
                 instruction.text = complete;
+                PlayerManager.Instance.CanAttack = false;
                 button.SetActive(true);
                 break;
         }

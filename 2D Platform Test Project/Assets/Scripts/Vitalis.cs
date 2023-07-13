@@ -35,11 +35,11 @@ public class Vitalis : NPC
 
     private void Update()
     {
-            stateMachine.Update();
+           // stateMachine.Update();
     }
 
     private void FixedUpdate()
     {
-            stateMachine.FixedUpdate();
+          //  stateMachine.FixedUpdate();
     }
 }

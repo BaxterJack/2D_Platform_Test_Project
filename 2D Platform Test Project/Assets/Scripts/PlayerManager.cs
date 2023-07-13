@@ -18,10 +18,18 @@ public class PlayerManager : Singleton<PlayerManager>
 
     Vector3 lastFortPosition = new Vector3();
 
+    bool canAttack = false;
+
     public enum PlayerState
     {
         Alive,
         Dead
+    }
+
+    public bool CanAttack
+    {
+        get { return canAttack; }
+        set { canAttack = value; }
     }
 
     protected override void Awake()
@@ -64,16 +72,13 @@ public class PlayerManager : Singleton<PlayerManager>
         if (currentState == PlayerState.Dead)
         {
             respawnTimer += Time.deltaTime;
-            //Debug.Log(respawnTimer);
         }
         else if (playerHealth.HasNoHealth())
         {
-
             ChangePlayerState(PlayerState.Dead);
         }
         if (respawnTimer > 5)
         {
-
             respawnTimer = 0;
             ChangePlayerState(PlayerState.Alive);
             RespawnPlayer();

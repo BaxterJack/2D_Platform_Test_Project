@@ -44,14 +44,8 @@ public class PlayerAnimation : MonoBehaviour
         {
             SetMoveAnimation();
             OrientPlayer();
-            
-            bool isFightScene = false;
-            if(gameSceneManager.CurrentScene == GameSceneManager.SceneState.DemoLevel)
-            {
-                isFightScene = true;
-            }
 
-            if (isFightScene)
+            if (playerManager.CanAttack)
             {
                 SetIsAttacking();
                 if (Input.GetMouseButtonDown(0) && !isAttacking)
@@ -147,12 +141,25 @@ public class PlayerAnimation : MonoBehaviour
 
     void ApplySlashDamage()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackPoint.attackRange, enemeyLayers);
+
+        int tree = LayerMask.NameToLayer("ChoppableTree");
+        int Enemy = LayerMask.NameToLayer("Enemy");
+        AudioManager audioManager = AudioManager.Instance;
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackPoint.attackRange/*, enemeyLayers*/);
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponentInChildren<HealthBar>().TakeDamage(slashDamage);
-            AudioManager audioManager = AudioManager.Instance;
-            audioManager.PlaySound("Hit");
+            if (enemy.gameObject.layer == Enemy)
+            {
+                enemy.GetComponentInChildren<HealthBar>().TakeDamage(slashDamage);
+                
+                audioManager.PlaySound("Hit");
+            }
+            if(enemy.gameObject.layer == tree)
+            {
+                enemy.GetComponent<TreeChopping>().TakeDamage();
+                audioManager.PlaySound("Hit");
+            }
+
         }
     }
 
