@@ -16,7 +16,23 @@ public class Log : MonoBehaviour
     public TMP_Text textPrefab;
     bool isPlayerInRange = false;
     bool isLogCarried = false;
+    int count = 0;
+    
+    BathHouse bathHouse;
+    private void Start()
+    {
+        bathHouse = FindObjectOfType<BathHouse>();
+       
+    }
 
+    bool IsNearBathHouse()
+    {
+        Vector3 bathHousePos = bathHouse.gameObject.transform.position;
+        float distance = Vector2.Distance(transform.position, bathHousePos);
+        Debug.DrawLine(transform.position, bathHousePos);
+        float distanceThreshold = 2.0f;
+        return distance <= distanceThreshold;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -51,10 +67,11 @@ public class Log : MonoBehaviour
         isLogCarried = true;
         transform.SetParent(player.transform);
         transform.localPosition = logOffset;
-        ApplyPhysics(true);
+        DisablePhysics(true);
+        DestroyPickupText();
     }
 
-    void ApplyPhysics(bool isPhysicsDisabled)
+    void DisablePhysics(bool isPhysicsDisabled)
     {
         Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
         rigidbody.isKinematic = isPhysicsDisabled;
@@ -64,7 +81,19 @@ public class Log : MonoBehaviour
     {
         isLogCarried = false;
         transform.SetParent(null);
-        ApplyPhysics(false);
+        DisablePhysics(false);
+
+        if (IsNearBathHouse() && count == 0)
+        {
+            bathHouse.ActivateConstructionStages();
+            DestroyLog();
+            count++;
+        }
+    }
+
+    void DestroyLog()
+    {
+        Destroy(gameObject, 1);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -94,8 +123,8 @@ public class Log : MonoBehaviour
 
     Vector3 GetDialogueTextPosition()
     {
-        Vector3 npcPosition = this.transform.position;
-        npcPosition.y += textYOffset;
-        return npcPosition;
+        Vector3 logPos = this.transform.position;
+        logPos.y += textYOffset;
+        return logPos;
     }
 }

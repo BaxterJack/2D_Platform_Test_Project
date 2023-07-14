@@ -6,12 +6,16 @@ public class Vitalis : NPC
 {
     protected static Vitalis instance;
     GameManager gameManager;
+    VitalisSendToTraining vitalisSendToTraining;
+    VitalisLumberQuest vitalisLumberQuest;
+    VitalisBathHouseComplete vitalisBathHouseComplete;
     private void Awake()
     {
 
         stateMachine = new StateMachine();
-
-      
+        vitalisSendToTraining = new VitalisSendToTraining(this);
+        vitalisLumberQuest = new VitalisLumberQuest(this);
+        vitalisBathHouseComplete = new VitalisBathHouseComplete(this);
         homeWaypoint = gameObject.transform.position;
         if (instance != null)
         {
@@ -28,18 +32,20 @@ public class Vitalis : NPC
     {
         base.Start();
         gameManager = GameManager.Instance;
-//        stateMachine.SetInitialState(flaviusWelcomeState);
+        stateMachine.SetInitialState(vitalisSendToTraining);
+        stateMachine.AddTransition(new StateTransition(vitalisSendToTraining, vitalisLumberQuest, gameManager.IsTutorialComplete));
+        stateMachine.AddTransition(new StateTransition(vitalisLumberQuest, vitalisBathHouseComplete, gameManager.IsBathHouseConstructed));
 
 
     }
 
     private void Update()
     {
-           // stateMachine.Update();
+           stateMachine.Update();
     }
 
     private void FixedUpdate()
     {
-          //  stateMachine.FixedUpdate();
+          stateMachine.FixedUpdate();
     }
 }

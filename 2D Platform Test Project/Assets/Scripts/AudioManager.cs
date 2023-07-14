@@ -50,17 +50,14 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlaySound(String name)
     {
-        soundEffect = Array.Find(sounds, s => s.name == name);
-        soundEffect.audioSource.Play();
+        Sound s = Array.Find(sounds, s => s.name == name);
+        s.audioSource.Play();
     }
 
     public void StopSound(String name)
     {
-        if(soundEffect.audioSource == null)
-        {
-            return;
-        }
-        soundEffect.audioSource.Stop(); 
+        Sound s = Array.Find(sounds, s => s.name == name);
+        s.audioSource.Stop();
     }
 
     public void PlayTheme(String name)

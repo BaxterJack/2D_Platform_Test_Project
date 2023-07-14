@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace Player
 {
-
+   
 
     public class PlayerMovement : MonoBehaviour
     {
-
+        Rigidbody2D rigidbody;
         [SerializeField]
         float speed = 3.0f;
         [SerializeField]
@@ -17,14 +17,15 @@ namespace Player
         private void Start()
         {
             playerManager = PlayerManager.Instance;
+            rigidbody = GetComponent<Rigidbody2D>();
         }
 
         void FixedUpdate()
         {
             if (playerManager.CurrentState == PlayerManager.PlayerState.Alive)
             {
-                Rigidbody2D rigidbody2D = GetComponent<Rigidbody2D>();
-                Vector3 velocity = rigidbody2D.velocity;
+                
+                Vector3 velocity = rigidbody.velocity;
 
                 if (Input.GetKey(KeyCode.A))
                 {
@@ -38,7 +39,7 @@ namespace Player
                 {
                     velocity.y = jumpSpeed;
                 }
-                rigidbody2D.velocity = velocity;
+                rigidbody.velocity = velocity;
             }
         }
     }
