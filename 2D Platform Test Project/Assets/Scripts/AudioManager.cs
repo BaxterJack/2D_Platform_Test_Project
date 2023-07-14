@@ -13,6 +13,7 @@ public class AudioManager : Singleton<AudioManager>
     Sound[] themes;
 
     public Sound Theme = null;
+    Sound soundEffect = null;
 
     private void Start()
     {
@@ -49,9 +50,17 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlaySound(String name)
     {
-        Sound s = Array.Find(sounds, s => s.name == name);
-        s.audioSource.Play();
-       
+        soundEffect = Array.Find(sounds, s => s.name == name);
+        soundEffect.audioSource.Play();
+    }
+
+    public void StopSound(String name)
+    {
+        if(soundEffect.audioSource == null)
+        {
+            return;
+        }
+        soundEffect.audioSource.Stop(); 
     }
 
     public void PlayTheme(String name)

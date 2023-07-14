@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7119174265722738653}
   - component: {fileID: 3406767988424567614}
   - component: {fileID: 567593109844733619}
+  - component: {fileID: 6976058131861907931}
   m_Layer: 0
   m_Name: Text Prefab
   m_TagString: Untagged
@@ -31,7 +32,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -172,3 +173,11 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 3406767988424567614}
   m_maskType: 0
+--- !u!33 &6976058131861907931
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1325733780552104539}
+  m_Mesh: {fileID: 0}

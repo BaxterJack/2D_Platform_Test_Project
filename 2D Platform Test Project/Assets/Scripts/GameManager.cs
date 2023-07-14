@@ -13,10 +13,18 @@ public class GameManager : Singleton<GameManager>
     List<NPC> nPCs = new List<NPC>();
     bool isGodsQuizComplete = false;
     GodsQuiz godsQuiz;
-
+    bool isBathHouseConstucted = false;
     public void AddNPC(NPC npc)
     {
         nPCs.Add(npc);
+    }
+    public bool BathHouseConstructed
+    {
+        set {  isBathHouseConstucted = value;}
+    }
+    public bool IsBathHouseConstructed()
+    {
+        return isBathHouseConstucted;
     }
 
     public void ActivateNPCS(bool isActive)

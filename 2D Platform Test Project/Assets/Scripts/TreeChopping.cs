@@ -8,7 +8,7 @@ public class TreeChopping : MonoBehaviour
     Animator animator;
     [SerializeField]
     GameObject log;
-
+    bool isTreeChopped = false;
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -17,9 +17,10 @@ public class TreeChopping : MonoBehaviour
 
     private void Update()
     {
-        if(treeHealth <= 0)
+        if(treeHealth <= 0 && !isTreeChopped)
         {
             TreeFallAnimation();
+            isTreeChopped = true;
         }
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
@@ -34,7 +35,7 @@ public class TreeChopping : MonoBehaviour
     void TreeFallAnimation()
     {
         animator.SetTrigger("IsChopped");
-
+        PlaySoundFX();
     }
 
     void DestroyTree()
@@ -47,5 +48,10 @@ public class TreeChopping : MonoBehaviour
         GameObject instantiatedLog = Instantiate(log, transform.position, Quaternion.identity);
         instantiatedLog.transform.localScale = new Vector3(0.7f, 0.7f, 1f);
         DestroyTree();
+    }
+
+    void PlaySoundFX()
+    {
+        AudioManager.Instance.PlaySound("TreeFall");
     }
 }
