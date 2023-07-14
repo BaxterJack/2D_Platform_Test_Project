@@ -15,7 +15,7 @@ public class DialogueTrigger : MonoBehaviour
     public TMP_Text textPrefab;
     TMP_Text startDialogue;
     string startDialogueText = "Press E to Talk";
-
+    bool isInTalkingRange = false;
     void CreateStartDialogueUI()
     {
         startDialogue = Instantiate(textPrefab);
@@ -50,6 +50,7 @@ public class DialogueTrigger : MonoBehaviour
         if (collision.tag == "Player")
         {
             CreateStartDialogueUI();
+            isInTalkingRange = true;
         }
     }
 
@@ -64,6 +65,18 @@ public class DialogueTrigger : MonoBehaviour
             }
         }
     }
+    //private void Update()
+    //{
+    //    bool isTabletOpen = TabletManager.Instance.IsTabletCanvasActive;
+    //    if ((Input.GetKey(KeyCode.E) && isInTalkingRange && !isTabletOpen))
+    //    {
+    //        TriggerDialogue();
+    //    }
+    //    if (dialogue.ForcedDialogue)
+    //    {
+    //        TriggerDialogue();
+    //    }
+    //}
 
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -71,6 +84,7 @@ public class DialogueTrigger : MonoBehaviour
         {
             DestroyStartDialogueUI();
             dialogueManager.DisableCanvas();
+            isInTalkingRange = false;
         }
     }
 
