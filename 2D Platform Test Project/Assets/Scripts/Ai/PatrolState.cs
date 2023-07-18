@@ -17,7 +17,7 @@ public class PatrolState : BaseState
 
     public override void EnterState()
     {
-       
+        aiObject.SetDestination(aiObject.GetWaypoint(currentWaypointIndex));
     }
 
     public override void UpdateState()

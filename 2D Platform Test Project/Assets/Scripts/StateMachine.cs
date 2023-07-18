@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class StateMachine 
 {
     public BaseState currentState;
 
-//    List<BaseState> allStates;
     List<StateTransition> allTransitions;
     public StateMachine()
     {
-//        allStates = new List<BaseState>();
         allTransitions = new List<StateTransition>();
     }
 
@@ -38,20 +37,12 @@ public class StateMachine
             if (correctState && transition.canTransition())
             {
                 currentState = transition.transitionState;
-                //Debug.Log(currentState);
+                Debug.Log(currentState);
                 currentState.EnterState();
             }
         }
     }
 
-    //public void AddState(BaseState state)
-    //{
-    //    allStates.Add(state);
-    //    if(allStates.Count == 1)
-    //    {
-    //        currentState = state;
-    //    }
-    //}
     public void SetInitialState(BaseState initialState)
     {
         currentState = initialState;

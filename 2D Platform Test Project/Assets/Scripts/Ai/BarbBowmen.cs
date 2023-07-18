@@ -18,8 +18,6 @@ public class BarbBowmen : AiObject
         deathState = new DeathState(this);
         shootState = new ShootState(this, this);
         stateMachine = new StateMachine();
-        //stateMachine.AddState(patrolState);
-        //stateMachine.AddState(deathState);
         stateMachine.SetInitialState(patrolState);
 
         stateMachine.AddTransition(new StateTransition(patrolState, deathState, this.healthBar.HasNoHealth));
@@ -29,9 +27,9 @@ public class BarbBowmen : AiObject
         FindPlayer();
     }
 
-    // Update is called once per frame
     void Update()
     {
+        
         stateMachine.Update();
     }
 

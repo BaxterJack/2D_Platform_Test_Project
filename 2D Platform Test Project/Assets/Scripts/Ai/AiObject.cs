@@ -33,7 +33,6 @@ public class AiObject : MonoBehaviour
     public float attackOffset;
 
     public float attackCoolDown = 0.0f;
-//    public float timeSinceAttack = 0.0f;
 
     public Vector2 target;
     public Vector2 destination;
@@ -61,8 +60,7 @@ public class AiObject : MonoBehaviour
         {
             velocity.x = direction.normalized.x * -speed;
         }
-        //velocity.x = direction.normalized.x * -speed;
-        GetComponent<Rigidbody2D>().velocity = velocity;
+        rigidbody.velocity = velocity;
     }
     public float AttackOffset
     {
@@ -84,12 +82,6 @@ public class AiObject : MonoBehaviour
     {
         return attackOffset;
     }
-
-    //public bool HasJustAttacked()
-    //{
-    //    return attackCoolDown > 0.0f;
-    //}
-
 
     public bool HasJustAttacked()
     {

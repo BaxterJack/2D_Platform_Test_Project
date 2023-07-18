@@ -513,6 +513,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5373330553216305745, guid: e0868e2099f22704cb8f4781f4dffe5f, type: 3}
   m_PrefabInstance: {fileID: 172670708}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &182656598 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7818466261548566946, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
+  m_PrefabInstance: {fileID: 6866111469678486933}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &188570466
 GameObject:
   m_ObjectHideFlags: 0
@@ -2684,7 +2689,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1465204994}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.46, y: -3.44, z: -9.995526}
+  m_LocalPosition: {x: -9.02, y: -3.44, z: -9.995526}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3048,7 +3053,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -9.46, y: -3.44}
+  m_AnchoredPosition: {x: -9.02, y: -3.44}
   m_SizeDelta: {x: 1197, y: 675}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1615611893
@@ -3098,6 +3103,11 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &1684824060 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5001142141416212421, guid: 86570501c5ad0954692d8c2bbf46f989, type: 3}
+  m_PrefabInstance: {fileID: 1721874910166922282}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1707103171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8976,6 +8986,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barbarian Bowmen
       objectReference: {fileID: 0}
+    - target: {fileID: 5001142141416212421, guid: 86570501c5ad0954692d8c2bbf46f989, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5001142141416212421, guid: 86570501c5ad0954692d8c2bbf46f989, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 9128390638834425617, guid: 86570501c5ad0954692d8c2bbf46f989, type: 3}
       propertyPath: player
       value: 
@@ -9003,6 +9021,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4752148173123535551, guid: 86570501c5ad0954692d8c2bbf46f989, type: 3}
   m_PrefabInstance: {fileID: 1721874910166922282}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &1721874910166922291
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684824060}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -2.2201118, y: 0.60758317}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.6363636, y: 0.5}
+    oldSize: {x: 0.6875, y: 0.765625}
+    newSize: {x: 0.703125, y: 0.765625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 7.5948963, y: 2.1303508}
+  m_EdgeRadius: 0
 --- !u!1001 &3036859145457702653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9017,7 +9061,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1740887442183484587, guid: 4132ffad7b6ffed49876345541ce243e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.46
+      value: -9.02
       objectReference: {fileID: 0}
     - target: {fileID: 1740887442183484587, guid: 4132ffad7b6ffed49876345541ce243e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -9225,6 +9269,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barbarian Axeman
       objectReference: {fileID: 0}
+    - target: {fileID: 7818466261548566946, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7818466261548566946, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8224793908168488267, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
       propertyPath: player
       value: 
@@ -9252,6 +9304,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5729527009019465423, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
   m_PrefabInstance: {fileID: 6866111469678486933}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &6866111469678486942
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182656598}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -1.893292, y: 0.73197603}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.4888889, y: 0.5}
+    oldSize: {x: 0.703125, y: 0.765625}
+    newSize: {x: 0.703125, y: 0.765625}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 8.44987, y: 2.229577}
+  m_EdgeRadius: 0
 --- !u!1001 &8697161152577683519
 PrefabInstance:
   m_ObjectHideFlags: 0

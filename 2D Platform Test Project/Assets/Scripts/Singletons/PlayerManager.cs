@@ -48,9 +48,8 @@ public class PlayerManager : Singleton<PlayerManager>
         switch (newState)
         {
             case PlayerState.Alive:
-                player.GetComponent<Rigidbody2D>().gravityScale = 6.0f;
-                player.GetComponent<Collider2D>().enabled = true;
                 player.layer = playerLayer;
+                player.tag = "Player";
                 playerHealth.SetMaxHealth();
                 playerHealth.EnableHealthCanvas();
 
@@ -59,9 +58,8 @@ public class PlayerManager : Singleton<PlayerManager>
             case PlayerState.Dead:
                 DestroyArrows();
                 uiManager.DecreaseLives();
-                player.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
-                player.GetComponent<Collider2D>().enabled = false;
-                player.layer = 0;
+                player.layer = 6;
+                player.tag = "Enemy";
                 break;
         }
     }
