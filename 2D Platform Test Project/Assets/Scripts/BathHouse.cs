@@ -10,8 +10,7 @@ public class BathHouse : MonoBehaviour
     TMP_Text dropDialogue;
     public TMP_Text textPrefab;
     string dropLog = "Press R to drop the Log";
-    //public float textYOffset = 0.5f;
-    Vector3 textOffset = new Vector3(1.5f, 1, 0);
+    Vector3 textOffset = new Vector3(1.5f, 1.5f, 0);
     GameManager gameManager;
     public List<GameObject> constructionStages;
 

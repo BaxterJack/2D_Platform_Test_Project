@@ -54,29 +54,21 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void Update()
     {
-        if (collision.tag == "Player")
+        bool isTabletOpen = TabletManager.Instance.IsTabletCanvasActive;
+        if (isInTalkingRange)
         {
-            bool isTabletOpen = TabletManager.Instance.IsTabletCanvasActive;
             if (Input.GetKey(KeyCode.E) && !isTabletOpen || dialogue.ForcedDialogue)
             {
                 TriggerDialogue();
+                if(dialogue.ForcedDialogue)
+                {
+                    dialogue.ForcedDialogue = false;
+                }
             }
         }
     }
-    //private void Update()
-    //{
-    //    bool isTabletOpen = TabletManager.Instance.IsTabletCanvasActive;
-    //    if ((Input.GetKey(KeyCode.E) && isInTalkingRange && !isTabletOpen))
-    //    {
-    //        TriggerDialogue();
-    //    }
-    //    if (dialogue.ForcedDialogue)
-    //    {
-    //        TriggerDialogue();
-    //    }
-    //}
 
     private void OnTriggerExit2D(Collider2D collision)
     {
