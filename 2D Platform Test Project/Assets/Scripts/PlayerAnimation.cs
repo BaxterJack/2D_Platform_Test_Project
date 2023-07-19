@@ -65,26 +65,11 @@ public class PlayerAnimation : MonoBehaviour
 
     }
 
-    //void Die()
-    //{
-    //    DieAnimation(gameManager.CurrentState == GameManager.PlayerState.Dead);
-    //    //GetComponent<Rigidbody2D>().gravityScale = 0.0f;
-    //    ////GetComponent<Rigidbody2D>().Sleep();
-    //    //GetComponent<Collider2D>().enabled = false;
-    //    //GetComponent<GameObject>().layer = 0;
-
-    //}
-
     void DieAnimation(bool isDead)
     {
         animator.SetBool("HasDied", isDead);
     }
-    //void Died()
-    //{
-    //    GameManager manager = GameManager.Instance;
-    //    hasDied = false;
-    //    manager.PlayerHasDied();
-    //}
+
     void SetMoveAnimation()
     {
         horizontalMove = Input.GetAxisRaw("Horizontal");
@@ -120,11 +105,16 @@ public class PlayerAnimation : MonoBehaviour
     void ApplyStabDamage()
     {
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackPoint.attackRange, enemeyLayers);
+        
         foreach (Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponentInChildren<HealthBar>().TakeDamage(stabDamage);
-            AudioManager audioManager = AudioManager.Instance;
-            audioManager.PlaySound("Hit");
+            if(enemy.isTrigger == false)
+            {
+                enemy.GetComponentInChildren<HealthBar>().TakeDamage(stabDamage);
+                AudioManager audioManager = AudioManager.Instance;
+                audioManager.PlaySound("Hit");
+            }
+
         }
     }
 
@@ -148,7 +138,7 @@ public class PlayerAnimation : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.transform.position, attackPoint.attackRange/*, enemeyLayers*/);
         foreach (Collider2D enemy in hitEnemies)
         {
-            if (enemy.gameObject.layer == Enemy)
+            if (enemy.gameObject.layer == Enemy &&  enemy.isTrigger == false)
             {
                 enemy.GetComponentInChildren<HealthBar>().TakeDamage(slashDamage);
                 
