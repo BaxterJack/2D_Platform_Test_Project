@@ -133,6 +133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 172f4f45f0220e345b4af358f63c31da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textPrefab: {fileID: 0}
   constructionStages: []
 --- !u!1 &7693490467604542855
 GameObject:
@@ -6076,8 +6077,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 853891709
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -2721198482178416932, guid: 68118f9b8ad30234d9f1749a377b703b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

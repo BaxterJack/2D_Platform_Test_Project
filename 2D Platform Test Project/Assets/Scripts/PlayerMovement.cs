@@ -13,7 +13,7 @@ namespace Player
         float speed = 3.0f;
         float jumpSpeed = 25.0f;
         PlayerManager playerManager;
-        int maxJumps = 2;
+        public int maxJumps = 2;
         int currentJumps = 0;
         private void Start()
         {
