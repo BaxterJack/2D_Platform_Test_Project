@@ -19,14 +19,14 @@ public class ShootState : BaseState
     }
     public override void EnterState()
     {
-
+        Debug.Log(aiObject.attackCoolDown);
     }
 
     public override void UpdateState()
     {
         aiObject.SetAttackOffset();
         aiObject.SetTarget(aiObject.GetPlayerPosition());
-        isShooting = aiObject.barbarianAnimation.animator.GetCurrentAnimatorStateInfo(0).IsName("BarbSlashAnim");
+        isShooting = aiObject.barbarianAnimation.animator.GetCurrentAnimatorStateInfo(0).IsName("BarbBowShoot");
         if (!isShooting && aiObject.attackCoolDown >= coolDownLimit)
         {
             aiObject.attackCoolDown = 0.0f;
@@ -35,7 +35,7 @@ public class ShootState : BaseState
         else
         {
             aiObject.attackCoolDown += Time.deltaTime;
-            Debug.Log("Cant shoot yet");
+            
         }
     }
 
