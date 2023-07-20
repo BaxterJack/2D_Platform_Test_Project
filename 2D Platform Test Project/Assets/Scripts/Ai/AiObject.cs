@@ -91,7 +91,7 @@ public class AiObject : MonoBehaviour
     public bool IsInRangeOfTarget()
     {
         bool isInRange = distanceToDestination <= 0.1f;
-        
+        Debug.Log(distanceToDestination);
         isInRange &= attackCoolDown <= 0.0f;
         return isInRange; 
     }
