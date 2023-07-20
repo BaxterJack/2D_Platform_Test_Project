@@ -7471,70 +7471,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[2].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 9885c7a8a78e8f641a60551930081a1f, type: 3}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[2].loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[2].name
-      value: Construction
-      objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[3].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 40d700575b6f4e940bec193d3de07b7a, type: 3}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[3].loop
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[3].name
-      value: TreeFall
-      objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 899ec8163d59e314c9571568ad15bb0e, type: 3}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[4].name
-      value: LogThud
-      objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[0].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[2].pitch
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[3].pitch
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[4].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[2].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[3].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[4].volume
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2559661439915901974, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
       propertyPath: m_RootOrder
       value: 19
@@ -9157,10 +9093,6 @@ PrefabInstance:
     - target: {fileID: 4396924553187437884, guid: b5397a43b14d2ae4dbd6a6a6204a4eac, type: 3}
       propertyPath: m_Name
       value: GameManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 4396924553187437884, guid: b5397a43b14d2ae4dbd6a6a6204a4eac, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4396924553187437886, guid: b5397a43b14d2ae4dbd6a6a6204a4eac, type: 3}
       propertyPath: m_RootOrder
@@ -13828,14 +13760,6 @@ PrefabInstance:
     - target: {fileID: 1069946440601402792, guid: e7f6bb90e655302439315ad4b1c9a234, type: 3}
       propertyPath: m_Name
       value: UICanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 1069946440601402792, guid: e7f6bb90e655302439315ad4b1c9a234, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1069946440601402802, guid: e7f6bb90e655302439315ad4b1c9a234, type: 3}
-      propertyPath: m_Enabled
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1069946440601402805, guid: e7f6bb90e655302439315ad4b1c9a234, type: 3}
       propertyPath: m_Pivot.x

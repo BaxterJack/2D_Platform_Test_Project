@@ -91,6 +91,10 @@ public class GameSceneManager : Singleton<GameSceneManager>
             case SceneState.DemoLevel:
                 audioManager.PlayTheme("BattleTheme");
                 break;
+
+            case SceneState.Level1:
+                audioManager.PlayTheme("BattleTheme2");
+                break;
         }
 
     }

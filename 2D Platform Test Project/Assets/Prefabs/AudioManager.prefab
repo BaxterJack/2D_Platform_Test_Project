@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2559661439915901973
 MonoBehaviour:
@@ -57,6 +57,24 @@ MonoBehaviour:
     pitch: 1
     audioSource: {fileID: 0}
     loop: 0
+  - name: Construction
+    clip: {fileID: 8300000, guid: 9885c7a8a78e8f641a60551930081a1f, type: 3}
+    volume: 1
+    pitch: 2.5
+    audioSource: {fileID: 0}
+    loop: 1
+  - name: TreeFall
+    clip: {fileID: 8300000, guid: 40d700575b6f4e940bec193d3de07b7a, type: 3}
+    volume: 1
+    pitch: 1.5
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: LogThud
+    clip: {fileID: 8300000, guid: 899ec8163d59e314c9571568ad15bb0e, type: 3}
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
   themes:
   - name: BattleTheme
     clip: {fileID: 8300000, guid: 0863e3cadb9a2f24ab725c28ec7d74e4, type: 3}
@@ -72,6 +90,12 @@ MonoBehaviour:
     loop: 1
   - name: FortTheme
     clip: {fileID: 8300000, guid: 31b304e8b1c4c0a488a884cf96647fb1, type: 3}
+    volume: 0.3
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 1
+  - name: BattleTheme2
+    clip: {fileID: 8300000, guid: 864550579dad34845ac6640e4b5805b2, type: 3}
     volume: 0.3
     pitch: 1
     audioSource: {fileID: 0}
