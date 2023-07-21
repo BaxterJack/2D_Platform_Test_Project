@@ -17,6 +17,11 @@ public class BarbarianAnimation : MonoBehaviour
 
     Vector2 barbPosition;
 
+    AiObject aiObject;
+    private void Start()
+    {
+        aiObject = GetComponent<AiObject>();
+    }
     void Update()
     {
         barbPosition = transform.position;
@@ -54,9 +59,9 @@ public class BarbarianAnimation : MonoBehaviour
 
     public bool IsGoingRight()
     {
-        Vector2 target = GetComponent<AiObject>().target;
+        Vector2 destination = aiObject.GetDestination();
 
-        if (target.x > barbPosition.x) // Going right
+        if (destination.x > barbPosition.x) // Going right
         {
             return true;
         }
@@ -84,8 +89,6 @@ public class BarbarianAnimation : MonoBehaviour
         GetComponent<Rigidbody2D>().gravityScale = 0.0f;
         GetComponent<Rigidbody2D>().Sleep();
         GetComponent<Collider2D>().enabled = false;
-
-        //this.enabled = false;
     }
 
     public bool IsAiDead()

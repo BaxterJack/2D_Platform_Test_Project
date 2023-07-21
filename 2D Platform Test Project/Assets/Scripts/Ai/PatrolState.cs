@@ -12,7 +12,7 @@ public class PatrolState : BaseState
         numWaypoints = aiObject.GetNumWaypoints();
         currentWaypointIndex = 0;
         aiObject.SetDestination(aiObject.GetWaypoint(currentWaypointIndex));
-        aiObject.SetTarget(aiObject.GetDestination());
+        //aiObject.SetTarget(aiObject.GetDestination());
         aiObject.SetDistanceToDestintion();
     }
 
@@ -23,7 +23,8 @@ public class PatrolState : BaseState
 
     public override void UpdateState()
     {
-        aiObject.SetTarget(aiObject.GetDestination());
+        //aiObject.SetTarget(aiObject.GetDestination());
+
         aiObject.SetDistanceToDestintion();
         if (aiObject.attackCoolDown >= 0)
         {
@@ -49,7 +50,7 @@ public class PatrolState : BaseState
             currentWaypointIndex = 0;
         }
         aiObject.SetDestination(aiObject.GetWaypoint(currentWaypointIndex));
-        aiObject.SetTarget(aiObject.GetDestination());
+        //aiObject.SetTarget(aiObject.GetDestination());
     }
 
 

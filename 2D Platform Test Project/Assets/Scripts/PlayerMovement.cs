@@ -8,7 +8,7 @@ namespace Player
 
     public class PlayerMovement : MonoBehaviour
     {
-        Rigidbody2D rigidbody;
+        Rigidbody2D rBody;
         [SerializeField]
         float speed = 3.0f;
         float jumpSpeed = 25.0f;
@@ -18,7 +18,7 @@ namespace Player
         private void Start()
         {
             playerManager = PlayerManager.Instance;
-            rigidbody = GetComponent<Rigidbody2D>();
+            rBody = GetComponent<Rigidbody2D>();
             currentJumps = 0;
         }
 
@@ -32,7 +32,7 @@ namespace Player
             if (playerManager.CurrentState == PlayerManager.PlayerState.Alive)
             {
 
-                Vector3 velocity = rigidbody.velocity;
+                Vector3 velocity = rBody.velocity;
 
                 if (Input.GetKey(KeyCode.A))
                 {
@@ -42,7 +42,7 @@ namespace Player
                 {
                     velocity.x = speed;
                 }
-                rigidbody.velocity = velocity;
+                rBody.velocity = velocity;
             }
         }
 
@@ -55,12 +55,12 @@ namespace Player
         {
             if (playerManager.CurrentState == PlayerManager.PlayerState.Alive)
             {
-                Vector3 velocity = rigidbody.velocity;
+                Vector3 velocity = rBody.velocity;
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
                     Jump(ref velocity);
                 }
-                rigidbody.velocity = velocity;
+                rBody.velocity = velocity;
             }
         }
 

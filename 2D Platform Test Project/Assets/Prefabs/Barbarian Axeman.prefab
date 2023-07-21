@@ -84,7 +84,7 @@ Transform:
   - {fileID: 4042107793375011765}
   - {fileID: 3762240217106421227}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4421352300299675117
 SpriteRenderer:
@@ -238,19 +238,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   speed: 1.5
-  aiSight: {fileID: 2385792172210073901}
-  healthBar: {fileID: 1551429489646233289}
   barbarianAnimation: {fileID: 8914824443322415099}
-  attackPoint: {fileID: 29075459406618937}
   playerLayers:
     serializedVersion: 2
     m_Bits: 128
   attackOffset: 0
   attackCoolDown: 0
-  target: {x: 0, y: 0}
   destination: {x: 0, y: 0}
   distanceToDestination: 0
-  hasAttacked: 0
+  knockBackForce: 500
 --- !u!61 &6866111469678486942
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -384,17 +380,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eacfd9394e053ea49823a3a62a610cbd, type: 3}
---- !u!114 &1551429489646233289 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5390418315728399933, guid: eacfd9394e053ea49823a3a62a610cbd, type: 3}
-  m_PrefabInstance: {fileID: 6866111468760058100}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc2b56cdf8c2f32449455e17c1a6de91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &4042107793375011765 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7444775225362312001, guid: eacfd9394e053ea49823a3a62a610cbd, type: 3}

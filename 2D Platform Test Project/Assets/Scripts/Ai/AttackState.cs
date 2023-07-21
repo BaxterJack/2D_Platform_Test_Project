@@ -14,15 +14,12 @@ public class AttackState : BaseState
 
     public override void EnterState()
     {
-        //aiObject.timeSinceAttack = 0.0f;
         
     }
 
     public override void UpdateState()
     {
-        aiObject.SetAttackOffset();
-        aiObject.SetDestination(aiObject.PlayerPosition, aiObject.AttackOffset);
-        aiObject.SetTarget(aiObject.GetPlayerPosition());
+        aiObject.SetDestination(aiObject.PlayerPosition);
         aiObject.SetDistanceToDestintion();
         isAttacking = aiObject.barbarianAnimation.animator.GetCurrentAnimatorStateInfo(0).IsName("BarbSlashAnim");
         

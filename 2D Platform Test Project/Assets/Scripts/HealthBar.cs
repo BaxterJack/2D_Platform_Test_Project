@@ -17,7 +17,7 @@ public class HealthBar : MonoBehaviour
 
     private void Start()
     {
-        currentHealth = maxHealth;
+        SetMaxHealth();
         healthCanvas = GetComponentInParent<Canvas>();
     }
 
@@ -28,6 +28,8 @@ public class HealthBar : MonoBehaviour
             DisableHealthCanvas();
         }
     }
+
+
 
     public void DisableHealthCanvas()
     {
@@ -59,7 +61,15 @@ public class HealthBar : MonoBehaviour
             currentHealth = 0;
         }
         SetHealth(currentHealth);
+        StartCoroutine(ApplyRedDamageEffect());
+    }
 
+    IEnumerator ApplyRedDamageEffect()
+    {
+        SpriteRenderer spriteRenderer = GetComponentInParent<SpriteRenderer>();
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.35f);
+        spriteRenderer.color = Color.white;
     }
 
     public bool HasNoHealth()

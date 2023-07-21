@@ -12,8 +12,9 @@ public class BarbBowmen : AiObject
     public ShootState shootState;
     public DeathState deathState;
 
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         patrolState = new PatrolState(this);
         deathState = new DeathState(this);
         shootState = new ShootState(this, this);
@@ -24,7 +25,13 @@ public class BarbBowmen : AiObject
         stateMachine.AddTransition(new StateTransition(patrolState, shootState, this.aiSight.CanSeePlayer));
         stateMachine.AddTransition(new StateTransition(shootState, deathState, this.healthBar.HasNoHealth));
         stateMachine.AddTransition(new StateTransition(shootState, patrolState, this.aiSight.CannotSeePlayer));
-        FindPlayer();
+        //FindPlayer();
+        type = this.GetType().Name;
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
     }
 
     void Update()

@@ -13,7 +13,7 @@ public class AudioManager : Singleton<AudioManager>
     Sound[] themes;
 
     public Sound Theme = null;
-    Sound soundEffect = null;
+
 
     private void Start()
     {

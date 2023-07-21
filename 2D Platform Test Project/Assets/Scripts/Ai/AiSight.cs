@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AiSight : MonoBehaviour
 {
-    [SerializeField]
-    float sightRange = 5f;
+    //[SerializeField]
+    //float sightRange = 5f;
     PlayerManager playerManager;
 
     bool canSeePlayer = false;

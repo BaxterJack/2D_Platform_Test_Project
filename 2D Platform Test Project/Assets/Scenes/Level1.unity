@@ -1555,11 +1555,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2996287573774763640, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2996287573774763640, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5729527009019465423, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
       propertyPath: m_RootOrder
@@ -1608,10 +1608,6 @@ PrefabInstance:
     - target: {fileID: 7818466261548566946, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
       propertyPath: m_Name
       value: Barbarian Axeman (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 7818466261548566946, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8224793908168488267, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -2113,15 +2109,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5001142141416212421, guid: 86570501c5ad0954692d8c2bbf46f989, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7005617189060938807, guid: 86570501c5ad0954692d8c2bbf46f989, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7005617189060938807, guid: 86570501c5ad0954692d8c2bbf46f989, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9128390638834425617, guid: 86570501c5ad0954692d8c2bbf46f989, type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -2210,7 +2206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664398480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58.52, y: 3.56, z: -9.995526}
+  m_LocalPosition: {x: 53.03, y: 1.28, z: -9.995526}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -18926,11 +18922,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1740887442183484587, guid: 4132ffad7b6ffed49876345541ce243e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 58.52
+      value: 53.03
       objectReference: {fileID: 0}
     - target: {fileID: 1740887442183484587, guid: 4132ffad7b6ffed49876345541ce243e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.56
+      value: -0.72
       objectReference: {fileID: 0}
     - target: {fileID: 1740887442183484587, guid: 4132ffad7b6ffed49876345541ce243e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19254,7 +19250,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124987860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 58.52, y: 3.56, z: -9.995526}
+  m_LocalPosition: {x: 53.03, y: 1.28, z: -9.995526}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -19303,10 +19299,6 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 196998610707398931, guid: ef9a8df158dafc748922c35da74d4d1f, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.24
-      objectReference: {fileID: 0}
     - target: {fileID: 2240887256877879936, guid: ef9a8df158dafc748922c35da74d4d1f, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -19314,6 +19306,10 @@ PrefabInstance:
     - target: {fileID: 2240887256877879936, guid: ef9a8df158dafc748922c35da74d4d1f, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2524830939054944817, guid: ef9a8df158dafc748922c35da74d4d1f, type: 3}
+      propertyPath: maxHealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 4947660219808817587, guid: ef9a8df158dafc748922c35da74d4d1f, type: 3}
       propertyPath: waypoints.Array.data[0]
@@ -19326,22 +19322,6 @@ PrefabInstance:
     - target: {fileID: 6488857060877163866, guid: ef9a8df158dafc748922c35da74d4d1f, type: 3}
       propertyPath: m_Name
       value: Barbarian Boss
-      objectReference: {fileID: 0}
-    - target: {fileID: 6488857060877163866, guid: ef9a8df158dafc748922c35da74d4d1f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7621388795892412774, guid: ef9a8df158dafc748922c35da74d4d1f, type: 3}
-      propertyPath: m_SpriteTilingProperty.pivot.x
-      value: 0.4074074
-      objectReference: {fileID: 0}
-    - target: {fileID: 7621388795892412774, guid: ef9a8df158dafc748922c35da74d4d1f, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 0.84375
-      objectReference: {fileID: 0}
-    - target: {fileID: 7621388795892412774, guid: ef9a8df158dafc748922c35da74d4d1f, type: 3}
-      propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8723075345537325623, guid: ef9a8df158dafc748922c35da74d4d1f, type: 3}
       propertyPath: m_RootOrder
