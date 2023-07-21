@@ -13,6 +13,7 @@ public class PatrolState : BaseState
         currentWaypointIndex = 0;
         aiObject.SetDestination(aiObject.GetWaypoint(currentWaypointIndex));
         aiObject.SetTarget(aiObject.GetDestination());
+        aiObject.SetDistanceToDestintion();
     }
 
     public override void EnterState()

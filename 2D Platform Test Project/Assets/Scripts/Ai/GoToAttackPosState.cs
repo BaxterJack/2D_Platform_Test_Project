@@ -33,7 +33,7 @@ public class GoToAttackPosState : BaseState
         if(aiObject.GetDistanceToDestintion() > 0.1)
         {
             aiObject.MoveAI();
+           
         }
-        //aiObject.MoveAI();
     }
 }

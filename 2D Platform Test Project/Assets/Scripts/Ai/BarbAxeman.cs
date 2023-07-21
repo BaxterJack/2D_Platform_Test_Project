@@ -29,6 +29,7 @@ public class BarbAxeman : AiObject
         stateMachine.AddTransition(new StateTransition(attackState, deathState, this.healthBar.HasNoHealth));
         stateMachine.AddTransition(new StateTransition(attackState, goToAttackPosState, this.HasJustAttacked));
         FindPlayer();
+        Debug.Log(distanceToDestination);
     }
 
     void Update()

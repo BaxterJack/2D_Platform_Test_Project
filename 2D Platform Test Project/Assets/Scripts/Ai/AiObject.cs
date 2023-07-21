@@ -37,9 +37,14 @@ public class AiObject : MonoBehaviour
     public Vector2 target;
     public Vector2 destination;
 
-    public float distanceToDestination;
+    public float distanceToDestination = 2.0f;
 
     public bool hasAttacked = false;
+
+    private void Start()
+    {
+        
+    }
 
     protected void FindPlayer()
     {
@@ -49,17 +54,19 @@ public class AiObject : MonoBehaviour
     {
         Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
         Vector2 velocity = rigidbody.velocity;
-        Vector2 barbPosition = rigidbody.transform.transform.position;
+        Vector2 barbPosition = rigidbody.transform.position;
         Vector2 direction = (barbPosition - destination);
         float distance = GetDistanceToDestintion();
         if (distance <= 0.5)
         {
-            velocity.x = direction.normalized.x * -speed * (distance+0.5f);
+            velocity.x = direction.normalized.x * -speed * (distance + 0.5f);
         }
         else
         {
             velocity.x = direction.normalized.x * -speed;
+
         }
+        //velocity.x = direction.normalized.x * -speed; // test
         rigidbody.velocity = velocity;
     }
     public float AttackOffset
@@ -75,7 +82,7 @@ public class AiObject : MonoBehaviour
     }
     public void SetAttackOffset()
     {
-        attackOffset = (transform.position.x - GetComponentInChildren<Attack_Point>().transform.position.x) * 1.25f;
+        attackOffset = (transform.position.x - GetComponentInChildren<Attack_Point>().transform.position.x) /** 1.25f*/;
     }
 
     public float GetAttackOffset()
@@ -91,7 +98,6 @@ public class AiObject : MonoBehaviour
     public bool IsInRangeOfTarget()
     {
         bool isInRange = distanceToDestination <= 0.1f;
-        Debug.Log(distanceToDestination);
         isInRange &= attackCoolDown <= 0.0f;
         return isInRange; 
     }
@@ -129,7 +135,11 @@ public class AiObject : MonoBehaviour
 
     public void SetDistanceToDestintion()
     {
-        distanceToDestination = (destination - (Vector2)transform.position).magnitude;
+        //distanceToDestination = (destination - (Vector2)transform.position).magnitude;
+        Vector2 temp = (destination - (Vector2)transform.position);
+        temp.y = 0;
+        distanceToDestination = temp.magnitude;
+
     }
 
     public float GetDistanceToDestintion()
