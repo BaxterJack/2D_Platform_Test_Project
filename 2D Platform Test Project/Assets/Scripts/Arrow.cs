@@ -19,6 +19,7 @@ public class Arrow : MonoBehaviour
         rigidBody.velocity = new Vector2(direction.x, direction.y).normalized * arrowSpeed;
         float rotation = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0,0,rotation);
+        AudioManager.Instance.PlaySound("ArrowFire");
     }
 
     // Update is called once per frame
@@ -29,6 +30,7 @@ public class Arrow : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        AudioManager.Instance.PlaySound("ArrowImpact");
         if (collision.gameObject.CompareTag("Player"))
         {         
             player.GetComponentInChildren<HealthBar>().TakeDamage(20);

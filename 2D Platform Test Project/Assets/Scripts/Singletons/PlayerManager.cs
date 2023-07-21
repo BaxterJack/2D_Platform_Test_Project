@@ -20,10 +20,17 @@ public class PlayerManager : Singleton<PlayerManager>
 
     bool canAttack = false;
 
+    Vector3 checkpoint = new Vector3();
     public enum PlayerState
     {
         Alive,
         Dead
+    }
+
+    public Vector3 Checkpoint
+    {
+        get { return checkpoint; }
+        set { checkpoint = value; }
     }
 
     public bool CanAttack
@@ -58,7 +65,7 @@ public class PlayerManager : Singleton<PlayerManager>
             case PlayerState.Dead:
                 DestroyArrows();
                 uiManager.DecreaseLives();
-                player.layer = 6;
+                player.layer = 15;
                 player.tag = "Enemy";
                 break;
         }
@@ -115,10 +122,10 @@ public class PlayerManager : Singleton<PlayerManager>
 
     public void RespawnPlayer()
     {
-        Vector3 deathPos = player.transform.position;
-        Vector3 respawnPos = deathPos;
-        respawnPos.y += 2;
-        player.transform.position = respawnPos;
+        //Vector3 deathPos = player.transform.position;
+        //Vector3 respawnPos = deathPos;
+        //respawnPos.y += 2;
+        player.transform.position = checkpoint;
     }
 
     public void SaveFortPosition()

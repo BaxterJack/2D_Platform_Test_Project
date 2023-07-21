@@ -86,9 +86,7 @@ public class BarbarianAnimation : MonoBehaviour
     {
         hasDied = true;
         animator.SetBool("HasDied", hasDied);
-        GetComponent<Rigidbody2D>().gravityScale = 0.0f;
-        GetComponent<Rigidbody2D>().Sleep();
-        GetComponent<Collider2D>().enabled = false;
+        gameObject.layer = 15;
     }
 
     public bool IsAiDead()
