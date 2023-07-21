@@ -1046,42 +1046,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.size
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[5].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 4e9c5ceef2f284a459d27a665e263b95, type: 3}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[5].name
-      value: ArrowFire
-      objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[6].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 5426e2bd785ee3e4abe0f5a43f31dab0, type: 3}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[6].name
-      value: ArrowImpact
-      objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[5].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[6].pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[5].volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2559661439915901973, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
-      propertyPath: sounds.Array.data[6].volume
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2559661439915901974, guid: 6bad23122b142c545b338ee389c7c240, type: 3}
       propertyPath: m_RootOrder
       value: 13
