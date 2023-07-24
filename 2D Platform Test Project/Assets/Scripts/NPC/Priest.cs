@@ -40,6 +40,7 @@ public class Priest : NPC
         stateMachine.AddTransition(new StateTransition(priestWelcomeState, priestQuizState, this.GetHasConversationCompleted));
         stateMachine.AddTransition(new StateTransition(priestQuizState, priestTeachState, gameManager.IsGodsQuizComplete));
         stateMachine.SetInitialState(priestSendToTraining);
+        type = npcTypes.fort;
     }
 
     private void Update()

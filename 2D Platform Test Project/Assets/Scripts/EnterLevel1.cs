@@ -4,16 +4,13 @@ using UnityEngine;
 
 public class EnterLevel1 : MonoBehaviour
 {
-    // Start is called before the first frame update
+
     void Start()
     {
         PlayerManager.Instance.CanAttack = true;
-        GameManager.Instance.ActivateNPCS(false);
+        GameManager.Instance.ActivateNPCS(false, NPC.npcTypes.fort);
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

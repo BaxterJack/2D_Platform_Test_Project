@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static NPC;
 
 public class GameManager : Singleton<GameManager>
 {
@@ -14,6 +15,14 @@ public class GameManager : Singleton<GameManager>
     bool isGodsQuizComplete = false;
     GodsQuiz godsQuiz;
     bool isBathHouseConstucted = false;
+    int level1Raiders = 0;
+    int raidersCleared = 0;
+
+    public int RaidersCleared
+    {
+        get { return raidersCleared; }
+        set { raidersCleared = value; }
+    }
     public void AddNPC(NPC npc)
     {
         nPCs.Add(npc);
@@ -27,11 +36,28 @@ public class GameManager : Singleton<GameManager>
         return isBathHouseConstucted;
     }
 
+    public bool AreRaidersCleared()
+    {
+        return raidersCleared == level1Raiders;
+    }
+
+    public void AddRaider()
+    {
+        level1Raiders++;
+    }
     public void ActivateNPCS(bool isActive)
     {
         foreach (NPC npc in nPCs)
         {
             npc.ActivateNPC(isActive);
+        }
+    }
+
+    public void ActivateNPCS(bool isActive, npcTypes Type)
+    {
+        foreach (NPC npc in nPCs)
+        {
+            npc.ActivateNpcType(isActive, Type);
         }
     }
 

@@ -46,6 +46,7 @@ public class GaiusArmatus : NPC
         stateMachine.AddTransition(new StateTransition(armatusWelcomeState, armatusTutorialState, this.GetHasConversationCompleted));
         stateMachine.AddTransition(new StateTransition(armatusTutorialState, armatusSendToCommanderState, gameManager.IsTutorialComplete));
         stateMachine.AddTransition(new StateTransition(armatusSendToCommanderState, armatusTeachState, this.GetHasConversationCompleted));
+        type = npcTypes.fort;
     }
 
     private void Update()

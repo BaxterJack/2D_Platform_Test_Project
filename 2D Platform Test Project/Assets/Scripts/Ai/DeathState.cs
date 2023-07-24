@@ -16,7 +16,7 @@ public class DeathState : BaseState
         {
             aiObject.barbarianAnimation.animator.ResetTrigger("SlashAttack");
         }
-       
+        GameManager.Instance.RaidersCleared += 1;
 
     }
 

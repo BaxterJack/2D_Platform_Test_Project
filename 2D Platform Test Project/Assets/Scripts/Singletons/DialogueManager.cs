@@ -19,14 +19,15 @@ public class DialogueManager : Singleton<DialogueManager>
 
     void Start()
     {
-        sentences = new Queue<string>();  
+        sentences = new Queue<string>();
+        DisableCanvas();
     }
 
     protected override void Awake()
     {
         base.Awake();
         dialogueCanvas = GetComponent<Canvas>();
-        DisableCanvas();
+        
         foreach (TMP_Text textComponent in GetComponentsInChildren<TMP_Text>())
         {
             switch (textComponent.name)

@@ -41,6 +41,7 @@ public class AiObject : MonoBehaviour
     protected virtual void Start()
     {
         FindPlayer();
+        GameManager.Instance.AddRaider();
     }
 
     protected virtual void Awake()

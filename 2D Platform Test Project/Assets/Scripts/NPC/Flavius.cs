@@ -40,8 +40,10 @@ public class Flavius : NPC
         stateMachine.SetInitialState(flaviusWelcomeState);
         stateMachine.AddTransition(new StateTransition(flaviusWelcomeState, goToCommandersHouseState, this.GetHasConversationCompleted));
         stateMachine.AddTransition(new StateTransition(goToCommandersHouseState, flaviusTabletOne, gameManager.IsTutorialComplete));
-       
+        type = npcTypes.fort;
     }
+
+
 
     private void Update()
     {

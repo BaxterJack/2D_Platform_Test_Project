@@ -13,6 +13,12 @@ public class NPC : MonoBehaviour
     public float speed = 1.0f;
 
     DialogueTrigger dialogueTrigger;
+    protected npcTypes type;
+    public enum npcTypes
+    {
+        fort,
+        level1
+    }
 
     protected virtual void Start()
     {
@@ -52,5 +58,18 @@ public class NPC : MonoBehaviour
         gameObject.SetActive(isActive);
     }
 
-   
+    public void ActivateNpcType(bool isActive, npcTypes Type)
+    {
+        if(type == Type)
+        {
+            gameObject.SetActive(isActive);
+        }
+        else
+        {
+            gameObject.SetActive(!isActive);
+        }
+        
+    }
+
+
 }

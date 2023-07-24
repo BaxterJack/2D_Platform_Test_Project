@@ -32,6 +32,7 @@ public class Lepidina : NPC
         gameManager = GameManager.Instance;
         //stateMachine.AddTransition(new StateTransition(priestQuizState, priestTeachState, gameManager.IsGodsQuizComplete));
         //stateMachine.SetInitialState(priestSendToTraining);
+        type = npcTypes.fort;
     }
 
     private void Update()

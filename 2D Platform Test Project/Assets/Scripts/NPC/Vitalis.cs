@@ -35,7 +35,7 @@ public class Vitalis : NPC
         stateMachine.SetInitialState(vitalisSendToTraining);
         stateMachine.AddTransition(new StateTransition(vitalisSendToTraining, vitalisLumberQuest, gameManager.IsTutorialComplete));
         stateMachine.AddTransition(new StateTransition(vitalisLumberQuest, vitalisBathHouseComplete, gameManager.IsBathHouseConstructed));
-
+        type = npcTypes.fort;
 
     }
 
