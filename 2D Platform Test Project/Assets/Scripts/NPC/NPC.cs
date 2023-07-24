@@ -48,9 +48,13 @@ public class NPC : MonoBehaviour
         Vector2 velocity = rigidbody.velocity;
         Vector2 npcPosition = rigidbody.transform.transform.position;
         Vector2 direction = npcPosition - (Vector2)homeWaypoint;
-
         velocity.x = direction.normalized.x * -speed;
         rigidbody.velocity = velocity;  
+    }
+
+    public void AssignTablet(Tablet t)
+    {
+        TabletManager.Instance.CurrentTablet = t;   
     }
 
     public void ActivateNPC(bool isActive)

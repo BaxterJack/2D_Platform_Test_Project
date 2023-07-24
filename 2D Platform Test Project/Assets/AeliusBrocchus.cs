@@ -20,7 +20,7 @@ public class AeliusBrocchus : NPC
         type = npcTypes.level1;
         stateMachine.SetInitialState(clearRaiders);
         stateMachine.AddTransition(new StateTransition( clearRaiders, raidersCleared, gameManager.AreRaidersCleared));
-
+        homeWaypoint = gameObject.transform.position;
     }
 
     private void Update()

@@ -15,9 +15,13 @@ public class GameManager : Singleton<GameManager>
     bool isGodsQuizComplete = false;
     GodsQuiz godsQuiz;
     bool isBathHouseConstucted = false;
-    int level1Raiders = 0;
-    int raidersCleared = 0;
+    int raidersCount = 0;
+    public int raidersCleared = 0;
 
+    public void ResetRaiderCount()
+    {
+        raidersCount = 0;
+    }
     public int RaidersCleared
     {
         get { return raidersCleared; }
@@ -38,12 +42,12 @@ public class GameManager : Singleton<GameManager>
 
     public bool AreRaidersCleared()
     {
-        return raidersCleared == level1Raiders;
+        return raidersCleared == raidersCount;
     }
 
     public void AddRaider()
     {
-        level1Raiders++;
+        raidersCount++;
     }
     public void ActivateNPCS(bool isActive)
     {

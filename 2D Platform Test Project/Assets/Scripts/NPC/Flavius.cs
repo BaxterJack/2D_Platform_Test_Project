@@ -51,7 +51,6 @@ public class Flavius : NPC
         {
             stateMachine.Update();
         }
-
     }
 
     private void FixedUpdate()

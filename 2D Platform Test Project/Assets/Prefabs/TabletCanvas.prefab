@@ -698,11 +698,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1cfe48463758c54f8fa35cae34a15a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tablets:
-  - name: Tablet1
-    message: The construction of the bathouse is taking too long. Get the building
-      finished so our soldiers dont stink of hog!
-  currentTablet: 0
 --- !u!1 &2825436506383726927
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,6 +29,10 @@ namespace Player
 
         void HandleMovement()
         {
+            if (TabletManager.Instance.IsTabletCanvasActive)
+            {
+                return;
+            }
             if (playerManager.CurrentState == PlayerManager.PlayerState.Alive)
             {
 

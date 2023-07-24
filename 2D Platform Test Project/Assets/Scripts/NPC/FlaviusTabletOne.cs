@@ -5,6 +5,7 @@ using UnityEngine;
 public class FlaviusTabletOne : BaseState
 {
     Dialogue dialogue;
+    Tablet tablet;
     public FlaviusTabletOne(NPC npc) : base(npc)
     {
         string sentence1 = "Gauis Armatus says you did well on the training ground. It looks like your fit for duty!";
@@ -23,6 +24,9 @@ public class FlaviusTabletOne : BaseState
         dialogue.name = "Flavius Cerialis";
         dialogue.ForcedDialogue = false;
 
+        tablet = new Tablet();
+        tablet.name = "Bath house Tablet";
+        tablet.message = "The construction of the bathouse is taking too long. Get the building finished so our soldiers dont stink of hog!";
 
     }
 
@@ -30,6 +34,7 @@ public class FlaviusTabletOne : BaseState
     public override void EnterState()
     {
         npc.AssignDialogue(dialogue);
+        npc.AssignTablet(tablet);
     }
 
     public override void UpdateState()

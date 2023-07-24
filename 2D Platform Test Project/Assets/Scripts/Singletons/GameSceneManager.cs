@@ -43,6 +43,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
                 break;
             case "Level1":
                 currentSceneState = SceneState.Level1;
+                GameManager.Instance.ResetRaiderCount();
                 break;
         }
     }
@@ -58,21 +59,8 @@ public class GameSceneManager : Singleton<GameSceneManager>
         currentSceneState = sceneName;
         string sceneNameString = sceneName.ToString();
         SceneManager.LoadScene(sceneNameString);
-        //ApplySceneSettings(sceneName);
         ChangeThemeMusic(sceneName);
     }
-
-    //public void ApplySceneSettings(SceneState sceneName)
-    //{
-    //    switch(sceneName)
-    //    {
-    //        case SceneState.DemoLevel:
-    //            GameObject obj = GameObject.Find("PlayerSpawn");
-    //            PlayerManager playerManager = PlayerManager.Instance;
-    //            playerManager.player.transform.position = obj.transform.position;
-    //            break;
-    //    }
-    //}
 
     void ChangeThemeMusic(SceneState sceneName)
     {

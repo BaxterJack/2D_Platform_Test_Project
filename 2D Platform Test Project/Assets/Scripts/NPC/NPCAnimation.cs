@@ -21,11 +21,11 @@ public class NPCAnimation : MonoBehaviour
 
     private void Update()
     {
-        if (gameSceneManager.CurrentScene == GameSceneManager.SceneState.Fort)
-        {
+ 
+
             WalkAnimation();
             FlipSprite();
-        }
+
            
     }
     void WalkAnimation()

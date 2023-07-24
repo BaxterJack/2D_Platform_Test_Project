@@ -77,6 +77,7 @@ public class UIManager : Singleton<UIManager>
     public void ShowUI()
     {
         uiCanvas.enabled = true;
+        Debug.Log("Showing UI");
     }
 
     void Start()

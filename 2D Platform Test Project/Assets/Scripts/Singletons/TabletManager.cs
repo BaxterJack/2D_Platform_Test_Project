@@ -9,7 +9,7 @@ using System.Linq;
 public class TabletManager : Singleton<TabletManager>
 {
     Typer typer;
-    public Tablet[] tablets;
+//    public Tablet[] tablets;
 
     Button closeButton;
     TMP_Text tabletText;
@@ -17,9 +17,16 @@ public class TabletManager : Singleton<TabletManager>
     TMP_Text title;
     Canvas canvas;
 
+    Tablet currentTablet;
 
-    public int currentTablet;
-    int totalTablets;
+    public Tablet CurrentTablet
+    {
+        get { return currentTablet; }
+        set { currentTablet = value; }
+    }
+
+//    public int currentTablet;
+//    int totalTablets;
 
     bool isTabletCanvasActive = false;
 
@@ -37,11 +44,11 @@ public class TabletManager : Singleton<TabletManager>
     protected override void Awake()
     {
         base.Awake();
-        currentTablet = 0;
+//        currentTablet = 0;
         typer = new Typer();
         translatedTabletText = new StringBuilder();
         remainingTabletText = new StringBuilder();
-        totalTablets = tablets.Length;
+ //       totalTablets = tablets.Length;
 
         closeButton = GetComponentInChildren<Button>();
         tabletText = GetComponentInChildren<TMP_Text>();
@@ -78,11 +85,13 @@ public class TabletManager : Singleton<TabletManager>
 
     public void InitialiseTablet()
     {
-        tabletText.text = tablets[currentTablet].message;
+        //tabletText.text = tablets[currentTablet].message;
+        tabletText.text = currentTablet.message;
         remainingTabletText.Clear();
         translatedTabletText.Clear();
         remainingTabletText.Append(tabletText.text);
-        typer.SplitTabletMessage(tablets[currentTablet]);
+        // typer.SplitTabletMessage(tablets[currentTablet]);
+        typer.SplitTabletMessage(currentTablet);
         isTabletCanvasActive = true;
         canvas.enabled = isTabletCanvasActive; // test 2
         UIManager.Instance.HideUI();
