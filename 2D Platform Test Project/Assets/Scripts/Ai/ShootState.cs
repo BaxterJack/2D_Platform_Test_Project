@@ -19,7 +19,7 @@ public class ShootState : BaseState
     }
     public override void EnterState()
     {
-        Debug.Log(aiObject.attackCoolDown);
+
     }
 
     public override void UpdateState()

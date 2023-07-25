@@ -4,123 +4,149 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+
 public class TutorialGuide : MonoBehaviour
 {
-    public GameObject leftMouse;
-    public GameObject rightMouse;
-    public GameObject space;
-    public GameObject a;
-    public GameObject d;
-    public GameObject button;
-    public TMP_Text instruction;
-
     public HealthBar axeHealth;
     public HealthBar bowHealth;
     public HealthBar playerHealth;
 
-    string moveLeft = "Try moving Left";
-    string moveRight = "Try moving Right";
     string jump = "Try Jumping";
+    string jumpTip = "Space: Jump";
     string stab = "Try the quick stab attack, performs minor damgage";
+    string stabTip = "Left Mouse Click: Stab";
     string slash = "Try the heavy slash attack, performs major damgage";
-    string barbAxeman = "Try taking out the barbarian axeman. Try and dodge their attack when they pull their axe back, then counterattack.";
-    string barbBowmen = "Try taking out the barbarian bowmen. Try and jump over their arrows, then go in for an attack.";
+    string slashTip = "Right Mouse Click: Slash";
+    string barbAxeman = "Take out the barbarian axeman.";
+    string barbAxeTip = "Try and dodge their attack when they pull their axe back, then counterattack.";
+    string barbBowmen = "Take out the barbarian bowmen.";
+    string barbBowTip = "Try and jump over their arrows, then go in for an attack.";
+
+
     string complete = "You'll make a fine soldier thats for sure";
+
+    public List<Goal> goals = new List<Goal>();
 
     enum Objective
     {
-        MoveLeft,
-        MoveRight,
         Jump,
         Stab,
         Slash,
         BarbAxeman,
-        BarbBowmen, 
+        BarbBowmen,
         Complete
     }
     Objective currentObjective;
-   
 
     void Start()
     {
-        instruction.text = moveLeft;
-        currentObjective = Objective.MoveLeft;
+        currentObjective = Objective.Jump;
         PlayerManager.Instance.CanAttack = true;
+
+        AddGoal(jump, jumpTip);
+        AddGoal(stab, stabTip);
+        AddGoal(slash, slashTip);
+        AddGoal(barbAxeman, barbAxeTip);
+        AddGoal(barbBowmen, barbBowTip);
+
+        Button button = UIManager.Instance.ContinueButton.GetComponent<Button>();
+
+        button.onClick.AddListener(ExitTrainingGround);
+
     }
 
-    
+
+
+    void AddGoal(string Objective, string Tip)
+    {
+        goals.Add(new Goal(Objective, Tip));
+    }
+
+
+    void FindCurrentObjective()
+    {
+        int size = goals.Count;
+        for(int i = 0; i < size; i++)
+        {
+            if (goals[i].Complete == false)
+            {
+                currentObjective = (Objective)i;
+                break;
+            }
+        }
+    }
+
+
+
+    string objPrefix = "Objective: ";
     void Update()
     {
+        FindCurrentObjective();
+        int index = (int)currentObjective;
         switch (currentObjective)
         {
-            case Objective.MoveLeft:
-                instruction.text = moveLeft;
-                a.SetActive(true);
-                if(Input.GetKeyDown(KeyCode.A))
-                {
-                    a.SetActive(false);
-                    currentObjective = Objective.MoveRight;
-                }
-                break;
-            case Objective.MoveRight:
-                instruction.text = moveRight;
-                d.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.D))
-                {
-                    d.SetActive(false);
-                    currentObjective = Objective.Jump;
-                }
-                break;
+            
             case Objective.Jump:
-                instruction.text = jump;
-                space.SetActive(true);
+                UIManager.Instance.Objective.text = objPrefix + goals[index].Objective;
+                UIManager.Instance.Tip.text = goals[index].Tip;
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
-                    space.SetActive(false);
+                    goals[index].Complete = true;
                     currentObjective = Objective.Stab;
                 }
                 break;
+
             case Objective.Stab:
-                instruction.text = stab;
-                leftMouse.SetActive(true);
+                UIManager.Instance.Objective.text = objPrefix + goals[index].Objective;
+                UIManager.Instance.Tip.text = goals[index].Tip;
+
                 if (Input.GetMouseButtonDown(0))
                 {
-                    leftMouse.SetActive(false);
+                    goals[index].Complete = true;
                     currentObjective = Objective.Slash;
                 }
                 break;
             case Objective.Slash:
-                instruction.text = slash;
-                rightMouse.SetActive(true);
+                UIManager.Instance.Objective.text = objPrefix + goals[index].Objective;
+                UIManager.Instance.Tip.text = goals[index].Tip;
                 if (Input.GetMouseButtonDown(1))
                 {
-                    rightMouse.SetActive(false);
+                    goals[index].Complete = true;
                     currentObjective = Objective.BarbAxeman;
                 }
                 break;
             case Objective.BarbAxeman:
-                instruction.text = barbAxeman;
+                UIManager.Instance.Objective.text = objPrefix + goals[index].Objective;
+                UIManager.Instance.Tip.text = goals[index].Tip;
                 if (axeHealth.HasNoHealth())
                 {
+                    goals[index].Complete = true;
                     currentObjective = Objective.BarbBowmen;
                 }
 
                 break;
             case Objective.BarbBowmen:
-                instruction.text = barbBowmen;
+                UIManager.Instance.Objective.text = objPrefix + goals[index].Objective;
+                UIManager.Instance.Tip.text = goals[index].Tip;
                 if (bowHealth.HasNoHealth())
                 {
+                    goals[index].Complete = true;
                     currentObjective = Objective.Complete;
                 }
                 break;
 
             case Objective.Complete:
-                instruction.text = complete;
+                UIManager.Instance.Objective.text = objPrefix + complete;
+                UIManager.Instance.Tip.text = "";
                 PlayerManager.Instance.CanAttack = false;
-                button.SetActive(true);
+                GameObject continueButton =  UIManager.Instance.ContinueButton;
+                continueButton.SetActive(true);
+                
+
                 break;
         }
     }
+
 
     public void ExitTrainingGround()
     {
@@ -128,5 +154,7 @@ public class TutorialGuide : MonoBehaviour
         GameManager.Instance.TutorialComplete = true;
         GameManager.Instance.ActivateNPCS(true);
         PlayerManager.Instance.SetFortPosition();
+
     }
+
 }

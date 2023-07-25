@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+//using UnityEngine.UIElements;
+
 public class UIManager : Singleton<UIManager>
 {
     [SerializeField]
@@ -22,8 +24,11 @@ public class UIManager : Singleton<UIManager>
     Canvas uiCanvas;
     TMP_Text scoreText;
     TMP_Text lootText;
+    TMP_Text objective;
+    TMP_Text tip;
     GameObject gameOverUI;
     RectTransform heartTransform;
+    GameObject continueButton;
 
     protected override void Awake()
     {
@@ -33,9 +38,40 @@ public class UIManager : Singleton<UIManager>
         FindTextComponents();
         FindRectTransforms();
         DisactivateGameOverUI();
-
+        FindContinueButton();
     }
 
+    void FindContinueButton()
+    {
+        foreach (Button b in GetComponentsInChildren<Button>())
+        {
+            switch (b.name)
+            {
+                case "ContinueButton":
+                    continueButton = b.gameObject;
+                    continueButton.SetActive(false);
+                    break;
+            }
+        }
+    }
+
+    public TMP_Text Objective
+    {
+        get { return objective; }
+        set { objective = value; }
+    }
+
+    public TMP_Text Tip
+    {
+        get { return tip; }
+        set { tip = value; }
+    }
+
+    public GameObject ContinueButton 
+    {
+        get { return continueButton; }
+        set { continueButton = value; }
+    }
 
     void FindTextComponents()
     {
@@ -48,6 +84,12 @@ public class UIManager : Singleton<UIManager>
                     break;
                 case "Text: Score":
                     scoreText = textComponent;
+                    break;
+                case "Objective":
+                    objective = textComponent;
+                    break;
+                case "Tip":
+                    tip = textComponent;
                     break;
             }
         }
@@ -154,27 +196,4 @@ public class UIManager : Singleton<UIManager>
             currentLives++;
         }
     }
-
-
-
-    //void Start()
-    //{
-    //    lootText.text += " 100";
-    //    currentLives = maxLives;
-    //    heartImages = new Image[maxLives];
-    //    gameManager = GameManager.Instance;
-    //    for (int i = 0; i < maxLives; i++)
-    //    {
-    //        Vector3 pos = heartTransform.localPosition;
-    //        pos.x += i * offset;
-    //        InstantiateHeart(pos, i);
-    //    }
-    //}
-    //private void InstantiateHeart(Vector3 position, int index)
-    //{
-    //    Image newHeart = Instantiate(heart, position, Quaternion.identity); ;
-    //    newHeart.transform.SetParent(uiCanvas.transform, false);
-    //    heartImages[index] = newHeart;
-    //}
-
 }

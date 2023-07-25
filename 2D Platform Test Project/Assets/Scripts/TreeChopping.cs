@@ -22,10 +22,10 @@ public class TreeChopping : MonoBehaviour
             TreeFallAnimation();
             isTreeChopped = true;
         }
-        if (Input.GetKeyDown(KeyCode.Backspace))
-        {
-            treeHealth = 0;
-        }
+        //if (Input.GetKeyDown(KeyCode.Backspace))
+        //{
+        //    treeHealth = 0;
+        //}
     }
     public void TakeDamage()
     {

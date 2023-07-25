@@ -155,5 +155,6 @@ public class PlayerManager : Singleton<PlayerManager>
     public void SetFortPosition()
     {
         player.transform.position = lastFortPosition;
+
     }
 }
