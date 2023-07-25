@@ -170,8 +170,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -105.93385, y: 332.08215}
-  m_SizeDelta: {x: 745.9686, y: 101.2422}
+  m_AnchoredPosition: {x: -105.93385, y: 254.56}
+  m_SizeDelta: {x: 745.9686, y: 174.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2825436505591618896
 CanvasRenderer:
@@ -446,7 +446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000041007996, y: 0}
+  m_AnchoredPosition: {x: -0.000030517578, y: 0}
   m_SizeDelta: {x: 800, y: 491.14}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &2825436505813260099
@@ -617,7 +617,7 @@ RectTransform:
   m_Children:
   - {fileID: 2825436505813260096}
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1004,8 +1004,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -105.93385, y: -247}
-  m_SizeDelta: {x: 745.9686, y: 85.24}
+  m_AnchoredPosition: {x: -105.93385, y: -284.44458}
+  m_SizeDelta: {x: 745.9686, y: 182.6393}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2825436506782939342
 CanvasRenderer:
@@ -1063,12 +1063,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 26
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 12
+  m_fontSizeMax: 26
   m_fontStyle: 0
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
@@ -1099,7 +1099,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 14.368467, z: 0.6895141, w: -44.985504}
+  m_margin: {x: 0, y: 1.08675, z: 0.6895141, w: 0.3936386}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

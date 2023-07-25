@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-
     protected StateMachine stateMachine;
-//    public bool hasConversationCompleted = false;
 
     public Vector3 homeWaypoint;
 
     public float speed = 1.0f;
+
+    private float distanceToDestination;
 
     DialogueTrigger dialogueTrigger;
     protected npcTypes type;
@@ -24,21 +24,26 @@ public class NPC : MonoBehaviour
     {
         GameManager.Instance.AddNPC(this);
         dialogueTrigger = gameObject.GetComponent<DialogueTrigger>();
+        distanceToDestination = 10;
     }
     public void SetHasConversationCompleted(bool hasConversationCompleted)
     {
-        //this.hasConversationCompleted = hasConversationCompleted;
         dialogueTrigger.dialogue.ConversationComplete = hasConversationCompleted;
+    }
+
+    protected void SetDistance()
+    {
+        Vector2 distance = (homeWaypoint - gameObject.transform.position);
+        distance.y = 0;
+        distanceToDestination = distance.magnitude;
     }
 
     public bool GetHasConversationCompleted()
     {
-        //return hasConversationCompleted;
         return dialogueTrigger.dialogue.ConversationComplete;
     }
     public void AssignDialogue(Dialogue dialogue)
     {
-        //GetComponent<DialogueTrigger>().dialogue = dialogue;
         dialogueTrigger.dialogue = dialogue;
     }
 
@@ -51,6 +56,9 @@ public class NPC : MonoBehaviour
         velocity.x = direction.normalized.x * -speed;
         rigidbody.velocity = velocity;  
     }
+
+
+
 
     public void AssignTablet(Tablet t)
     {
@@ -72,8 +80,14 @@ public class NPC : MonoBehaviour
         {
             gameObject.SetActive(!isActive);
         }
-        
     }
+
+    public bool HasReachedDestination()
+    {
+        return distanceToDestination <= 0.1;
+    }
+
+
 
 
 }

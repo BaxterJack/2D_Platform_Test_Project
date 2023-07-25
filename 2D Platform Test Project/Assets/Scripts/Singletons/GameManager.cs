@@ -15,6 +15,7 @@ public class GameManager : Singleton<GameManager>
     bool isGodsQuizComplete = false;
     GodsQuiz godsQuiz;
     bool isBathHouseConstucted = false;
+    [SerializeField]
     int raidersCount = 0;
     public int raidersCleared = 0;
 

@@ -20,6 +20,8 @@ public class PlayerManager : Singleton<PlayerManager>
 
     bool canAttack = false;
 
+    bool canAttackCheck = false;
+
     Vector3 checkpoint = new Vector3();
     public enum PlayerState
     {
@@ -36,7 +38,7 @@ public class PlayerManager : Singleton<PlayerManager>
     public bool CanAttack
     {
         get { return canAttack; }
-        set { canAttack = value; }
+        set { canAttack = value; /*Debug.Log("changed can attack");*/ }
     }
 
     protected override void Awake()
@@ -71,9 +73,26 @@ public class PlayerManager : Singleton<PlayerManager>
         }
     }
 
+    void CanAttackCheck()
+    {
+        if(canAttackCheck != canAttack)
+        {
+            if(canAttack == true)
+            {
+                canAttackCheck = true;
+                Debug.Log("Weapons Enabled");
+            }
+            else if(canAttack == false)
+            {
+                canAttackCheck = false;
+                Debug.Log("Weapons Disabled");
+            }
+        }
+    }
+
     private void Update()
     {
-
+        //CanAttackCheck();
         if (currentState == PlayerState.Dead)
         {
             respawnTimer += Time.deltaTime;

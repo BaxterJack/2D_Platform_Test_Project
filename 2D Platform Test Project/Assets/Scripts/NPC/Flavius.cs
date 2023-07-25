@@ -39,10 +39,16 @@ public class Flavius : NPC
         gameSceneManager = GameSceneManager.Instance;
         stateMachine.SetInitialState(flaviusWelcomeState);
         stateMachine.AddTransition(new StateTransition(flaviusWelcomeState, goToCommandersHouseState, this.GetHasConversationCompleted));
-        stateMachine.AddTransition(new StateTransition(goToCommandersHouseState, flaviusTabletOne, gameManager.IsTutorialComplete));
+        stateMachine.AddTransition(new StateTransition(goToCommandersHouseState, flaviusTabletOne, FlaviusTabletCondition));
         type = npcTypes.fort;
     }
 
+    bool FlaviusTabletCondition()
+    {
+        bool condition = gameManager.IsTutorialComplete();
+        condition &= HasReachedDestination();
+        return condition;
+    }
 
 
     private void Update()
@@ -50,6 +56,7 @@ public class Flavius : NPC
         if (gameSceneManager.CurrentScene == GameSceneManager.SceneState.Fort)
         {
             stateMachine.Update();
+            SetDistance();
         }
     }
 

@@ -22,7 +22,7 @@ public class NPCAnimation : MonoBehaviour
     private void Update()
     {
  
-
+        npcPosition = gameObject.transform.position;
             WalkAnimation();
             FlipSprite();
 
@@ -65,4 +65,6 @@ public class NPCAnimation : MonoBehaviour
             return false;
         }
     }
+
+
 }

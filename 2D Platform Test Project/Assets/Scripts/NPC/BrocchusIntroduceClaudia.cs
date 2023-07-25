@@ -2,22 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BrocchusRaidersCleared : BaseState
+public class BrocchusIntroduceClaudia : BaseState
 {
     Dialogue dialogue;
 
-    public BrocchusRaidersCleared(NPC npc) : base(npc)
+    public BrocchusIntroduceClaudia(NPC npc) : base(npc)
     {
-        string sentence1 = "Thank you for clearing those Raiders Soldier. You really saved the day!";
-        string sentence2 = "Someone really needs to build a wall to stop them!!";
-        string sentence3 = "My name is Aelius Brocchus, I am the Fort commander at Newbrough.";
-
+        string sentence1 = "Oh, and this here is my wife.";
 
         dialogue = new Dialogue();
         dialogue.sentences.Add(sentence1);
-        dialogue.sentences.Add(sentence2);
-        dialogue.sentences.Add(sentence3);
         dialogue.HasTabletPuzzle = false;
+        dialogue.ForcedDialogue = true;
         dialogue.name = "Aelius Brocchus";
     }
 
@@ -25,6 +21,10 @@ public class BrocchusRaidersCleared : BaseState
     public override void EnterState()
     {
         npc.AssignDialogue(dialogue);
+
+        AeliusBrocchus brocchus = (AeliusBrocchus)npc;
+        brocchus.SpawnClaudia();
+        //npc.GetComponent<DialogueTrigger>().enabled = false;
     }
 
     public override void UpdateState()

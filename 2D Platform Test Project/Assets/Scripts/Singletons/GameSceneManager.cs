@@ -43,7 +43,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
                 break;
             case "Level1":
                 currentSceneState = SceneState.Level1;
-                GameManager.Instance.ResetRaiderCount();
+                //GameManager.Instance.ResetRaiderCount();
                 break;
         }
     }

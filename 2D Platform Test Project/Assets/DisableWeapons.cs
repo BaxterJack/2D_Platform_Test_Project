@@ -13,11 +13,21 @@ public class DisableWeapons : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        PlayerManager.Instance.CanAttack = false;
+        if(collision.tag == "Player")
+        {
+            PlayerManager.Instance.CanAttack = false;
+        }
+        
+        
     }
+
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        PlayerManager.Instance.CanAttack = true;
+        if(collision.tag == "Player")
+        {
+            PlayerManager.Instance.CanAttack = true;
+        }
+        
     }
 }

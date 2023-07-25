@@ -20,15 +20,16 @@ public class ClaudiaSevera : NPC
         gameManager = GameManager.Instance;
         type = npcTypes.level1;
         stateMachine.SetInitialState(goToPlayer);
-        stateMachine.AddTransition(new StateTransition(goToPlayer, claudiaBirthdayTablet, gameManager.AreRaidersCleared));
-        GameObject gO = GameObject.Find("ClaudiaWaypoint");
-        homeWaypoint = gO.transform.position;
+        stateMachine.AddTransition(new StateTransition(goToPlayer, claudiaBirthdayTablet, HasReachedDestination));
+        //GameObject gO = GameObject.Find("ClaudiaWaypoint");
+        //homeWaypoint = gO.transform.position;
+
     }
 
     private void Update()
     {
         stateMachine.Update();
-
+        SetDistance();
     }
 
     private void FixedUpdate()
