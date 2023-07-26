@@ -32,11 +32,15 @@ public class LepidinaArtefactQuest : BaseState
         npc.AssignDialogue(dialogue);
         Rigidbody2D rB = npc.GetComponent<Rigidbody2D>();
         rB.velocity = Vector3.zero;
+        ArtefactCanvasManager.Instance.ActivateChests();
     }
 
     public override void UpdateState()
     {
-
+        if(npc.GetHasConversationCompleted())
+        {
+            FortGuide.Instance.SetObjectivecomplete(FortGuide.FortObjective.GetLumber);
+        }
     }
 
     public override void FixedUpdateState()

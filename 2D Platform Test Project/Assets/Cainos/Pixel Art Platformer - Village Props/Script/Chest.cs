@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cainos.LucidEditor;
+using TMPro;
 
 namespace Cainos.PixelArtPlatformer_VillageProps
 {
@@ -37,8 +38,11 @@ namespace Cainos.PixelArtPlatformer_VillageProps
         /////////
         ArtefactCanvasManager artefactCanvasManager;
         public Artefact artefact;
-        public GameObject chestText;
         public float textYOffset;
+        public TMP_Text textPrefab;
+        TMP_Text openChest;
+        string openChestText = "Press E to Open";
+        bool isInRange = false;
         private void Start()
         {
             artefactCanvasManager = ArtefactCanvasManager.Instance;
@@ -47,34 +51,61 @@ namespace Cainos.PixelArtPlatformer_VillageProps
         {
            IsOpened = true;
            artefactCanvasManager.OpenCanvas(artefact);
+           artefactCanvasManager.CurrentChest = this;
         }
 
-        private void OnTriggerStay2D(Collider2D collision)
+        public void CollectChest()
         {
-            if (collision.tag == "Player")
+            IsOpened = false;
+            DestroyOpenChestText();
+            Destroy(this.gameObject, 0.5f);
+
+            
+        }
+
+        private void Update()
+        {
+            if(isInRange && Input.GetKeyDown(KeyCode.E))
             {
-                if (Input.GetKey(KeyCode.E))
+                
+                if (!isOpened)
                 {
-                    OpenChest();
+                    ArtefactCanvasManager.Instance.AddArtefact(artefact);
                 }
+                OpenChest();
             }
         }
 
+        void CreateOpenChestText()
+        {
+            openChest = Instantiate(textPrefab);
+            openChest.text = openChestText;
+            Vector2 chestPosition = this.transform.position;
+            chestPosition.y += textYOffset;
+            openChest.gameObject.transform.position = chestPosition;
+        }
+
+        void DestroyOpenChestText()
+        {
+            if (openChest != null)
+            {
+                Destroy(openChest.gameObject);
+                
+            }
+        }
+
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            SetTextPosition();
-            chestText.gameObject.SetActive(true);
+            CreateOpenChestText();
+            isInRange = true;
         }
         private void OnTriggerExit2D(Collider2D collision)
         {
-            chestText.gameObject.SetActive(false);
+            DestroyOpenChestText();
+            isInRange = false;
         }
 
-        void SetTextPosition()
-        {
-            Vector2 chestPosition = this.transform.position;
-            chestPosition.y += textYOffset;
-            chestText.transform.position = chestPosition;
-        }
+
     }
 }

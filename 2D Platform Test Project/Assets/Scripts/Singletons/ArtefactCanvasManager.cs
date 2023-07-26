@@ -1,3 +1,4 @@
+using Cainos.PixelArtPlatformer_VillageProps;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,7 +12,36 @@ public class ArtefactCanvasManager : Singleton<ArtefactCanvasManager>
     TMP_Text artefactDescription;
     Image artefactImage;
 
+    public Chest currentChest = new Chest();
 
+    public Chest CurrentChest {  get { return currentChest; } set { currentChest = value; } }
+
+    public List<Artefact> collectedArtefacts = new List<Artefact>();
+    public List<GameObject> chests = new List<GameObject>();
+
+    [SerializeField]
+    private int numChests = 0;
+
+    public int NumChests
+    {
+        get { return numChests; }
+        set { numChests = value; }
+    }
+
+    public void ClearChests()
+    {
+        chests.Clear();
+    }
+    public void AddChest(GameObject chest)
+    {
+        chests.Add(chest);
+    }
+
+    bool allChestsCollected = false;
+    public bool AllChestsCollected()
+    {
+         return allChestsCollected; 
+    }
     protected override void Awake()
     {
         base.Awake();
@@ -40,6 +70,18 @@ public class ArtefactCanvasManager : Singleton<ArtefactCanvasManager>
             }
         }
     }
+
+    private void Update()
+    {
+        if(collectedArtefacts.Count == numChests)
+        {
+            allChestsCollected = true;
+        }
+    }
+    public void AddArtefact(Artefact artefact)
+    {
+        collectedArtefacts.Add(artefact);
+    }
     public void OpenCanvas(Artefact artefact)
     {
         artefactName.text = artefact.name;
@@ -60,5 +102,18 @@ public class ArtefactCanvasManager : Singleton<ArtefactCanvasManager>
     {
         artefactCanvas.enabled = false;
         UIManager.Instance.ShowUI();
+        if(currentChest != null)
+        {
+            currentChest.CollectChest();
+        }
+        
+    }
+
+    public void ActivateChests()
+    {
+        foreach(GameObject g in chests)
+        {
+            g.SetActive(true);
+        }
     }
 }
