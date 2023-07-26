@@ -16,7 +16,6 @@ public class Log : MonoBehaviour
     public TMP_Text textPrefab;
     bool isPlayerInRange = false;
     bool isLogCarried = false;
-    int count = 0;
     
     BathHouse bathHouse;
     private void Start()
@@ -83,11 +82,13 @@ public class Log : MonoBehaviour
         transform.SetParent(null);
         DisablePhysics(false);
 
-        if (IsNearBathHouse() && count == 0)
+        if (IsNearBathHouse() )
         {
-            bathHouse.ActivateConstructionStages();
             DestroyLog();
-            count++;
+            if (!GameManager.Instance.IsBathHouseConstructed())
+            {
+                bathHouse.ActivateConstructionStages();
+            }
         }
     }
 

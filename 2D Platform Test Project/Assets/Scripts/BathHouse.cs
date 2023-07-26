@@ -84,6 +84,9 @@ public class BathHouse : MonoBehaviour
 
         StopConstructionFX();
         gameManager.BathHouseConstructed = true;
+        gameManager.InstatiateLepidina();
+
+
     }
 
     void PlayConstructionFX()

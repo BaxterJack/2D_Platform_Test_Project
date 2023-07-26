@@ -19,6 +19,7 @@ public class GameManager : Singleton<GameManager>
     int raidersCount = 0;
     public int raidersCleared = 0;
 
+    public GameObject lepidinaPrefab;
     public void ResetRaiderCount()
     {
         raidersCount = 0;
@@ -90,5 +91,12 @@ public class GameManager : Singleton<GameManager>
     public bool IsGodsQuizComplete()
     {
         return isGodsQuizComplete;
+    }
+
+    public void InstatiateLepidina()
+    {
+        GameObject instantiatedPrefab = Instantiate(lepidinaPrefab);
+        instantiatedPrefab.transform.position = new Vector3(24.43f, -3.69f, 0f);
+        instantiatedPrefab.transform.rotation = Quaternion.identity;
     }
 }

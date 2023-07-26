@@ -29,7 +29,7 @@ public class ClaudiaSevera : NPC
     private void Update()
     {
         stateMachine.Update();
-        SetDistance();
+        DistanceToDestination = SetDistance(destinationWaypoint);
     }
 
     private void FixedUpdate()

@@ -62,7 +62,6 @@ public class BarbAxeman : AiObject
     {
         Vector2 knockBackDirection = (this.PlayerPosition - (Vector2)transform.position);
         knockBackDirection.y = 0;
-        Debug.Log(knockBackDirection);
         player.GetComponent<Rigidbody2D>().AddForce(knockBackDirection.normalized * knockBackForce);
     }
 

@@ -46,7 +46,7 @@ public class Flavius : NPC
     bool FlaviusTabletCondition()
     {
         bool condition = gameManager.IsTutorialComplete();
-        condition &= HasReachedDestination();
+        condition &= HasReachedHome();
         return condition;
     }
 
@@ -56,7 +56,7 @@ public class Flavius : NPC
         if (gameSceneManager.CurrentScene == GameSceneManager.SceneState.Fort)
         {
             stateMachine.Update();
-            SetDistance();
+            DistanceToHome = SetDistance(homeWaypoint);
         }
     }
 

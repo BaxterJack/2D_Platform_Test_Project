@@ -35,11 +35,15 @@ public class FlaviusTabletOne : BaseState
     {
         npc.AssignDialogue(dialogue);
         npc.AssignTablet(tablet);
+        
     }
 
     public override void UpdateState()
     {
-
+        if (npc.GetHasConversationCompleted())
+        {
+            FortGuide.Instance.SetObjectivecomplete(FortGuide.FortObjective.SpeakWithCommander);
+        }
     }
 
     public override void FixedUpdateState()

@@ -7,11 +7,19 @@ using UnityEngine;
 public class FortGuide : Singleton<FortGuide>
 {
 
-    string meetCommander = "Go and speak with the Fort Commander at the Gatehouse.";
-    string meetCommanderTip = "Use the A & D key to move.";
+    string introduceCommander = "Go and speak with the Fort Commander at the Gatehouse.";
+    string introduceCommanderTip = "Use the A & D key to move.";
+    string tutorial = "Go to the Master at Arms for basic training.";
+    string tutorialTip = "You can find Gaius Armatus to the right of the blacksmith.";
+    string speakWithCommander = "Speak with the Fort Commander.";
+    string speakWithCommanderTip = "The commanders house is to the right of the training field.";
+    string speakWithBathhouse = "Send the tablet message to Vitalis, the BathHouse keeper.";
+    string speakWithBathhouseTip = "The bathouse is the unconstructed building to the east of the commanders house.";
+    string getLumber = "Chop down one tree to get lumber for construction.";
+    string getLumberTip = "There are trees outside the eastern gate.";
 
 
-    List<Goal>goals = new List<Goal>();
+    public List<Goal>goals = new List<Goal>();
 
     public enum FortObjective
     {
@@ -19,13 +27,19 @@ public class FortGuide : Singleton<FortGuide>
         Tutorial,
         SpeakWithCommander,
         SpeakWithBathHouse,
+        GetLumber
 
     }
 
     public void SetObjectivecomplete(FortObjective objective)
     {
+
         int index = (int)objective;
         goals[index].Complete = true;
+        FindCurrentObjective();
+        index = (int)currentObjective;
+        InitialiseCurrentObjective(index);
+
     }
 
     FortObjective currentObjective;
@@ -37,7 +51,15 @@ public class FortGuide : Singleton<FortGuide>
     void Start()
     {
         currentObjective = FortObjective.IntroduceCommander;
-        AddGoal(meetCommander, meetCommanderTip);
+
+        AddGoal(introduceCommander, introduceCommanderTip);
+        AddGoal(tutorial, tutorialTip);
+        AddGoal(speakWithCommander, speakWithCommanderTip);
+        AddGoal(speakWithBathhouse, speakWithBathhouseTip);
+        AddGoal(getLumber, getLumberTip);
+
+
+        InitialiseCurrentObjective((int)currentObjective);
     }
 
     void AddGoal(string Objective, string Tip)
@@ -60,21 +82,13 @@ public class FortGuide : Singleton<FortGuide>
 
     void Update()
     {
-        FindCurrentObjective();
-        int index = (int)currentObjective;
-        InitialiseCurrentObjective(index);
+
     }
 
     string objPrefix = "Objective: ";
     void InitialiseCurrentObjective(int index)
     {
-        switch (currentObjective)
-        {
-            case FortObjective.IntroduceCommander:
-                UIManager.Instance.Objective.text = objPrefix + goals[index].Objective;
-                UIManager.Instance.Tip.text = goals[index].Tip;
-
-                break;
-        }
+        UIManager.Instance.Objective.text = objPrefix + goals[index].Objective;
+        UIManager.Instance.Tip.text = goals[index].Tip;
     }
 }

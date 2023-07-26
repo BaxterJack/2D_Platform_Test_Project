@@ -8,9 +8,22 @@ public class NPC : MonoBehaviour
 
     public Vector3 homeWaypoint;
 
+    public Vector3 destinationWaypoint;
+
     public float speed = 1.0f;
 
     private float distanceToDestination;
+    public float DistanceToDestination
+    {
+        get { return distanceToDestination; }
+        set { distanceToDestination = value; }
+    }
+    private float distanceToHome;
+    public float DistanceToHome
+    {
+        get { return distanceToHome; }
+        set { distanceToHome = value; }
+    }
 
     DialogueTrigger dialogueTrigger;
     protected npcTypes type;
@@ -25,34 +38,46 @@ public class NPC : MonoBehaviour
         GameManager.Instance.AddNPC(this);
         dialogueTrigger = gameObject.GetComponent<DialogueTrigger>();
         distanceToDestination = 10;
-    }
-    public void SetHasConversationCompleted(bool hasConversationCompleted)
-    {
-        dialogueTrigger.dialogue.ConversationComplete = hasConversationCompleted;
+        distanceToHome = 10;
     }
 
-    protected void SetDistance()
+
+    protected float SetDistance(Vector3 waypoint)
     {
-        Vector2 distance = (homeWaypoint - gameObject.transform.position);
+        Vector2 distance = (waypoint - gameObject.transform.position);
         distance.y = 0;
-        distanceToDestination = distance.magnitude;
+        return distance.magnitude;
     }
 
-    public bool GetHasConversationCompleted()
+    public bool HasReachedDestination()
     {
-        return dialogueTrigger.dialogue.ConversationComplete;
-    }
-    public void AssignDialogue(Dialogue dialogue)
-    {
-        dialogueTrigger.dialogue = dialogue;
+        return distanceToDestination <= 0.1;
     }
 
-    public void MoveNPC()
+    public bool HasReachedHome()
+    {
+        return distanceToHome <= 0.1;
+    }
+
+    public void SetDestination()
+    {
+        Vector3 playerPos = PlayerManager.Instance.transform.position;
+
+        Vector3 npcPos = transform.position;
+        Vector3 directionToPlayer = playerPos - npcPos;
+
+        float offset = (directionToPlayer.x < 0) ? 0.5f : -0.5f;
+        playerPos.x += offset;
+        destinationWaypoint = playerPos;
+    }
+
+
+    public void MoveNPC(Vector3 waypoint)
     {
         Rigidbody2D rigidbody = GetComponent<Rigidbody2D>();
         Vector2 velocity = rigidbody.velocity;
         Vector2 npcPosition = rigidbody.transform.transform.position;
-        Vector2 direction = npcPosition - (Vector2)homeWaypoint;
+        Vector2 direction = npcPosition - (Vector2)waypoint;
         velocity.x = direction.normalized.x * -speed;
         rigidbody.velocity = velocity;  
     }
@@ -82,12 +107,19 @@ public class NPC : MonoBehaviour
         }
     }
 
-    public bool HasReachedDestination()
+    public void SetHasConversationCompleted(bool hasConversationCompleted)
     {
-        return distanceToDestination <= 0.1;
+        dialogueTrigger.dialogue.ConversationComplete = hasConversationCompleted;
     }
 
-
+    public bool GetHasConversationCompleted()
+    {
+        return dialogueTrigger.dialogue.ConversationComplete;
+    }
+    public void AssignDialogue(Dialogue dialogue)
+    {
+        dialogueTrigger.dialogue = dialogue;
+    }
 
 
 }

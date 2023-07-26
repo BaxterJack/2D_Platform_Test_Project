@@ -355,6 +355,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   homeWaypoint: {x: 0, y: 0, z: 0}
+  destinationWaypoint: {x: 0, y: 0, z: 0}
   speed: 1
   claudiaPrefab: {fileID: 4160870100300127469, guid: f6044b962024c66488e8b5db46e8aa0e, type: 3}
 --- !u!1 &98874163
@@ -2539,7 +2540,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1664398480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.54, y: 3.46, z: -9.995526}
+  m_LocalPosition: {x: 80.97, y: 0.91999996, z: -9.995526}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -19255,11 +19256,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1740887442183484587, guid: 4132ffad7b6ffed49876345541ce243e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.54
+      value: 80.97
       objectReference: {fileID: 0}
     - target: {fileID: 1740887442183484587, guid: 4132ffad7b6ffed49876345541ce243e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.46
+      value: -1.08
       objectReference: {fileID: 0}
     - target: {fileID: 1740887442183484587, guid: 4132ffad7b6ffed49876345541ce243e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -19765,7 +19766,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2124987860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.54, y: 3.46, z: -9.995526}
+  m_LocalPosition: {x: 80.97, y: 0.91999996, z: -9.995526}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

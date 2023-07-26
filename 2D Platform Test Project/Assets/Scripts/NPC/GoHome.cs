@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GoToCommandersHouseState : BaseState
+public class GoHome : BaseState
 {
-    public GoToCommandersHouseState(NPC npc) : base(npc)
+    public GoHome(NPC npc) : base(npc)
     {
-        
+
     }
 
     public override void EnterState()
     {
-        FortGuide.Instance.SetObjectivecomplete(FortGuide.FortObjective.IntroduceCommander);
+        
 
     }
 

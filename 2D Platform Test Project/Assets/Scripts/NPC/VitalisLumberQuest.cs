@@ -33,11 +33,15 @@ public class VitalisLumberQuest : BaseState
     public override void EnterState()
     {
         npc.AssignDialogue(dialogue);
+        
     }
 
     public override void UpdateState()
     {
-
+        if (npc.GetHasConversationCompleted())
+        {
+            FortGuide.Instance.SetObjectivecomplete(FortGuide.FortObjective.SpeakWithBathHouse);
+        }
     }
 
     public override void FixedUpdateState()

@@ -19,15 +19,12 @@ public class ClaudiaGoToPlayer : BaseState
 
     public override void UpdateState()
     {
-        Vector3 playerPos = playerManager.transform.position;
-        float offset = 0.5f;
-        playerPos.x += offset;
-        npc.homeWaypoint = playerPos;
+        npc.SetDestination();
     }
 
     public override void FixedUpdateState()
     {
-        npc.MoveNPC();
+        npc.MoveNPC(npc.destinationWaypoint);
      
     }
 }
