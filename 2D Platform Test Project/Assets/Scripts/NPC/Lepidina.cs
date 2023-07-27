@@ -9,6 +9,9 @@ public class Lepidina : NPC
     private static Lepidina instance;
     ClaudiaGoToPlayer goToPlayer;
     LepidinaArtefactQuest artefactQuest;
+    LepidinaArtefactsFound artefactsFound;
+    LepidinaArtefactQuiz artefactQuiz;
+    LepidinaSendOtherQuiz lepidinaSendOtherQuiz;
 
     GoHome goHome;
 
@@ -17,6 +20,9 @@ public class Lepidina : NPC
         stateMachine = new StateMachine();
         goToPlayer = new ClaudiaGoToPlayer(this);
         artefactQuest = new LepidinaArtefactQuest(this);
+        artefactsFound = new LepidinaArtefactsFound(this);
+        artefactQuiz = new LepidinaArtefactQuiz(this);
+        lepidinaSendOtherQuiz = new LepidinaSendOtherQuiz(this);
         goHome = new GoHome(this);
         if (instance != null)
         {
@@ -38,6 +44,9 @@ public class Lepidina : NPC
         type = npcTypes.fort;
         stateMachine.AddTransition(new StateTransition(goToPlayer, artefactQuest, this.HasReachedDestination));
         stateMachine.AddTransition(new StateTransition(artefactQuest, goHome, this.GetHasConversationCompleted));
+        stateMachine.AddTransition(new StateTransition(goHome, artefactsFound, ArtefactCanvasManager.Instance.AllChestsCollected));
+        stateMachine.AddTransition(new StateTransition(artefactsFound, artefactQuiz, this.GetHasConversationCompleted));
+        stateMachine.AddTransition(new StateTransition(artefactQuiz, lepidinaSendOtherQuiz, GameManager.Instance.IsArtefactQuizComplete));
 
         stateMachine.SetInitialState(goToPlayer);
     }

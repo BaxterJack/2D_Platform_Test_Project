@@ -15,14 +15,25 @@ public class QuizManager : MonoBehaviour
 
     int score;
     public Button[] buttons;
+    Button nextQuestion;
     TMP_Text question, scorefield;
     int currentQuestion;
     int numAnswer = 0;
-    void Start()
+    string filePath = "ArtefactQuiz";
+    QuizType type;
+    public enum QuizType
     {
+        Artefact,
+        Weaponary,
+        BattleTactics
+    }
+    public void Initiliase(string FilePath, QuizType Type)
+    {
+        type = Type;
         buttons = new Button[4];
         currentQuestion = 0;
         score = 0;
+        filePath = FilePath;
         LoadQuestionsFromJSON();
         InitialseButtons();
         InitialiseText();
@@ -47,8 +58,18 @@ public class QuizManager : MonoBehaviour
                 case "ButtonD":
                     buttons[3] = b;
                     break;
+                case "NextQuestion":
+                    nextQuestion = b;
+                    ActivateNextQuestionButton(false);
+                    nextQuestion.onClick.AddListener(NextQuestion);
+                    break;
             }
         }
+    }
+
+    void ActivateNextQuestionButton(bool condition)
+    {
+        nextQuestion.gameObject.SetActive(condition);
     }
 
     void InitialiseText()
@@ -73,7 +94,7 @@ public class QuizManager : MonoBehaviour
         for (int i = 0; i < buttons.Length; i++)
         {
             int buttonIndex = i;
-            buttons[i].onClick.RemoveAllListeners();
+            
             buttons[i].GetComponentInChildren<TMP_Text>().text = quizData.questions[currentQuestion].answers[i];
             if (quizData.questions[currentQuestion].correctAnswer == i)
             {
@@ -86,8 +107,17 @@ public class QuizManager : MonoBehaviour
         }
     }
 
+    void RemoveButtonListeners()
+    {
+        for (int i = 0; i < buttons.Length; i++)
+        {
+            buttons[i].onClick.RemoveAllListeners();
+        }
+    }
+
     void CorrectAnswer()
     {
+        RemoveButtonListeners();
         int correctIndex = quizData.questions[currentQuestion].correctAnswer;
         buttons[correctIndex].image.color = Color.green;
         score++;
@@ -96,6 +126,7 @@ public class QuizManager : MonoBehaviour
 
     void IncorrectAnswer(int selectedButtonIndex)
     {
+        RemoveButtonListeners();
         buttons[selectedButtonIndex].image.color = Color.red;
         int correctIndex = quizData.questions[currentQuestion].correctAnswer;
         buttons[correctIndex].image.color = Color.green;
@@ -105,7 +136,7 @@ public class QuizManager : MonoBehaviour
     void NextQuestion()
     {
 
-        numAnswer = 0;
+        
         currentQuestion++;
         if(currentQuestion <  quizData.questions.Length)
         {
@@ -115,7 +146,12 @@ public class QuizManager : MonoBehaviour
             }
             InitialiseQuestion();
         }
-       
+        else
+        {
+            EndQuiz();
+            return;
+        }
+        numAnswer = 0;
     }
 
     private void Update()
@@ -123,8 +159,41 @@ public class QuizManager : MonoBehaviour
         InitialiseScore();
         if(numAnswer == 1)
         {
-            NextQuestion();
+            ActivateNextQuestionButton(true);
         }
+        else
+        {
+            ActivateNextQuestionButton(false);
+        }
+    }
+
+    void EndQuiz()
+    {
+        nextQuestion.GetComponentInChildren<TMP_Text>().text = "End Quiz";
+        nextQuestion.onClick.RemoveAllListeners();
+        nextQuestion.onClick.AddListener(CloseCanvas);
+        SetComplete();
+    }
+
+    void SetComplete()
+    {
+        switch (type)
+        {
+            case QuizType.Artefact:
+                GameManager.Instance.ArtefactQuiz = true;
+                break;
+            case QuizType.BattleTactics:
+                GameManager.Instance.ArtefactQuiz = true;
+                break;
+            case QuizType.Weaponary:
+                GameManager.Instance.ArtefactQuiz = true;
+                break;
+        }
+    }
+
+    void CloseCanvas()
+    {
+        Destroy(gameObject);
     }
 
     void InitialiseScore()
@@ -134,7 +203,7 @@ public class QuizManager : MonoBehaviour
 
     private void LoadQuestionsFromJSON()
     {
-        string filePath = "ArtefactQuiz";
+        Debug.Log(filePath);
         TextAsset jsonAsset = Resources.Load<TextAsset>(filePath);
 
         if (jsonAsset != null)

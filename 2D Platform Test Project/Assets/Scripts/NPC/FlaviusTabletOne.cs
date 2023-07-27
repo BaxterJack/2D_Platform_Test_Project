@@ -26,7 +26,8 @@ public class FlaviusTabletOne : BaseState
 
         tablet = new Tablet();
         tablet.name = "Bath house Tablet";
-        tablet.message = "The construction of the bathouse is taking too long. Get the building finished so our soldiers dont stink of hog!";
+        //  tablet.message = "The construction of the bathouse is taking too long. Get the building finished so our soldiers dont stink of hog!";
+        tablet.message = "Test";
 
     }
 

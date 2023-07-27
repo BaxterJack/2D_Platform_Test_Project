@@ -18,8 +18,40 @@ public class GameManager : Singleton<GameManager>
     [SerializeField]
     int raidersCount = 0;
     public int raidersCleared = 0;
+    bool artefactQuizComplete = false;
+    bool weaponQuizComplete = false;
+    bool BattleQuizComplete = false;
+
+    public bool WeaponQuiz
+    {
+        set { weaponQuizComplete = value; }
+    }
+    public bool IsWeaponQuizComplete()
+    {
+        return weaponQuizComplete;
+    }
+
+    public bool BattleQuiz
+    {
+        set { BattleQuizComplete = value; }
+    }
+    public bool IsBattleComplete()
+    {
+        return BattleQuizComplete;
+    }
+
+    public bool ArtefactQuiz
+    {
+        set { artefactQuizComplete = value; }
+    }
+    public bool IsArtefactQuizComplete()
+    {
+        return artefactQuizComplete;
+    }
+
 
     public GameObject lepidinaPrefab;
+    public GameObject quizPrefab;
     public void ResetRaiderCount()
     {
         raidersCount = 0;
@@ -98,5 +130,21 @@ public class GameManager : Singleton<GameManager>
         GameObject instantiatedPrefab = Instantiate(lepidinaPrefab);
         instantiatedPrefab.transform.position = new Vector3(24.43f, -3.69f, 0f);
         instantiatedPrefab.transform.rotation = Quaternion.identity;
+    }
+
+    public void InstatiateQuiz(string FilePath, QuizManager.QuizType Type)
+    {
+        GameObject quizManagerObject = Instantiate(quizPrefab);
+        QuizManager quizManager = quizManagerObject.GetComponent<QuizManager>();
+
+        quizManager.Initiliase(FilePath, Type);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            InstatiateQuiz("ArtefactQuiz", QuizManager.QuizType.Artefact);
+        }
     }
 }
