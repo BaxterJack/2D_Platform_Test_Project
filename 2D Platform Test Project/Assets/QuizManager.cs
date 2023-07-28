@@ -15,7 +15,6 @@ public class QuizManager : MonoBehaviour
 
 {
     private QuizData quizData;
-    
 
     protected int score;
     protected Button[] buttons;
@@ -178,20 +177,42 @@ public class QuizManager : MonoBehaviour
         SetComplete();
     }
 
-    protected void SetComplete()
+
+
+    protected virtual void SetComplete()
     {
-        switch (type)
-        {
-            case QuizType.Artefact:
-                GameManager.Instance.ArtefactQuiz = true;
-                break;
-            case QuizType.BattleTactics:
-                GameManager.Instance.ArtefactQuiz = true;
-                break;
-            case QuizType.Weaponary:
-                GameManager.Instance.ArtefactQuiz = true;
-                break;
-        }
+        GameManager manager = GameManager.Instance;
+
+        manager.ArtefactQuiz = true;
+        float value = ((float)score / quizData.questions.Length) * 100;
+        //Debug.Log(value);
+        //Debug.Log(score);
+        //Debug.Log(quizData.questions.Length);
+        manager.ArtefactQuizScore = value;
+
+
+
+
+        //switch (type)
+        //{
+        //    case QuizType.Artefact:
+        //        manager.ArtefactQuiz = true;
+        //        float value = ((float)score / quizData.questions.Length) * 100;
+        //        Debug.Log(value);
+        //        Debug.Log(score);
+        //        Debug.Log(quizData.questions.Length);
+        //        manager.ArtefactQuizScore = value;
+        //        Debug.Log("hello");
+        //        break;
+        //    case QuizType.BattleTactics:
+        //        manager.BattleQuiz = true;
+        //        manager.BattleQuizScore = (score / quizData.questions.Length) * 100;
+        //        break;
+        //    case QuizType.Weaponary:
+        //        manager.WeaponQuiz = true;
+        //        manager.WeaponsQuizScore = (score / quizData.questions.Length) * 100;
+        //        break;
+        //}
     }
 
     protected void CloseCanvas()

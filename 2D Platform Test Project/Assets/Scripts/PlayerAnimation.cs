@@ -25,9 +25,16 @@ public class PlayerAnimation : MonoBehaviour
 
     bool isAttacking;
 
-    //int stabDamage = 35; //original
-    int stabDamage = 100;
+    //float stabDamage = 35; //original
+    public float stabDamage = 100;
     int slashDamage = 65;
+
+    public float StabDamage
+    {
+        get { return stabDamage; }
+        set { stabDamage = value; }
+    }
+
 
     PlayerManager playerManager;
     GameSceneManager gameSceneManager;

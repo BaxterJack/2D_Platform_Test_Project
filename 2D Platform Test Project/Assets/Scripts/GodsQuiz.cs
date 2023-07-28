@@ -141,6 +141,7 @@ public class GodsQuiz : MonoBehaviour
 
     void EndQuiz()
     {
+        GameManager.Instance.GodsQuizScore = (score / (numQuestions * 2)) * 100;
         ShowCanvas(false);
         GameManager.Instance.SetGodsQuizComplete();
     }

@@ -157,4 +157,10 @@ public class PlayerManager : Singleton<PlayerManager>
         player.transform.position = lastFortPosition;
 
     }
+
+    public void IncreaseStabDamage()
+    {
+        PlayerAnimation anim = GetComponent<PlayerAnimation>();
+        anim.StabDamage *= 1.1f;
+    }
 }

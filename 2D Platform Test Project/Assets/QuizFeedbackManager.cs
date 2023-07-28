@@ -92,4 +92,20 @@ public class QuizFeedbackManager : QuizManager
         }
         numAnswer = 0;
     }
+
+    protected override void SetComplete()
+    {
+        GameManager manager = GameManager.Instance;
+        switch (type)
+        {
+            case QuizType.BattleTactics:
+                manager.BattleQuiz = true;
+                manager.BattleQuizScore = ((float)score / quizData.questions.Length) * 100;
+                break;
+            case QuizType.Weaponary:
+                manager.WeaponQuiz = true;
+                manager.WeaponsQuizScore = ((float)score / quizData.questions.Length) * 100;
+                break;
+        }
+    }
 }

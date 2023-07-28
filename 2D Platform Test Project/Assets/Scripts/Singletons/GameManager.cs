@@ -22,6 +22,34 @@ public class GameManager : Singleton<GameManager>
     bool weaponQuizComplete = false;
     bool BattleQuizComplete = false;
 
+    float godQuizScore = 0;
+    float weaponQuizScore = 0;
+    float battleQuizScore = 0;
+    float artefactQuizScore = 0;
+
+    public float ArtefactQuizScore
+    {
+        get { return artefactQuizScore; }
+        set { artefactQuizScore = value;}
+    }
+
+    public float GodsQuizScore
+    {
+        get { return godQuizScore; }
+        set { godQuizScore = value; }
+    }
+    public float WeaponsQuizScore
+    {
+        get { return weaponQuizScore; }
+        set { weaponQuizScore = value; }
+    }
+
+    public float BattleQuizScore
+    {
+        get { return battleQuizScore; }
+        set { battleQuizScore = value;}
+    }
+
     public bool WeaponQuiz
     {
         set { weaponQuizComplete = value; }

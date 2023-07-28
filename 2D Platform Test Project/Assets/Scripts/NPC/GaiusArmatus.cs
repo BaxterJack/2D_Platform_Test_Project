@@ -8,7 +8,9 @@ public class GaiusArmatus : NPC
     ArmatusWelcomeState armatusWelcomeState;
     ArmatusTutorialState armatusTutorialState;
     ArmatusSendToCommanderState armatusSendToCommanderState;
-    ArmatusTeachState armatusTeachState;
+    //    ArmatusTeachState armatusTeachState;
+    ArmatusQuiz armatusQuiz;
+    ArmatusReward armatusReward;
     GameManager gameManager;
 
 
@@ -21,7 +23,9 @@ public class GaiusArmatus : NPC
         armatusWelcomeState = new ArmatusWelcomeState(this);
         armatusTutorialState = new ArmatusTutorialState(this);
         armatusSendToCommanderState = new ArmatusSendToCommanderState(this);
-        armatusTeachState = new ArmatusTeachState(this);
+//        armatusTeachState = new ArmatusTeachState(this);
+        armatusQuiz = new ArmatusQuiz(this);
+        armatusReward = new ArmatusReward(this);
        
 
         homeWaypoint = gameObject.transform.position;
@@ -45,7 +49,9 @@ public class GaiusArmatus : NPC
         stateMachine.SetInitialState(armatusWelcomeState);
         stateMachine.AddTransition(new StateTransition(armatusWelcomeState, armatusTutorialState, this.GetHasConversationCompleted));
         stateMachine.AddTransition(new StateTransition(armatusTutorialState, armatusSendToCommanderState, gameManager.IsTutorialComplete));
-        stateMachine.AddTransition(new StateTransition(armatusSendToCommanderState, armatusTeachState, this.GetHasConversationCompleted));
+        //        stateMachine.AddTransition(new StateTransition(armatusSendToCommanderState, armatusTeachState, this.GetHasConversationCompleted));
+        stateMachine.AddTransition(new StateTransition(armatusSendToCommanderState, armatusQuiz, this.GetHasConversationCompleted));
+        stateMachine.AddTransition(new StateTransition(armatusQuiz, armatusReward, gameManager.IsBattleComplete));
         type = npcTypes.fort;
     }
 

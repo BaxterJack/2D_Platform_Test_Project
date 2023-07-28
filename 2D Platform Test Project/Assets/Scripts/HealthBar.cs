@@ -65,6 +65,17 @@ public class HealthBar : MonoBehaviour
         StartCoroutine(ApplyRedDamageEffect());
     }
 
+    public void TakeDamage(float damage)
+    {
+        currentHealth -= (int)damage;
+        if (currentHealth < 0)
+        {
+            currentHealth = 0;
+        }
+        SetHealth(currentHealth);
+        StartCoroutine(ApplyRedDamageEffect());
+    }
+
     IEnumerator ApplyRedDamageEffect()
     {
         SpriteRenderer spriteRenderer = GetComponentInParent<SpriteRenderer>();
