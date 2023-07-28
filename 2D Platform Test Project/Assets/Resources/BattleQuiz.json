@@ -1,0 +1,35 @@
+{
+  "questions": [
+    {
+      "question": "In which year did the Roman invasion of Britannia begin under Emperor Claudius?",
+      "answers": [ "43 AD", "106 AD", "55 BC", "78 AD" ],
+      "correctAnswer": 0,
+      "feedback": "The Roman invasion of Britannia, also known as the Roman conquest of Britain, began in 43 AD under Emperor Claudius. The invasion was a significant military campaign that marked the beginning of Roman rule in Britain and had far-reaching impacts on the region's history."
+    },
+    {
+      "question": "Who was the Celtic queen who led the resistance against the Roman invasion in Britannia??",
+      "answers": [ "Cleopatra", "Boudicca (Boadicea)", "Joan of Arc", "Helen of Troy" ],
+      "correctAnswer": 1,
+      "feedback": "Boudicca, also known as Boadicea, was a courageous Celtic queen who led a fierce rebellion against the Roman forces in Britannia. Her rebellion was a response to Roman oppression and played a crucial role in the history of Britain's resistance against Roman rule."
+    },
+    {
+      "question": "The Battle of Mons Graupius was fought between Romans and which Celtic tribe?",
+      "answers": [ "Iceni", "Brigantes", "Caledonians", "Trinovantes" ],
+      "correctAnswer": 2,
+      "feedback": "The Battle of Mons Graupius was fought between the Roman forces led by Governor Gnaeus Julius Agricola and the Caledonians, a Celtic tribe from Scotland. The battle was a significant confrontation during the Roman occupation of Britain."
+    },
+    {
+      "question": "Which Roman emperor is known for building a Wall in Britannia from modern day Carlisle to Newcastle?",
+      "answers": [ "Julius Caesar", "Nero", "Hadrian", "Augustus" ],
+      "correctAnswer": 2,
+      "feedback": "Emperor Hadrian is renowned for ordering the construction of Hadrian's Wall, a defensive fortification that stretched across the northern border of Britannia. The wall served as a defensive barrier and marked the northern limit of Roman influence in Britain."
+    },
+    {
+      "question": "What was the outcome of the Battle of Watling Street, where Quen Boudica led a rebelling against the Romans?",
+      "answers": [ "Roman victory", "Celtic victory", "Truce", "Ongoing conflict" ],
+      "correctAnswer": 0,
+      "feedback": "The Battle of Watling Street concluded with a Roman victory over the Celtic forces led by Queen Boudica. The defeat of the rebellion contributed to the consolidation of Roman control over Britannia."
+    }
+                        
+  ]
+}

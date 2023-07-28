@@ -135,9 +135,18 @@ public class GameManager : Singleton<GameManager>
     public void InstatiateQuiz(string FilePath, QuizManager.QuizType Type)
     {
         GameObject quizManagerObject = Instantiate(quizPrefab);
-        QuizManager quizManager = quizManagerObject.GetComponent<QuizManager>();
-
-        quizManager.Initiliase(FilePath, Type);
+        if (Type == QuizManager.QuizType.Artefact)
+        {
+            quizManagerObject.AddComponent<QuizManager>();
+            QuizManager quizManager = quizManagerObject.GetComponent<QuizManager>();
+            quizManager.Initialise(FilePath, Type);
+        }
+        else
+        {
+            quizManagerObject.AddComponent<QuizFeedbackManager>();
+            QuizFeedbackManager quizManager = quizManagerObject.GetComponent<QuizFeedbackManager>();
+            quizManager.Initialise(FilePath, Type);
+        }   
     }
 
     private void Update()
@@ -145,6 +154,14 @@ public class GameManager : Singleton<GameManager>
         if (Input.GetKeyDown(KeyCode.M))
         {
             InstatiateQuiz("ArtefactQuiz", QuizManager.QuizType.Artefact);
+        }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            InstatiateQuiz("BattleQuiz", QuizManager.QuizType.BattleTactics);
+        }
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            InstatiateQuiz("WeaponsQuiz", QuizManager.QuizType.Weaponary);
         }
     }
 }

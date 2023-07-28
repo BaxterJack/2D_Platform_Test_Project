@@ -9,25 +9,29 @@ public class QuizData
 {
     public QuizQuestion[] questions;
 }
-public class QuizManager : MonoBehaviour
-{
-    public QuizData quizData;
 
-    int score;
-    public Button[] buttons;
-    Button nextQuestion;
-    TMP_Text question, scorefield;
-    int currentQuestion;
-    int numAnswer = 0;
-    string filePath = "ArtefactQuiz";
-    QuizType type;
+
+public class QuizManager : MonoBehaviour
+
+{
+    private QuizData quizData;
+    
+
+    protected int score;
+    protected Button[] buttons;
+    protected Button nextQuestion;
+    protected TMP_Text question, scorefield;
+    protected int currentQuestion;
+    protected int numAnswer = 0;
+    protected string filePath = "ArtefactQuiz";
+    protected QuizType type;
     public enum QuizType
     {
         Artefact,
         Weaponary,
         BattleTactics
     }
-    public void Initiliase(string FilePath, QuizType Type)
+    public void Initialise(string FilePath, QuizType Type)
     {
         type = Type;
         buttons = new Button[4];
@@ -40,9 +44,9 @@ public class QuizManager : MonoBehaviour
         InitialiseQuestion();
     }
 
-    void InitialseButtons()
+    protected void InitialseButtons()
     {
-        foreach(Button b in GetComponentsInChildren<Button>())
+        foreach (Button b in GetComponentsInChildren<Button>())
         {
             switch (b.name)
             {
@@ -67,14 +71,15 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    void ActivateNextQuestionButton(bool condition)
+    protected void ActivateNextQuestionButton(bool condition)
     {
         nextQuestion.gameObject.SetActive(condition);
+
     }
 
-    void InitialiseText()
+    protected void InitialiseText()
     {
-        foreach(TMP_Text text in GetComponentsInChildren<TMP_Text>())
+        foreach (TMP_Text text in GetComponentsInChildren<TMP_Text>())
         {
             switch (text.name)
             {
@@ -88,13 +93,13 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    void InitialiseQuestion()
+    protected virtual void InitialiseQuestion()
     {
         question.text = quizData.questions[currentQuestion].question;
         for (int i = 0; i < buttons.Length; i++)
         {
             int buttonIndex = i;
-            
+
             buttons[i].GetComponentInChildren<TMP_Text>().text = quizData.questions[currentQuestion].answers[i];
             if (quizData.questions[currentQuestion].correctAnswer == i)
             {
@@ -107,7 +112,7 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    void RemoveButtonListeners()
+    protected void RemoveButtonListeners()
     {
         for (int i = 0; i < buttons.Length; i++)
         {
@@ -115,7 +120,7 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    void CorrectAnswer()
+    protected virtual void CorrectAnswer()
     {
         RemoveButtonListeners();
         int correctIndex = quizData.questions[currentQuestion].correctAnswer;
@@ -124,7 +129,7 @@ public class QuizManager : MonoBehaviour
         numAnswer = 1;
     }
 
-    void IncorrectAnswer(int selectedButtonIndex)
+    protected virtual void IncorrectAnswer(int selectedButtonIndex)
     {
         RemoveButtonListeners();
         buttons[selectedButtonIndex].image.color = Color.red;
@@ -133,14 +138,12 @@ public class QuizManager : MonoBehaviour
         numAnswer = 1;
     }
 
-    void NextQuestion()
+    protected virtual void NextQuestion()
     {
-
-        
         currentQuestion++;
-        if(currentQuestion <  quizData.questions.Length)
+        if (currentQuestion < quizData.questions.Length)
         {
-            foreach(Button button in buttons)
+            foreach (Button button in buttons)
             {
                 button.image.color = Color.white;
             }
@@ -154,10 +157,10 @@ public class QuizManager : MonoBehaviour
         numAnswer = 0;
     }
 
-    private void Update()
+    protected void Update()
     {
         InitialiseScore();
-        if(numAnswer == 1)
+        if (numAnswer == 1)
         {
             ActivateNextQuestionButton(true);
         }
@@ -167,7 +170,7 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    void EndQuiz()
+    protected void EndQuiz()
     {
         nextQuestion.GetComponentInChildren<TMP_Text>().text = "End Quiz";
         nextQuestion.onClick.RemoveAllListeners();
@@ -175,7 +178,7 @@ public class QuizManager : MonoBehaviour
         SetComplete();
     }
 
-    void SetComplete()
+    protected void SetComplete()
     {
         switch (type)
         {
@@ -191,19 +194,19 @@ public class QuizManager : MonoBehaviour
         }
     }
 
-    void CloseCanvas()
+    protected void CloseCanvas()
     {
         Destroy(gameObject);
     }
 
-    void InitialiseScore()
+    protected virtual void InitialiseScore()
     {
-        scorefield.text = "Score: " + score;
+        int numQs = quizData.questions.Length;
+        scorefield.text = "Score: " + score + "/" + numQs;
     }
 
-    private void LoadQuestionsFromJSON()
+    protected virtual void LoadQuestionsFromJSON()
     {
-        Debug.Log(filePath);
         TextAsset jsonAsset = Resources.Load<TextAsset>(filePath);
 
         if (jsonAsset != null)

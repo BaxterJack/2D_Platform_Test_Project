@@ -1,0 +1,35 @@
+{
+  "questions": [
+    {
+      "question": "What was the primary weapon used by Roman infantry soldiers?",
+      "answers": [ "Gladius", "Spear (Pilum)", "Bow and Arrow", "Battle Axe" ],
+      "correctAnswer": 0,
+      "feedback": "The Gladius was the primary weapon used by Roman infantry soldiers, often referred to as sword of the Roman Empire. Its short length and double-edged blade made it highly effective for close combat and thrusting attacks."
+    },
+    {
+      "question": "What type of helmet did Roman soldiers wear in battle?",
+      "answers": [ "Corinthian helmet", "Viking helmet", "Gallic Helmet", "Galea Helmet" ],
+      "correctAnswer": 3,
+      "feedback": "Roman soldiers wore Galea Helmets, which were made of metal and provided head protection during battles. The helmets featured a distinctive design, and their shape varied based on the soldier's rank and unit."
+    },
+    {
+      "question": "What was the purpose of the Roman scutum?",
+      "answers": [ "Spear-throwing", "Food storage", "Shield for protection", "War chariot" ],
+      "correctAnswer": 2,
+      "feedback": "The Roman scutum was a large, rectangular shield used by soldiers for protection in battle. Its curved design allowed soldiers to interlock their shields to form a protective wall, a tactic known as the Testudo formation."
+    },
+    {
+      "question": "What Roman soldier formation involved soldiers overlapping their shields?",
+      "answers": [ "Phalanx", "Testudo", "Wedge", "Skirmish line" ],
+      "correctAnswer": 1,
+      "feedback": "The Testudo formation, also known as the tortoise formation involved Roman soldiers overlapping their shields to create a protective shell-like barrier. This formation was used to shield soldiers from projectiles during sieges or while advancing toward enemy positions."
+    },
+    {
+      "question": "The Roman military formation called Triarii was composed of which type of soldiers?",
+      "answers": [ "Archers", "Cavalry", "Veteran spear infantry", "Slingers" ],
+      "correctAnswer": 2,
+      "feedback": "The Triarii were elite, veteran spear infantry in the Roman army. They were highly trained and equipped with long spears called hastae, and they formed the final line of defense in the Roman battle formation known as the maniple."
+    }
+                        
+  ]
+}
