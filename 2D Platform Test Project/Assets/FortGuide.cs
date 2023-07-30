@@ -19,6 +19,12 @@ public class FortGuide : Singleton<FortGuide>
     string getLumberTip = "There are trees outside the eastern gate.";
     string findArtefacts = "Collect all the chests containing artefacts.";
     string findArtefactsTip = "Remember to read the description, it will be on the test.";
+    string vulcanusQuiz = "";
+    string vulcanusTip = "";
+    string armatusQuiz = "";
+    string armatusTip = "";
+    string priestQuiz = "";
+    string priestTip = "";
 
     public List<Goal>goals = new List<Goal>();
 
@@ -28,8 +34,18 @@ public class FortGuide : Singleton<FortGuide>
         Tutorial,
         SpeakWithCommander,
         SpeakWithBathHouse,
-        GetLumber
+        GetLumber, 
+        FindArtefacts,
+        BattleQuiz,
+        WeaponsQuiz, 
+        GodsQuiz
 
+    }
+    bool areFortQuestsComplete = false;
+
+    bool AreFortQuestsComplete()
+    {
+        return areFortQuestsComplete;
     }
 
     public void SetObjectivecomplete(FortObjective objective)
@@ -78,7 +94,9 @@ public class FortGuide : Singleton<FortGuide>
                 currentObjective = (FortObjective)i;
                 break;
             }
+
         }
+        areFortQuestsComplete = true;
     }
 
     void Update()

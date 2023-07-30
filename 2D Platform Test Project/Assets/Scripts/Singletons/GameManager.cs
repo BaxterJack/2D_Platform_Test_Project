@@ -21,6 +21,7 @@ public class GameManager : Singleton<GameManager>
     bool artefactQuizComplete = false;
     bool weaponQuizComplete = false;
     bool BattleQuizComplete = false;
+    public bool isQuizOpen = false;
 
     float godQuizScore = 0;
     float weaponQuizScore = 0;
@@ -163,11 +164,13 @@ public class GameManager : Singleton<GameManager>
     public void InstatiateQuiz(string FilePath, QuizManager.QuizType Type)
     {
         GameObject quizManagerObject = Instantiate(quizPrefab);
+        isQuizOpen = true;
         if (Type == QuizManager.QuizType.Artefact)
         {
             quizManagerObject.AddComponent<QuizManager>();
             QuizManager quizManager = quizManagerObject.GetComponent<QuizManager>();
             quizManager.Initialise(FilePath, Type);
+            
         }
         else
         {
@@ -179,17 +182,6 @@ public class GameManager : Singleton<GameManager>
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            InstatiateQuiz("ArtefactQuiz", QuizManager.QuizType.Artefact);
-        }
-        if (Input.GetKeyDown(KeyCode.B))
-        {
-            InstatiateQuiz("BattleQuiz", QuizManager.QuizType.BattleTactics);
-        }
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            InstatiateQuiz("WeaponsQuiz", QuizManager.QuizType.Weaponary);
-        }
+
     }
 }

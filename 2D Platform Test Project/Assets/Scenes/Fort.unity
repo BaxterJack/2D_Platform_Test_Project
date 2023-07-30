@@ -6318,6 +6318,7 @@ GameObject:
   - component: {fileID: 820670443}
   - component: {fileID: 820670442}
   - component: {fileID: 820670441}
+  - component: {fileID: 820670445}
   m_Layer: 0
   m_Name: Valerius Vulcanius (Blacksmith)
   m_TagString: Untagged
@@ -6427,6 +6428,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &820670445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820670440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca28b84cc1fc77a44ae7931e729f12a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  homeWaypoint: {x: 0, y: 0, z: 0}
+  destinationWaypoint: {x: 0, y: 0, z: 0}
+  speed: 1
 --- !u!1 &894554579
 GameObject:
   m_ObjectHideFlags: 0

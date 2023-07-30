@@ -185,38 +185,12 @@ public class QuizManager : MonoBehaviour
 
         manager.ArtefactQuiz = true;
         float value = ((float)score / quizData.questions.Length) * 100;
-        //Debug.Log(value);
-        //Debug.Log(score);
-        //Debug.Log(quizData.questions.Length);
         manager.ArtefactQuizScore = value;
-
-
-
-
-        //switch (type)
-        //{
-        //    case QuizType.Artefact:
-        //        manager.ArtefactQuiz = true;
-        //        float value = ((float)score / quizData.questions.Length) * 100;
-        //        Debug.Log(value);
-        //        Debug.Log(score);
-        //        Debug.Log(quizData.questions.Length);
-        //        manager.ArtefactQuizScore = value;
-        //        Debug.Log("hello");
-        //        break;
-        //    case QuizType.BattleTactics:
-        //        manager.BattleQuiz = true;
-        //        manager.BattleQuizScore = (score / quizData.questions.Length) * 100;
-        //        break;
-        //    case QuizType.Weaponary:
-        //        manager.WeaponQuiz = true;
-        //        manager.WeaponsQuizScore = (score / quizData.questions.Length) * 100;
-        //        break;
-        //}
     }
 
     protected void CloseCanvas()
     {
+        GameManager.Instance.isQuizOpen = false;
         Destroy(gameObject);
     }
 

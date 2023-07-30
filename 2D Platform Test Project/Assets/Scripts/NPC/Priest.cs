@@ -9,8 +9,8 @@ public class Priest : NPC
     PriestSendToTraining priestSendToTraining;
     PriestWelcomeState priestWelcomeState;
     PriestQuizState priestQuizState;
-    PriestTeachState priestTeachState;
-
+    //    PriestTeachState priestTeachState;
+    PriestReward reward;
     private void Awake()
     {
         stateMachine = new StateMachine();
@@ -18,7 +18,8 @@ public class Priest : NPC
         priestSendToTraining = new PriestSendToTraining(this);
         priestWelcomeState = new PriestWelcomeState(this);
         priestQuizState = new PriestQuizState(this);
-        priestTeachState = new PriestTeachState(this);
+       // priestTeachState = new PriestTeachState(this);
+       reward = new PriestReward(this);
         homeWaypoint = gameObject.transform.position;
         
         if (instance != null)
@@ -38,7 +39,8 @@ public class Priest : NPC
         gameManager = GameManager.Instance;
         stateMachine.AddTransition(new StateTransition(priestSendToTraining, priestWelcomeState, gameManager.IsTutorialComplete));
         stateMachine.AddTransition(new StateTransition(priestWelcomeState, priestQuizState, this.GetHasConversationCompleted));
-        stateMachine.AddTransition(new StateTransition(priestQuizState, priestTeachState, gameManager.IsGodsQuizComplete));
+        // stateMachine.AddTransition(new StateTransition(priestQuizState, priestTeachState, gameManager.IsGodsQuizComplete));
+        stateMachine.AddTransition(new StateTransition(priestQuizState, reward, gameManager.IsGodsQuizComplete));
         stateMachine.SetInitialState(priestSendToTraining);
         type = npcTypes.fort;
     }

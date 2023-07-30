@@ -57,9 +57,10 @@ public class DialogueTrigger : MonoBehaviour
     private void Update()
     {
         bool isTabletOpen = TabletManager.Instance.IsTabletCanvasActive;
+        bool isQuizOpen = GameManager.Instance.isQuizOpen;
         if (isInTalkingRange)
         {
-            if (Input.GetKey(KeyCode.E) && !isTabletOpen || dialogue.ForcedDialogue)
+            if (Input.GetKey(KeyCode.E) && !isTabletOpen || dialogue.ForcedDialogue && !isQuizOpen)
             {
                 TriggerDialogue();
                 if(dialogue.ForcedDialogue)

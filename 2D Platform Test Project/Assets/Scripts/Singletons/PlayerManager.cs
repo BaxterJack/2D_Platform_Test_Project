@@ -163,4 +163,19 @@ public class PlayerManager : Singleton<PlayerManager>
         PlayerAnimation anim = GetComponent<PlayerAnimation>();
         anim.StabDamage *= 1.1f;
     }
+
+    public void IncreaseSpeed()
+    {
+        Player.PlayerMovement movement = GetComponent<Player.PlayerMovement>();
+        movement.BoostSpeed();
+
+      
+    }
+
+    public void IncreaseVitality()
+    {
+        HealthBar health = GetComponentInChildren<HealthBar>();
+        health.maxHealth = 130;
+        health.SetMaxHealth();
+    }
 }

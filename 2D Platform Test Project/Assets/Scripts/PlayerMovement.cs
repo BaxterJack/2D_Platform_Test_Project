@@ -15,6 +15,11 @@ namespace Player
         PlayerManager playerManager;
         public int maxJumps = 2;
         int currentJumps = 0;
+
+        public void BoostSpeed()
+        {
+            speed += 0.5f;
+        }
         private void Start()
         {
             playerManager = PlayerManager.Instance;
