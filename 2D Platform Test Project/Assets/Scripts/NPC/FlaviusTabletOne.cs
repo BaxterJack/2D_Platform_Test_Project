@@ -34,6 +34,8 @@ public class FlaviusTabletOne : BaseState
 
     public override void EnterState()
     {
+        Rigidbody2D rB = npc.GetComponent<Rigidbody2D>();
+        rB.velocity = Vector3.zero;
         npc.AssignDialogue(dialogue);
         npc.AssignTablet(tablet);
         

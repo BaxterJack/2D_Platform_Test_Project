@@ -7322,7 +7322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   homeWaypoint: {x: 0, y: 0, z: 0}
   destinationWaypoint: {x: 0, y: 0, z: 0}
-  speed: 3
+  speed: 2
 --- !u!114 &1122111521
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10259,19 +10259,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1759871639}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1130996643}
-        m_TargetAssemblyTypeName: ArtefactCanvasManager, Assembly-CSharp
-        m_MethodName: CloseCanvas
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1759871639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12076,6 +12064,14 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2825436505813260098, guid: a3fe97c3e07359448b8d6637665c3af8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 89506a5ef1f249643ad1450239310e7f, type: 3}
+    - target: {fileID: 2825436505908541418, guid: a3fe97c3e07359448b8d6637665c3af8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2825436505908541419, guid: a3fe97c3e07359448b8d6637665c3af8, type: 3}
       propertyPath: m_Pivot.x
       value: 0

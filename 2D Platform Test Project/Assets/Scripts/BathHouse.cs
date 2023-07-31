@@ -76,6 +76,7 @@ public class BathHouse : MonoBehaviour
     IEnumerator ActivateConstructionStagesCoroutine()
     {
         PlayConstructionFX();
+        gameManager.InstatiateLepidina();
         for (int i = 0; i < constructionStages.Count; i++)
         {
             constructionStages[i].SetActive(true);
@@ -84,7 +85,7 @@ public class BathHouse : MonoBehaviour
 
         StopConstructionFX();
         gameManager.BathHouseConstructed = true;
-        gameManager.InstatiateLepidina();
+        FortGuide.Instance.SetObjectivecomplete(FortGuide.FortObjective.GetLumber);
 
 
     }

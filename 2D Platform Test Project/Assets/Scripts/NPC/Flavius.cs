@@ -9,6 +9,8 @@ public class Flavius : NPC
     FlaviusWelcomeState flaviusWelcomeState;
     GoToCommandersHouseState goToCommandersHouseState;
     FlaviusTabletOne flaviusTabletOne;
+    FlaviusGoToPlayer goToPlayer;
+    FlaviusClearRaidersQuest clearRaiders;
     protected static Flavius instance;
     private void Awake()
     {
@@ -18,7 +20,8 @@ public class Flavius : NPC
         flaviusWelcomeState = new FlaviusWelcomeState(this);
         goToCommandersHouseState = new GoToCommandersHouseState(this);
         flaviusTabletOne = new FlaviusTabletOne(this);  
-
+        goToPlayer = new FlaviusGoToPlayer(this);
+        clearRaiders = new FlaviusClearRaidersQuest(this);
         
         GameObject gO = GameObject.Find("CommandersHouseWaypoint");
         homeWaypoint = gO.transform.position;
@@ -40,6 +43,9 @@ public class Flavius : NPC
         stateMachine.SetInitialState(flaviusWelcomeState);
         stateMachine.AddTransition(new StateTransition(flaviusWelcomeState, goToCommandersHouseState, this.GetHasConversationCompleted));
         stateMachine.AddTransition(new StateTransition(goToCommandersHouseState, flaviusTabletOne, FlaviusTabletCondition));
+        stateMachine.AddTransition(new StateTransition(flaviusTabletOne, goToPlayer, FortGuide.Instance.AreFortQuestsComplete));
+        stateMachine.AddTransition(new StateTransition(goToPlayer, clearRaiders, this.HasReachedDestination));  
+
         type = npcTypes.fort;
     }
 

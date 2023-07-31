@@ -42,7 +42,7 @@ public class NPC : MonoBehaviour
     }
 
 
-    protected float SetDistance(Vector3 waypoint)
+    public float SetDistance(Vector3 waypoint)
     {
         Vector2 distance = (waypoint - gameObject.transform.position);
         distance.y = 0;

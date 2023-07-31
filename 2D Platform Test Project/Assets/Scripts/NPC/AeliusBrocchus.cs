@@ -17,12 +17,13 @@ public class AeliusBrocchus : NPC
         raidersCleared = new BrocchusRaidersCleared(this);
         introduceClaudia = new BrocchusIntroduceClaudia(this);
         endDialogue = new BrocchusEndDialogue(this);
+        type = npcTypes.level1;
     }
     protected override void Start()
     {
         base.Start();
         gameManager = GameManager.Instance;
-        type = npcTypes.level1;
+        
         stateMachine.SetInitialState(clearRaiders);
         stateMachine.AddTransition(new StateTransition( clearRaiders, raidersCleared, gameManager.AreRaidersCleared));
         stateMachine.AddTransition(new StateTransition(raidersCleared, introduceClaudia, this.GetHasConversationCompleted));

@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2559661439915901973
 MonoBehaviour:
@@ -83,6 +83,12 @@ MonoBehaviour:
     loop: 0
   - name: ArrowImpact
     clip: {fileID: 8300000, guid: 5426e2bd785ee3e4abe0f5a43f31dab0, type: 3}
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: Horn
+    clip: {fileID: 8300000, guid: 37674a3f344619846afe68a0d5976ded, type: 3}
     volume: 1
     pitch: 1
     audioSource: {fileID: 0}

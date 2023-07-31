@@ -19,12 +19,14 @@ public class FortGuide : Singleton<FortGuide>
     string getLumberTip = "There are trees outside the eastern gate.";
     string findArtefacts = "Collect all the chests containing artefacts.";
     string findArtefactsTip = "Remember to read the description, it will be on the test.";
-    string vulcanusQuiz = "";
-    string vulcanusTip = "";
-    string armatusQuiz = "";
-    string armatusTip = "";
-    string priestQuiz = "";
-    string priestTip = "";
+    string artefactQuiz = "Go back to Lady Lepidina to give her slippers back and get ready for the quiz.";
+    string artefactTip = "Press the 1 key to open up information about the artefacts.";
+    string vulcanusQuiz = "Speak with Vulcanus the Blacksmith.";
+    string vulcanusTip = "The blacksmith is by the western gate.";
+    string armatusQuiz = "Speak with Armatus the Master at Arms.";
+    string armatusTip = "Armatus is found to the east of the blacksmith";
+    string priestQuiz = "Speak with Marcus Flavus the Priest.";
+    string priestTip = "The priest can be found to the east of the bathhouse.";
 
     public List<Goal>goals = new List<Goal>();
 
@@ -36,6 +38,7 @@ public class FortGuide : Singleton<FortGuide>
         SpeakWithBathHouse,
         GetLumber, 
         FindArtefacts,
+        AretefactsQuiz,
         BattleQuiz,
         WeaponsQuiz, 
         GodsQuiz
@@ -43,7 +46,7 @@ public class FortGuide : Singleton<FortGuide>
     }
     bool areFortQuestsComplete = false;
 
-    bool AreFortQuestsComplete()
+    public bool AreFortQuestsComplete()
     {
         return areFortQuestsComplete;
     }
@@ -75,6 +78,10 @@ public class FortGuide : Singleton<FortGuide>
         AddGoal(speakWithBathhouse, speakWithBathhouseTip);
         AddGoal(getLumber, getLumberTip);
         AddGoal(findArtefacts, findArtefactsTip);
+        AddGoal(artefactQuiz, artefactTip);
+        AddGoal(armatusQuiz, armatusTip);
+        AddGoal(vulcanusQuiz, vulcanusTip);
+        AddGoal(priestQuiz, priestTip);
 
         InitialiseCurrentObjective((int)currentObjective);
     }
@@ -94,9 +101,13 @@ public class FortGuide : Singleton<FortGuide>
                 currentObjective = (FortObjective)i;
                 break;
             }
-
+            else if(i == size - 1)
+            {
+                areFortQuestsComplete = true;
+            }
+            
         }
-        areFortQuestsComplete = true;
+        
     }
 
     void Update()

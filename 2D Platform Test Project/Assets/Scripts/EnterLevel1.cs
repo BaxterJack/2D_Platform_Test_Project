@@ -9,7 +9,7 @@ public class EnterLevel1 : MonoBehaviour
     {
         PlayerManager.Instance.CanAttack = true;
         GameManager.Instance.ActivateNPCS(false, NPC.npcTypes.fort);
-
+        PlayerManager.Instance.gameObject.transform.position = gameObject.transform.position;
     }
 
 

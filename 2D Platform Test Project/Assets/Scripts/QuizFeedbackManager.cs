@@ -101,10 +101,12 @@ public class QuizFeedbackManager : QuizManager
             case QuizType.BattleTactics:
                 manager.BattleQuiz = true;
                 manager.BattleQuizScore = ((float)score / quizData.questions.Length) * 100;
+                FortGuide.Instance.SetObjectivecomplete(FortGuide.FortObjective.BattleQuiz);
                 break;
             case QuizType.Weaponary:
                 manager.WeaponQuiz = true;
                 manager.WeaponsQuizScore = ((float)score / quizData.questions.Length) * 100;
+                FortGuide.Instance.SetObjectivecomplete(FortGuide.FortObjective.WeaponsQuiz);
                 break;
         }
     }

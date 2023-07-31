@@ -11,6 +11,7 @@ public class ArtefactCanvasManager : Singleton<ArtefactCanvasManager>
     TMP_Text artefactName;
     TMP_Text artefactDescription;
     Image artefactImage;
+    Button button;
 
     public Chest currentChest = new Chest();
 
@@ -21,7 +22,7 @@ public class ArtefactCanvasManager : Singleton<ArtefactCanvasManager>
 
     [SerializeField]
     private int numChests = 0;
-
+    int currentChestIndex = 0;
     public int NumChests
     {
         get { return numChests; }
@@ -69,6 +70,9 @@ public class ArtefactCanvasManager : Singleton<ArtefactCanvasManager>
                 artefactImage = image;
             }
         }
+
+        button = GetComponentInChildren<Button>();
+        button.onClick.AddListener(CloseCanvas);
     }
 
     private void Update()
@@ -76,7 +80,58 @@ public class ArtefactCanvasManager : Singleton<ArtefactCanvasManager>
         if(collectedArtefacts.Count == numChests)
         {
             allChestsCollected = true;
+            FortGuide.Instance.SetObjectivecomplete(FortGuide.FortObjective.FindArtefacts);
         }
+        if (Input.GetKeyDown(KeyCode.Alpha1) && !GameManager.Instance.isQuizOpen)
+        {
+            ViewArtefacts();
+        }
+        if(currentChestIndex == numChests - 1)
+        {
+            CreateCloseButton();
+        }
+    }
+
+    void ViewArtefacts()
+    {
+        if (!allChestsCollected) { return; }
+        else
+        {
+            currentChestIndex = 0;
+
+            OpenCanvas(collectedArtefacts[currentChestIndex]);
+            CreateNextButton();
+            
+        }
+    }
+
+    void PopulateCanvas()
+    {
+        artefactName.text = collectedArtefacts[currentChestIndex].name;
+        artefactDescription.text = collectedArtefacts[currentChestIndex].description;
+        artefactImage.sprite = collectedArtefacts[currentChestIndex].image;
+    }
+    void CreateNextButton()
+    {
+        TMP_Text tMP_Text = button.GetComponentInChildren<TMP_Text>();
+        tMP_Text.text = "Next Artefact";
+        button.onClick.RemoveAllListeners();
+        button.onClick.AddListener(NextArtefact);
+    }
+
+    void CreateCloseButton()
+    {
+
+        TMP_Text tMP_Text = button.GetComponentInChildren<TMP_Text>();
+        tMP_Text.text = "Close";
+        button.onClick.RemoveAllListeners();
+        button.onClick.AddListener(CloseCanvas);
+    }
+
+    void NextArtefact()
+    {
+        currentChestIndex++;
+        PopulateCanvas();
     }
     public void AddArtefact(Artefact artefact)
     {

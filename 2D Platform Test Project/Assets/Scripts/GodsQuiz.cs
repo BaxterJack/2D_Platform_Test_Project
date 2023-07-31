@@ -144,6 +144,7 @@ public class GodsQuiz : MonoBehaviour
         GameManager.Instance.GodsQuizScore = (score / (numQuestions * 2)) * 100;
         ShowCanvas(false);
         GameManager.Instance.SetGodsQuizComplete();
+        FortGuide.Instance.SetObjectivecomplete(FortGuide.FortObjective.GodsQuiz);
     }
 
     void CreateEndQuizButton()
