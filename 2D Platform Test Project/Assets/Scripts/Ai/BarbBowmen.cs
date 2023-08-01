@@ -27,6 +27,7 @@ public class BarbBowmen : AiObject
         stateMachine.AddTransition(new StateTransition(shootState, patrolState, this.aiSight.CannotSeePlayer));
         //FindPlayer();
         type = this.GetType().Name;
+        SetXP(type);
     }
 
     protected override void Awake()

@@ -23,7 +23,7 @@ public class UIManager : Singleton<UIManager>
 
     Canvas uiCanvas;
     TMP_Text scoreText;
-    TMP_Text lootText;
+//    TMP_Text lootText;
     TMP_Text objective;
     TMP_Text tip;
     GameObject gameOverUI;
@@ -39,6 +39,12 @@ public class UIManager : Singleton<UIManager>
         FindRectTransforms();
         DisactivateGameOverUI();
         FindContinueButton();
+    }
+
+    public void AddToScore(float points)
+    {
+        score += (int)points;
+        UpdateScore();
     }
 
     void FindContinueButton()
@@ -79,9 +85,9 @@ public class UIManager : Singleton<UIManager>
         {
             switch (textComponent.name)
             {
-                case "Text: Loot":
-                    lootText = textComponent;
-                    break;
+                //case "Text: Loot":
+                //    lootText = textComponent;
+                //    break;
                 case "Text: Score":
                     scoreText = textComponent;
                     break;
@@ -122,9 +128,16 @@ public class UIManager : Singleton<UIManager>
         //Debug.Log("Showing UI");
     }
 
+    void UpdateScore()
+    {
+        string scoreField = "Score: " + score.ToString();
+        scoreText.text = scoreField;
+    }
+
     void Start()
     {
-        lootText.text += " 100";
+        //lootText.text += " 100";
+        UpdateScore();
         currentLives = maxLives;
         heartImages = new Image[maxLives];
         playerManager = PlayerManager.Instance;

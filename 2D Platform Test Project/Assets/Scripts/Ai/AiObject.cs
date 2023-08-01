@@ -39,6 +39,11 @@ public class AiObject : MonoBehaviour
     protected float knockBackForce;
 
     protected float xp;
+    
+    public float XP
+    {
+        get { return xp; }
+    }
 
     protected void SetXP(string type)
     {
