@@ -27,6 +27,7 @@ public class BarbAxeman : AiObject
         stateMachine.AddTransition(new StateTransition(attackState, deathState, this.healthBar.HasNoHealth));
         stateMachine.AddTransition(new StateTransition(attackState, goToAttackPosState, this.HasJustAttacked));
         type = this.GetType().Name;
+        SetXP(type);
     }
 
     protected override void Awake()

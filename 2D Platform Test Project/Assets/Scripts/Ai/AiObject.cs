@@ -38,6 +38,24 @@ public class AiObject : MonoBehaviour
     [SerializeField]
     protected float knockBackForce;
 
+    protected float xp;
+
+    protected void SetXP(string type)
+    {
+        switch (type)
+        {
+            case "BarbAxeman":
+                xp = 150;
+                break;
+            case "BarbBowmen":
+                xp = 100;
+                break;
+            case "BarbBoss":
+                xp = 250;
+                break;
+        }
+    }
+
     protected virtual void Start()
     {
         FindPlayer();
