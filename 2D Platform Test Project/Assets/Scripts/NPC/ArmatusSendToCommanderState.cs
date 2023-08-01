@@ -21,6 +21,9 @@ public class ArmatusSendToCommanderState : BaseState
     public override void EnterState()
     {
         npc.AssignDialogue(dialogue);
+
+
+
         UIManager.Instance.ContinueButton.SetActive(false);
         FortGuide.Instance.SetObjectivecomplete(FortGuide.FortObjective.Tutorial);
     }

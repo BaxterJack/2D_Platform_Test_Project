@@ -59,19 +59,13 @@ public class Flavius : NPC
 
     private void Update()
     {
-        if (gameSceneManager.CurrentScene == GameSceneManager.SceneState.Fort)
-        {
             stateMachine.Update();
             DistanceToHome = SetDistance(homeWaypoint);
-        }
+
     }
 
     private void FixedUpdate()
     {
-        if (gameSceneManager.CurrentScene == GameSceneManager.SceneState.Fort)
-        {
             stateMachine.FixedUpdate();
-        }
-            
     }
 }

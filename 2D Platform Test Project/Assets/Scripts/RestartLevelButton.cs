@@ -7,6 +7,6 @@ public class RestartLevelButton : MonoBehaviour
     public void RestartLevel()
     {
         Debug.Log("Restart Level");
-        GameSceneManager.Instance.LoadScene(GameSceneManager.Instance.CurrentScene);
+        GameSceneManager.Instance.LoadNextLevel(GameSceneManager.Instance.CurrentScene);
     }
 }

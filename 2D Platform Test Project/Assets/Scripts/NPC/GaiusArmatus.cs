@@ -58,19 +58,14 @@ public class GaiusArmatus : NPC
     private void Update()
     {
 
-        if (gameSceneManager.CurrentScene == GameSceneManager.SceneState.Fort)
-        {
+
             stateMachine.Update();
-        }
+
             
     }
 
     private void FixedUpdate()
     {
-        if (gameSceneManager.CurrentScene == GameSceneManager.SceneState.Fort)
-        {
-            stateMachine.FixedUpdate();
-        }
-            
+            stateMachine.FixedUpdate();           
     }
 }

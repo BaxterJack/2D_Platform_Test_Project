@@ -205,7 +205,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &565591735
 GameObject:
@@ -352,7 +352,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 752858474995524307, guid: defba5ed43824d84781de75c8531a2bf, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 752858474995524307, guid: defba5ed43824d84781de75c8531a2bf, type: 3}
       propertyPath: m_LocalPosition.x
@@ -466,7 +466,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &981542108
 GameObject:
@@ -601,7 +601,6 @@ GameObject:
   - component: {fileID: 1140966085}
   - component: {fileID: 1140966088}
   - component: {fileID: 1140966087}
-  - component: {fileID: 1140966086}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -629,26 +628,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -788}
   m_SizeDelta: {x: 600, y: 1015.6833}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &1140966086
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1140966084}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 561c274f3151ee44ca6e92698e8ea45d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1140966087
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -669,29 +648,47 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Welcome to \"Vindolanda Saga: Tales of an Auxilia Soldier,\" an educational
-    journey back in time to the Roman frontier circa 105 AD. As an Auxilia soldier
-    serving in the First Cohort of Tungrians, you have been chosen to man the historic
-    fort at Vindolanda, situated amidst the rugged landscapes of Britannia's northern
-    borders.\r\n\nPrepare to immerse yourself in the rich tapestry of Roman life
-    and interact with real-life characters who once walked these very grounds. Along
-    your journey you will meet Flavius Cerialis, the esteemed fort commander, and
-    his wife, Sulpicia Lepidina as well as Aelius Brocchus, another fort commander,
-    and his wife Claudia Severa.\r\n\nBut beware! The northern frontiers are not
-    without peril. You'll face fierce Raiders from the north, defending the fort
-    and the Empire's honour with your sword and shield.\r\n\nYet, amidst the battles
-    and excitement, remember that knowledge is your most potent weapon. Delve into
-    tablet mystery puzzles, where you must decipher ancient messages written in Roman
-    cursive to unveil hidden truths and historical mysteries.\r\n\nTest your wits
-    and learn about the fascinating artifacts discovered at Vindolanda. From Roman
-    weaponry and tactics to the conquest of Britannia and the worship of Roman gods,
-    your understanding of history will be put to the test.\r\n\nGet ready to step
-    into the shoes of an Auxilia soldier and experience the life, challenges, and
-    triumphs of those who once stood guard on the Roman frontier. Your choices and
-    knowledge will shape your destiny as you navigate the \"Vindolanda Saga\u201D.\r\n\nPrepare
-    yourself for an unforgettable adventure, where the past comes alive, and you
-    become part of the remarkable history of Vindolanda! Are you ready, brave soldier?
-    The Roman Empire awaits your service!\r\n"
+  m_text: 'Welcome to "Vindolanda Saga: Tales of an Auxilia Soldier," a journey back
+    to the Roman frontier circa 105 AD. As an Auxilia soldier of the First Cohort
+    of Tungrians, you have been sent to man the fort at Vindolanda, amidst Britannia''s
+    rugged northern borders.
+
+    
+
+    Interact with real-life characters like
+    Flavius Cerialis, the fort commander, and his wife Sulpicia Lepidina, along with
+    Aelius Brocchus and his wife Claudia Severa.
+
+    
+
+    Face fierce Raiders
+    from the north, defending the fort and the Empire''s honour with your sword and
+    shield.
+
+    
+
+    Unravel tablet mystery puzzles, deciphering ancient messages
+    in Roman cursive to unveil hidden truths.
+
+    
+
+    Test your knowledge with
+    quizzes on Roman weaponry, tactics, Britannia''s conquest, and the worship of
+    Roman gods.
+
+    
+
+    Experience the life, challenges, and triumphs of an
+    Auxilia soldier on the Roman frontier. Your choices shape your destiny in the
+    "Vindolanda Saga."
+
+    
+
+    Prepare for an adventure, where history comes
+    alive, and you become part of Vindolanda''s remarkable past! The Roman Empire
+    awaits your service, brave soldier!
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -863,7 +860,7 @@ RectTransform:
   m_Children:
   - {fileID: 1381914477}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -922,7 +919,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.62352943, g: 0.03137255, b: 0.027450982, a: 1}
+  m_Color: {r: 0.62352943, g: 0.03137255, b: 0.027450982, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1039,7 +1036,7 @@ GameObject:
   - component: {fileID: 1422889253}
   - component: {fileID: 1422889252}
   - component: {fileID: 1422889251}
-  - component: {fileID: 1422889250}
+  - component: {fileID: 1422889256}
   m_Layer: 5
   m_Name: IntroCanvas
   m_TagString: Untagged
@@ -1047,26 +1044,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!95 &1422889250
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1422889249}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 561c274f3151ee44ca6e92698e8ea45d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1422889251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1108,7 +1085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1139,7 +1116,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1422889255
 RectTransform:
@@ -1162,6 +1139,26 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!95 &1422889256
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422889249}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f48ba3f60bdecb448af1017e74ebac54, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1640642637
 GameObject:
   m_ObjectHideFlags: 0

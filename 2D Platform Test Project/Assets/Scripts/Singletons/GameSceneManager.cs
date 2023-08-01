@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameSceneManager : Singleton<GameSceneManager>
+public class GameSceneManager : /*Singleton<GameSceneManager>*/ SingletonDestroy<GameSceneManager>
 {
     SceneState currentSceneState;
+    Animator sceneFade;
+    [SerializeField] float transitionTime = 1f;
     public enum SceneState
     {
         MainMenu,
@@ -18,6 +20,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
     protected override void Awake()
     {
         base.Awake();
+        sceneFade = GetComponentInChildren<Animator>();
     }
 
     void Start()
@@ -53,17 +56,31 @@ public class GameSceneManager : Singleton<GameSceneManager>
 
     }
 
-    public void LoadScene(SceneState sceneName)
+    void LoadScene(SceneState sceneName)
     {
         currentSceneState = sceneName;
         string sceneNameString = sceneName.ToString();
         SceneManager.LoadScene(sceneNameString);
-        ChangeThemeMusic(sceneName);
+        //ChangeThemeMusic(sceneName);
+    }
+
+    public void LoadNextLevel(SceneState sceneName)
+    {
+        StartCoroutine(LoadLevel(sceneName));
+    }
+
+    IEnumerator LoadLevel(SceneState sceneName)
+    {
+        sceneFade.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        LoadScene(sceneName);
     }
 
     void ChangeThemeMusic(SceneState sceneName)
     {
-        AudioManager audioManager = AudioManager.instance;
+        AudioManager audioManager = AudioManager.Instance;
         audioManager.StopTheme();
         switch (sceneName)
         {

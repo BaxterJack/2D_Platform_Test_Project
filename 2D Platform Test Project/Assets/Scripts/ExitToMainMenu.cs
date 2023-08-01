@@ -7,6 +7,6 @@ public class ExitToMainMenu : MonoBehaviour
     public void ExitToMain()
     {
         Debug.Log("Exit to Main Menu");
-        GameSceneManager.Instance.LoadScene(GameSceneManager.SceneState.MainMenu);
+        GameSceneManager.Instance.LoadNextLevel(GameSceneManager.SceneState.MainMenu);
     }
 }

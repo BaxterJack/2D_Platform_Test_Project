@@ -34,7 +34,7 @@ public class FlaviusClearRaidersQuest : BaseState
         {
             count++;
             PlayerManager.Instance.SaveFortPosition();
-            GameSceneManager.Instance.LoadScene(GameSceneManager.SceneState.Level1);
+            GameSceneManager.Instance.LoadNextLevel(GameSceneManager.SceneState.Level1);
         }
     }
 

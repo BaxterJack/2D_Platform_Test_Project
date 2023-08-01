@@ -15,8 +15,8 @@ public class StartGameButton : MonoBehaviour
     }
     public void StartGame()
     {
-        //GameSceneManager.Instance.LoadScene(GameSceneManager.SceneState.Fort);
-        thisCanvas.gameObject.SetActive(false);
+        //GameSceneManager.Instance.LoadNextLevel(GameSceneManager.SceneState.Fort);
+        //thisCanvas.gameObject.SetActive(false);
         introcanvas.gameObject.SetActive(true);
     }
 }
