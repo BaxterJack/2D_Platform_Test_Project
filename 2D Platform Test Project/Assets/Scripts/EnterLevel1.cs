@@ -60,6 +60,7 @@ public class EnterLevel1 : MonoBehaviour
     void InitialiseCurrentObjective(int index)
     {
         UIManager.Instance.Objective.text = objPrefix + goals[index].Objective;
+        Debug.Log(objPrefix + goals[index].Objective);
         UIManager.Instance.Tip.text = goals[index].Tip;
     }
 
