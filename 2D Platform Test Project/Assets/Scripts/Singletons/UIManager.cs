@@ -46,6 +46,11 @@ public class UIManager : Singleton<UIManager>
         UpdateScore();
     }
 
+    public int GetScore()
+    {
+        return score;
+    }
+
     public void AddToScore(int points)
     {
         score += points;

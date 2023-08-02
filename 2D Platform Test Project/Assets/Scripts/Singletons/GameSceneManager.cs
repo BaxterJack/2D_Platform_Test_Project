@@ -13,7 +13,8 @@ public class GameSceneManager : /*Singleton<GameSceneManager>*/ SingletonDestroy
         MainMenu,
         Fort,
         Level1,
-        DemoLevel
+        DemoLevel, 
+        FinalScene
     }
     Scene scene;
 
@@ -46,6 +47,9 @@ public class GameSceneManager : /*Singleton<GameSceneManager>*/ SingletonDestroy
                 break;
             case "Level1":
                 currentSceneState = SceneState.Level1;
+                break;
+            case "FinalScene":
+                currentSceneState = SceneState.FinalScene;
                 break;
         }
     }
@@ -98,6 +102,10 @@ public class GameSceneManager : /*Singleton<GameSceneManager>*/ SingletonDestroy
 
             case SceneState.Level1:
                 audioManager.PlayTheme("BattleTheme2");
+                break;
+
+            case SceneState.FinalScene:
+                audioManager.PlayTheme("Victory");
                 break;
         }
 
