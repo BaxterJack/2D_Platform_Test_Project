@@ -13,7 +13,7 @@ public class ArtefactCanvasManager : Singleton<ArtefactCanvasManager>
     Image artefactImage;
     Button button;
 
-    public Chest currentChest = new Chest();
+    public Chest currentChest; // = new Chest();
 
     public Chest CurrentChest {  get { return currentChest; } set { currentChest = value; } }
 

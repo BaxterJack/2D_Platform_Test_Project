@@ -8,6 +8,7 @@ public class ArmatusReward : BaseState
     string sentence1 = "You could do better. As such, I'm afraid theres no reward.";
     string sentence2 = "Well done, you really know your stuff!";
     string sentence3 = "As such, Ill give you my secret on how to increase the damage you cause with your stabbing attack.";
+    int count = 0;
     public ArmatusReward(NPC npc) : base(npc)
     {
 
@@ -40,7 +41,11 @@ public class ArmatusReward : BaseState
 
     public override void UpdateState()
     {
-
+        if (npc.GetHasConversationCompleted() && count == 0)
+        {
+            count++;
+            AudioManager.Instance.PlaySound("SwordSharpen");
+        }
     }
 
     public override void FixedUpdateState()

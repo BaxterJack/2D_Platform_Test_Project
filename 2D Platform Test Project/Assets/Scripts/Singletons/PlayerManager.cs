@@ -72,6 +72,7 @@ public class PlayerManager : Singleton<PlayerManager>
             case PlayerState.Dead:
                 DestroyArrows();
                 uiManager.DecreaseLives();
+                AudioManager.Instance.PlaySound("Revived");
                 player.layer = 15;
                 player.tag = "Enemy";
                 break;

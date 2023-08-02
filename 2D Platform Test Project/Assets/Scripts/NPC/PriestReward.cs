@@ -8,7 +8,7 @@ public class PriestReward : BaseState
     string sentence1 = "You could do better. As such, I'm afraid theres no reward.";
     string sentence2 = "Well done, you really know your stuff!";
     string sentence3 = "As such, I'll bless you to give you more Vitality!";
-
+    int count = 0;
     public PriestReward(NPC npc) : base(npc)
     {
        
@@ -42,7 +42,11 @@ public class PriestReward : BaseState
 
     public override void UpdateState()
     {
-
+        if(npc.GetHasConversationCompleted() && count == 0)
+        {
+            count++;
+            AudioManager.Instance.PlaySound("Blessed");
+        }
     }
 
     public override void FixedUpdateState()

@@ -8,6 +8,7 @@ public class VulcaniusReward : BaseState
     string sentence1 = "You could do better. As such, I'm afraid theres no reward.";
     string sentence2 = "Well done, you really know your stuff!";
     string sentence3 = "As such, I'll make some improvement to your amour to make it lighter, making you a bit more fleet-footed.";
+    int count = 0;
     public VulcaniusReward(NPC npc) : base(npc)
     {
 
@@ -40,7 +41,11 @@ public class VulcaniusReward : BaseState
 
     public override void UpdateState()
     {
-
+        if (npc.GetHasConversationCompleted() && count == 0)
+        {
+            count++;
+            AudioManager.Instance.PlaySound("Anvil");
+        }
     }
 
     public override void FixedUpdateState()

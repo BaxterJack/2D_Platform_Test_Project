@@ -58,6 +58,7 @@ namespace Cainos.PixelArtPlatformer_VillageProps
         {
             IsOpened = false;
             DestroyOpenChestText();
+            AudioManager.Instance.PlaySound("CloseChest");
             Destroy(this.gameObject, 0.5f);
 
             

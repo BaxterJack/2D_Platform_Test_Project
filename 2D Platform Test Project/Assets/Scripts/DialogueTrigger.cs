@@ -60,7 +60,7 @@ public class DialogueTrigger : MonoBehaviour
         bool isQuizOpen = GameManager.Instance.isQuizOpen;
         if (isInTalkingRange)
         {
-            if (Input.GetKey(KeyCode.E) && !isTabletOpen || dialogue.ForcedDialogue && !isQuizOpen)
+            if (Input.GetKey(KeyCode.E) && !isTabletOpen || dialogue.ForcedDialogue && !isQuizOpen  && !isTabletOpen)
             {
                 TriggerDialogue();
                 if(dialogue.ForcedDialogue)
