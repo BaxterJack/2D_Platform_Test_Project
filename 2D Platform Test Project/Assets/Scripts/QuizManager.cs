@@ -186,6 +186,7 @@ public class QuizManager : MonoBehaviour
         manager.ArtefactQuiz = true;
         float value = ((float)score / quizData.questions.Length) * 100;
         manager.ArtefactQuizScore = value;
+        UIManager.Instance.AddToScore(score * 10);
     }
 
     protected void CloseCanvas()

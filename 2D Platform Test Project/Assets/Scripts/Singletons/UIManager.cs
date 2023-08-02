@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
-//using UnityEngine.UIElements;
 
 public class UIManager : Singleton<UIManager>
 {
@@ -23,12 +22,12 @@ public class UIManager : Singleton<UIManager>
 
     Canvas uiCanvas;
     TMP_Text scoreText;
-//    TMP_Text lootText;
     TMP_Text objective;
     TMP_Text tip;
     GameObject gameOverUI;
     RectTransform heartTransform;
     GameObject continueButton;
+    bool isGameOverActive = false;
 
     protected override void Awake()
     {
@@ -44,6 +43,12 @@ public class UIManager : Singleton<UIManager>
     public void AddToScore(float points)
     {
         score += (int)points;
+        UpdateScore();
+    }
+
+    public void AddToScore(int points)
+    {
+        score += points;
         UpdateScore();
     }
 
@@ -85,9 +90,6 @@ public class UIManager : Singleton<UIManager>
         {
             switch (textComponent.name)
             {
-                //case "Text: Loot":
-                //    lootText = textComponent;
-                //    break;
                 case "Text: Score":
                     scoreText = textComponent;
                     break;
@@ -125,7 +127,6 @@ public class UIManager : Singleton<UIManager>
     public void ShowUI()
     {
         uiCanvas.enabled = true;
-        //Debug.Log("Showing UI");
     }
 
     void UpdateScore()
@@ -136,7 +137,6 @@ public class UIManager : Singleton<UIManager>
 
     void Start()
     {
-        //lootText.text += " 100";
         UpdateScore();
         currentLives = maxLives;
         heartImages = new Image[maxLives];
@@ -173,6 +173,17 @@ public class UIManager : Singleton<UIManager>
         {
             IncreaseLives();
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isGameOverActive)
+            {
+                DisactivateGameOverUI();
+            }
+            else
+            {
+                ActivateGameOverUI();
+            }
+        }
     }
     public void DecreaseLives()
     {
@@ -192,11 +203,13 @@ public class UIManager : Singleton<UIManager>
     void ActivateGameOverUI()
     {
         gameOverUI.SetActive(true);
+        isGameOverActive = true;
     }
 
     void DisactivateGameOverUI()
     {
         gameOverUI.SetActive(false);
+        isGameOverActive = false;
     }
 
 

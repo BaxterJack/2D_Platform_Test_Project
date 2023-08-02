@@ -29,6 +29,11 @@ public class PlayerManager : Singleton<PlayerManager>
         Dead
     }
 
+    public int GetDamageTaken()
+    {
+        return playerHealth.DamageTaken;
+    }
+
     public Vector3 Checkpoint
     {
         get { return checkpoint; }

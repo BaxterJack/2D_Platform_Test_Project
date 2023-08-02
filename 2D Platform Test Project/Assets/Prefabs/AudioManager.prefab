@@ -93,6 +93,30 @@ MonoBehaviour:
     pitch: 1
     audioSource: {fileID: 0}
     loop: 0
+  - name: Error
+    clip: {fileID: 8300000, guid: 53dff20f6229c034293c423f19f1b9b5, type: 3}
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: Blessed
+    clip: {fileID: 8300000, guid: cfce0cea076109f478783201b2a9f57f, type: 3}
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: Revived
+    clip: {fileID: 8300000, guid: d654174ef194bd7479bf4b8d8f753318, type: 3}
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
+  - name: CloseChest
+    clip: {fileID: 8300000, guid: 78ad99fd0a0a5144280b07bbdba84815, type: 3}
+    volume: 1
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 0
   themes:
   - name: BattleTheme
     clip: {fileID: 8300000, guid: 0863e3cadb9a2f24ab725c28ec7d74e4, type: 3}

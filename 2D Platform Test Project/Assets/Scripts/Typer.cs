@@ -17,6 +17,8 @@ public class Typer
 
     string wordOutput = "";
 
+    int errorsMade = 0;
+
     StringBuilder tabletMessage = new StringBuilder();
     public void Update()
     {
@@ -28,8 +30,14 @@ public class Typer
         get { return wordOutput; }
     }
 
+    private void ResetErrors()
+    {
+        errorsMade = 0;
+    }
+
     public void SplitTabletMessage(Tablet tablet)
     {
+        ResetErrors();
         tabletMessage.Clear();
         tabletMessage.Append(tablet.message);
         string[] wordsArray = tablet.message.Split(new char[] { ' ' }.Concat(punctuationMarks).ToArray(), StringSplitOptions.RemoveEmptyEntries);
@@ -72,6 +80,7 @@ public class Typer
         if(IsCorrectLetter(typedLetter))
         {
             EnterLetterToOutput(typedLetter);
+            TabletManager.Instance.SetDefaultHint();
             TabletManager.Instance.ChangeCompletedLetterColour();
             RemoveLetter();
             if (IsWordComplete())
@@ -80,12 +89,12 @@ public class Typer
                 RemoveWord();
                 if (IsSenteceComplete())
                 {
-                    //EndOutputText();
                     TabletManager.Instance.TabletTranslated();
+                    CalculatePoints();
+                    //Points
                 }
                 else
                 {
-                    //AddSpaceToOutput();
                     SetCurrentWord();
                 }   
             }
@@ -93,8 +102,55 @@ public class Typer
         else
         {
             //Need to add a hint system
-            Debug.Log(remainingWord);
+            errorsMade++;
+            ErrorNoise();
+            Hint(typedLetter);
+            //Debug.Log(remainingWord);
         }
+    }
+
+    char[] noCursiveLetters = { 'j', 'y', 'w', 'z', 'v' };
+
+    struct LetterPairs
+    {
+        public LetterPairs(char EnglishLetter, char RomanLetter)
+        {
+           englishLetter = EnglishLetter;
+           romanLetter = RomanLetter;
+        }
+        public char englishLetter;
+        public char romanLetter;
+    }
+
+    LetterPairs[] letterPairs = { new LetterPairs('j', 'g'), new LetterPairs('y', 'i'), new LetterPairs('w', 'm'), new LetterPairs('z', 's'), new LetterPairs('v', 'u') };
+
+    void Hint(char typedLetter)
+    {
+        char nextLetter = char.ToLower(remainingWord[0]);
+        string hint = "";
+        if (noCursiveLetters.Contains(nextLetter))
+        {
+            foreach(LetterPairs pair in letterPairs)
+            {
+                if(pair.englishLetter == nextLetter)
+                {
+                    hint = "Remember that " + char.ToUpper(pair.englishLetter) + " is also used for the Roman Character " + char.ToUpper(pair.romanLetter) + ".";
+                }
+            }
+            TabletManager.Instance.SetHint(hint);
+        }
+    }
+
+    void CalculatePoints()
+    {
+        int score = 200;
+        score -= errorsMade;
+        UIManager.Instance.AddToScore(score);
+    }
+
+    void ErrorNoise()
+    {
+        AudioManager.Instance.PlaySound("Error");
     }
 
     private bool IsCorrectLetter(char letter) 
@@ -123,15 +179,7 @@ public class Typer
         }
         //wordOutput += typedLetter; // original
     }
-    //void AddSpaceToOutput()
-    //{
-    //    wordOutput += " ";
-    //}
 
-    //void EndOutputText()
-    //{
-    //    wordOutput += ".";
-    //}
     private bool IsWordComplete()
     {
         return remainingWord.Length == 0;

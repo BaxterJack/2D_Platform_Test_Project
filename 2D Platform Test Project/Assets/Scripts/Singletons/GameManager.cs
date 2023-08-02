@@ -28,6 +28,8 @@ public class GameManager : Singleton<GameManager>
     float battleQuizScore = 0;
     float artefactQuizScore = 0;
 
+    public GameObject lepidinaPrefab;
+    public GameObject quizPrefab;
     public float ArtefactQuizScore
     {
         get { return artefactQuizScore; }
@@ -79,8 +81,7 @@ public class GameManager : Singleton<GameManager>
     }
 
 
-    public GameObject lepidinaPrefab;
-    public GameObject quizPrefab;
+
     public void ResetRaiderCount()
     {
         raidersCount = 0;

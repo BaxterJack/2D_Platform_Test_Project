@@ -12089,6 +12089,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4024251472796708964, guid: 4132ffad7b6ffed49876345541ce243e, type: 3}
+      propertyPath: speed
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 7995428977019770341, guid: 4132ffad7b6ffed49876345541ce243e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

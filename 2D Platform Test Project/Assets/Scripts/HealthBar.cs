@@ -14,6 +14,12 @@ public class HealthBar : MonoBehaviour
 
     Canvas healthCanvas;
 
+    int damageTaken = 0;
+
+    public int DamageTaken
+    {
+        get { return damageTaken; }
+    }
 
     private void Start()
     {
@@ -56,6 +62,7 @@ public class HealthBar : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        damageTaken += damage;
         currentHealth -= damage;
         if(currentHealth < 0)
         {

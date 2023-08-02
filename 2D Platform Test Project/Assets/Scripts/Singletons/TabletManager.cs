@@ -9,12 +9,11 @@ using System.Linq;
 public class TabletManager : Singleton<TabletManager>
 {
     Typer typer;
-//    public Tablet[] tablets;
-
     Button closeButton;
     TMP_Text tabletText;
     TMP_Text translatedText;
     TMP_Text title;
+    TMP_Text hint;
     Canvas canvas;
 
     Tablet currentTablet;
@@ -24,9 +23,6 @@ public class TabletManager : Singleton<TabletManager>
         get { return currentTablet; }
         set { currentTablet = value; }
     }
-
-//    public int currentTablet;
-//    int totalTablets;
 
     bool isTabletCanvasActive = false;
 
@@ -44,12 +40,9 @@ public class TabletManager : Singleton<TabletManager>
     protected override void Awake()
     {
         base.Awake();
-//        currentTablet = 0;
         typer = new Typer();
         translatedTabletText = new StringBuilder();
         remainingTabletText = new StringBuilder();
- //       totalTablets = tablets.Length;
-
         closeButton = GetComponentInChildren<Button>();
         tabletText = GetComponentInChildren<TMP_Text>();
         canvas = GetComponent<Canvas>();
@@ -68,9 +61,22 @@ public class TabletManager : Singleton<TabletManager>
                 case "Title":
                     title = textComponent;
                     break;
+                case "Hint":
+                    hint = textComponent;
+                    break;
             }
         }
 
+    }
+
+    public void SetHint(string Hint)
+    {
+        hint.text = "Hint: " + Hint;
+    }
+
+    public void SetDefaultHint()
+    {
+        hint.text = "Hint: Use the keyboard to translate the message. Ignore capitals, spaces and punctuation.";
     }
 
     private void Update()
@@ -80,20 +86,17 @@ public class TabletManager : Singleton<TabletManager>
             typer.Update();
             translatedText.text = typer.WordOutput;
         }
-
     }
 
     public void InitialiseTablet()
     {
-        //tabletText.text = tablets[currentTablet].message;
         tabletText.text = currentTablet.message;
         remainingTabletText.Clear();
         translatedTabletText.Clear();
         remainingTabletText.Append(tabletText.text);
-        // typer.SplitTabletMessage(tablets[currentTablet]);
         typer.SplitTabletMessage(currentTablet);
         isTabletCanvasActive = true;
-        canvas.enabled = isTabletCanvasActive; // test 2
+        canvas.enabled = isTabletCanvasActive;
         UIManager.Instance.HideUI();
         title.text = "Writing Tablet Mystery: Can you translate the message?";
     }
@@ -126,7 +129,7 @@ public class TabletManager : Singleton<TabletManager>
     {
         closeButton.gameObject.SetActive(false);
         isTabletCanvasActive = false;
-        canvas.enabled = isTabletCanvasActive; // test 2       
+        canvas.enabled = isTabletCanvasActive;
         UIManager.Instance.ShowUI();
     }
 

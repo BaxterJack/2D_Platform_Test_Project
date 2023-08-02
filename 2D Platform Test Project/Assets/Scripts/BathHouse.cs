@@ -86,6 +86,7 @@ public class BathHouse : MonoBehaviour
         StopConstructionFX();
         gameManager.BathHouseConstructed = true;
         FortGuide.Instance.SetObjectivecomplete(FortGuide.FortObjective.GetLumber);
+        UIManager.Instance.AddToScore(100);
 
 
     }
