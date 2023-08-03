@@ -1,3 +1,4 @@
+using Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -30,6 +31,19 @@ public class GameManager : Singleton<GameManager>
 
     public GameObject lepidinaPrefab;
     public GameObject quizPrefab;
+
+    Vector3 lastFortPosition = new Vector3();
+
+    public void SaveFortPosition()
+    {
+        lastFortPosition = PlayerManager.Instance.gameObject.transform.position;
+    }
+
+    public void SetFortPosition()
+    {
+        PlayerManager.Instance.gameObject.transform.position = lastFortPosition;
+
+    }
     public float ArtefactQuizScore
     {
         get { return artefactQuizScore; }

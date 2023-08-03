@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using static Cinemachine.DocumentationSortingAttribute;
 
 public class UIManager : Singleton<UIManager>
 {
-    [SerializeField]
-    int maxLives = 3;
-    int currentLives;
+
     int score = 0;
 
-    PlayerManager playerManager;
+//    PlayerManager playerManager;
 
     Image[] heartImages;
 
@@ -143,14 +142,21 @@ public class UIManager : Singleton<UIManager>
     void Start()
     {
         UpdateScore();
-        currentLives = maxLives;
-        heartImages = new Image[maxLives];
-        playerManager = PlayerManager.Instance;
-        for (int i = 0; i < maxLives; i++)
+        int lives = PlayerManager.Instance.currentLives;
+        heartImages = new Image[lives];
+        for (int i = 0; i < lives; i++)
         {
             Vector2 anchoredPosition = heartTransform.anchoredPosition;
             anchoredPosition.x += i * offset;
             InstantiateHeart(anchoredPosition, i);
+        }
+    }
+
+    public void ResetLivesUI()
+    {
+        foreach(Image image in heartImages)
+        {
+            image.gameObject.SetActive(true);
         }
     }
 
@@ -169,15 +175,7 @@ public class UIManager : Singleton<UIManager>
 
     void Update()
     {
-        
-        if (Input.GetKeyDown("down"))
-        {
-            DecreaseLives();
-        }
-        if (Input.GetKeyDown("up"))
-        {
-            IncreaseLives();
-        }
+
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isGameOverActive)
@@ -190,41 +188,24 @@ public class UIManager : Singleton<UIManager>
             }
         }
     }
-    public void DecreaseLives()
-    {
-        if(currentLives > 0)
-        {
-            currentLives--;
-            heartImages[currentLives].gameObject.SetActive(false);
 
-        }
-        if(currentLives == 0)
-        {
-           playerManager.GameOver();
-           ActivateGameOverUI();
-        }
+
+    public void RemoveHeart(int currentLives)
+    {
+        heartImages[currentLives].gameObject.SetActive(false);
     }
 
-    void ActivateGameOverUI()
+    public void ActivateGameOverUI()
     {
         gameOverUI.SetActive(true);
         isGameOverActive = true;
     }
 
-    void DisactivateGameOverUI()
+    public void DisactivateGameOverUI()
     {
         gameOverUI.SetActive(false);
         isGameOverActive = false;
     }
 
 
-    public void IncreaseLives()
-    {
-        if (currentLives < maxLives)
-        {
-            
-            heartImages[currentLives].gameObject.SetActive(true);
-            currentLives++;
-        }
-    }
 }

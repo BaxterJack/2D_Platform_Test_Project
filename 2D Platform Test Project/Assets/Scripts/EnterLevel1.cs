@@ -17,6 +17,11 @@ public class EnterLevel1 : MonoBehaviour
 
     void Start()
     {
+        //if(FortGuide.Instance != null)
+        //{
+        //    FortGuide.Instance.gameObject.SetActive(false);
+        //}
+        
         PlayerManager.Instance.CanAttack = true;
         GameManager.Instance.ActivateNPCS(false, NPC.npcTypes.fort);
         PlayerManager.Instance.gameObject.transform.position = gameObject.transform.position;
@@ -25,12 +30,14 @@ public class EnterLevel1 : MonoBehaviour
         AddGoal(brocchus, "");
         InitialiseCurrentObjective((int)currentObjective);
     }
+    bool isSecondObjectiveAssigned = false;
 
     private void Update()
     {
-        if (GameManager.Instance.AreRaidersCleared())
+        if ( !isSecondObjectiveAssigned && GameManager.Instance.AreRaidersCleared())
         {
             SetObjectivecomplete(Level1Objectives.ClearRaiders);
+            isSecondObjectiveAssigned= true;
         }
     }
 
@@ -59,6 +66,7 @@ public class EnterLevel1 : MonoBehaviour
     string objPrefix = "Objective: ";
     void InitialiseCurrentObjective(int index)
     {
+        Debug.Log(UIManager.Instance.Objective.text);
         UIManager.Instance.Objective.text = objPrefix + goals[index].Objective;
         Debug.Log(objPrefix + goals[index].Objective);
         UIManager.Instance.Tip.text = goals[index].Tip;

@@ -29,7 +29,7 @@ public class VitalisLumberQuest : BaseState
 
 
     }
-
+    int count = 0;
     public override void EnterState()
     {
         npc.AssignDialogue(dialogue);
@@ -38,7 +38,7 @@ public class VitalisLumberQuest : BaseState
 
     public override void UpdateState()
     {
-        if (npc.GetHasConversationCompleted())
+        if (npc.GetHasConversationCompleted() && count == 0)
         {
             FortGuide.Instance.SetObjectivecomplete(FortGuide.FortObjective.SpeakWithBathHouse);
         }

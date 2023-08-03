@@ -30,7 +30,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2559661439915901973
 MonoBehaviour:
@@ -156,6 +156,12 @@ MonoBehaviour:
     loop: 1
   - name: Victory
     clip: {fileID: 8300000, guid: 611b210ee1c7f9c4abf6ddbf36b2152e, type: 3}
+    volume: 0.3
+    pitch: 1
+    audioSource: {fileID: 0}
+    loop: 1
+  - name: Death
+    clip: {fileID: 8300000, guid: 8b7fa5c477711d247a1ce16102973a10, type: 3}
     volume: 0.3
     pitch: 1
     audioSource: {fileID: 0}

@@ -26,7 +26,7 @@ public class LepidinaArtefactQuest : BaseState
 
     }
 
-
+    int count = 0;
     public override void EnterState()
     {
         npc.AssignDialogue(dialogue);
@@ -37,8 +37,9 @@ public class LepidinaArtefactQuest : BaseState
 
     public override void UpdateState()
     {
-        if(npc.GetHasConversationCompleted())
+        if(npc.GetHasConversationCompleted() && count == 0)
         {
+            count++;
             FortGuide.Instance.SetObjectivecomplete(FortGuide.FortObjective.GetLumber);
         }
     }

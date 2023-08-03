@@ -38,7 +38,7 @@ Transform:
   - {fileID: 1740887442183484580}
   - {fileID: 9185646110924304424}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6521645923248172477
 SpriteRenderer:
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8ff1ebfb6a70c04896d0df31ccc916f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 7
   maxJumps: 2
 --- !u!114 &6003733373799212153
 MonoBehaviour:
@@ -182,6 +182,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   healthBar: {fileID: 5973535631447307604}
+  stabDamage: 100
 --- !u!114 &1740887442324486322
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,7 +195,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b3957055bc7f704b9e979969af55692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  maxLives: 1
 --- !u!1 &4632043274311690861
 GameObject:
   m_ObjectHideFlags: 0

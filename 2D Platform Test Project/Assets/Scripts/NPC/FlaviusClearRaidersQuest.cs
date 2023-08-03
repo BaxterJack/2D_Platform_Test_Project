@@ -33,7 +33,7 @@ public class FlaviusClearRaidersQuest : BaseState
         if(npc.GetHasConversationCompleted() && count == 0)
         {
             count++;
-            PlayerManager.Instance.SaveFortPosition();
+            GameManager.Instance.SaveFortPosition();
             GameSceneManager.Instance.LoadNextLevel(GameSceneManager.SceneState.Level1);
         }
     }

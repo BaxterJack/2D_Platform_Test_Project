@@ -11,7 +11,7 @@ public class ArmatusTutorialState : BaseState
     }
     public override void EnterState()
     {
-        PlayerManager.Instance.SaveFortPosition();
+        GameManager.Instance.SaveFortPosition();
         GameSceneManager.Instance.LoadNextLevel(GameSceneManager.SceneState.DemoLevel);
     }
 

@@ -10,7 +10,7 @@ public class LoadFortScene : MonoBehaviour
         if (GameManager.Instance.IsTutorialComplete())
         {
             GameManager.Instance.ActivateNPCS(true);
-            PlayerManager.Instance.SetFortPosition();
+            GameManager.Instance.SetFortPosition();
         }
     }
 }

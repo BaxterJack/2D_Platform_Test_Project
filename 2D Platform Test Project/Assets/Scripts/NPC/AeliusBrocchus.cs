@@ -10,6 +10,7 @@ public class AeliusBrocchus : NPC
     BrocchusIntroduceClaudia introduceClaudia;
     BrocchusEndDialogue endDialogue;
     public GameObject claudiaPrefab;
+    protected static AeliusBrocchus instance;
     private void Awake()
     {
         stateMachine = new StateMachine();
@@ -18,6 +19,15 @@ public class AeliusBrocchus : NPC
         introduceClaudia = new BrocchusIntroduceClaudia(this);
         endDialogue = new BrocchusEndDialogue(this);
         type = npcTypes.level1;
+
+        if (instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        instance = GetComponent<AeliusBrocchus>();
+        DontDestroyOnLoad(gameObject);
     }
     protected override void Start()
     {

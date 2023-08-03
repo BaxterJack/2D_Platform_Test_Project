@@ -1206,7 +1206,7 @@ RectTransform:
   - {fileID: 752466805}
   - {fileID: 1798267880}
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1287,7 +1287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5aebd7ced3fb764e9292e40b436563d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLives: 5
   heart: {fileID: 4341079674584340188, guid: e9dfca925d0346945b5dd9708369ba83, type: 3}
 --- !u!1 &1069946440754483765
 GameObject:

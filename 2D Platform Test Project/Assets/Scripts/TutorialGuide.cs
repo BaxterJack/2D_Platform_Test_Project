@@ -163,7 +163,7 @@ public class TutorialGuide : MonoBehaviour
         Debug.Log(2);
         
         GameManager.Instance.ActivateNPCS(true);
-        PlayerManager.Instance.SetFortPosition();
+        GameManager.Instance.SetFortPosition();
         Debug.Log(3);
     }
 

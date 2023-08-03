@@ -4,31 +4,26 @@ using UnityEngine;
 
 public class PlayerManager : Singleton<PlayerManager>
 {
-    public GameObject player;
-
+    [SerializeField] private int maxLives;
+    public int MaxLives    { get { return maxLives; }    }
+    public int currentLives { get; set; }
+    GameObject player;
     HealthBar playerHealth;
-
-    UIManager uiManager;
-
     float respawnTimer = 0.0f;
-
     PlayerState currentState = PlayerState.Alive;
-
     int playerLayer;
-
-    Vector3 lastFortPosition = new Vector3();
-
     bool canAttack = false;
-
     bool canAttackCheck = false;
-
     Vector3 checkpoint = new Vector3();
     public enum PlayerState
     {
         Alive,
         Dead
     }
-
+    public PlayerState CurrentState
+    {
+        get { return currentState; }
+    }
     public int GetDamageTaken()
     {
         return playerHealth.DamageTaken;
@@ -43,62 +38,27 @@ public class PlayerManager : Singleton<PlayerManager>
     public bool CanAttack
     {
         get { return canAttack; }
-        set { canAttack = value; /*Debug.Log("changed can attack");*/ }
+        set { canAttack = value; }
     }
 
     protected override void Awake()
     {
         base.Awake();
+        currentLives = maxLives;
+        player = this.gameObject;
+        playerLayer = player.layer;
+        playerHealth = player.GetComponentInChildren<HealthBar>();
     }
 
-    public PlayerState CurrentState
+    private void Start()
     {
-        get { return currentState; }
+        Debug.Log("Hello");
+        
     }
 
-    public void ChangePlayerState(PlayerState newState)
-    {
-        currentState = newState;
-        switch (newState)
-        {
-            case PlayerState.Alive:
-                player.layer = playerLayer;
-                player.tag = "Player";
-                playerHealth.SetMaxHealth();
-                playerHealth.EnableHealthCanvas();
-
-                break;
-
-            case PlayerState.Dead:
-                DestroyArrows();
-                uiManager.DecreaseLives();
-                AudioManager.Instance.PlaySound("Revived");
-                player.layer = 15;
-                player.tag = "Enemy";
-                break;
-        }
-    }
-
-    void CanAttackCheck()
-    {
-        if(canAttackCheck != canAttack)
-        {
-            if(canAttack == true)
-            {
-                canAttackCheck = true;
-                Debug.Log("Weapons Enabled");
-            }
-            else if(canAttack == false)
-            {
-                canAttackCheck = false;
-                Debug.Log("Weapons Disabled");
-            }
-        }
-    }
 
     private void Update()
     {
-        //CanAttackCheck();
         if (currentState == PlayerState.Dead)
         {
             respawnTimer += Time.deltaTime;
@@ -115,6 +75,60 @@ public class PlayerManager : Singleton<PlayerManager>
         }
     }
 
+
+    public void ChangePlayerState(PlayerState newState)
+    {
+        currentState = newState;
+        switch (newState)
+        {
+            case PlayerState.Alive:
+                player.layer = playerLayer;
+                player.tag = "Player";
+                playerHealth.SetMaxHealth();
+                playerHealth.EnableHealthCanvas();
+                break;
+
+            case PlayerState.Dead:
+                player.layer = 15;
+                player.tag = "Enemy";
+                DestroyArrows();
+                DecreaseLives();       
+                break;
+        }
+    }
+
+    public void DecreaseLives()
+    {
+        currentLives--;
+        UIManager.Instance.RemoveHeart(currentLives);
+        if (currentLives > 0)
+        {
+            AudioManager.Instance.PlaySound("Revived");
+        }
+        if (currentLives == 0)
+        {
+            AudioManager.Instance.StopTheme();
+            AudioManager.Instance.PlayTheme("Death");
+            StartCoroutine(StopGame());
+        }
+    }
+
+    public void GameOver()
+    {
+        Time.timeScale = 0f;
+    }
+
+    IEnumerator StopGame()
+    {
+        yield return new WaitForSeconds(3);
+        UIManager.Instance.ActivateGameOverUI();
+        GameOver();
+    }
+
+
+
+
+
     void DestroyArrows()
     {
         for (int i = 0; i < player.transform.childCount; i++)
@@ -130,39 +144,13 @@ public class PlayerManager : Singleton<PlayerManager>
 
     }
 
-    private void Start()
-    {
 
-        player = GameObject.Find("Player");
-        playerLayer = player.layer;
-        playerHealth = player.GetComponentInChildren<HealthBar>();
-        GameObject obj = GameObject.Find("UICanvas");
-        uiManager = obj.GetComponent<UIManager>();
-    }
-
-    public void GameOver()
-    {
-
-    }
 
     public void RespawnPlayer()
     {
-        //Vector3 deathPos = player.transform.position;
-        //Vector3 respawnPos = deathPos;
-        //respawnPos.y += 2;
         player.transform.position = checkpoint;
     }
 
-    public void SaveFortPosition()
-    {
-        lastFortPosition = player.transform.position;
-    }
-
-    public void SetFortPosition()
-    {
-        player.transform.position = lastFortPosition;
-
-    }
 
     public void IncreaseStabDamage()
     {
@@ -183,5 +171,24 @@ public class PlayerManager : Singleton<PlayerManager>
         HealthBar health = GetComponentInChildren<HealthBar>();
         health.maxHealth = 130;
         health.SetMaxHealth();
+    }
+
+
+
+    void CanAttackCheck()
+    {
+        if (canAttackCheck != canAttack)
+        {
+            if (canAttack == true)
+            {
+                canAttackCheck = true;
+                Debug.Log("Weapons Enabled");
+            }
+            else if (canAttack == false)
+            {
+                canAttackCheck = false;
+                Debug.Log("Weapons Disabled");
+            }
+        }
     }
 }

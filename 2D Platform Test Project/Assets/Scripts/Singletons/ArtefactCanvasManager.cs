@@ -74,11 +74,12 @@ public class ArtefactCanvasManager : Singleton<ArtefactCanvasManager>
         button = GetComponentInChildren<Button>();
         button.onClick.AddListener(CloseCanvas);
     }
-
+    int count = 0;
     private void Update()
     {
-        if(collectedArtefacts.Count == numChests)
+        if(collectedArtefacts.Count == numChests && count == 0)
         {
+            count++;
             allChestsCollected = true;
             FortGuide.Instance.SetObjectivecomplete(FortGuide.FortObjective.FindArtefacts);
         }
