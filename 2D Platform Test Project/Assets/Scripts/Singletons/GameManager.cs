@@ -99,6 +99,7 @@ public class GameManager : Singleton<GameManager>
     public void ResetRaiderCount()
     {
         raidersCount = 0;
+        raidersCleared = 0;
     }
     public int RaidersCleared
     {
@@ -131,6 +132,11 @@ public class GameManager : Singleton<GameManager>
     {
         foreach (NPC npc in nPCs)
         {
+            if(npc == null)
+            {
+                //nPCs.Remove(npc);
+                continue;
+            }
             npc.ActivateNPC(isActive);
         }
     }
@@ -139,6 +145,11 @@ public class GameManager : Singleton<GameManager>
     {
         foreach (NPC npc in nPCs)
         {
+            if (npc == null)
+            {
+                //nPCs.Remove(npc);
+                continue;
+            }
             npc.ActivateNpcType(isActive, Type);
         }
     }

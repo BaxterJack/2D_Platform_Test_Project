@@ -8,7 +8,7 @@ public class ArmatusReward : BaseState
     string sentence1 = "You could do better. As such, I'm afraid theres no reward.";
     string sentence2 = "Well done, you really know your stuff!";
     string sentence3 = "As such, Ill give you my secret on how to increase the damage you cause with your stabbing attack.";
-    int count = 0;
+    bool over60 = false;
     public ArmatusReward(NPC npc) : base(npc)
     {
 
@@ -24,7 +24,8 @@ public class ArmatusReward : BaseState
     public override void EnterState()
     {
         GameManager manager = GameManager.Instance;
-        if(manager.BattleQuizScore >= 60.0f)
+        over60 = manager.BattleQuizScore >= 60.0f;
+        if (over60)
         {
             dialogue.sentences.Add(sentence2);
             dialogue.sentences.Add(sentence3);
@@ -41,9 +42,9 @@ public class ArmatusReward : BaseState
 
     public override void UpdateState()
     {
-        if (npc.GetHasConversationCompleted() && count == 0)
+        if (npc.GetHasConversationCompleted() && over60)
         {
-            count++;
+            over60 = false;
             AudioManager.Instance.PlaySound("SwordSharpen");
         }
     }

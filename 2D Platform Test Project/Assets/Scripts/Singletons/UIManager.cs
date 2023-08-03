@@ -37,6 +37,7 @@ public class UIManager : Singleton<UIManager>
         FindRectTransforms();
         DisactivateGameOverUI();
         FindContinueButton();
+
     }
 
     public void AddToScore(float points)

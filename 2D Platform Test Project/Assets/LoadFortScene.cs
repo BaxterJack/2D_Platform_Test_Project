@@ -7,6 +7,8 @@ public class LoadFortScene : MonoBehaviour
 
     void Start()
     {
+
+
         if (GameManager.Instance.IsTutorialComplete())
         {
             GameManager.Instance.ActivateNPCS(true);

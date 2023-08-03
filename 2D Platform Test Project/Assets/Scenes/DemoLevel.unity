@@ -552,7 +552,7 @@ GameObject:
   - component: {fileID: 215560915}
   m_Layer: 0
   m_Name: PlayerSpawn
-  m_TagString: Untagged
+  m_TagString: DestroyOnExit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2079,7 +2079,7 @@ GameObject:
   - component: {fileID: 1636500763}
   m_Layer: 0
   m_Name: Tutorial
-  m_TagString: Untagged
+  m_TagString: DestroyOnExit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

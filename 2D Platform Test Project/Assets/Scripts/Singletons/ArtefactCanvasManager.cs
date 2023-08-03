@@ -47,7 +47,7 @@ public class ArtefactCanvasManager : Singleton<ArtefactCanvasManager>
     {
         base.Awake();
         artefactCanvas = GetComponent<Canvas>();
-        CloseCanvas();
+        
 
         artefactImage = GetComponentInChildren<Image>();
         foreach (TMP_Text textComponent in GetComponentsInChildren<TMP_Text>())
@@ -73,6 +73,11 @@ public class ArtefactCanvasManager : Singleton<ArtefactCanvasManager>
 
         button = GetComponentInChildren<Button>();
         button.onClick.AddListener(CloseCanvas);
+    }
+
+    private void Start()
+    {
+        CloseCanvas();
     }
     int count = 0;
     private void Update()
