@@ -26,7 +26,7 @@ public class ShootState : BaseState
     {
         //aiObject.SetAttackOffset();
         aiObject.SetDestination(aiObject.PlayerPosition);
-        isShooting = aiObject.barbarianAnimation.animator.GetCurrentAnimatorStateInfo(0).IsName("BarbBowShoot");
+        isShooting = aiObject.barbarianAnimation.animator.GetCurrentAnimatorStateInfo(0).IsName(aiObject.AttackAnim);
         if (!isShooting && aiObject.attackCoolDown >= coolDownLimit)
         {
             aiObject.attackCoolDown = 0.0f;

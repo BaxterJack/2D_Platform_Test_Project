@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class BarbBowmen : AiObject
 {
-    [SerializeField]
-    GameObject arrow;
-    [SerializeField]
-    Transform arrowPosition;
+    [SerializeField] GameObject arrow;
+    [SerializeField] Transform arrowPosition;
     public PatrolState patrolState;
     public ShootState shootState;
     public DeathState deathState;
@@ -25,9 +23,9 @@ public class BarbBowmen : AiObject
         stateMachine.AddTransition(new StateTransition(patrolState, shootState, this.aiSight.CanSeePlayer));
         stateMachine.AddTransition(new StateTransition(shootState, deathState, this.healthBar.HasNoHealth));
         stateMachine.AddTransition(new StateTransition(shootState, patrolState, this.aiSight.CannotSeePlayer));
-        //FindPlayer();
         type = this.GetType().Name;
         SetXP(type);
+        attackAnim = "BarbBowShoot";
     }
 
     protected override void Awake()

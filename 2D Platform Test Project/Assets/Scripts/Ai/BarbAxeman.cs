@@ -8,17 +8,35 @@ public class BarbAxeman : AiObject
     public AttackState attackState;
     public DeathState deathState;
     public GoToAttackPosState goToAttackPosState;
-
+    int slashDamage;
     protected override void Start()
     {
         base.Start();
+        InitStates();
+        InitStateTransitions();
+        InitInitialState();
+
+        type = this.GetType().Name;
+        SetXP(type);
+        slashDamage = 1;
+        attackAnim = "BarbSlashAnim";
+    }
+
+    void InitStates()
+    {
+        stateMachine = new StateMachine();
         patrolState = new PatrolState(this);
         attackState = new AttackState(this);
         deathState = new DeathState(this);
         goToAttackPosState = new GoToAttackPosState(this);
+    }
 
-        stateMachine = new StateMachine();
+    void InitInitialState()
+    {
         stateMachine.SetInitialState(patrolState);
+    }
+   void InitStateTransitions()
+    {
         stateMachine.AddTransition(new StateTransition(patrolState, goToAttackPosState, this.aiSight.CanSeePlayer));
         stateMachine.AddTransition(new StateTransition(patrolState, deathState, this.healthBar.HasNoHealth));
         stateMachine.AddTransition(new StateTransition(goToAttackPosState, patrolState, this.aiSight.CannotSeePlayer));
@@ -26,8 +44,6 @@ public class BarbAxeman : AiObject
         stateMachine.AddTransition(new StateTransition(goToAttackPosState, attackState, this.IsInRangeOfTarget));
         stateMachine.AddTransition(new StateTransition(attackState, deathState, this.healthBar.HasNoHealth));
         stateMachine.AddTransition(new StateTransition(attackState, goToAttackPosState, this.HasJustAttacked));
-        type = this.GetType().Name;
-        SetXP(type);
     }
 
     protected override void Awake()
@@ -38,7 +54,7 @@ public class BarbAxeman : AiObject
     void Update()
     {
         stateMachine.Update();
-        Debug.DrawLine(transform.position, destination, Color.red);
+
     }
 
     void FixedUpdate()
@@ -52,7 +68,7 @@ public class BarbAxeman : AiObject
 
         foreach (Collider2D player in hitPlayer)
         {
-            player.GetComponentInChildren<HealthBar>().TakeDamage(100);
+            player.GetComponentInChildren<HealthBar>().TakeDamage(slashDamage);
             ApplyKnockBack();
             AudioManager audioManager = AudioManager.Instance;
             audioManager.PlaySound("Hit");

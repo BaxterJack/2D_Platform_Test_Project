@@ -21,7 +21,7 @@ public class AttackState : BaseState
     {
         aiObject.SetDestination(aiObject.PlayerPosition);
         aiObject.SetDistanceToDestintion();
-        isAttacking = aiObject.barbarianAnimation.animator.GetCurrentAnimatorStateInfo(0).IsName("BarbSlashAnim");
+        isAttacking = aiObject.barbarianAnimation.animator.GetCurrentAnimatorStateInfo(0).IsName(aiObject.AttackAnim);
         
         if (!isAttacking)
         {
@@ -29,7 +29,7 @@ public class AttackState : BaseState
         }
         else
         {
-            aiObject.attackCoolDown += Time.deltaTime;
+            //aiObject.attackCoolDown += Time.deltaTime;
         }
     }
 
