@@ -22,15 +22,14 @@ public class AttackState : BaseState
         aiObject.SetDestination(aiObject.PlayerPosition);
         aiObject.SetDistanceToDestintion();
         isAttacking = aiObject.barbarianAnimation.animator.GetCurrentAnimatorStateInfo(0).IsName(aiObject.AttackAnim);
-        
+
         if (!isAttacking)
         {
+           
             SlashAttack();
+            aiObject.attackCoolDown = 1.0f;
         }
-        else
-        {
-            //aiObject.attackCoolDown += Time.deltaTime;
-        }
+
     }
 
     public override void FixedUpdateState()

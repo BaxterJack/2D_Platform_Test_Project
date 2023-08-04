@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BarbAxeman : AiObject
 {
-    public PatrolState patrolState;
-    public AttackState attackState;
-    public DeathState deathState;
-    public GoToAttackPosState goToAttackPosState;
-    int slashDamage;
+    protected PatrolState patrolState;
+    protected AttackState attackState;
+    protected DeathState deathState;
+    protected GoToAttackPosState goToAttackPosState;
+    [SerializeField] protected int slashDamage;
     protected override void Start()
     {
         base.Start();
@@ -18,11 +18,12 @@ public class BarbAxeman : AiObject
 
         type = this.GetType().Name;
         SetXP(type);
-        slashDamage = 1;
+        slashDamage = 25;
         attackAnim = "BarbSlashAnim";
+        Debug.Log("BarbAxeman");
     }
 
-    void InitStates()
+    protected void InitStates()
     {
         stateMachine = new StateMachine();
         patrolState = new PatrolState(this);
@@ -31,11 +32,11 @@ public class BarbAxeman : AiObject
         goToAttackPosState = new GoToAttackPosState(this);
     }
 
-    void InitInitialState()
+    protected void InitInitialState()
     {
         stateMachine.SetInitialState(patrolState);
     }
-   void InitStateTransitions()
+    protected void InitStateTransitions()
     {
         stateMachine.AddTransition(new StateTransition(patrolState, goToAttackPosState, this.aiSight.CanSeePlayer));
         stateMachine.AddTransition(new StateTransition(patrolState, deathState, this.healthBar.HasNoHealth));
@@ -75,14 +76,14 @@ public class BarbAxeman : AiObject
         }
     }
 
-    private void ApplyKnockBack()
+    protected void ApplyKnockBack()
     {
         Vector2 knockBackDirection = (this.PlayerPosition - (Vector2)transform.position);
         knockBackDirection.y = 0;
         player.GetComponent<Rigidbody2D>().AddForce(knockBackDirection.normalized * knockBackForce);
     }
 
-    void SetHasAttackedTrue() // used in animation event
+    public void SetHasAttackedTrue() // used in animation event
     {
        HasAttacked = true;
     }

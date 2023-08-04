@@ -71,6 +71,11 @@ public class NPC : MonoBehaviour
         destinationWaypoint = playerPos;
     }
 
+    public void Wander()
+    {
+
+    }
+
 
     public void MoveNPC(Vector3 waypoint)
     {

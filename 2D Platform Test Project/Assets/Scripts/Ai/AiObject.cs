@@ -9,7 +9,7 @@ public class AiObject : MonoBehaviour
     [SerializeField] GameObject[] waypoints;
     [SerializeField] public float speed = 1.0f;
     protected AiSight aiSight;
-    protected GameObject player;
+    [SerializeField] protected GameObject player;
     protected HealthBar healthBar;
     [HideInInspector] public BarbarianAnimation barbarianAnimation;
 
@@ -49,6 +49,7 @@ public class AiObject : MonoBehaviour
 
     protected virtual void Start()
     {
+        Debug.Log("AIObject");
         FindPlayer();
         GameManager.Instance.AddRaider();
     }
@@ -69,6 +70,7 @@ public class AiObject : MonoBehaviour
     private void FindPlayer()
     {
         player = PlayerManager.Instance.gameObject;
+        Debug.Log(player);
     }
 
     public void MoveAI()

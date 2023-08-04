@@ -31,11 +31,11 @@ public class FlaviusWelcomeState : BaseState
 
     public override void UpdateState()
     {
-       
+        //npc.SetDestination();
     }
 
     public override void FixedUpdateState()
     {
-
+        //npc.MoveNPC(npc.destinationWaypoint);
     }
 }

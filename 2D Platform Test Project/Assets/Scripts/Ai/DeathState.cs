@@ -12,7 +12,7 @@ public class DeathState : BaseState
     public override void EnterState()
     {
         aiObject.barbarianAnimation.Die();
-        if (aiObject.type == "BarbAxeman")
+        if (aiObject.type == "BarbAxeman" || aiObject.type == "BarbBoss")
         {
             aiObject.barbarianAnimation.animator.ResetTrigger("SlashAttack");
         }

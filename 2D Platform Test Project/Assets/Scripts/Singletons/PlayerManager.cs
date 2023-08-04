@@ -52,7 +52,6 @@ public class PlayerManager : Singleton<PlayerManager>
 
     private void Start()
     {
-        Debug.Log("Hello");
         
     }
 

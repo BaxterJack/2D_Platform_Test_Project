@@ -13,10 +13,12 @@ public class NPCAnimation : MonoBehaviour
     Vector2 npcPosition;
 
     GameSceneManager gameSceneManager;
+    Rigidbody2D rB;
 
     private void Start()
     {
         gameSceneManager = GameSceneManager.Instance;
+        rB = GetComponent<Rigidbody2D>();   
     }
 
     private void Update()
@@ -54,9 +56,11 @@ public class NPCAnimation : MonoBehaviour
 
     public bool IsGoingRight()
     {
-        Vector2 target = GetComponent<NPC>().homeWaypoint;
-
-        if (target.x > npcPosition.x) // Going right
+        //Vector2 target = GetComponent<NPC>().homeWaypoint;
+        float xSpeed = rB.velocity.x;
+        Debug.Log(xSpeed);
+       // if (target.x > npcPosition.x) // Going right
+       if(xSpeed > 0)
         {
             return true;
         }

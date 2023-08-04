@@ -86,7 +86,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5729527009019465423, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5729527009019465423, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -140,6 +140,10 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 1.53125
       objectReference: {fileID: 0}
+    - target: {fileID: 7138321559161270433, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
+      propertyPath: m_Mass
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7435393350519750841, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
       propertyPath: m_SizeDelta.x
       value: 401.1
@@ -164,6 +168,37 @@ PrefabInstance:
       propertyPath: knockBackForce
       value: 1000
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8224793908168488267, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
+--- !u!1 &6488857060877163866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7818466261548566946, guid: 29da4e9251927244fb3a9c5463c387b6, type: 3}
+  m_PrefabInstance: {fileID: 3931018750956197112}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1530405925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6488857060877163866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a5029af4460ddf4088e8832fcd8d748, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  speed: 1.5
+  player: {fileID: 0}
+  barbarianAnimation: {fileID: 0}
+  playerLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  attackCoolDown: 0
+  knockBackForce: 1000
+  slashDamage: 0
