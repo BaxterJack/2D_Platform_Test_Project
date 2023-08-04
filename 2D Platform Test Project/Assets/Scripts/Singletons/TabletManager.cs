@@ -76,7 +76,7 @@ public class TabletManager : Singleton<TabletManager>
 
     public void SetDefaultHint()
     {
-        hint.text = "Hint: Use the keyboard to translate the message. Ignore capitals, spaces and punctuation.";
+        hint.text = "Hint: Use the keyboard to translate the message. Ignore capitals, spaces and punctuation. Make use of the translator and note there are no Roman Charachters for J, V, W, Y & Z, so other roman charachters have been used instead.";
     }
 
     private void Update()

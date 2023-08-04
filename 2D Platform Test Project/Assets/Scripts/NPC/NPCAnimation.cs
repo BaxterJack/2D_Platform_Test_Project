@@ -58,7 +58,7 @@ public class NPCAnimation : MonoBehaviour
     {
         //Vector2 target = GetComponent<NPC>().homeWaypoint;
         float xSpeed = rB.velocity.x;
-        Debug.Log(xSpeed);
+        //Debug.Log(xSpeed);
        // if (target.x > npcPosition.x) // Going right
        if(xSpeed > 0)
         {

@@ -17,7 +17,7 @@ public class FortGuide : Singleton<FortGuide>
     string speakWithBathhouseTip = "The bathouse is the unconstructed building to the east of the commanders house.";
     string getLumber = "Chop down one tree to get lumber for construction.";
     string getLumberTip = "There are trees outside the eastern gate.";
-    string findArtefacts = "Collect all the chests containing artefacts.";
+    string findArtefacts = "Collect all 7 chests containing artefacts.";
     string findArtefactsTip = "Remember to read the description, it will be on the test.";
     string artefactQuiz = "Go back to Lady Lepidina to give her slippers back and get ready for the quiz.";
     string artefactTip = "Press the 1 key to open up information about the artefacts.";

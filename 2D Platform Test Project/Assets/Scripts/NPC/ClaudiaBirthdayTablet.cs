@@ -20,10 +20,10 @@ public class ClaudiaBirthdayTablet : BaseState
         dialogue.name = "Claudia Severa";
         tablet = new Tablet();
         tablet.name = "Birthday Invitation";
-        //tablet.message = "I give you a warm invitation to my birthday celebration to make sure that you come to us," +
-        //    " to make the day more enjoyable for me by your arrival. Give my greetings to your Cerialis." +
-        //    " I shall expect you, sister. Farewell, sister, my dearest soul, as I hope to prosper, and hail.";
-        tablet.message = "Test";
+        tablet.message = "I give you a warm invitation to my birthday celebration to make sure that you come to us," +
+            " to make the day more enjoyable for me by your arrival. Give my greetings to your Cerialis." +
+            " I shall expect you, sister. Farewell, sister, my dearest soul, as I hope to prosper, and hail.";
+        //tablet.message = "Test";
 
     }
 
