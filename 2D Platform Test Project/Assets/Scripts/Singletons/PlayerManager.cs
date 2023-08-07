@@ -14,6 +14,12 @@ public class PlayerManager : Singleton<PlayerManager>
     int playerLayer;
     bool canAttack = false;
     bool canAttackCheck = false;
+    bool inConversation = false;
+    public bool InConversation
+    {
+        get { return inConversation; }
+        set { inConversation = value; }
+    }
     Vector3 checkpoint = new Vector3();
     public enum PlayerState
     {

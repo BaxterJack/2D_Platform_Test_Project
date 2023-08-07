@@ -101,6 +101,7 @@ public class DialogueManager : Singleton<DialogueManager>
             TabletManager.Instance.InitialiseTablet();
         }
         currentNPC.SetHasConversationCompleted(true) ;
+        PlayerManager.Instance.InConversation = false;
     }
 
     public void AssignCurrentNPC(NPC npc)

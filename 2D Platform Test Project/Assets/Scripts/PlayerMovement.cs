@@ -29,6 +29,10 @@ namespace Player
 
         void FixedUpdate()
         {
+            if (PlayerManager.Instance.InConversation)
+            {
+                return;
+            }
             HandleMovement();
         }
 
@@ -57,6 +61,10 @@ namespace Player
 
         private void Update()
         {
+            if (PlayerManager.Instance.InConversation)
+            {
+                return;
+            }
             HandleJump();
         }
 

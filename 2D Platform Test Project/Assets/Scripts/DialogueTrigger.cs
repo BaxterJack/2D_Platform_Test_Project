@@ -43,6 +43,7 @@ public class DialogueTrigger : MonoBehaviour
         dialogueManager.EnableCanvas();
         dialogueManager.AssignCurrentNPC(GetComponent<NPC>());
         dialogueManager.StartDialogue(dialogue);
+        PlayerManager.Instance.InConversation = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

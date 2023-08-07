@@ -170,8 +170,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -105.93385, y: 254.56}
-  m_SizeDelta: {x: 745.9686, y: 174.57}
+  m_AnchoredPosition: {x: -105.93385, y: 274.0641}
+  m_SizeDelta: {x: 745.9686, y: 173.8321}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2825436505591618896
 CanvasRenderer:
@@ -542,8 +542,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -123.66022, y: -270.81906}
-  m_SizeDelta: {x: 211.32031, y: 487.1281}
+  m_AnchoredPosition: {x: -123.66022, y: -351.46558}
+  m_SizeDelta: {x: 211.3203, y: 648.421}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2825436505829219813
 CanvasRenderer:
@@ -573,7 +573,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d4773d1753b15cb4da72981b00f13905, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 833e62064d3ef20438d3dc545b821dca, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -733,8 +733,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -105.51797, y: 38}
-  m_SizeDelta: {x: 747.1158, y: 25.4423}
+  m_AnchoredPosition: {x: -66.8056, y: 50.482544}
+  m_SizeDelta: {x: 853.9086, y: 37.2493}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2825436506383726922
 CanvasRenderer:
@@ -765,7 +765,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Hint: Use the keyboard to translate the message. Ignore capitals, spaces
-    and punctuation.'
+    and punctuation. Make use of the translator and note there are no Roman Charachters
+    for J, V, W, Y & Z, so other roman charachters have been used instead.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -792,11 +793,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18
+  m_fontSize: 15.8
   m_fontSizeBase: 18
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 10
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
