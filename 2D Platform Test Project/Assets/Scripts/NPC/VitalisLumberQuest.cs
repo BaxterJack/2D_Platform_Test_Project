@@ -9,11 +9,11 @@ public class VitalisLumberQuest : BaseState
 
     public VitalisLumberQuest(NPC npc) : base(npc)
     {
-        string sentence1 = "Hello, I am Vitalis. Im in charge of the Bath House, or will be when its finished!";
-        string sentence2 = "Whats this message then? Oh, the commander is complaining about the progress of the bathouse construction?!";
+        string sentence1 = "Hello, I am Vitalis. I'm in charge of the Bath House, or will be when its finished!";
+        string sentence2 = "Whats this message then? Oh, the commander is complaining about the progress of the bath house construction?!";
         string sentence3 = "Well, seeing as there are no raiders about, this sounds like soldiers work.";
         string sentence4 = "Being a soldier here at Vindolanda isn't just fighting remember. You also provide maintenance, construction and any other day to day tasks to keep this fort operating.";
-        string sentence5 = "All we need to fiish the bath house is Lumber. If you go out the eastern gate, there are some trees there ready for felling";
+        string sentence5 = "All we need to finish the bath house is Lumber. If you go out the eastern gate, there are some trees there ready for felling";
         string sentence6 = "Bring back a log and dump it back here in front of the construction site.";
 
 

@@ -8,7 +8,7 @@ public class ArmatusSendToCommanderState : BaseState
     public ArmatusSendToCommanderState(NPC npc) : base(npc)
     {
         string sentence1 = "You were pretty impressive in the ring!";
-        string sentence2 = "You better get back to the commander, he will assign you some work to do now that you are fit for duty";
+        string sentence2 = "You better get back to the commander, he will assign you some work to do now that you are fit for duty.";
         dialogue = new Dialogue();
         dialogue.sentences.Add(sentence1);
         dialogue.sentences.Add(sentence2);

@@ -10,7 +10,7 @@ public class FlaviusTabletOne : BaseState
     {
         string sentence1 = "Gauis Armatus says you did well on the training ground. It looks like your fit for duty!";
         string sentence2 = "I have some other tasks for you, you can read can't you?";
-        string sentence3 = "Excellent, Ok well take a look at this message to make sure you can read Roman Cursive";
+        string sentence3 = "Excellent, Ok well take a look at this message to make sure you can read Roman Cursive.";
         string sentence4 = "Then you can deliver the message to the Fort Bath House Keeper, Vitalis.";
         string sentence5 = "You'll find Vitalis at the next building to the East.";
 
@@ -26,7 +26,7 @@ public class FlaviusTabletOne : BaseState
 
         tablet = new Tablet();
         tablet.name = "Bath house Tablet";
-          tablet.message = "The construction of the bathouse is taking too long. Get the building finished so our soldiers dont stink of hog!";
+          tablet.message = "The construction of the bath house is taking too long. Get the building finished so our soldiers dont stink of hog!";
         // tablet.message = "Test";
     }
 
