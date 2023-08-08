@@ -1103,6 +1103,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Chest
       objectReference: {fileID: 0}
+    - target: {fileID: 901730687491878206, guid: 61fb673a3bad0944682f6a670dc596a9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 61fb673a3bad0944682f6a670dc596a9, type: 3}
@@ -1639,6 +1643,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Chest
       objectReference: {fileID: 0}
+    - target: {fileID: 901730687491878206, guid: 61fb673a3bad0944682f6a670dc596a9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 61fb673a3bad0944682f6a670dc596a9, type: 3}
@@ -1808,6 +1816,10 @@ PrefabInstance:
     - target: {fileID: 901730687070235374, guid: 61fb673a3bad0944682f6a670dc596a9, type: 3}
       propertyPath: m_TagString
       value: Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 901730687491878206, guid: 61fb673a3bad0944682f6a670dc596a9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -3009,6 +3021,10 @@ PrefabInstance:
     - target: {fileID: 901730687070235374, guid: 61fb673a3bad0944682f6a670dc596a9, type: 3}
       propertyPath: m_TagString
       value: Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 901730687491878206, guid: 61fb673a3bad0944682f6a670dc596a9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -10385,6 +10401,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Chest
       objectReference: {fileID: 0}
+    - target: {fileID: 901730687491878206, guid: 61fb673a3bad0944682f6a670dc596a9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 61fb673a3bad0944682f6a670dc596a9, type: 3}
@@ -10775,6 +10795,10 @@ PrefabInstance:
     - target: {fileID: 901730687070235374, guid: 61fb673a3bad0944682f6a670dc596a9, type: 3}
       propertyPath: m_TagString
       value: Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 901730687491878206, guid: 61fb673a3bad0944682f6a670dc596a9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
@@ -11565,6 +11589,10 @@ PrefabInstance:
     - target: {fileID: 901730687070235374, guid: 61fb673a3bad0944682f6a670dc596a9, type: 3}
       propertyPath: m_TagString
       value: Chest
+      objectReference: {fileID: 0}
+    - target: {fileID: 901730687491878206, guid: 61fb673a3bad0944682f6a670dc596a9, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
