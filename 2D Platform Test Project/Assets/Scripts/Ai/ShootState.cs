@@ -15,7 +15,7 @@ public class ShootState : BaseState
     {
         barbBowmen = BarbBowmen;
         aiObject.attackCoolDown = 2.5f;
-        coolDownLimit = 2.0f;
+        coolDownLimit = 3.0f;
     }
     public override void EnterState()
     {

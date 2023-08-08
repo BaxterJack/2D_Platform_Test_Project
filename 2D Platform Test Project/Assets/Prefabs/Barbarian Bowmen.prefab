@@ -162,7 +162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b67fcaa5991e65146b39ea5496a38f41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sightRange: 5
 --- !u!114 &6119054396224246838
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,23 +188,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3f43caab9e3ac941a4c50ab5a2202de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   speed: 1
-  aiSight: {fileID: 8508719276810398253}
-  healthBar: {fileID: 6713680661262625926}
+  player: {fileID: 0}
   barbarianAnimation: {fileID: 6119054396224246838}
-  attackPoint: {fileID: 7391153962629553856}
   playerLayers:
     serializedVersion: 2
     m_Bits: 128
-  attackOffset: 0
   attackCoolDown: 0
-  target: {x: 0, y: 0}
-  destination: {x: 0, y: 0}
-  distanceToDestination: 0
-  hasAttacked: 0
+  knockBackForce: 0
   arrow: {fileID: 7107373551082097070, guid: 206b2e257d5bcea43ab335df7859142c, type: 3}
   arrowPosition: {fileID: 4154429547779177755}
 --- !u!61 &1721874910166922291
@@ -287,6 +281,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 4752148173123535551}
     m_Modifications:
+    - target: {fileID: 5390418315728399933, guid: eacfd9394e053ea49823a3a62a610cbd, type: 3}
+      propertyPath: maxHealth
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 6208280340967805623, guid: eacfd9394e053ea49823a3a62a610cbd, type: 3}
       propertyPath: m_Name
       value: HealthCanvas
@@ -386,17 +384,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: eacfd9394e053ea49823a3a62a610cbd, type: 3}
---- !u!114 &6713680661262625926 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5390418315728399933, guid: eacfd9394e053ea49823a3a62a610cbd, type: 3}
-  m_PrefabInstance: {fileID: 1721874910268605115}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc2b56cdf8c2f32449455e17c1a6de91, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &8121243039674837498 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7444775225362312001, guid: eacfd9394e053ea49823a3a62a610cbd, type: 3}

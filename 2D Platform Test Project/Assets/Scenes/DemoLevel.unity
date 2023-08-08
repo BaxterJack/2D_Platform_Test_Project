@@ -7750,10 +7750,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Barbarian Bowmen
       objectReference: {fileID: 0}
-    - target: {fileID: 5001142141416212421, guid: 86570501c5ad0954692d8c2bbf46f989, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7005617189060938807, guid: 86570501c5ad0954692d8c2bbf46f989, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
