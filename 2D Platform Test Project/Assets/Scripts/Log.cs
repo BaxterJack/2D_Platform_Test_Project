@@ -29,7 +29,7 @@ public class Log : MonoBehaviour
         Vector3 bathHousePos = bathHouse.gameObject.transform.position;
         float distance = Vector2.Distance(transform.position, bathHousePos);
         Debug.DrawLine(transform.position, bathHousePos);
-        float distanceThreshold = 2.0f;
+        float distanceThreshold = 3.0f;
         return distance <= distanceThreshold;
     }
 

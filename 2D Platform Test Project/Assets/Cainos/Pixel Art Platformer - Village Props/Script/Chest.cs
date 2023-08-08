@@ -98,13 +98,21 @@ namespace Cainos.PixelArtPlatformer_VillageProps
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            CreateOpenChestText();
-            isInRange = true;
+            if(collision.tag == "Player")
+            {
+                CreateOpenChestText();
+                isInRange = true;
+            }
+           
         }
         private void OnTriggerExit2D(Collider2D collision)
         {
-            DestroyOpenChestText();
-            isInRange = false;
+            if (collision.tag == "Player")
+            {
+                DestroyOpenChestText();
+                isInRange = false;
+            }
+          
         }
 
 

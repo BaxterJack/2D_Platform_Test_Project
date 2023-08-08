@@ -89,4 +89,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   homeWaypoint: {x: 0, y: 0, z: 0}
-  speed: 2
+  destinationWaypoint: {x: 0, y: 0, z: 0}
+  speed: 2.75
