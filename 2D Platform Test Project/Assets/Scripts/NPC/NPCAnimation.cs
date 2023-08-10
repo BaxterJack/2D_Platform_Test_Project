@@ -25,42 +25,47 @@ public class NPCAnimation : MonoBehaviour
     {
  
         npcPosition = gameObject.transform.position;
-            WalkAnimation();
-            FlipSprite();
+        float xSpeed = rB.velocity.x;
+        WalkAnimation(xSpeed);
+        if(xSpeed != 0.0f )
+        {
+            FlipSprite(xSpeed);
+        }
+        
 
            
     }
-    void WalkAnimation()
+    void WalkAnimation(float xSpeed)
     {
-        Rigidbody2D rigidbody2D = GetComponent<Rigidbody2D>();
-        horizontalMove = rigidbody2D.velocity.x;
+        //Rigidbody2D rigidbody2D = GetComponent<Rigidbody2D>();
+        //horizontalMove = rigidbody2D.velocity.x;
 
-        isMoving = horizontalMove > 0.1f || horizontalMove < -0.1f;
+       // isMoving = horizontalMove > 0.1f || horizontalMove < -0.1f;
+        isMoving = xSpeed > 0.1f || xSpeed < -0.1f;
         animator.SetBool("IsMoving", isMoving);
 
     }
 
-    void FlipSprite()
+    void FlipSprite(float xSpeed)
     {
-        if (IsGoingRight())
+        if (IsGoingRight(xSpeed))
         {
             transform.localScale = new Vector3(-1, 1, 1);
             
         }
-        else if (!IsGoingRight())
+        else if (!IsGoingRight(xSpeed))
         {
             transform.localScale = new Vector3(1, 1, 1);
             
         }
     }
 
-    public bool IsGoingRight()
+    public bool IsGoingRight(float xSpeed)
     {
-        //Vector2 target = GetComponent<NPC>().homeWaypoint;
-        float xSpeed = rB.velocity.x;
-        //Debug.Log(xSpeed);
-       // if (target.x > npcPosition.x) // Going right
-       if(xSpeed > 0)
+
+        //float xSpeed = rB.velocity.x;
+
+        if (xSpeed > 0)
         {
             return true;
         }
@@ -68,6 +73,7 @@ public class NPCAnimation : MonoBehaviour
         {
             return false;
         }
+
     }
 
 

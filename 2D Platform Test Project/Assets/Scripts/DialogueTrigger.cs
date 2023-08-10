@@ -16,6 +16,7 @@ public class DialogueTrigger : MonoBehaviour
     TMP_Text startDialogue;
     string startDialogueText = "Press E to Talk";
     bool isInTalkingRange = false;
+
     void CreateStartDialogueUI()
     {
         startDialogue = Instantiate(textPrefab);
@@ -41,6 +42,7 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerDialogue()
     {
         dialogueManager.EnableCanvas();
+
         dialogueManager.AssignCurrentNPC(GetComponent<NPC>());
         dialogueManager.StartDialogue(dialogue);
         PlayerManager.Instance.InConversation = true;

@@ -41,6 +41,23 @@ public class NPC : MonoBehaviour
         distanceToHome = 10;
     }
 
+    public void LookToPlayer()
+    {
+        float playerXPos = PlayerManager.Instance.gameObject.transform.position.x;
+        float npcXPos = gameObject.transform.position.x;
+        float direction = npcXPos - playerXPos;
+        if (direction < 0)
+        {
+            //look right
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {
+            //look left
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+    }
+
 
     public float SetDistance(Vector3 waypoint)
     {

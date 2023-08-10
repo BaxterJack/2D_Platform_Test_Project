@@ -45,6 +45,7 @@ public class DialogueManager : Singleton<DialogueManager>
 
     public void StartDialogue(Dialogue dialogue)
     {
+        currentNPC.LookToPlayer();
         npcName.text = dialogue.name;
         sentences.Clear();
         hasTabletPuzzle = dialogue.HasTabletPuzzle;
