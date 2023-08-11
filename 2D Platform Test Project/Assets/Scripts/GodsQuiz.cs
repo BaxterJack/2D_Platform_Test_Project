@@ -25,7 +25,7 @@ public class GodsQuiz : MonoBehaviour
 
     int numQuestions;
     int currentQuestion = 0;
-    int score = 0;
+    float score = 0;
 
     int correctButton;
     int wrongGuesses = 0;
