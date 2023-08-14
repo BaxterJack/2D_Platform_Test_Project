@@ -15,11 +15,11 @@ public abstract class BaseState
         npc = NPC;
     }
 
-    public abstract void EnterState(/*BarbStateManager barbarian*/);
+    public abstract void EnterState();
 
-    public abstract void UpdateState(/*BarbStateManager barbarian*/);
+    public abstract void UpdateState();
 
-    public abstract void FixedUpdateState(/*BarbStateManager barbarian*/);
+    public abstract void FixedUpdateState();
 
-    //public abstract bool CanTransition();
+
 }
