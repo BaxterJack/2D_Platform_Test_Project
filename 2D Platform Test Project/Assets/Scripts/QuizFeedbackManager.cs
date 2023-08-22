@@ -47,7 +47,6 @@ public class QuizFeedbackManager : QuizManager
         }
     }
 
-    //Why do the below functions have to be overriden, despite having no difference in code???
 
     protected override void InitialiseQuestion()
     {

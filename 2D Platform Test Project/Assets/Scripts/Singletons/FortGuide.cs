@@ -16,7 +16,7 @@ public class FortGuide : Singleton<FortGuide>
     string speakWithBathhouse = "Send the tablet message to Vitalis, the BathHouse keeper.";
     string speakWithBathhouseTip = "The bathouse is the unconstructed building to the east of the commanders house.";
     string getLumber = "Chop down one tree to get lumber for construction.";
-    string getLumberTip = "There are trees outside the eastern gate.";
+    string getLumberTip = "There are trees outside the eastern gate. Chop the tree using the slash attack.";
     string findArtefacts = "Collect all 7 chests containing artefacts.";
     string findArtefactsTip = "Remember to read the description, it will be on the test.";
     string artefactQuiz = "Go back to Lady Lepidina to give her slippers back and get ready for the quiz.";

@@ -18,6 +18,7 @@ public class PriestReward : BaseState
         dialogue = new Dialogue();
         dialogue.HasTabletPuzzle = false;
         dialogue.ForcedDialogue = true;
+        dialogue.ConversationComplete = false;
         dialogue.name = "Marcus Flavus";
 
 
@@ -32,6 +33,7 @@ public class PriestReward : BaseState
             dialogue.sentences.Add(sentence2);
             dialogue.sentences.Add(sentence3);
             PlayerManager.Instance.IncreaseVitality();
+            AudioManager.Instance.PlaySound("Blessed");
         }
         else
         {
@@ -44,11 +46,7 @@ public class PriestReward : BaseState
 
     public override void UpdateState()
     {
-        if(npc.GetHasConversationCompleted() && over60)
-        {
-            over60 = false;
-            AudioManager.Instance.PlaySound("Blessed");
-        }
+
     }
 
     public override void FixedUpdateState()

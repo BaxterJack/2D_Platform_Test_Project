@@ -59,11 +59,16 @@ public class Typer
 
     private void CheckInput()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            return;
+        }
+
         if (Input.anyKeyDown)
         {
             string keysPressed = Input.inputString;
 
-            if(keysPressed.Length == 1)
+            if (keysPressed.Length == 1)
             {
                 char letterPressed = keysPressed[0];
                 EnterLetter(letterPressed);
@@ -101,11 +106,11 @@ public class Typer
         }
         else
         {
-            //Need to add a hint system
+
             errorsMade++;
             ErrorNoise();
             Hint(typedLetter);
-            //Debug.Log(remainingWord);
+
         }
     }
 
